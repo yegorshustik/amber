@@ -117,7 +117,7 @@
   background: var(--navy); border-bottom: 1px solid var(--line-dark);
 }
 .ac-header__inner { display: flex; align-items: center; gap: var(--space-8);
-  max-width: var(--container-max); margin-inline: auto; padding: 16px var(--container-pad); }
+  max-width: var(--container-max); margin-inline: auto; padding: 8px var(--container-pad); }
 .ac-header__logo { height: 36px; flex: none; }
 .ac-header__nav { display: flex; gap: var(--space-6); margin-left: auto; }
 .ac-nav-link { font-family: var(--font-body); font-weight: var(--fw-medium); font-size: 15px; color: var(--cream); text-decoration: none; opacity: .82; transition: opacity .15s ease, color .15s ease; }
