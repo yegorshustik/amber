@@ -90,6 +90,16 @@ a { color: inherit; }
   background: var(--cream); display: flex; align-items: center; justify-content: center;
   color: var(--muted); font-size: 14px; letter-spacing: 0.04em;
 }
+/* real photos — fill the slot and crop nicely */
+.ac-photo {
+  display: block; width: 100%; height: auto;
+  object-fit: cover; object-position: center;
+  border-radius: var(--radius-card);
+}
+.ac-photo--portrait { aspect-ratio: 4 / 5; }
+.ac-photo--wide { aspect-ratio: 16 / 9; }
+.ac-photo--square { aspect-ratio: 1 / 1; }
+
 .ac-prose figcaption, .ac-figcaption { margin-top: var(--space-3); font-size: 14px; color: var(--muted); }
 
 /* blockquote */
