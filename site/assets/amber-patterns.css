@@ -158,7 +158,7 @@ a { color: inherit; }
    ============================================================ */
 
 /* logo sizing */
-.ac-header__logo { height: 46px; }
+.ac-header__logo { height: 64px; }
 
 /* eyebrow + copy on dark sections */
 .ac-section--navy .ac-eyebrow, .ac-quote .ac-eyebrow { color: var(--amber-light); }
