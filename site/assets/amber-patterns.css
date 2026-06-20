@@ -147,7 +147,7 @@ a { color: inherit; }
   border-top: 1px solid var(--line-dark); display: flex; justify-content: space-between;
   flex-wrap: wrap; gap: var(--space-4); font-size: 13px; color: var(--muted);
 }
-.ac-lang a { color: rgba(237, 228, 210, 0.78); text-decoration: none; margin-left: var(--space-4); font-size: 13px; }
+.ac-lang a { display: inline-block; color: rgba(237, 228, 210, 0.78); text-decoration: none; margin-left: var(--space-4); font-size: 13px; }
 .ac-lang a:hover { color: var(--amber-light); }
 
 /* ============================================================
