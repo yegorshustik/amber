@@ -188,7 +188,7 @@
             <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-dob">Date of birth</label>
-                <input class="ac-input" id="f-dob" type="date" min="2000-01-01" max="2016-12-31">
+                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10" pattern="\d{2}\.\d{2}\.\d{4}" title="Date of birth in format dd.mm.yyyy">
               </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-grade">Current grade</label>
@@ -282,6 +282,31 @@
       n.classList.remove('is-open');
       b.setAttribute('aria-expanded', 'false');
     });
+  });
+})();
+
+/* Date-of-birth mask: dd.mm.yyyy */
+(function () {
+  var dob = document.getElementById('f-dob');
+  if (!dob) return;
+
+  dob.addEventListener('input', function () {
+    var d = dob.value.replace(/\D/g, '').slice(0, 8); // ddmmyyyy
+    var out = d.slice(0, 2);
+    if (d.length >= 3) out += '.' + d.slice(2, 4);
+    if (d.length >= 5) out += '.' + d.slice(4, 8);
+    dob.value = out;
+  });
+
+  dob.addEventListener('blur', function () {
+    dob.setCustomValidity('');
+    if (!dob.value) return;
+    var m = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(dob.value);
+    if (!m) { dob.setCustomValidity('Use the format dd.mm.yyyy'); return; }
+    var day = +m[1], mon = +m[2], yr = +m[3];
+    var ok = mon >= 1 && mon <= 12 && day >= 1 && day <= 31 && yr >= 1990 && yr <= 2020;
+    var realDay = new Date(yr, mon - 1, day).getDate() === day; // reject 31.02 etc.
+    if (!ok || !realDay) dob.setCustomValidity('Enter a valid date of birth');
   });
 })();
 </script>
