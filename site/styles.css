@@ -1,0 +1,6 @@
+/* DEPRECATED — no longer used.
+   The site now uses the Claude Design Dev Package as the source of styles:
+     assets/amber-tokens.css      (design tokens)
+     assets/amber-components.css  (components: buttons, forms, cards, header, footer, chips)
+     assets/amber-patterns.css    (base, prose/content-blocks, ToC, action block, sections)
+   This file is kept only to avoid breaking old links. Do not add styles here. */

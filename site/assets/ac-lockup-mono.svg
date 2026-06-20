@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120" viewBox="0 0 320 120" role="img" aria-label="Amber Council">
+  <title>Amber Council — horizontal lockup (monochrome, single ink via currentColor)</title>
+  <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
+    <path d="M52 26 L94 56 L52 86 L10 56 Z"></path>
+  </g>
+  <text x="52" y="56" dy="-2.4" text-anchor="middle" dominant-baseline="central" font-family="Marcellus, &#39;Times New Roman&#39;, serif" font-size="30" fill="currentColor" letter-spacing="0.5">AC</text>
+  <text x="128" y="48" font-family="Marcellus, &#39;Times New Roman&#39;, serif" font-size="23" fill="currentColor" letter-spacing="7.5">AMBER</text>
+  <text x="128" y="80" font-family="Marcellus, &#39;Times New Roman&#39;, serif" font-size="23" fill="currentColor" letter-spacing="7.5">COUNCIL</text>
+</svg>

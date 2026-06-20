@@ -1,0 +1,133 @@
+/* ============================================================
+   Amber Council — Components & Layout
+   Requires amber-tokens.css (CSS custom properties) loaded first.
+   ============================================================ */
+
+/* ---- Typography helpers ---- */
+.ac-eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow);
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  font-weight: var(--fw-medium); color: var(--amber-deep);
+}
+.ac-h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-display); color: var(--navy); margin: 0; }
+.ac-h2 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-display); color: var(--navy); margin: 0; }
+.ac-h3 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--navy); margin: 0; }
+.ac-h4 { font-family: var(--font-body); font-weight: var(--fw-medium); font-size: var(--fs-h4); line-height: var(--lh-h4); color: var(--navy); margin: 0; }
+.ac-body { font-family: var(--font-body); font-weight: var(--fw-regular); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink); max-width: 70ch; }
+.ac-body-lg { font-family: var(--font-body); font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); color: var(--ink); max-width: 66ch; }
+.ac-editorial { font-family: var(--font-editorial); font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); color: var(--ink); } /* hero/about copy */
+.ac-small { font-family: var(--font-body); font-size: var(--fs-small); line-height: var(--lh-small); color: var(--muted); }
+.ac-stat { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-h2); line-height: 1; color: var(--navy); } /* big serif numbers */
+.on-dark { color: var(--cream); }
+.on-dark.ac-h1, .on-dark.ac-h2, .on-dark.ac-h3 { color: var(--cream); }
+
+/* ---- Layout: container + 12-col grid ---- */
+.ac-container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-pad); }
+.ac-section { padding-block: var(--section-y); }
+.ac-grid { display: grid; grid-template-columns: repeat(var(--grid-cols), 1fr); gap: var(--gutter); }
+.ac-hairline { height: 1px; background: var(--line); border: 0; }
+.ac-hairline--gold { background: var(--amber); opacity: .5; }
+
+/* ============================================================
+   BUTTONS  — base + variants. Padding 13/24, radius 8, Inter 600 15.
+   ============================================================ */
+.ac-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: var(--fw-semibold);
+  font-size: 15px; letter-spacing: .01em; line-height: 1;
+  padding: 13px 24px; border-radius: var(--radius-input); white-space: nowrap;
+  border: 1px solid transparent; cursor: pointer;
+  text-decoration: none; transition: background-color .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.ac-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* Primary CTA — amber fill, navy text */
+.ac-btn--primary { background: var(--amber); color: var(--navy); }
+.ac-btn--primary:hover { background: var(--amber-deep); }
+.ac-btn--primary:active { background: #946C1C; }
+.ac-btn--primary:disabled, .ac-btn--primary[aria-disabled="true"] { background: var(--amber); color: var(--navy); opacity: .45; cursor: not-allowed; }
+
+/* Secondary on light — ghost: navy outline, fills on hover */
+.ac-btn--secondary { background: transparent; color: var(--navy); border-color: var(--navy); }
+.ac-btn--secondary:hover { background: var(--navy); color: var(--cream); }
+.ac-btn--secondary:active { background: var(--navy-deep); color: var(--cream); }
+.ac-btn--secondary:disabled { opacity: .4; cursor: not-allowed; background: transparent; color: var(--navy); }
+
+/* Secondary on dark — amber-light outline, cream text */
+.ac-btn--secondary-dark { background: transparent; color: var(--cream); border-color: var(--amber-light); }
+.ac-btn--secondary-dark:hover { background: var(--amber-light); color: var(--navy); }
+.ac-btn--secondary-dark:disabled { opacity: .4; cursor: not-allowed; }
+
+/* Tertiary / ghost — text link with gold underline */
+.ac-btn--ghost { background: transparent; color: var(--amber-deep); padding: 8px 4px; border: 0; text-underline-offset: 4px; text-decoration: underline; text-decoration-color: var(--amber); }
+.ac-btn--ghost:hover { color: var(--navy); text-decoration-color: var(--navy); }
+.ac-btn--ghost:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ============================================================
+   FORM FIELDS
+   ============================================================ */
+.ac-field { display: flex; flex-direction: column; gap: 6px; }
+.ac-label { font-family: var(--font-body); font-weight: var(--fw-medium); font-size: 14px; color: var(--navy); }
+.ac-input, .ac-select, .ac-textarea {
+  font-family: var(--font-body); font-size: var(--fs-body); color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-input);
+  padding: 12px 14px; width: 100%; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.ac-input::placeholder, .ac-textarea::placeholder { color: var(--muted); }
+.ac-input:focus, .ac-select:focus, .ac-textarea:focus { outline: none; border-color: var(--amber); box-shadow: var(--focus-ring); }
+.ac-input:disabled { opacity: .55; cursor: not-allowed; }
+.ac-field--success .ac-input, .ac-input.is-success { border-color: var(--success); }
+.ac-field--error .ac-input, .ac-input.is-error { border-color: var(--error); }
+.ac-help { font-family: var(--font-body); font-size: 13px; color: var(--muted); }
+.ac-help--error { color: var(--error); }
+.ac-help--success { color: var(--success); }
+
+/* ============================================================
+   CARD  / InstitutionCard
+   ============================================================ */
+.ac-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-card);
+  padding: var(--space-6); box-shadow: var(--shadow-card);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.ac-card--interactive:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.ac-card__name { font-family: var(--font-display); font-size: var(--fs-h3); color: var(--navy); margin: 0; }
+.ac-card__meta { font-family: var(--font-body); font-size: var(--fs-small); color: var(--muted); }
+.ac-card__desc { font-family: var(--font-body); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink); }
+
+/* ============================================================
+   TAGS / FILTER CHIPS  — pills
+   ============================================================ */
+.ac-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-weight: var(--fw-medium); font-size: 11px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink);
+  background: transparent; border: 1px solid var(--line); border-radius: var(--radius-pill);
+  padding: 6px 13px; cursor: pointer; transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.ac-chip:hover { border-color: var(--navy); }
+.ac-chip--active, .ac-chip[aria-pressed="true"] { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+/* ============================================================
+   HEADER  — sticky, navy, persistent CTA
+   ============================================================ */
+.ac-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--navy); border-bottom: 1px solid var(--line-dark);
+}
+.ac-header__inner { display: flex; align-items: center; gap: var(--space-8);
+  max-width: var(--container-max); margin-inline: auto; padding: 16px var(--container-pad); }
+.ac-header__logo { height: 36px; flex: none; }
+.ac-header__nav { display: flex; gap: var(--space-6); margin-left: auto; }
+.ac-nav-link { font-family: var(--font-body); font-weight: var(--fw-medium); font-size: 15px; color: var(--cream); text-decoration: none; opacity: .82; transition: opacity .15s ease, color .15s ease; }
+.ac-nav-link:hover, .ac-nav-link[aria-current="page"] { opacity: 1; color: var(--amber-light); }
+
+/* ============================================================
+   FOOTER  — navy-deep
+   ============================================================ */
+.ac-footer { background: var(--navy-deep); color: var(--cream); }
+.ac-footer__inner { max-width: var(--container-max); margin-inline: auto; padding: var(--space-16) var(--container-pad); display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--gutter); }
+.ac-footer__title { font-family: var(--font-label); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--amber-light); margin-bottom: 14px; }
+.ac-footer a { font-family: var(--font-body); font-size: 15px; color: rgba(237,228,210,.78); text-decoration: none; display: block; padding: 5px 0; }
+.ac-footer a:hover { color: var(--amber-light); }

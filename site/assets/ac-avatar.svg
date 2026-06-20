@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" role="img" aria-label="Amber Council avatar">
+  <title>Amber Council — avatar (facet kept large, ~72u in 84 circle)</title>
+  <circle cx="42" cy="42" r="42" fill="#11283F"></circle>
+  <g fill="none" stroke="#C89B41" stroke-width="2" stroke-linejoin="round">
+    <path d="M42 15 L72 42 L42 69 L12 42 Z"></path>
+  </g>
+  <text x="42" y="42" dy="-1.7" text-anchor="middle" dominant-baseline="central" font-family="Marcellus, &#39;Times New Roman&#39;, serif" font-size="22" fill="#C89B41" letter-spacing="0.4">AC</text>
+</svg>

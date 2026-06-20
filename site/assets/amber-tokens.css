@@ -1,0 +1,95 @@
+/* ============================================================
+   Amber Council — Design Tokens
+   Source of truth: Amber Council Web Foundations.md + brand mark system.
+   Typography decision (final): Marcellus display · Inter body/UI ·
+   EB Garamond editorial · Archivo labels.  Fraunces is NOT used.
+   Load fonts:
+   https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap
+   ============================================================ */
+
+:root {
+  /* ---- Colour ---- */
+  --navy:        #11283F;  /* primary dark ground; text on light            */
+  --navy-deep:   #0C1E30;  /* deepest ground — footer, contrast sections    */
+  --cream:       #EDE4D2;  /* warm light section background; text on dark    */
+  --paper:       #F7F3EA;  /* card / surface on light                        */
+  --amber:       #C89B41;  /* accent + primary CTA fill (the only metal)     */
+  --amber-deep:  #A87B22;  /* gold hover / pressed; gold on light text       */
+  --amber-light: #E6CB86;  /* thin highlights; gold on dark                  */
+  --ink:         #3A3527;  /* body ink on paper (warm near-black)            */
+  --muted:       #6B7686;  /* secondary text on light                        */
+  --line:        rgba(17, 40, 63, 0.12);    /* borders / dividers on light  */
+  --line-dark:   rgba(237, 228, 210, 0.18); /* borders / lines on navy      */
+  --success:     #2E7D5B;  /* valid form field                               */
+  --error:       #B23B3B;  /* form error                                     */
+  --warning:     #C2872B;  /* warning                                        */
+
+  /* ---- Type families ---- */
+  --font-display:   'Marcellus', 'Times New Roman', serif; /* H1–H3, stats   */
+  --font-body:      'Inter', system-ui, sans-serif;        /* body, UI       */
+  --font-editorial: 'EB Garamond', Georgia, serif;         /* hero/about copy*/
+  --font-label:     'Archivo', system-ui, sans-serif;      /* eyebrow/labels */
+
+  /* ---- Type scale (desktop)  — see --fs-*-m for mobile ---- */
+  --fs-h1: 56px;  --lh-h1: 1.08;  --fs-h1-m: 36px;
+  --fs-h2: 40px;  --lh-h2: 1.12;  --fs-h2-m: 28px;
+  --fs-h3: 28px;  --lh-h3: 1.20;  --fs-h3-m: 22px;
+  --fs-h4: 22px;  --lh-h4: 1.30;  --fs-h4-m: 18px;
+  --fs-body-lg: 20px; --lh-body-lg: 1.60; --fs-body-lg-m: 18px;
+  --fs-body:    17px; --lh-body:    1.65; --fs-body-m:    16px;
+  --fs-small:   15px; --lh-small:   1.50; --fs-small-m:   14px;
+  --fs-eyebrow: 13px; --lh-eyebrow: 1.40; --fs-eyebrow-m: 12px;
+  --fs-caption: 13px; --lh-caption: 1.45; --fs-caption-m: 12px;
+
+  --ls-display:  0.01em;  /* headings  */
+  --ls-eyebrow:  0.12em;  /* eyebrow / label caps (range .12–.34em) */
+  --ls-logo:     0.34em;  /* wordmark caps */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;  /* UI only (buttons); never for serif headings */
+
+  /* ---- Spacing scale (base 4 / 8) ---- */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --space-24: 96px;
+  --section-y: 96px;       /* vertical section rhythm, desktop */
+  --section-y-m: 56px;     /* mobile */
+
+  /* ---- Radii ---- */
+  --radius-card:  12px;
+  --radius-input: 8px;
+  --radius-pill:  100px;
+
+  /* ---- Shadows (premium restraint — subtle only) ---- */
+  --shadow-sm:    0 1px 3px rgba(17, 40, 63, 0.08);
+  --shadow-card:  0 1px 3px rgba(17, 40, 63, 0.06), 0 8px 24px rgba(17, 40, 63, 0.05);
+  --shadow-hover: 0 4px 14px rgba(17, 40, 63, 0.10), 0 14px 40px rgba(17, 40, 63, 0.07);
+  --focus-ring:   0 0 0 3px rgba(200, 155, 65, 0.35); /* amber focus */
+
+  /* ---- Layout ---- */
+  --container-max: 1280px;
+  --container-pad: 64px;   /* desktop side padding */
+  --container-pad-m: 24px; /* mobile  side padding */
+  --grid-cols: 12;
+  --gutter: 24px;
+
+  /* ---- Breakpoints (reference; use in @media) ----
+     mobile  ≤ 640px
+     tablet  641–1024px
+     desktop > 1024px                                  */
+  --bp-tablet: 641px;
+  --bp-desktop: 1025px;
+}
+
+/* Mobile type overrides */
+@media (max-width: 640px) {
+  :root {
+    --fs-h1: var(--fs-h1-m); --fs-h2: var(--fs-h2-m); --fs-h3: var(--fs-h3-m);
+    --fs-h4: var(--fs-h4-m); --fs-body-lg: var(--fs-body-lg-m);
+    --fs-body: var(--fs-body-m); --fs-small: var(--fs-small-m);
+    --fs-eyebrow: var(--fs-eyebrow-m); --fs-caption: var(--fs-caption-m);
+    --container-pad: var(--container-pad-m);
+    --section-y: var(--section-y-m);
+  }
+}
