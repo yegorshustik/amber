@@ -8,6 +8,7 @@
 /* ---- Base ---- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html { background: var(--navy); }
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -60,7 +61,7 @@ a { color: inherit; }
 .ac-prose a { color: var(--amber-deep); text-decoration: underline; text-underline-offset: 3px; }
 
 /* lists — amber facet bullets */
-.ac-prose ul, .ac-prose ol { list-style: none; margin: 0; padding: 0; }
+.ac-prose ul, .ac-prose ol { list-style: none; margin: var(--space-4) 0 0; padding: 0; }
 .ac-prose li { position: relative; padding-left: var(--space-8); margin-bottom: var(--space-3); color: var(--ink); }
 .ac-prose ul li::before {
   content: ""; position: absolute; left: 4px; top: 0.62em;
@@ -74,7 +75,8 @@ a { color: inherit; }
 }
 
 /* table */
-.ac-prose table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--fs-body); }
+.ac-prose table { width: 100%; table-layout: fixed; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--fs-body); }
+.ac-prose th, .ac-prose td { overflow-wrap: break-word; }
 .ac-prose thead th {
   text-align: left; font-family: var(--font-body); font-weight: var(--fw-medium);
   color: var(--navy); padding: var(--space-3) var(--space-4); border-bottom: 2px solid var(--amber);

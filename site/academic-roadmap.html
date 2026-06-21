@@ -9,24 +9,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/amber-tokens.css?v=4">
-<link rel="stylesheet" href="assets/amber-components.css?v=4">
-<link rel="stylesheet" href="assets/amber-patterns.css?v=4">
+<link rel="stylesheet" href="assets/amber-tokens.css?v=5">
+<link rel="stylesheet" href="assets/amber-components.css?v=5">
+<link rel="stylesheet" href="assets/amber-patterns.css?v=5">
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
 <header class="ac-header">
   <div class="ac-header__inner">
-    <a href="#" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg" alt="Amber Council"></a>
-    <nav class="ac-header__nav">
-      <a class="ac-nav-link" aria-current="page" href="#">Academic Roadmap</a>
-      <a class="ac-nav-link" href="#">Services</a>
-      <a class="ac-nav-link" href="#">Pricing</a>
-      <a class="ac-nav-link" href="#">About</a>
-      <a class="ac-nav-link" href="#">Contacts</a>
+    <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg" alt="Amber Council"></a>
+    <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="ac-header__nav" id="site-nav">
+      <a class="ac-nav-link" aria-current="page" href="academic-roadmap.html">Academic Roadmap</a>
+      <a class="ac-nav-link" href="index.html#services">Services</a>
+      <a class="ac-nav-link" href="index.html#pricing">Pricing</a>
+      <a class="ac-nav-link" href="index.html#about">About</a>
+      <a class="ac-nav-link" href="index.html#lead">Contacts</a>
+      <a class="ac-btn ac-btn--primary ac-nav-cta" href="index.html#lead">Free consultation</a>
     </nav>
-    <a class="ac-btn ac-btn--primary" href="#cta">Free consultation</a>
+    <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
   </div>
 </header>
 
@@ -167,5 +169,22 @@
 </footer>
 
 <script src="toc.js"></script>
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
