@@ -200,7 +200,7 @@ a { color: inherit; }
 .ac-section--cream .ac-step__k { color: var(--amber-deep); }
 
 /* "How we work" — photo + 3 process steps */
-.ac-process { display: grid; grid-template-columns: 1fr 1.15fr; gap: var(--gutter); align-items: center; }
+.ac-process { display: grid; grid-template-columns: 1fr 1.15fr; gap: var(--space-16); align-items: center; }
 .ac-process__media { margin: 0; }
 .ac-process__steps { display: grid; gap: var(--space-8); }
 @media (max-width: 760px) { .ac-process { grid-template-columns: 1fr; gap: var(--space-12); } }
