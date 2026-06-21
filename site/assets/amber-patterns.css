@@ -205,6 +205,10 @@ a { color: inherit; }
 .ac-process__steps { display: grid; gap: var(--space-8); }
 @media (max-width: 760px) { .ac-process { grid-template-columns: 1fr; gap: var(--space-12); } }
 
+/* Cap portrait photo height on desktop so they aren't overly tall (mobile keeps 4:5) */
+@media (min-width: 900px) { .ac-hero__media .ac-photo { max-height: 520px; } }
+@media (min-width: 760px) { .ac-process__media .ac-photo { max-height: 440px; } }
+
 /* FEATURE GRID — big-type */
 .ac-features { display: grid; grid-template-columns: 1fr; gap: var(--space-12) var(--space-8); }
 @media (min-width: 760px) { .ac-features { grid-template-columns: repeat(3, 1fr); } }
