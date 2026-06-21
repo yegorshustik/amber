@@ -142,10 +142,11 @@ a { color: inherit; }
    FOOTER extras (bottom bar + responsive grid)
    ============================================================ */
 @media (max-width: 700px) { .ac-footer__inner { grid-template-columns: 1fr; gap: var(--space-6); } }
-.ac-footer__bottom {
-  max-width: var(--container-max); margin-inline: auto; padding: var(--space-6) var(--container-pad);
-  border-top: 1px solid var(--line-dark); display: flex; justify-content: space-between;
-  flex-wrap: wrap; gap: var(--space-4); font-size: 13px; color: var(--muted);
+.ac-footer__bottom { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-pad); }
+.ac-footer__bottom-row {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);
+  padding-block: var(--space-6); border-top: 1px solid var(--line-dark);
+  font-size: 13px; color: var(--muted);
 }
 .ac-lang a { display: inline-block; color: rgba(237, 228, 210, 0.78); text-decoration: none; margin-left: var(--space-4); font-size: 13px; }
 .ac-lang a:hover { color: var(--amber-light); }
@@ -186,6 +187,12 @@ a { color: inherit; }
 .ac-step__t { font-family: var(--font-display); font-size: var(--fs-h4); color: var(--navy); margin: 0 0 var(--space-2); }
 .ac-step__d { font-size: var(--fs-small); color: var(--muted); margin: 0; }
 .ac-section--cream .ac-step__k { color: var(--amber-deep); }
+
+/* "How we work" — photo + 3 process steps */
+.ac-process { display: grid; grid-template-columns: 1fr 1.15fr; gap: var(--gutter); align-items: center; }
+.ac-process__media { margin: 0; }
+.ac-process__steps { display: grid; gap: var(--space-8); }
+@media (max-width: 760px) { .ac-process { grid-template-columns: 1fr; gap: var(--space-12); } }
 
 /* FEATURE GRID — big-type */
 .ac-features { display: grid; grid-template-columns: 1fr; gap: var(--space-12) var(--space-8); }
