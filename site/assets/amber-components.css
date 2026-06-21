@@ -98,7 +98,7 @@
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .ac-card--interactive:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
-.ac-card__name { font-family: var(--font-display); font-size: var(--fs-h3); color: var(--navy); margin: 0; }
+.ac-card__name { font-family: var(--font-display); font-size: var(--fs-h3); line-height: 1.15; color: var(--navy); margin: 0; }
 .ac-card__meta { font-family: var(--font-body); font-size: var(--fs-small); color: var(--muted); }
 .ac-card__desc { font-family: var(--font-body); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink); }
 

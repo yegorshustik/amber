@@ -196,7 +196,7 @@ a { color: inherit; }
 @media (min-width: 900px) { .ac-path { grid-template-columns: repeat(4, 1fr); } }
 .ac-path .ac-step { background: var(--paper); padding: var(--space-8) var(--space-6); }
 .ac-step__k { font-family: var(--font-label); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-deep); margin: 0 0 var(--space-3); }
-.ac-step__t { font-family: var(--font-display); font-size: var(--fs-h4); color: var(--navy); margin: 0 0 var(--space-2); }
+.ac-step__t { font-family: var(--font-display); font-size: var(--fs-h4); line-height: 1.15; color: var(--navy); margin: 0 0 var(--space-2); }
 .ac-step__d { font-size: var(--fs-small); color: var(--muted); margin: 0; }
 .ac-section--cream .ac-step__k { color: var(--amber-deep); }
 
@@ -213,7 +213,7 @@ a { color: inherit; }
 /* FEATURE GRID — big-type */
 .ac-features { display: grid; grid-template-columns: 1fr; gap: var(--space-12) var(--space-8); }
 @media (min-width: 760px) { .ac-features { grid-template-columns: repeat(3, 1fr); } }
-.ac-feature__t { font-family: var(--font-display); font-size: var(--fs-h3); color: var(--navy); margin: 0 0 var(--space-3); }
+.ac-feature__t { font-family: var(--font-display); font-size: var(--fs-h3); line-height: 1.15; color: var(--navy); margin: 0 0 var(--space-3); }
 .ac-feature__d { font-size: var(--fs-body); color: var(--muted); margin: 0; }
 .ac-section--navy .ac-feature__t { color: var(--cream); }
 .ac-section--navy .ac-feature__d { color: rgba(237, 228, 210, 0.78); }
@@ -229,7 +229,7 @@ a { color: inherit; }
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .ac-svc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--amber); }
-.ac-svc-card__t { font-family: var(--font-display); font-size: var(--fs-h3); color: var(--navy); margin: 0; }
+.ac-svc-card__t { font-family: var(--font-display); font-size: var(--fs-h3); line-height: 1.15; color: var(--navy); margin: 0; }
 .ac-svc-card__d { font-size: var(--fs-body); color: var(--muted); margin: 0; flex: 1; }
 .ac-svc-card__more { margin-top: var(--space-3); font-family: var(--font-label); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--amber-deep); }
 .ac-svc-card__more span { transition: margin-left .2s ease; }
