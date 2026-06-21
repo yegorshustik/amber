@@ -151,6 +151,17 @@ a { color: inherit; }
 .ac-lang a { display: inline-block; color: rgba(237, 228, 210, 0.78); text-decoration: none; margin-left: var(--space-4); font-size: 13px; }
 .ac-lang a:hover { color: var(--amber-light); }
 
+/* footer items for not-yet-built pages */
+.ac-footer .ac-foot-soon { display: block; padding: 5px 0; font-size: 15px; color: rgba(237, 228, 210, 0.4); cursor: default; }
+.ac-footer .ac-foot-soon i {
+  font-style: normal; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-left: 7px; padding: 1px 5px; border: 1px solid rgba(237, 228, 210, 0.22);
+  border-radius: 4px; vertical-align: middle; color: rgba(237, 228, 210, 0.5);
+}
+.ac-footer__bottom-row .ac-foot-legal { color: rgba(237, 228, 210, 0.4); }
+.ac-footer__bottom-row .ac-foot-legal span { margin-left: 14px; }
+.ac-footer__bottom-row .ac-foot-legal span:first-child { margin-left: 0; }
+
 /* ============================================================
    LANDING ORGANISMS (reusable section patterns)
    From layout references: hero split, editorial columns, path
