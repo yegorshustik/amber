@@ -138,7 +138,7 @@ a { color: inherit; }
 .ac-action__text { max-width: 560px; }
 .ac-action h2, .ac-action .ac-h2 { color: var(--cream); margin-bottom: var(--space-2); }
 .ac-action p { color: var(--cream); opacity: 0.85; margin: 0; }
-.ac-action .ac-eyebrow { color: var(--amber-light); }
+.ac-action .ac-eyebrow { color: var(--amber-light); margin-bottom: var(--space-3); }
 
 /* ============================================================
    FOOTER extras (bottom bar + responsive grid)
