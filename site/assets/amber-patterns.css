@@ -183,6 +183,14 @@ a { color: inherit; }
 .ac-img-ph--square { aspect-ratio: 1 / 1; }
 
 /* HERO — split text + media */
+/* Hero background — sketched city skyline, full-bleed, anchored bottom */
+.ac-hero-section {
+  background-color: #FAF5EE;
+  background-image: url("hero-skyline.webp");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
 .ac-hero { display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: center; }
 @media (min-width: 900px) { .ac-hero { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); } }
 .ac-hero__cta { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6); }
