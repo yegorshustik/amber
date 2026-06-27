@@ -26,6 +26,7 @@ a { color: inherit; }
 }
 
 /* ---- Section backgrounds (extends .ac-section padding) ---- */
+.ac-section { scroll-margin-top: 100px; } /* offset anchored sections below the sticky header */
 .ac-section--paper { background: var(--paper); }
 .ac-section--cream { background: var(--cream); }
 .ac-section--navy  { background: var(--navy); color: var(--cream); }
