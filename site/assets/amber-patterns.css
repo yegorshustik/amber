@@ -365,9 +365,11 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   font-family: var(--font-body);
   font-size: 12px;
   color: var(--error, #c0392b);
-  margin: 4px 0 0;
-  min-height: 16px; /* keeps layout stable when empty */
+  margin: 0;
   line-height: 1.3;
+}
+.ac-field-error:empty {
+  display: none;
 }
 
 /* Input states */
