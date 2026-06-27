@@ -225,6 +225,11 @@ a { color: inherit; }
 .ac-section--cream .ac-step__k { color: var(--amber-deep); }
 
 /* "How we work" — photo + 3 process steps */
+/* Founder block — compact portrait + bio */
+.ac-founder { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: start; }
+@media (min-width: 700px) { .ac-founder { grid-template-columns: 220px 1fr; gap: var(--space-12); } }
+.ac-founder__photo { margin: 0; max-width: 220px; }
+
 .ac-process { display: grid; grid-template-columns: 1fr 1.15fr; gap: var(--space-16); align-items: center; }
 .ac-process__media { margin: 0; }
 .ac-process__steps { display: grid; gap: var(--space-8); }
