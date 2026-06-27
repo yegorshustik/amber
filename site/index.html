@@ -436,6 +436,20 @@
   });
 })();
 
+/* ---- Email mask: ASCII only (no Cyrillic) ---- */
+(function () {
+  var em = document.getElementById('f-email');
+  if (!em) return;
+  em.addEventListener('input', function () {
+    em.value = em.value.replace(/[^\x20-\x7E]/g, '');
+  });
+  em.addEventListener('paste', function () {
+    setTimeout(function () {
+      em.value = em.value.replace(/[^\x20-\x7E]/g, '');
+    }, 0);
+  });
+})();
+
 /* ---- Form validation ---- */
 (function () {
   var form    = document.getElementById('lead-form');
