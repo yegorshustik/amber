@@ -401,6 +401,42 @@
   });
 })();
 
+/* Phone mask: + and digits only, no letters */
+(function () {
+  var ph = document.getElementById('f-phone');
+  if (!ph) return;
+
+  ph.addEventListener('keydown', function (e) {
+    // Allow: backspace, delete, tab, escape, enter, arrows, home, end
+    var special = [8, 9, 13, 27, 35, 36, 37, 38, 39, 40, 46];
+    if (special.indexOf(e.keyCode) !== -1) return;
+    // Allow Ctrl/Cmd+A, C, V, X
+    if ((e.ctrlKey || e.metaKey) && [65, 67, 86, 88].indexOf(e.keyCode) !== -1) return;
+    // Allow + only at the very start (position 0) when field is empty or cursor is at 0
+    if (e.key === '+' && ph.selectionStart === 0 && ph.value.indexOf('+') === -1) return;
+    // Allow digits 0-9
+    if (/^\d$/.test(e.key)) return;
+    // Block everything else
+    e.preventDefault();
+  });
+
+  ph.addEventListener('input', function () {
+    var raw = ph.value;
+    // Keep leading + if present, then only digits
+    var hasPlus = raw.charAt(0) === '+';
+    var digits = raw.replace(/\D/g, '');
+    ph.value = (hasPlus ? '+' : '') + digits;
+  });
+
+  ph.addEventListener('paste', function (e) {
+    e.preventDefault();
+    var pasted = (e.clipboardData || window.clipboardData).getData('text');
+    var hasPlus = pasted.charAt(0) === '+';
+    var digits = pasted.replace(/\D/g, '');
+    ph.value = (hasPlus ? '+' : '') + digits;
+  });
+})();
+
 /* Autofocus the name field when the lead form scrolls into view (desktop only) */
 (function () {
   var name = document.getElementById('f-name');
