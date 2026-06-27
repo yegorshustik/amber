@@ -309,8 +309,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 .ac-slide__social svg { width: 18px; height: 18px; }
 .ac-slider__nav { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-4); margin-top: var(--space-6); }
 @media (min-width: 768px) {
-  .ac-slider { padding-bottom: 48px; }
-  .ac-slider__nav { position: absolute; bottom: 0; right: 0; margin-top: 0; }
+  .ac-slider__nav { position: absolute; bottom: 4px; right: 0; margin-top: 0; }
 }
 .ac-slider__dots { display: flex; gap: 8px; }
 .ac-slider__dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(17, 40, 63, 0.2); cursor: pointer; transition: background-color .18s; }
