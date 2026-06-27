@@ -276,16 +276,33 @@
           </div>
         </div>
 
-        <div class="ac-card">
-          <form class="ac-form" onsubmit="return false;">
+        <div class="ac-card" style="position:relative; overflow:hidden;">
+
+          <!-- ✅ Success overlay (hidden until form is submitted) -->
+          <div class="ac-form-success" id="form-success" aria-live="polite">
+            <div class="ac-form-success__inner">
+              <div class="ac-form-success__icon">
+                <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
+                  <polyline points="14,27 22,35 38,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="ac-form-success__title">Request received</h3>
+              <p class="ac-form-success__body">We'll reach out personally within one business day to schedule your free consultation.</p>
+            </div>
+          </div>
+
+          <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
             <div class="ac-field">
               <label class="ac-label" for="f-name">Full name of the student</label>
-              <input class="ac-input" id="f-name" type="text" placeholder="Name Surname">
+              <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
+              <p class="ac-field-error" id="err-name" aria-live="polite"></p>
             </div>
             <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-dob">Date of birth</label>
-                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10" pattern="\d{2}\.\d{2}\.\d{4}" title="Date of birth in format dd.mm.yyyy">
+                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
+                <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
               </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-grade">Current grade</label>
@@ -294,6 +311,7 @@
                   <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
                   <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
                 </select>
+                <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
               </div>
             </div>
             <div class="ac-field">
@@ -303,20 +321,24 @@
                 <option>School</option><option>University</option>
                 <option>Short program</option><option>Visa</option>
               </select>
+              <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
             </div>
             <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-email">Email</label>
-                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com">
+                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
+                <p class="ac-field-error" id="err-email" aria-live="polite"></p>
               </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-phone">Contact phone</label>
-                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …">
+                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
+                <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
               </div>
             </div>
-            <button class="ac-btn ac-btn--primary" type="submit" style="margin-top:var(--space-2);">Request consultation</button>
+            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="margin-top:var(--space-2);width:100%;">Request consultation</button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
@@ -360,6 +382,7 @@
 </footer>
 
 <script>
+/* ---- Mobile nav burger ---- */
 (function () {
   var b = document.querySelector('.ac-burger');
   var n = document.getElementById('site-nav');
@@ -376,58 +399,37 @@
   });
 })();
 
-/* Date-of-birth mask: dd.mm.yyyy */
+/* ---- Date-of-birth mask: dd.mm.yyyy ---- */
 (function () {
   var dob = document.getElementById('f-dob');
   if (!dob) return;
-
   dob.addEventListener('input', function () {
-    var d = dob.value.replace(/\D/g, '').slice(0, 8); // ddmmyyyy
+    var d = dob.value.replace(/\D/g, '').slice(0, 8);
     var out = d.slice(0, 2);
     if (d.length >= 3) out += '.' + d.slice(2, 4);
     if (d.length >= 5) out += '.' + d.slice(4, 8);
     dob.value = out;
   });
-
-  dob.addEventListener('blur', function () {
-    dob.setCustomValidity('');
-    if (!dob.value) return;
-    var m = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(dob.value);
-    if (!m) { dob.setCustomValidity('Use the format dd.mm.yyyy'); return; }
-    var day = +m[1], mon = +m[2], yr = +m[3];
-    var ok = mon >= 1 && mon <= 12 && day >= 1 && day <= 31 && yr >= 1990 && yr <= 2020;
-    var realDay = new Date(yr, mon - 1, day).getDate() === day; // reject 31.02 etc.
-    if (!ok || !realDay) dob.setCustomValidity('Enter a valid date of birth');
-  });
 })();
 
-/* Phone mask: + and digits only, no letters */
+/* ---- Phone mask: + and digits only ---- */
 (function () {
   var ph = document.getElementById('f-phone');
   if (!ph) return;
-
   ph.addEventListener('keydown', function (e) {
-    // Allow: backspace, delete, tab, escape, enter, arrows, home, end
     var special = [8, 9, 13, 27, 35, 36, 37, 38, 39, 40, 46];
     if (special.indexOf(e.keyCode) !== -1) return;
-    // Allow Ctrl/Cmd+A, C, V, X
     if ((e.ctrlKey || e.metaKey) && [65, 67, 86, 88].indexOf(e.keyCode) !== -1) return;
-    // Allow + only at the very start (position 0) when field is empty or cursor is at 0
     if (e.key === '+' && ph.selectionStart === 0 && ph.value.indexOf('+') === -1) return;
-    // Allow digits 0-9
     if (/^\d$/.test(e.key)) return;
-    // Block everything else
     e.preventDefault();
   });
-
   ph.addEventListener('input', function () {
     var raw = ph.value;
-    // Keep leading + if present, then only digits
     var hasPlus = raw.charAt(0) === '+';
     var digits = raw.replace(/\D/g, '');
     ph.value = (hasPlus ? '+' : '') + digits;
   });
-
   ph.addEventListener('paste', function (e) {
     e.preventDefault();
     var pasted = (e.clipboardData || window.clipboardData).getData('text');
@@ -437,19 +439,127 @@
   });
 })();
 
-/* Autofocus the name field when the lead form scrolls into view (desktop only) */
+/* ---- Form validation ---- */
 (function () {
-  var name = document.getElementById('f-name');
-  if (!name || !('IntersectionObserver' in window)) return;
-  // Skip on touch / small screens so we don't pop the mobile keyboard on scroll
+  var form    = document.getElementById('lead-form');
+  var btn     = document.getElementById('submit-btn');
+  var success = document.getElementById('form-success');
+  if (!form || !btn) return;
+
+  /* --- Validators --- */
+  function valName(v) {
+    v = v.trim();
+    if (!v) return 'Please enter the student\'s full name';
+    if (!/^[\p{L}\s\-']+$/u.test(v)) return 'Only letters, spaces and hyphens allowed';
+    var parts = v.split(/\s+/).filter(Boolean);
+    if (parts.length < 2) return 'Please enter both first and last name';
+    if (parts.some(function(p){ return p.length < 2; })) return 'Each name part must be at least 2 characters';
+    return '';
+  }
+  function valDob(v) {
+    v = v.trim();
+    if (!v) return 'Please enter the date of birth';
+    var m = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(v);
+    if (!m) return 'Use the format dd.mm.yyyy';
+    var day = +m[1], mon = +m[2], yr = +m[3];
+    if (mon < 1 || mon > 12) return 'Month must be between 01 and 12';
+    if (day < 1 || day > 31) return 'Day must be between 01 and 31';
+    if (yr < 1990 || yr > 2020) return 'Year must be between 1990 and 2020';
+    if (new Date(yr, mon - 1, day).getDate() !== day) return 'Enter a valid calendar date';
+    return '';
+  }
+  function valSelect(v) {
+    return v ? '' : 'Please select an option';
+  }
+  function valEmail(v) {
+    v = v.trim();
+    if (!v) return 'Please enter your email';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return 'Enter a valid email address';
+    return '';
+  }
+  function valPhone(v) {
+    v = v.trim();
+    if (!v) return 'Please enter a contact phone number';
+    var digits = v.replace(/\D/g, '');
+    if (digits.length < 7) return 'Enter at least 7 digits';
+    return '';
+  }
+
+  /* Map field id → { validator fn, error el id } */
+  var fields = [
+    { el: document.getElementById('f-name'),     fn: valName,   err: document.getElementById('err-name') },
+    { el: document.getElementById('f-dob'),      fn: valDob,    err: document.getElementById('err-dob') },
+    { el: document.getElementById('f-grade'),    fn: valSelect, err: document.getElementById('err-grade') },
+    { el: document.getElementById('f-consider'), fn: valSelect, err: document.getElementById('err-consider') },
+    { el: document.getElementById('f-email'),    fn: valEmail,  err: document.getElementById('err-email') },
+    { el: document.getElementById('f-phone'),    fn: valPhone,  err: document.getElementById('err-phone') }
+  ].filter(function(f){ return f.el && f.err; });
+
+  /* Show / hide error for one field */
+  function setFieldState(f, msg) {
+    f.err.textContent = msg;
+    if (msg) {
+      f.el.classList.add('is-error');
+      f.el.classList.remove('is-valid');
+    } else {
+      f.el.classList.remove('is-error');
+      if (f.el.value.trim()) f.el.classList.add('is-valid');
+    }
+  }
+
+  /* Check all fields, enable/disable button */
+  function checkAll() {
+    var allOk = fields.every(function(f) {
+      return f.fn(f.el.value) === '';
+    });
+    btn.disabled = !allOk;
+  }
+
+  /* Attach blur + input/change listeners to each field */
+  fields.forEach(function(f) {
+    /* Show error on blur (after user leaves the field) */
+    f.el.addEventListener('blur', function () {
+      setFieldState(f, f.fn(f.el.value));
+      checkAll();
+    });
+    /* Re-check live as user types / selects */
+    var evt = (f.el.tagName === 'SELECT') ? 'change' : 'input';
+    f.el.addEventListener(evt, function () {
+      /* Only clear error live (don't add new error while typing) */
+      if (f.el.classList.contains('is-error')) {
+        setFieldState(f, f.fn(f.el.value));
+      }
+      checkAll();
+    });
+  });
+
+  /* Submit — show success overlay */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    /* Final check in case button was somehow enabled without all fields valid */
+    var allOk = fields.every(function(f) {
+      var msg = f.fn(f.el.value);
+      setFieldState(f, msg);
+      return msg === '';
+    });
+    if (!allOk) { checkAll(); return; }
+    /* Show success */
+    if (success) success.classList.add('is-visible');
+  });
+})();
+
+/* ---- Autofocus name field when form scrolls into view (desktop only) ---- */
+(function () {
+  var nameEl = document.getElementById('f-name');
+  if (!nameEl || !('IntersectionObserver' in window)) return;
   if (!window.matchMedia('(min-width: 900px) and (pointer: fine)').matches) return;
   var io = new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting) {
       io.disconnect();
-      try { name.focus({ preventScroll: true }); } catch (e) { name.focus(); }
+      try { nameEl.focus({ preventScroll: true }); } catch (e) { nameEl.focus(); }
     }
   }, { threshold: 0.9 });
-  io.observe(name);
+  io.observe(nameEl);
 })();
 </script>
 <script src="assets/ac-slider.js?v=18"></script>
