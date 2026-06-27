@@ -237,6 +237,7 @@ a { color: inherit; }
 /* FEATURE GRID — big-type */
 .ac-features { display: grid; grid-template-columns: 1fr; gap: var(--space-12) var(--space-8); }
 @media (min-width: 760px) { .ac-features { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 760px) { .ac-features--two { grid-template-columns: repeat(2, 1fr); } }
 .ac-feature__icon { display: inline-flex; color: var(--amber-deep); margin-bottom: var(--space-4); }
 .ac-feature__icon svg { width: 32px; height: 32px; }
 .ac-feature__t { font-family: var(--font-display); font-size: var(--fs-h3); line-height: 1.15; color: var(--navy); margin: 0 0 var(--space-3); }
