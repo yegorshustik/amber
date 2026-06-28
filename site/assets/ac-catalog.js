@@ -113,7 +113,7 @@
 
   var activeFilters = {
     search: '',
-    type: 'all',
+    type: 'school',
     country: 'all',
     gender: 'all',
     boarding: 'all',
