@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Amber Council</title>
+<meta name="description" content="Error 404 - Page not found.">
+<link rel="icon" href="assets/ac-favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/amber-tokens.css?v=60">
+<link rel="stylesheet" href="assets/amber-components.css?v=60">
+<link rel="stylesheet" href="assets/amber-patterns.css?v=60">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class=ac-header>
+  <div class=ac-header__inner>
+    <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=60" alt="Amber Council"></a>
+    <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="ac-header__nav" id="site-nav">
+      <a class="ac-nav-link" href="academic-roadmap.html">Academic Roadmap</a>
+      <a class="ac-nav-link" href="services.html">Services</a>
+      <a class="ac-nav-link" href="catalog.html">Schools &amp; Universities</a>
+      <a class="ac-nav-link" href="pricing-policy.html">Pricing</a>
+      <a class="ac-nav-link" href="about.html">About</a>
+      <a class="ac-nav-link" href="faq.html">FAQ</a>
+      <a class="ac-btn ac-btn--primary ac-nav-cta" href="index.html#lead">Free consultation</a>
+    </nav>
+    <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="ac-section ac-section--cream" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Error 404</p>
+      <h1 class="ac-h1" style="max-width: 22ch;">Page not found.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:620px;">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html">Return to homepage</a>
+        <a class="ac-btn ac-btn--secondary" href="catalog.html">Explore directory</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ac-footer">
+  <div class="ac-footer__inner">
+    <div>
+      <img src="assets/ac-lockup-dark.svg?v=60" alt="Amber Council" height="64">
+      <p class="ac-small" style="margin-top:var(--space-3);max-width:280px;color:rgba(237,228,210,.72);">The right academic path to the strongest school or university your child can reach.</p>
+    </div>
+    <div>
+      <p class="ac-footer__title">Explore</p>
+      <a href="academic-roadmap.html">Academic Roadmap</a>
+      <a href="services.html">Services</a>
+      <a href="catalog.html">Schools &amp; Universities</a>
+      <a href="pricing-policy.html">Pricing</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Company</p>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Get in touch</p>
+      <a href="tel:+48500557417">+48 500 557 417</a>
+      <a href="mailto:info@ambercouncil.org">info@ambercouncil.org</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Nowomejska%203%2F2%2C%2080-864%20Gdańsk%2C%20Poland" target="_blank" rel="noopener">Nowomejska 3/2, 80-864 Gdańsk</a>
+    </div>
+  </div>
+  <div class="ac-footer__bottom">
+    <div class="ac-footer__bottom-row">
+      <span>&copy; 2026 Amber Council. All rights reserved.</span>
+      <span class="ac-foot-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
+      <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+<script src="assets/ac-cookies.js?v=60"></script>
+</body>
+</html>
