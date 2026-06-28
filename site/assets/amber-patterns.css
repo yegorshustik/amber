@@ -975,7 +975,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   height: 304px;
   margin: 0 auto;
 }
-.ac-hero-collage__girl {
+.ac-hero-collage__back {
   position: absolute;
   left: 0;
   top: 8px;
@@ -984,7 +984,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   z-index: 1;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
-.ac-hero-collage__guy {
+.ac-hero-collage__front {
   position: absolute;
   right: 0;
   bottom: 8px;
@@ -1001,13 +1001,13 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     margin-left: auto;
     margin-right: 0;
   }
-  .ac-hero-collage__girl {
+  .ac-hero-collage__back {
     top: 10px;
     width: 220px;
     height: 275px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
-  .ac-hero-collage__guy {
+  .ac-hero-collage__front {
     bottom: 10px;
     width: 240px;
     height: 300px;
