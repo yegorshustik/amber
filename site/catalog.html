@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schools &amp; Universities Directory — Amber Council</title>
+<meta name="description" content="Browse and filter elite boarding schools and universities across the UK, US, and Switzerland. Find the right academic path tailored to your child's profile.">
+<link rel="icon" href="assets/ac-favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/amber-tokens.css?v=32">
+<link rel="stylesheet" href="assets/amber-components.css?v=32">
+<link rel="stylesheet" href="assets/amber-patterns.css?v=32">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="ac-header">
+  <div class="ac-header__inner">
+    <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=32" alt="Amber Council"></a>
+    <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="ac-header__nav" id="site-nav">
+      <a class="ac-nav-link" href="academic-roadmap.html">Academic Roadmap</a>
+      <a class="ac-nav-link" href="services.html">Services</a>
+      <a class="ac-nav-link" aria-current="page" href="catalog.html">Schools &amp; Universities</a>
+      <a class="ac-nav-link" href="pricing-policy.html">Pricing</a>
+      <a class="ac-nav-link" href="about.html">About</a>
+      <a class="ac-nav-link" href="faq.html">FAQ</a>
+      <a class="ac-nav-link" href="contacts.html">Contacts</a>
+      <a class="ac-nav-link" href="blog.html">Blog</a>
+      <a class="ac-btn ac-btn--primary ac-nav-cta" href="index.html#lead">Free consultation</a>
+    </nav>
+    <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Academic directory</p>
+      <h1 class="ac-h1">Schools &amp; Universities</h1>
+      <p class="ac-editorial" style="margin:var(--space-4) 0 0;max-width:680px;">An curated guide to elite schools and universities in the United Kingdom, United States, and Switzerland. Filter by institution type, country, and specific academic parameters.</p>
+    </div>
+  </section>
+
+  <!-- ============ DIRECTORY GRID & FILTERS ============ -->
+  <section class="ac-section ac-section--paper" style="padding-top:0;">
+    <div class="ac-container">
+      
+      <!-- Type Selection Tabs -->
+      <div class="ac-filter-tabs">
+        <button class="ac-filter-tab is-active" data-filter-type="all">All institutions</button>
+        <button class="ac-filter-tab" data-filter-type="school">Boarding Schools</button>
+        <button class="ac-filter-tab" data-filter-type="university">Universities</button>
+      </div>
+
+      <div class="ac-catalog-layout">
+        
+        <!-- Filter Sidebar -->
+        <aside class="ac-filters">
+          <div class="ac-catalog-search-wrap">
+            <span class="ac-filter-group__t">Search</span>
+            <input type="text" id="filter-search" class="ac-catalog-search" placeholder="Type name or city...">
+          </div>
+
+          <div class="ac-filter-group">
+            <label class="ac-filter-group__t" for="filter-country">Country</label>
+            <select id="filter-country" class="ac-filter-select">
+              <option value="all">All Countries</option>
+              <option value="UK">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="Switzerland">Switzerland</option>
+            </select>
+          </div>
+
+          <!-- School-specific sub-filters -->
+          <div id="sub-filters-school" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-gender">Gender option</label>
+              <select id="filter-gender" class="ac-filter-select">
+                <option value="all">All Options</option>
+                <option value="coed">Co-educational</option>
+                <option value="single">Single-Sex</option>
+              </select>
+            </div>
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-boarding">Boarding option</label>
+              <select id="filter-boarding" class="ac-filter-select">
+                <option value="all">All Options</option>
+                <option value="full">Full Boarding</option>
+                <option value="day-weekly">Day / Weekly Boarding</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- University-specific sub-filters -->
+          <div id="sub-filters-university" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-campus">Campus style</label>
+              <select id="filter-campus" class="ac-filter-select">
+                <option value="all">All Styles</option>
+                <option value="collegiate">Collegiate Campus</option>
+                <option value="city-modern">City / Modern Campus</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Results Grid -->
+        <div class="ac-catalog-grid" id="catalog-grid">
+          <!-- Dynamically filled by ac-catalog.js -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Find the right fit for your child.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ac-footer">
+  <div class="ac-footer__inner">
+    <div>
+      <img src="assets/ac-lockup-dark.svg?v=32" alt="Amber Council" height="64">
+      <p class="ac-small" style="margin-top:var(--space-3);max-width:280px;color:rgba(237,228,210,.72);">The right academic path to the strongest school or university your child can reach.</p>
+    </div>
+    <div>
+      <p class="ac-footer__title">Explore</p>
+      <a href="academic-roadmap.html">Academic Roadmap</a>
+      <a href="catalog.html">Schools &amp; Universities</a>
+      <a href="services.html">Services</a>
+      <a href="pricing-policy.html">Pricing</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Company</p>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Get in touch</p>
+      <a href="tel:+48500557417">+48 500 557 417</a>
+      <a href="mailto:info@ambercouncil.org">info@ambercouncil.org</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Nowomejska%203%2F2%2C%2080-864%20Gdańsk%2C%20Poland" target="_blank" rel="noopener">Nowomejska 3/2, 80-864 Gdańsk</a>
+    </div>
+  </div>
+  <div class="ac-footer__bottom">
+    <div class="ac-footer__bottom-row">
+      <span>&copy; 2026 Amber Council. All rights reserved.</span>
+      <span class="ac-foot-legal"><span>Privacy Policy</span><span>Terms</span></span>
+      <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+<script src="assets/ac-catalog.js?v=32"></script>
+<script src="assets/ac-cookies.js?v=32"></script>
+</body>
+</html>

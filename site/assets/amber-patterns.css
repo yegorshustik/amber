@@ -632,3 +632,296 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   font-size: 13px;
 }
 
+/* ============================================================
+   SCHOOLS & UNIVERSITIES CATALOG & DIRECTORY
+   ============================================================ */
+.ac-catalog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+@media (min-width: 900px) {
+  .ac-catalog-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+/* Filters Panel */
+.ac-filters {
+  background: var(--cream);
+  padding: var(--space-6);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--line);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.ac-filter-group {
+  margin-bottom: var(--space-6);
+}
+.ac-filter-group:last-child {
+  margin-bottom: 0;
+}
+.ac-filter-group__t {
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--amber-deep);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+.ac-filter-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--navy);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+.ac-filter-select:focus {
+  border-color: var(--amber);
+}
+
+/* Type Tabs */
+.ac-filter-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--space-4);
+}
+.ac-filter-tab {
+  background: transparent;
+  border: 0;
+  padding: 8px 16px;
+  font-family: var(--font-label);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.ac-filter-tab:hover {
+  color: var(--navy);
+  background: rgba(11, 26, 42, 0.04);
+}
+.ac-filter-tab.is-active {
+  color: var(--cream);
+  background: var(--navy);
+}
+
+/* Cards Grid & Card */
+.ac-catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .ac-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .ac-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ac-catalog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, box-shadow 0.25s;
+}
+.ac-catalog-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--amber);
+  box-shadow: 0 8px 24px rgba(11, 26, 42, 0.06);
+}
+.ac-catalog-card.is-placeholder {
+  cursor: default;
+}
+.ac-catalog-card.is-placeholder:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+.ac-catalog-card__img-wrap {
+  position: relative;
+  height: 180px;
+  background: var(--cream);
+  overflow: hidden;
+}
+.ac-catalog-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.ac-catalog-card:hover .ac-catalog-card__img {
+  transform: scale(1.04);
+}
+.ac-catalog-card.is-placeholder:hover .ac-catalog-card__img {
+  transform: none;
+}
+.ac-catalog-card__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-label);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.ac-catalog-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.ac-catalog-card__loc {
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--amber-deep);
+  margin-bottom: var(--space-2);
+}
+.ac-catalog-card__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--navy);
+  margin: 0 0 var(--space-2);
+  line-height: 1.3;
+}
+.ac-catalog-card__desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 var(--space-4);
+  flex-grow: 1;
+}
+.ac-catalog-card__specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--space-4);
+}
+.ac-catalog-card__spec-item {
+  font-size: 12px;
+  color: var(--navy);
+}
+.ac-catalog-card__spec-item strong {
+  color: var(--muted);
+  font-weight: 500;
+}
+.ac-catalog-card__link {
+  font-family: var(--font-label);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amber-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.ac-catalog-card__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+.ac-catalog-card:hover .ac-catalog-card__link {
+  color: var(--navy);
+}
+.ac-catalog-card:hover .ac-catalog-card__link svg {
+  transform: translateX(4px);
+}
+.ac-catalog-card__link.is-placeholder {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* Empty & Search Styles */
+.ac-catalog-empty {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-card);
+}
+.ac-catalog-search-wrap {
+  margin-bottom: var(--space-6);
+}
+.ac-catalog-search {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--navy);
+  outline: none;
+  box-shadow: 0 2px 8px rgba(11, 26, 42, 0.02);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ac-catalog-search:focus {
+  border-color: var(--amber);
+  box-shadow: 0 4px 12px rgba(11, 26, 42, 0.04), var(--focus-ring);
+}
+
+/* ============================================================
+   DETAIL SPECIFICATION GRID (Used on Eton & Oxford Profile Pages)
+   ============================================================ */
+.ac-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+}
+.ac-spec-table tr {
+  border-bottom: 1px solid var(--line);
+}
+.ac-spec-table tr:last-child {
+  border-bottom: 0;
+}
+.ac-spec-table td {
+  padding: var(--space-3) var(--space-2);
+  font-size: var(--fs-body);
+  color: var(--navy);
+}
+.ac-spec-table td:first-child {
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  width: 35%;
+}
+.ac-spec-table td strong {
+  font-weight: 600;
+}
+
+
