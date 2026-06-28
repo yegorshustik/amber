@@ -424,10 +424,11 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   .ac-header__nav.is-open {
     display: flex; flex-direction: column; align-items: flex-start;
     position: absolute; top: 100%; left: 0; right: 0;
-    background: var(--navy); padding: var(--space-4) var(--container-pad);
+    background: var(--navy); padding: var(--space-6) var(--container-pad) var(--space-8);
     gap: var(--space-4); border-bottom: 1px solid var(--line-dark);
+    margin-left: 0; /* Align perfectly on the left with the logo */
   }
-  .ac-nav-cta { display: inline-flex; margin-top: var(--space-2); }
+  .ac-nav-cta { display: inline-flex; margin-top: var(--space-4); }
 }
 
 /* ============================================================
