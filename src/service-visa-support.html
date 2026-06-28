@@ -1,0 +1,253 @@
+---
+layout: base.njk
+title: "Visa Support — Amber Council"
+description: "Visa Support by Amber Council — tourist and student visas, paperwork and timing handled so the move abroad goes smoothly. Available standalone or as part of your Academic Roadmap."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow"><a href="services.html" style="color:inherit;text-decoration:none;">Services</a> &middot; Visa Support</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Visa Support.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:54ch;">Tourist and student visas — requirements, paperwork and timing handled, so the move abroad goes smoothly. Available standalone, or as part of your Academic Roadmap.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+        <a class="ac-btn ac-btn--secondary" href="academic-roadmap.html">See the Academic Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FOR WHOM & ROADMAP ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="display: grid; gap: var(--space-8); grid-template-columns: 1fr; @media(min-width: 800px) { grid-template-columns: 1fr 1fr; }">
+        
+        <!-- For Whom -->
+        <div>
+          <p class="ac-eyebrow">For whom</p>
+          <h2 class="ac-h3" style="margin-bottom: var(--space-4);">Is this for you?</h2>
+          <p class="ac-editorial">Families navigating the complex bureaucratic process of obtaining student visas, residency permits, and dependent visas for accompanying parents.</p>
+        </div>
+
+        <!-- Where in Roadmap -->
+        <div style="background: var(--paper); padding: var(--space-8); border-radius: 8px; border: 1px solid var(--line);">
+          <p class="ac-eyebrow" style="color: var(--amber-deep);">Academic Roadmap</p>
+          <h2 class="ac-h4" style="margin-bottom: var(--space-2);">Step 4: Logistics & Visas</h2>
+          <p class="ac-small" style="color: var(--muted); margin-bottom: var(--space-6);">Once an offer is accepted in the Academic Roadmap, securing the legal right to study is the critical next step. We handle the paperwork with precision.</p>
+          <a class="ac-btn ac-btn--secondary ac-btn--sm" href="academic-roadmap.html">Explore the full Roadmap &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">What's included</p>
+      <h2 class="ac-h2" style="max-width:26ch;">The move abroad, without the paperwork stress.</h2>
+      <div class="ac-features" style="margin-top:var(--space-12);">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Visa strategy</h3>
+          <p class="ac-feature__d">The right visa route for your child's situation and destination.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Documents</h3>
+          <p class="ac-feature__d">Forms, evidence and translations prepared correctly.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Appointments</h3>
+          <p class="ac-feature__d">Bookings and interview preparation where required.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Timing</h3>
+          <p class="ac-feature__d">Aligned with enrollment so nothing slips.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Who it's for</h3>
+          <p class="ac-feature__d">Families relocating a child to study abroad.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Pricing</h3>
+          <p class="ac-feature__d">From request — or by consultation as part of your Academic Roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">How it works</p>
+      <h2 class="ac-h2" style="margin-bottom: var(--space-12);">The process.</h2>
+      
+      <div class="ac-process__steps">
+        <div class="ac-step">
+          <p class="ac-step__k">Step 1</p>
+          <h3 class="ac-step__t">Document Checklist</h3>
+          <p class="ac-step__d">We provide a comprehensive, tailored list of exactly what financial and personal documents are required.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 2</p>
+          <h3 class="ac-step__t">Application Preparation</h3>
+          <p class="ac-step__d">We carefully review all documents, fill out the application forms, and ensure compliance with the latest immigration rules.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 3</p>
+          <h3 class="ac-step__t">Submission & Tracking</h3>
+          <p class="ac-step__d">We assist with booking embassy appointments, biometrics, and track the application until the passport is returned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model. -->
+        <article class="ac-prose">
+
+          <h2>Overview</h2>
+          <p>Relocating a child abroad to study involves complex visa regulations, detailed financial requirements, and strict deadlines. Mistakes can delay or jeopardize enrollment. Our Visa Support service takes the stress out of the process, ensuring all documentation is filed correctly and on time.</p>
+
+          <h2>Navigating the rules</h2>
+          <p>Immigration policies for student and tourist visas change constantly. What worked last year may not apply today. We stay up-to-date with embassy requirements for key destinations (UK, EU, USA, Canada) to ensure compliance.</p>
+
+          <h2>Our approach</h2>
+          <p>We do not just fill out forms. We evaluate your family's situation, determine the most suitable visa category, analyze financial requirements, and build a clear timeline aligned with the school or university start date.</p>
+
+          <h2>Key visa areas</h2>
+          <p>We support families with two primary visa types:</p>
+          <ul>
+            <li><strong>Student visas:</strong> Full guidance for the student, including school-sponsored certificates (like CAS in the UK or I-20 in the US) and biometric booking.</li>
+            <li><strong>Parent / Visitor visas:</strong> Visas for parents to accompany their child at the start of the school year or visit during term time.</li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr><th>Destination</th><th>Visa Type</th><th>Standard Processing Time</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>United Kingdom</td><td>Student Visa (formerly Tier 4)</td><td>3–4 weeks (Priority options available)</td></tr>
+              <tr><td>United States</td><td>F-1 Student Visa</td><td>Varies (Requires embassy interview)</td></tr>
+              <tr><td>Europe (Schengen)</td><td>National D-type (Study)</td><td>2–6 weeks (Depending on consulate)</td></tr>
+            </tbody>
+          </table>
+
+          <figure class="ac-figure">
+            <img class="ac-photo ac-photo--wide" src="assets/ac-photo-graduate.jpg" alt="A smiling student graduating from an international university" loading="lazy" width="1122" height="631">
+            <figcaption>The final destination — a successful academic path resulting in graduation and global opportunities.</figcaption>
+          </figure>
+
+          <h2>What's included</h2>
+          <p>Our visa support service covers every detail:</p>
+          <ol>
+            <li>Customized checklist of required supporting documents.</li>
+            <li>Verification of bank statements and financial proof to meet embassy standards.</li>
+            <li>Filling and submitting online application forms.</li>
+            <li>Booking visa center appointments and preparing the student for interviews.</li>
+          </ol>
+
+          <h2>Our promise</h2>
+          <blockquote>
+            "Applying for the US student visa was incredibly nerve-wracking, but the mock interviews and bank statement review left no room for error. The visa was approved on the spot."
+            <div class="ac-slide__by" style="margin-top: var(--space-6);">
+              <span class="ac-slide__avatar"><img src="assets/ac-avatar-yegor.jpg" alt="Yegor Shustik"></span>
+              <span class="ac-slide__id">
+                <a class="ac-slide__name" href="#" target="_blank" rel="noopener">Yegor Shustik</a>
+                <span class="ac-slide__role">Parent &middot; Sopot</span>
+              </span>
+            </div>
+          </blockquote>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FAQ ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">FAQ</p>
+      <h2 class="ac-h2" style="max-width:20ch;margin-bottom:var(--space-8);">Common questions.</h2>
+      <div class="ac-faq" data-faq>
+        <div class="ac-faq__list">
+          <details class="ac-faq__q" open>
+            <summary>Can you guarantee the visa will be approved?</summary>
+            <div class="ac-faq__a"><p>No one can legally guarantee a visa. However, we ensure your application is 100% compliant, minimizing any risk of rejection due to errors.</p></div>
+          </details>
+          <details class="ac-faq__q" open>
+            <summary>Do you handle visas for all countries?</summary>
+            <div class="ac-faq__a"><p>We specialize in student visas for our core destinations: the UK, US, Switzerland, and the EU.</p></div>
+          </details>
+          <details class="ac-faq__q ac-faq__q--last" open>
+            <summary>What if we have a previous refusal?</summary>
+            <div class="ac-faq__a"><p>We will carefully analyze the reasons for the previous refusal and build a robust case to address those specific concerns in the new application.</p></div>
+          </details>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--secondary" href="faq.html">See all FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Start with a free consultation.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

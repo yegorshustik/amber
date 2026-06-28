@@ -1,0 +1,126 @@
+---
+layout: base.njk
+title: "Eton College Profile — Amber Council"
+description: "Detailed profile and Amber Council admissions guidance for Eton College, one of the world's most prestigious boarding schools."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ INSTITUTION HERO ============ -->
+  <section class="ac-section ac-section--cream ac-section--hero-detail">
+    <div class="ac-container">
+      <div class="ac-hero">
+        <div class="ac-hero__text">
+          <p class="ac-eyebrow"><a href="catalog.html" style="color:inherit;text-decoration:none;">Directory</a> &middot; Boarding School</p>
+          <h1 class="ac-h1" style="max-width:18ch;margin-bottom:var(--space-4);">Eton College.</h1>
+          <p class="ac-editorial" style="margin:0;max-width:50ch;">Founded in 1440, Eton College is a premier British independent boarding school for boys, recognized worldwide for its academic excellence, sporting traditions, and list of notable alumni.</p>
+        </div>
+        <div class="ac-hero__media">
+          <img class="ac-photo ac-photo--portrait" src="assets/ac-photo-eton.jpg" alt="Eton College Gothic chapel and historical campus" width="941" height="941">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DETAILS & SPECS SECTION ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-cols">
+        
+        <!-- Sidebar: Technical Specs -->
+        <div class="ac-cols__label">
+          <p class="ac-eyebrow">Specifications</p>
+          <h2 class="ac-h2" style="margin-bottom:var(--space-6);">Profile Details</h2>
+          
+          <table class="ac-spec-table">
+            <tr>
+              <td>Type</td>
+              <td><strong>Boarding School</strong></td>
+            </tr>
+            <tr>
+              <td>Country</td>
+              <td><strong>United Kingdom</strong></td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td><strong>Windsor, Berkshire</strong></td>
+            </tr>
+            <tr>
+              <td>Age Range</td>
+              <td><strong>13 – 18</strong></td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td><strong>Boys Only</strong></td>
+            </tr>
+            <tr>
+              <td>Boarding</td>
+              <td><strong>Full Boarding (100%)</strong></td>
+            </tr>
+            <tr>
+              <td>Curriculum</td>
+              <td><strong>GCSE, A-Level</strong></td>
+            </tr>
+            <tr>
+              <td>Size</td>
+              <td><strong>~1,300 students</strong></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Main Body: Amber Council Guidance -->
+        <div class="ac-cols__body ac-cols__body--detail">
+          <p class="ac-eyebrow">Amber Council Admissions Counsel</p>
+          <h2 class="ac-h2" style="margin-bottom:var(--space-6);">Admissions &amp; Preparation</h2>
+
+          <div class="ac-prose">
+            <h3>Why Eton College?</h3>
+            <p>Eton offers a unique combination of historical traditions, exceptional academic instruction, and vast extracurricular opportunities. It remains one of the largest feeder schools to Oxford, Cambridge, and top US Ivy League universities.</p>
+
+            <h3>Admissions timeline</h3>
+            <p>Admission is highly selective and begins years in advance. The key entry point is <strong>Year 9 (age 13)</strong>. The process involves two primary stages:</p>
+            <ul>
+              <li><strong>Stage 1 (Year 6, age 10-11):</strong> The Eton List Test (ISEB Common Pre-Test), focusing on verbal and non-verbal reasoning, English, and Mathematics, plus a headmaster's report.</li>
+              <li><strong>Stage 2 (Year 6/7, age 11):</strong> The Eton College assessment, consisting of an individual interview and a computerized test of academic potential.</li>
+            </ul>
+
+            <h3>Admissions preparation</h3>
+            <p>To successfully navigate Eton's entrance requirements, we recommend starting academic planning no later than Grade 4. Preparation should focus on verbal reasoning mastery, critical thinking, mock interview practice, and broad extracurricular engagement to develop character.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Build the road map</p>
+          <h2 class="ac-h2">Prepare your child for Eton College.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

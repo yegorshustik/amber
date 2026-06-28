@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academic Roadmap — Amber Council</title>
-<meta name="description" content="The managed, end-to-end program that maps and walks your child's path to the strongest school or university they can realistically reach.">
+<meta name="description" content="The managed, end-to-end program that maps and walks your child&#39;s path to the strongest school or university they can realistically reach.">
 <link rel="icon" href="assets/ac-favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +12,16 @@
 <link rel="stylesheet" href="assets/amber-tokens.css?v=61">
 <link rel="stylesheet" href="assets/amber-components.css?v=61">
 <link rel="stylesheet" href="assets/amber-patterns.css?v=61">
+
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
-<header class=ac-header>
+  <header class=ac-header>
   <div class=ac-header__inner>
     <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council"></a>
     <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
     <nav class="ac-header__nav" id="site-nav">
-      <a class="ac-nav-link" aria-current="page" href="academic-roadmap.html">Academic Roadmap</a>
+      <a class="ac-nav-link" href="academic-roadmap.html">Academic Roadmap</a>
       <a class="ac-nav-link" href="services.html">Services</a>
       <a class="ac-nav-link" href="catalog.html">Schools &amp; Universities</a>
       <a class="ac-nav-link" href="pricing-policy.html">Pricing</a>
@@ -33,9 +33,12 @@
   </div>
 </header>
 
-<main>
 
-  <!-- ============ HERO ============ -->
+  <main>
+    ---
+
+
+<!-- ============ HERO ============ -->
   <section class="ac-page-hero ac-page-hero--paper">
     <div class="ac-container">
       <p class="ac-eyebrow">Flagship program</p>
@@ -276,10 +279,9 @@
     </div>
   </section>
 
-</main>
+  </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="ac-footer">
+  <footer class="ac-footer">
   <div class="ac-footer__inner">
     <div>
       <img src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council" height="64">
@@ -315,25 +317,13 @@
   </div>
 </footer>
 
-<script src="toc.js"></script>
-<script>
-(function () {
-  var b = document.querySelector('.ac-burger');
-  var n = document.getElementById('site-nav');
-  if (!b || !n) return;
-  b.addEventListener('click', function () {
-    var open = n.classList.toggle('is-open');
-    b.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  n.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      n.classList.remove('is-open');
-      b.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
-<script src="assets/ac-cookies.js?v=61"></script>
-<script src="assets/ac-reveal.js?v=61"></script>
+
+
+
+  <script src="assets/ac-nav.js?v=61"></script>
+  <script src="assets/ac-cookies.js?v=61"></script>
+  <script src="assets/ac-reveal.js?v=61"></script>
+  
+
 </body>
 </html>

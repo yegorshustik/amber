@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body>
+
+  {% include "partials/header.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="assets/ac-nav.js?v=61"></script>
+  <script src="assets/ac-cookies.js?v=61"></script>
+  <script src="assets/ac-reveal.js?v=61"></script>
+  {% if extra_js %}
+  {{ extra_js | safe }}
+  {% endif %}
+
+</body>
+</html>

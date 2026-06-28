@@ -1,0 +1,254 @@
+---
+layout: base.njk
+title: "Post-Enrollment Support — Amber Council"
+description: "Post-Enrollment Support by Amber Council — our signature accountability layer that stays with you after the offer. Available standalone or as part of your Academic Roadmap."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow"><a href="services.html" style="color:inherit;text-decoration:none;">Services</a> &middot; Post-Enrollment Support</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Post-Enrollment Support.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:54ch;">Our signature layer — accountability after the offer. We stay with you once your child is enrolled, so progress doesn't depend on luck. Available standalone, or as part of your Academic Roadmap.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+        <a class="ac-btn ac-btn--secondary" href="academic-roadmap.html">See the Academic Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FOR WHOM & ROADMAP ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="display: grid; gap: var(--space-8); grid-template-columns: 1fr; @media(min-width: 800px) { grid-template-columns: 1fr 1fr; }">
+        
+        <!-- For Whom -->
+        <div>
+          <p class="ac-eyebrow">For whom</p>
+          <h2 class="ac-h3" style="margin-bottom: var(--space-4);">Is this for you?</h2>
+          <p class="ac-editorial">Students who are already enrolled abroad, and parents who want peace of mind through ongoing local guardianship, academic tracking, and logistics support.</p>
+        </div>
+
+        <!-- Where in Roadmap -->
+        <div style="background: var(--paper); padding: var(--space-8); border-radius: 8px; border: 1px solid var(--line);">
+          <p class="ac-eyebrow" style="color: var(--amber-deep);">Academic Roadmap</p>
+          <h2 class="ac-h4" style="margin-bottom: var(--space-2);">Step 5: Post-Enrollment</h2>
+          <p class="ac-small" style="color: var(--muted); margin-bottom: var(--space-6);">This is the final ongoing phase of the Academic Roadmap. We don't just place the student and leave; we ensure they thrive in their new environment.</p>
+          <a class="ac-btn ac-btn--secondary ac-btn--sm" href="academic-roadmap.html">Explore the full Roadmap &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">What's included</p>
+      <h2 class="ac-h2" style="max-width:26ch;">We don't stop at the offer.</h2>
+      <div class="ac-features" style="margin-top:var(--space-12);">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
+          </span>
+          <h3 class="ac-feature__t">24/7 guidance</h3>
+          <p class="ac-feature__d">A real person to call when questions come up.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Progress check-ins</h3>
+          <p class="ac-feature__d">Regular reviews of how your child is settling and doing.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-life-buoy"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Issue resolution</h3>
+          <p class="ac-feature__d">We step in with the school when something needs fixing.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/><line x1="4.93" x2="7.76" y1="4.93" y2="7.76"/><line x1="16.24" x2="19.07" y1="16.24" y2="19.07"/><line x1="2" x2="6" y1="12" y2="12"/><line x1="18" x2="22" y1="12" y2="12"/><line x1="4.93" x2="7.76" y1="19.07" y2="16.24"/><line x1="16.24" x2="19.07" y1="7.76" y2="4.93"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Next-step planning</h3>
+          <p class="ac-feature__d">Always looking ahead to the next stage of the path.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Who it's for</h3>
+          <p class="ac-feature__d">Families who want continuity after enrollment, not a hand-off.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Pricing</h3>
+          <p class="ac-feature__d">By consultation, as part of your Academic Roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">How it works</p>
+      <h2 class="ac-h2" style="margin-bottom: var(--space-12);">The process.</h2>
+      
+      <div class="ac-process__steps">
+        <div class="ac-step">
+          <p class="ac-step__k">Step 1</p>
+          <h3 class="ac-step__t">Arrival & Settling In</h3>
+          <p class="ac-step__d">Assistance with airport transfers, school uniform fitting, local bank accounts, and initial orientation.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 2</p>
+          <h3 class="ac-step__t">Academic Tracking</h3>
+          <p class="ac-step__d">Regular check-ins on academic progress, parent-teacher meeting attendance (proxy), and translating reports.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 3</p>
+          <h3 class="ac-step__t">Emergency & Guardianship</h3>
+          <p class="ac-step__d">Acting as the local point of contact for the school for any immediate needs, permissions, or emergencies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model. -->
+        <article class="ac-prose">
+
+          <h2>Overview</h2>
+          <p>Securing an offer is only the beginning of a student's journey. Adapting to a new country, a different educational system, and living independently can be overwhelming. Our Post-Enrollment Support is our signature service — we stay with your child after they enroll to ensure their long-term success and peace of mind.</p>
+
+          <h2>Why ongoing support matters</h2>
+          <p>Many students encounter difficulties in their first year: academic pressure, cultural adaptation, roommate conflicts, or navigation of school administration. Without proper guidance, small issues can spiral into major setbacks. We provide immediate, professional assistance when it's needed most.</p>
+
+          <h2>Our approach</h2>
+          <p>We do not wait for problems to arise. We maintain regular contact with the student, monitor their academic progress, and check in on their emotional well-being. We act as an active bridge between the school, the student, and the parents back home.</p>
+
+          <h2>Support areas</h2>
+          <p>Our post-enrollment assistance focuses on three core areas:</p>
+          <ul>
+            <li><strong>Academic monitoring:</strong> Reviewing school grades, coordinating with subject teachers, and organizing additional tutoring support when required.</li>
+            <li><strong>Social &amp; life guidance:</strong> Helping students settle into boarding life, resolve peer or dorm conflicts, and manage independent routines.</li>
+            <li><strong>Parent liaison:</strong> Providing parents with structured updates on academic progress and school life, translating administrative requirements.</li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr><th>Support Area</th><th>Frequency</th><th>Core Deliverable</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Academic Review</td><td>Monthly</td><td>Performance tracking &amp; tutor coordination</td></tr>
+              <tr><td>Student Mentorship</td><td>Bi-weekly</td><td>One-on-one check-ins for adaptation &amp; welfare</td></tr>
+              <tr><td>Parent Reporting</td><td>Termly</td><td>Detailed progress reports &amp; next-stage planning</td></tr>
+            </tbody>
+          </table>
+
+          <figure class="ac-figure">
+            <img class="ac-photo ac-photo--wide" src="assets/ac-photo-hero.jpg" alt="A student walking across a scenic university courtyard" loading="lazy" width="1122" height="631">
+            <figcaption>Ongoing journey — we ensure the transition to study abroad is smooth and academically successful.</figcaption>
+          </figure>
+
+          <h2>What's included</h2>
+          <p>Our signature support service includes:</p>
+          <ol>
+            <li>24/7 direct messaging and call access to your advisor for both student and parents.</li>
+            <li>Scheduled monthly reviews of academic performance and well-being.</li>
+            <li>Direct mediation with school houseparents, teachers, or administrators.</li>
+            <li>Next-stage academic planning (GCSE/A-Level choices, early university guidance).</li>
+          </ol>
+
+          <h2>Our promise</h2>
+          <blockquote>
+            "Knowing that Amber Council was only a phone call away gave us immense peace of mind when our son had issues adjusting to his boarding house. They resolved the situation within 24 hours."
+            <div class="ac-slide__by" style="margin-top: var(--space-6);">
+              <span class="ac-slide__avatar"><img src="assets/ac-avatar-yegor.jpg" alt="Yegor Shustik"></span>
+              <span class="ac-slide__id">
+                <a class="ac-slide__name" href="#" target="_blank" rel="noopener">Yegor Shustik</a>
+                <span class="ac-slide__role">Parent &middot; Sopot</span>
+              </span>
+            </div>
+          </blockquote>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FAQ ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">FAQ</p>
+      <h2 class="ac-h2" style="max-width:20ch;margin-bottom:var(--space-8);">Common questions.</h2>
+      <div class="ac-faq" data-faq>
+        <div class="ac-faq__list">
+          <details class="ac-faq__q" open>
+            <summary>Is guardianship legally required?</summary>
+            <div class="ac-faq__a"><p>In many countries like the UK, having a locally based educational guardian is a strict legal requirement for international students under 18.</p></div>
+          </details>
+          <details class="ac-faq__q" open>
+            <summary>How often do you report to parents?</summary>
+            <div class="ac-faq__a"><p>We provide regular updates after every key academic milestone or school report, plus immediate contact for any urgent matters.</p></div>
+          </details>
+          <details class="ac-faq__q ac-faq__q--last" open>
+            <summary>Can you help with university applications later?</summary>
+            <div class="ac-faq__a"><p>Yes, post-enrollment support seamlessly transitions into university admissions planning when the time comes.</p></div>
+          </details>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--secondary" href="faq.html">See all FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Start with a free consultation.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

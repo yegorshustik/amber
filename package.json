@@ -1,0 +1,24 @@
+{
+  "name": "amber",
+  "version": "1.0.0",
+  "description": "Стартовый комплект для Cowork-проекта. **Эта папка = единый источник правды.**",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yegorshustik/amber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yegorshustik/amber/issues"
+  },
+  "homepage": "https://github.com/yegorshustik/amber#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

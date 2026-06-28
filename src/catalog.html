@@ -1,0 +1,120 @@
+---
+layout: base.njk
+title: "Schools &amp; Universities Directory — Amber Council"
+description: "Browse and filter elite boarding schools and universities across the UK, US, and Switzerland. Find the right academic path tailored to your child's profile."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Academic directory</p>
+      <h1 class="ac-h1">Schools &amp; Universities</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:680px;">An curated guide to elite schools and universities in the United Kingdom, United States, and Switzerland. Filter by institution type, country, and specific academic parameters.</p>
+    </div>
+  </section>
+
+  <!-- ============ DIRECTORY GRID & FILTERS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      
+      <!-- Type Selection Tabs -->
+      <div class="ac-filter-tabs">
+        <button class="ac-filter-tab is-active" data-filter-type="school">Boarding Schools</button>
+        <button class="ac-filter-tab" data-filter-type="university">Universities</button>
+      </div>
+
+      <div class="ac-catalog-layout">
+        
+        <!-- Filter Sidebar -->
+        <aside class="ac-filters">
+          <div class="ac-catalog-search-wrap">
+            <span class="ac-filter-group__t">Search</span>
+            <input type="text" id="filter-search" class="ac-input" placeholder="Type name or city...">
+          </div>
+
+          <div class="ac-filter-group">
+            <label class="ac-filter-group__t" for="filter-country">Country</label>
+            <select id="filter-country" class="ac-select">
+              <option value="all">All Countries</option>
+              <option value="UK">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="Switzerland">Switzerland</option>
+            </select>
+          </div>
+
+          <!-- School-specific sub-filters -->
+          <div id="sub-filters-school" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-gender">Gender option</label>
+              <select id="filter-gender" class="ac-select">
+                <option value="all">All Options</option>
+                <option value="coed">Co-educational</option>
+                <option value="single">Single-Sex</option>
+              </select>
+            </div>
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-boarding">Boarding option</label>
+              <select id="filter-boarding" class="ac-select">
+                <option value="all">All Options</option>
+                <option value="full">Full Boarding</option>
+                <option value="day-weekly">Day / Weekly Boarding</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- University-specific sub-filters -->
+          <div id="sub-filters-university" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-campus">Campus style</label>
+              <select id="filter-campus" class="ac-select">
+                <option value="all">All Styles</option>
+                <option value="collegiate">Collegiate Campus</option>
+                <option value="city-modern">City / Modern Campus</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Results Grid -->
+        <div class="ac-catalog-grid" id="catalog-grid">
+          <!-- Dynamically filled by ac-catalog.js -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Find the right fit for your child.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

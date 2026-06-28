@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: "Page Not Found — Amber Council"
+description: "Error 404 - Page not found."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ PAGE HERO ============ -->
+  <section class="ac-section ac-section--cream" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Error 404</p>
+      <h1 class="ac-h1" style="max-width: 22ch;">Page not found.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:620px;">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html">Return to homepage</a>
+        <a class="ac-btn ac-btn--secondary" href="catalog.html">Explore directory</a>
+      </div>
+    </div>
+  </section>

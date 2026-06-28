@@ -1,0 +1,255 @@
+---
+layout: base.njk
+title: "Boarding School Placement — Amber Council"
+description: "Boarding School Placement by Amber Council — school shortlist, applications, assessments and enrollment, managed end-to-end. Available standalone or as part of your Academic Roadmap."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow"><a href="services.html" style="color:inherit;text-decoration:none;">Services</a> &middot; Boarding School Placement</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Boarding School Placement.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:54ch;">We find the right school for your child and manage the whole placement — shortlist, applications, assessments and enrollment — end to end. Available standalone, or as part of your Academic Roadmap.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+        <a class="ac-btn ac-btn--secondary" href="academic-roadmap.html">See the Academic Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FOR WHOM & ROADMAP ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="display: grid; gap: var(--space-8); grid-template-columns: 1fr; @media(min-width: 800px) { grid-template-columns: 1fr 1fr; }">
+        
+        <!-- For Whom -->
+        <div>
+          <p class="ac-eyebrow">For whom</p>
+          <h2 class="ac-h3" style="margin-bottom: var(--space-4);">Is this for you?</h2>
+          <p class="ac-editorial">Families seeking a premium, structured, and safe international education environment for their child (typically ages 11-18).</p>
+        </div>
+
+        <!-- Where in Roadmap -->
+        <div style="background: var(--paper); padding: var(--space-8); border-radius: 8px; border: 1px solid var(--line);">
+          <p class="ac-eyebrow" style="color: var(--amber-deep);">Academic Roadmap</p>
+          <h2 class="ac-h4" style="margin-bottom: var(--space-2);">Core Focus</h2>
+          <p class="ac-small" style="color: var(--muted); margin-bottom: var(--space-6);">Boarding school placement is often the primary goal of the Academic Roadmap. We handle the entire process from selection to enrollment.</p>
+          <a class="ac-btn ac-btn--secondary ac-btn--sm" href="academic-roadmap.html">Explore the full Roadmap &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">What's included</p>
+      <h2 class="ac-h2" style="max-width:26ch;">One managed process — from shortlist to first day.</h2>
+      <div class="ac-features" style="margin-top:var(--space-12);">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/><line x1="4.93" x2="7.76" y1="4.93" y2="7.76"/><line x1="16.24" x2="19.07" y1="16.24" y2="19.07"/><line x1="2" x2="6" y1="12" y2="12"/><line x1="18" x2="22" y1="12" y2="12"/><line x1="4.93" x2="7.76" y1="19.07" y2="16.24"/><line x1="16.24" x2="19.07" y1="7.76" y2="4.93"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Profile &amp; shortlist</h3>
+          <p class="ac-feature__d">Schools matched to your child's profile, goals and budget — honestly, not aspirationally.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Applications managed</h3>
+          <p class="ac-feature__d">Documents, essays and deadlines handled end-to-end, with nothing missed.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Assessments &amp; interviews</h3>
+          <p class="ac-feature__d">Preparation for entrance tests and admissions interviews.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8.24-2a1 1 0 0 1 .5 0l8.24 2A1 1 0 0 1 20 6z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Enrollment &amp; onboarding</h3>
+          <p class="ac-feature__d">Offer, contract and a smooth start at the new school.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Who it's for</h3>
+          <p class="ac-feature__d">Families choosing a boarding school abroad who want the process managed, not DIY.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Pricing</h3>
+          <p class="ac-feature__d">From request — or by consultation as part of your Academic Roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">How it works</p>
+      <h2 class="ac-h2" style="margin-bottom: var(--space-12);">The process.</h2>
+      
+      <div class="ac-process__steps">
+        <div class="ac-step">
+          <p class="ac-step__k">Step 1</p>
+          <h3 class="ac-step__t">Family Consultation</h3>
+          <p class="ac-step__d">We understand your child's academic level, interests, and your family's preferences (geography, budget, culture).</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 2</p>
+          <h3 class="ac-step__t">School Shortlisting</h3>
+          <p class="ac-step__d">We curate a list of target, reach, and safety schools that match the profile perfectly.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 3</p>
+          <h3 class="ac-step__t">Application Management</h3>
+          <p class="ac-step__d">We handle all paperwork, deadlines, and communication with the admissions offices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model. -->
+        <article class="ac-prose">
+
+          <h2>Overview</h2>
+          <p>Choosing the right boarding school is one of the most critical decisions in your child's academic journey. We find schools that match your child's academic profile, personality, and interests, and manage the entire placement process end-to-end to ensure they secure a place where they will thrive.</p>
+
+          <h2>Why boarding schools matter</h2>
+          <p>A good boarding school provides more than just rigorous academics; it offers a community, extracurricular breadth, and preparation for independent life. It is the strongest springboard for entry into elite universities worldwide.</p>
+
+          <h2>Our approach</h2>
+          <p>We do not believe in a one-size-fits-all list. We look at the student honestly — assessing their strengths, weaknesses, and potential. We recommend schools where they will be challenged but not overwhelmed, ensuring a productive and happy school experience.</p>
+
+          <h2>The placement process</h2>
+          <p>We break the placement down into clear, manageable steps:</p>
+          <ul>
+            <li><strong>Shortlisting:</strong> We select 3–5 candidate schools based on a detailed profile analysis.</li>
+            <li><strong>Applications:</strong> We coordinate all document submissions, essay writing, and registration deadlines.</li>
+            <li><strong>Preparation:</strong> We provide practice materials and coaching for entrance exams (like UKiset, ISEB, or SSAT) and school interviews.</li>
+            <li><strong>Enrollment:</strong> We guide you through accepting the offer, deposits, and boarding arrangements.</li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr><th>Destination</th><th>Main Systems</th><th>Standard Entry Points</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>United Kingdom</td><td>A-Levels, IB, GCSE</td><td>Year 9 (age 13), Year 12 (age 16)</td></tr>
+              <tr><td>United States</td><td>AP, High School Diploma</td><td>Grade 9 (age 14), Grade 11 (age 16)</td></tr>
+              <tr><td>Switzerland</td><td>IB, Swiss Matura, French Bac</td><td>Varies by program (ages 12–18)</td></tr>
+            </tbody>
+          </table>
+
+          <figure class="ac-figure">
+            <img class="ac-photo ac-photo--wide" src="assets/ac-photo-study.jpg" alt="Students studying inside a historic boarding school library" loading="lazy" width="1122" height="631">
+            <figcaption>Academic environment — historic campus libraries foster deep focus and scholarly traditions.</figcaption>
+          </figure>
+
+          <h2>What's included</h2>
+          <p>Our placement service provides comprehensive support:</p>
+          <ol>
+            <li>Dedicated educational advisor guiding you at every step.</li>
+            <li>Direct coordination and communication with school admissions offices.</li>
+            <li>Mock interviews with detailed feedback.</li>
+            <li>Visa coordination and guardianship recommendations.</li>
+          </ol>
+
+          <h2>Our promise</h2>
+          <blockquote>
+            "Finding the right school felt like trying to solve a puzzle with missing pieces. Amber Council guided us with total honesty and clear data, and our son is now thriving in the UK."
+            <div class="ac-slide__by" style="margin-top: var(--space-6);">
+              <span class="ac-slide__avatar"><img src="assets/ac-avatar-yegor.jpg" alt="Yegor Shustik"></span>
+              <span class="ac-slide__id">
+                <a class="ac-slide__name" href="#" target="_blank" rel="noopener">Yegor Shustik</a>
+                <span class="ac-slide__role">Parent &middot; Sopot</span>
+              </span>
+            </div>
+          </blockquote>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FAQ ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">FAQ</p>
+      <h2 class="ac-h2" style="max-width:20ch;margin-bottom:var(--space-8);">Common questions.</h2>
+      <div class="ac-faq" data-faq>
+        <div class="ac-faq__list">
+          <details class="ac-faq__q" open>
+            <summary>How do you select the schools?</summary>
+            <div class="ac-faq__a"><p>We use a proprietary evaluation process combining academic metrics, extracurricular strengths, and cultural fit. We never push "partner" schools.</p></div>
+          </details>
+          <details class="ac-faq__q" open>
+            <summary>Do we need to visit the schools?</summary>
+            <div class="ac-faq__a"><p>While highly recommended, it is not strictly necessary. We can arrange virtual tours and interviews, though physical visits provide the best feel.</p></div>
+          </details>
+          <details class="ac-faq__q ac-faq__q--last" open>
+            <summary>What happens if my child is rejected?</summary>
+            <div class="ac-faq__a"><p>Our strategy always includes "safety" schools that are excellent fits. A well-planned roadmap ensures the student will have strong options.</p></div>
+          </details>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--secondary" href="faq.html">See all FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Start with a free consultation.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

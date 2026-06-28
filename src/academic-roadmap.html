@@ -1,0 +1,266 @@
+---
+layout: base.njk
+title: "Academic Roadmap — Amber Council"
+description: "The managed, end-to-end program that maps and walks your child's path to the strongest school or university they can realistically reach."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Flagship program</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Academic Roadmap.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:54ch;">The managed, end-to-end program that maps your child's path — and walks it with you, from first assessment to life after enrollment.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+        <a class="ac-btn ac-btn--secondary" href="services.html">See modular services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROADMAP PATH & WHAT'S INCLUDED ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      
+      <!-- 1. The Visual Path -->
+      <p class="ac-eyebrow">The route</p>
+      <h2 class="ac-h2" style="max-width:24ch;margin-bottom:var(--space-12);">One managed path, from first step to life after enrollment.</h2>
+      <div class="ac-path">
+        <div class="ac-step"><p class="ac-step__k">Stage 01</p><h3 class="ac-step__t">Camps</h3><p class="ac-step__d">Summer programs that open doors and build profile.</p></div>
+        <div class="ac-step"><p class="ac-step__k">Stage 02</p><h3 class="ac-step__t">Boarding School</h3><p class="ac-step__d">The right placement, managed end to end.</p></div>
+        <div class="ac-step"><p class="ac-step__k">Stage 03</p><h3 class="ac-step__t">University</h3><p class="ac-step__d">Admissions, deadlines and exams — handled.</p></div>
+        <div class="ac-step"><p class="ac-step__k">Stage 04</p><h3 class="ac-step__t">Support</h3><p class="ac-step__d">Post-enrollment accountability, 24/7.</p></div>
+      </div>
+
+      <!-- Separator -->
+      <hr style="border:0;border-top:1px solid var(--line);margin:var(--space-16) 0;opacity:0.6;">
+
+      <!-- 2. What's Included -->
+      <p class="ac-eyebrow">What's included</p>
+      <h2 class="ac-h2" style="max-width:26ch;margin-bottom:var(--space-12);">End-to-end guidance, 24/7.</h2>
+      <div class="ac-features">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
+          </span>
+          <h3 class="ac-feature__t">24/7 access</h3>
+          <p class="ac-feature__d">Direct, unlimited messaging and calls with your personal advisor.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Full accountability</h3>
+          <p class="ac-feature__d">We take responsibility for outcomes, not just school administration.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale"><path d="m16 16 3-8 3 8c-.87.65-2.24 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-2.24 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Unbiased selection</h3>
+          <p class="ac-feature__d">Work with any school or university, completely independent of partners.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Elite expertise</h3>
+          <p class="ac-feature__d">Deep experience with boarding schools and Ivy League / Oxbridge admissions.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Continuous support</h3>
+          <p class="ac-feature__d">We stay on after enrollment to monitor and manage academic progress.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Pricing</h3>
+          <p class="ac-feature__d">By consultation, customized to your child's roadmap requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model.
+             Blocks = heading, paragraph, list, table, figure/image, blockquote. -->
+        <article class="ac-prose">
+
+          <h2>Overview</h2>
+          <p>Amber Council's Academic Roadmap is a single, accountable program that takes a student from where they are today to the strongest institution they can realistically reach. It is not a one-off application service — it is ongoing guidance, built around your child and managed end to end.</p>
+          <p>Everything below is placeholder content to demonstrate the page system. Final copy will be supplied and edited in place.</p>
+
+          <h2>How it works</h2>
+          <p>The roadmap moves through clear stages. You always know where your child stands and what comes next.</p>
+
+          <h3>Assessment</h3>
+          <p>We start with an honest, ability-weighted assessment: academic profile, interests, and realistic targets. No overselling — we map what is genuinely reachable.</p>
+
+          <h3>Placement &amp; preparation</h3>
+          <p>We shortlist the right schools or universities, manage the full application and deadlines, and prepare the student for exams and interviews.</p>
+
+          <h3>Post-enrollment support</h3>
+          <p>After enrollment we stay on — communicating with the institution, monitoring progress, and handling issues as they arise. This is the signature layer of the program.</p>
+
+          <h2>What's included</h2>
+          <ul>
+            <li>24/7 access to your advisor throughout the journey</li>
+            <li>Unlimited calls and meetings — online or offline</li>
+            <li>Full accountability for every stage of the process</li>
+            <li>Work with any institution, not only partner schools</li>
+            <li>Experience with top-tier universities</li>
+          </ul>
+
+          <h2>The path at a glance</h2>
+          <table>
+            <thead>
+              <tr><th>Stage</th><th>Focus</th><th>Outcome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Assessment</td><td>Profile &amp; realistic targets</td><td>Ability-weighted shortlist</td></tr>
+              <tr><td>Placement</td><td>Applications &amp; deadlines</td><td>Submitted, on time</td></tr>
+              <tr><td>Preparation</td><td>Exams &amp; interviews</td><td>Ready candidate</td></tr>
+              <tr><td>Support</td><td>Life after enrollment</td><td>Ongoing accountability</td></tr>
+            </tbody>
+          </table>
+
+          <figure class="ac-figure">
+            <img class="ac-photo ac-photo--wide" src="assets/ac-photo-graduate.jpg" alt="A graduate laughing in cap and gown at commencement" style="object-position: 50% 28%;" loading="lazy" width="1122" height="1402">
+            <figcaption>A genuine moment of achievement — where the right academic path leads.</figcaption>
+          </figure>
+
+          <h2>Modular services</h2>
+          <p>Each part of the roadmap is also available on its own — standalone or as part of your Academic Roadmap.</p>
+          <ol>
+            <li>Camps</li>
+            <li>Boarding School Placement</li>
+            <li>Admissions Preparation</li>
+            <li>Visa Support (tourist / student)</li>
+            <li>Post-Enrollment Support</li>
+          </ol>
+
+          <h2>Our promise</h2>
+          <blockquote>
+            "We don't promise a logo. We promise the right path to the strongest university your child can realistically reach — and we walk it with you, 24/7, with full accountability."
+            <div class="ac-slide__by" style="margin-top: var(--space-6);">
+              <span class="ac-slide__avatar"><img src="assets/ac-avatar-yegor.jpg" alt="Yegor Shustik"></span>
+              <span class="ac-slide__id">
+                <a class="ac-slide__name" href="#" target="_blank" rel="noopener">Yegor Shustik</a>
+                <span class="ac-slide__role">Parent &middot; Sopot</span>
+              </span>
+            </div>
+          </blockquote>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FOR WHOM ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="max-width: 680px;">
+        <p class="ac-eyebrow">Is this for you?</p>
+        <h2 class="ac-h2" style="margin-bottom: var(--space-4);">Who we work with.</h2>
+        <p class="ac-editorial">The Academic Roadmap is designed for families who want a managed, highly structured path to top-tier international education. It is ideal for students aged 11–17 aiming for selective boarding schools in the UK, Switzerland, or the US, and those targeting Ivy League, Oxbridge, or Russell Group universities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUTCOMES ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Track record</p>
+      <h2 class="ac-h2" style="margin-bottom: var(--space-12);">Outcomes that matter.</h2>
+      
+      <div class="ac-features">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">100% Placement</h3>
+          <p class="ac-feature__d">Every student on the Academic Roadmap receives offers from their target or reach list.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Unbiased Selection</h3>
+          <p class="ac-feature__d">Zero commission from institutions ensures we only select what's best for your child.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Ongoing Support</h3>
+          <p class="ac-feature__d">24/7 dedicated advisor access even after enrollment to ensure a smooth transition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING & COMMITMENTS ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="display: grid; gap: var(--space-12); grid-template-columns: 1fr; @media(min-width: 800px) { grid-template-columns: 1fr 1fr; }">
+        
+        <div>
+          <p class="ac-eyebrow">Transparency</p>
+          <h2 class="ac-h3" style="margin-bottom: var(--space-4);">Pricing & Commitments.</h2>
+          <p class="ac-editorial">The Academic Roadmap is a bespoke service. Pricing is determined after our initial consultation and depends on the student's current profile, the timeline to enrollment, and the level of intervention required.</p>
+        </div>
+
+        <div style="background: var(--paper); padding: var(--space-8); border-radius: 8px; border: 1px solid var(--line);">
+          <p class="ac-eyebrow" style="color: var(--amber-deep);">Mutual Commitment</p>
+          <h2 class="ac-h4" style="margin-bottom: var(--space-2);">Our Guarantee</h2>
+          <p class="ac-small" style="color: var(--muted); margin-bottom: 0;">We commit to full accountability and 24/7 access. In return, we ask for your trust and timely collaboration on documents and decisions to ensure the best possible outcome.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTION BLOCK (recurring CTA) ============ -->
+  <section class="ac-section ac-section--cream" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Start with a free consultation</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

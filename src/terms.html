@@ -1,0 +1,77 @@
+---
+layout: base.njk
+title: "Terms of Service — Amber Council"
+description: "Amber Council Terms of Service — legal framework and rules governing our consulting and academic placement services."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Legal</p>
+      <h1 class="ac-h1">Terms of Service</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:680px;">These terms govern the relationship, mutual obligations, and service scope between Amber Council and our clients.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE -->
+        <article class="ac-prose">
+
+          <h2>Service scope</h2>
+          <p>Amber Council provides independent advising and consulting services for student placement in schools and universities. Our scope includes:</p>
+          <ul>
+            <li>Profile evaluation and academic roadmap design.</li>
+            <li>Admissions and examination preparation advice.</li>
+            <li>Visa procedures and application portfolio support.</li>
+            <li>Post-enrollment mentorship and guidance.</li>
+          </ul>
+
+          <h2>Mutual commitment</h2>
+          <p>We work as a dedicated partner to realize your child's full academic potential. This requires mutual commitment:</p>
+          <ul>
+            <li>We commit to providing expert, unbiased, and honest evaluation.</li>
+            <li>Clients commit to sharing accurate, timely, and complete academic history.</li>
+            <li>We cannot guarantee admissions outcomes as final decisions reside with school and university selection committees.</li>
+          </ul>
+
+          <h2>Payment &amp; fees</h2>
+          <p>Our fee structure is outlined in detail in our <a href="pricing-policy.html">Pricing Policy</a>. Depending on the service level chosen (Roadmap-only, Full-placement, or Mentorship), payments are due upon agreement execution or according to agreed milestone schedules. All invoices are issued electronically with standard payment terms.</p>
+
+          <h2>Discretion &amp; privacy</h2>
+          <p>All information shared with Amber Council is treated with the highest degree of confidentiality. It will not be disclosed to any third party without your explicit request or consent, save for the school and university admissions offices during active application processes.</p>
+
+          <h2>Governing law</h2>
+          <p>These terms and any agreements made under them are governed by and construed in accordance with the laws of Poland (EU). Any disputes arising from these terms will be resolved in the competent courts of Gdańsk.</p>
+
+        </article>
+
+      </div>
+    </div>
+  </section>

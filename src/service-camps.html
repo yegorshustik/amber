@@ -1,0 +1,254 @@
+---
+layout: base.njk
+title: "Camps — Amber Council"
+description: "Camps by Amber Council — summer and short programs abroad that open doors and build your child's profile. Available standalone or as part of your Academic Roadmap."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow"><a href="services.html" style="color:inherit;text-decoration:none;">Services</a> &middot; Camps</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Camps.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:54ch;">Summer and short programs abroad that open doors, build profile and give your child a taste of studying away from home. Available standalone, or as a first step on your Academic Roadmap.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+        <a class="ac-btn ac-btn--secondary" href="academic-roadmap.html">See the Academic Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FOR WHOM & ROADMAP ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="display: grid; gap: var(--space-8); grid-template-columns: 1fr; @media(min-width: 800px) { grid-template-columns: 1fr 1fr; }">
+        
+        <!-- For Whom -->
+        <div>
+          <p class="ac-eyebrow">For whom</p>
+          <h2 class="ac-h3" style="margin-bottom: var(--space-4);">Is this for you?</h2>
+          <p class="ac-editorial">Children and teenagers looking for enriching summer or winter experiences: language immersion, academic prep, or specialized sports/arts.</p>
+        </div>
+
+        <!-- Where in Roadmap -->
+        <div style="background: var(--paper); padding: var(--space-8); border-radius: 8px; border: 1px solid var(--line);">
+          <p class="ac-eyebrow" style="color: var(--amber-deep);">Academic Roadmap</p>
+          <h2 class="ac-h4" style="margin-bottom: var(--space-2);">Step 2: Profile Building</h2>
+          <p class="ac-small" style="color: var(--muted); margin-bottom: var(--space-6);">Educational camps are an excellent way to build a student's profile and independence early on in the Academic Roadmap before applying to long-term programs.</p>
+          <a class="ac-btn ac-btn--secondary ac-btn--sm" href="academic-roadmap.html">Explore the full Roadmap &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">What's included</p>
+      <h2 class="ac-h2" style="max-width:26ch;">A first step abroad, fully arranged.</h2>
+      <div class="ac-features" style="margin-top:var(--space-12);">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/><line x1="4.93" x2="7.76" y1="4.93" y2="7.76"/><line x1="16.24" x2="19.07" y1="16.24" y2="19.07"/><line x1="2" x2="6" y1="12" y2="12"/><line x1="18" x2="22" y1="12" y2="12"/><line x1="4.93" x2="7.76" y1="19.07" y2="16.24"/><line x1="16.24" x2="19.07" y1="7.76" y2="4.93"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Program selection</h3>
+          <p class="ac-feature__d">Camps matched to your child's age, interests and goals.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Applications &amp; logistics</h3>
+          <p class="ac-feature__d">Enrollment, documents and travel handled for you.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8.24-2a1 1 0 0 1 .5 0l8.24 2A1 1 0 0 1 20 6z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Safety &amp; supervision</h3>
+          <p class="ac-feature__d">Vetted programs with proper duty of care.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Profile building</h3>
+          <p class="ac-feature__d">Experiences that strengthen future school and university applications.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Who it's for</h3>
+          <p class="ac-feature__d">Families wanting a low-commitment first step abroad.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Pricing</h3>
+          <p class="ac-feature__d">From request — or by consultation as part of your Academic Roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">How it works</p>
+      <h2 class="ac-h2" style="margin-bottom: var(--space-12);">The process.</h2>
+      
+      <div class="ac-process__steps">
+        <div class="ac-step">
+          <p class="ac-step__k">Step 1</p>
+          <h3 class="ac-step__t">Needs Assessment</h3>
+          <p class="ac-step__d">We identify the goal: is it language improvement, a taste of boarding school life, or a specific academic subject?</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 2</p>
+          <h3 class="ac-step__t">Camp Selection</h3>
+          <p class="ac-step__d">We present the best vetted camps in the UK, US, Switzerland, or Europe that align with your goals.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 3</p>
+          <h3 class="ac-step__t">Registration & Logistics</h3>
+          <p class="ac-step__d">We manage the booking, visa support documents, and pre-departure briefings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model. -->
+        <article class="ac-prose">
+
+          <h2>Overview</h2>
+          <p>Summer and short-term programs abroad are more than just holidays — they are the first step toward international education. A well-chosen camp gives your child a taste of independence, builds language confidence in a native setting, and adds valuable credentials to their future school or university profile.</p>
+
+          <h2>Why short-term programs matter</h2>
+          <p>Top boarding schools and universities look for candidates with global experience. A camp at a top school or university is the easiest way to test whether your child is ready for boarding school life, and it builds their confidence dramatically.</p>
+
+          <h2>Our approach</h2>
+          <p>We do not work with mass-market tourist camps. Instead, we select academic, sports, or creative camps hosted by premier boarding schools and universities. We match the program to your child's personality, language level, and long-term academic path.</p>
+
+          <h2>Selecting the right camp</h2>
+          <p>Depending on your child's age and goals, we recommend one of three paths:</p>
+          <ul>
+            <li><strong>Language &amp; Activity:</strong> For younger students (ages 9–13) to get comfortable with English and living away from home.</li>
+            <li><strong>Academic Tasters:</strong> For older students to experience subjects like business, robotics, or literature in a boarding school environment.</li>
+            <li><strong>University Preparation:</strong> Intensive courses at top universities (like Oxford, Cambridge, or Yale) to prepare for future applications.</li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr><th>Program Type</th><th>Target Age</th><th>Key Benefit</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Language &amp; Activity</td><td>Ages 9–13</td><td>Confidence &amp; basic independence</td></tr>
+              <tr><td>Academic Tasters</td><td>Ages 14–16</td><td>Deep dive into future school subjects</td></tr>
+              <tr><td>University Prep</td><td>Ages 16–18</td><td>Elite portfolio building &amp; SAT prep</td></tr>
+            </tbody>
+          </table>
+
+          <figure class="ac-figure">
+            <img class="ac-photo ac-photo--wide" src="assets/ac-photo-students.jpg" alt="Students studying together on an international campus" loading="lazy" width="1122" height="631">
+            <figcaption>A first taste of campus life — students collaborating during an academic summer program.</figcaption>
+          </figure>
+
+          <h2>Logistics &amp; Safety</h2>
+          <p>Sending a child abroad can be stressful. We take full responsibility for the logistics:</p>
+          <ol>
+            <li>Selecting vetted, secure programs with high staff-to-student ratios.</li>
+            <li>Handling enrollment documents, visas, and health insurance.</li>
+            <li>Arranging airport transfers and flights, with unaccompanied minor service if required.</li>
+            <li>Remaining contactable 24/7 during the camp.</li>
+          </ol>
+
+          <h2>Our promise</h2>
+          <blockquote>
+            "The camp experience completely changed our daughter's perspective on education. She came back motivated, speaking English fluently, and excited to apply to international schools."
+            <div class="ac-slide__by" style="margin-top: var(--space-6);">
+              <span class="ac-slide__avatar"><img src="assets/ac-avatar-yegor.jpg" alt="Yegor Shustik"></span>
+              <span class="ac-slide__id">
+                <a class="ac-slide__name" href="#" target="_blank" rel="noopener">Yegor Shustik</a>
+                <span class="ac-slide__role">Parent &middot; Sopot</span>
+              </span>
+            </div>
+          </blockquote>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FAQ ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">FAQ</p>
+      <h2 class="ac-h2" style="max-width:20ch;margin-bottom:var(--space-8);">Common questions.</h2>
+      <div class="ac-faq" data-faq>
+        <div class="ac-faq__list">
+          <details class="ac-faq__q" open>
+            <summary>Are these camps safe?</summary>
+            <div class="ac-faq__a"><p>Absolutely. We only work with accredited, highly reputable providers with strict safeguarding and supervision policies.</p></div>
+          </details>
+          <details class="ac-faq__q" open>
+            <summary>Can a camp help with future boarding school applications?</summary>
+            <div class="ac-faq__a"><p>Yes. Attending a summer program at a target boarding school is a fantastic way to show interest and adapt to the environment early.</p></div>
+          </details>
+          <details class="ac-faq__q ac-faq__q--last" open>
+            <summary>When should we book?</summary>
+            <div class="ac-faq__a"><p>Premium camps fill up very quickly. We recommend booking by January or February for the upcoming summer season.</p></div>
+          </details>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--secondary" href="faq.html">See all FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Start with a free consultation.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

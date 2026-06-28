@@ -1,0 +1,204 @@
+---
+layout: base.njk
+title: "Pricing Policy — Amber Council"
+description: "Amber Council pricing — three managed tiers (Basic, Standard, Premium) across the full journey, plus add-on services. Final pricing is confirmed at a free consultation."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Pricing</p>
+      <h1 class="ac-h1">Pricing Policy</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:680px;">Three managed tiers across the whole journey — from university admission to life after enrollment. Every line below is editable. Final pricing is always confirmed at a free consultation, tailored to your child.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + editable article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model.
+             Blocks = heading, paragraph, list, table. Edit text and table cells in place. -->
+        <article class="ac-prose">
+
+          <h2>How our pricing works</h2>
+          <p>We offer three tiers — <strong>Basic</strong>, <strong>Standard</strong> and <strong>Premium</strong> — covering the full journey, grouped into five stages. Each service is included at one of three levels:</p>
+          <ul>
+            <li><strong>Full</strong> — we handle it for you, end to end.</li>
+            <li><strong>Info</strong> — we guide you and you complete it yourself.</li>
+            <li><strong>—</strong> — not included in this tier.</li>
+          </ul>
+          <p>For families who need a bespoke route, the full <a href="academic-roadmap.html">Academic Roadmap</a> is priced by consultation. The numbers on this page are placeholders — replace them with final figures in the editor.</p>
+
+          <h2>Stage 1 — University admission</h2>
+          <table>
+            <colgroup><col style="width:40%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+            <thead>
+              <tr><th>Service</th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Personal admission plan</td><td>Full</td><td>Full</td><td>Full</td></tr>
+              <tr><td>List of required documents</td><td>Info</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Legalisation &amp; translation of documents</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Submitting applications to universities</td><td>2 programs</td><td>4 programs</td><td>4 programs</td></tr>
+              <tr><td>Motivation-letter assistance</td><td>Info</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Entrance-exam preparation materials</td><td>—</td><td>Full</td><td>Full</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Stage 2 — Boarding school placement</h2>
+          <table>
+            <colgroup><col style="width:40%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+            <thead>
+              <tr><th>Service</th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Shortlist of schools</td><td>Info</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Applications &amp; enrollment</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Communication with schools</td><td>Info</td><td>Full</td><td>Full</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Stage 3 — Visa &amp; residence permit</h2>
+          <table>
+            <colgroup><col style="width:40%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+            <thead>
+              <tr><th>Service</th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Document list for the residence permit</td><td>Info</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Legalisation &amp; translation</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Forms &amp; applications</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Residence-permit renewal (next year)</td><td>—</td><td>—</td><td>Full</td></tr>
+              <tr><td>In-person support at submission</td><td>—</td><td>Info</td><td>Full</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Stage 4 — Relocation &amp; integration</h2>
+          <table>
+            <colgroup><col style="width:40%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+            <thead>
+              <tr><th>Service</th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Address registration</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Student bank account</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Health insurance</td><td>Info</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Mobile &amp; e-signature</td><td>—</td><td>Info</td><td>Full</td></tr>
+              <tr><td>Transit card &amp; ISIC card</td><td>—</td><td>Full</td><td>Full</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Stage 5 — Ongoing support</h2>
+          <table>
+            <colgroup><col style="width:40%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+            <thead>
+              <tr><th>Service</th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>24/7 guidance</td><td>Info</td><td>Full</td><td>Full</td></tr>
+              <tr><td>Progress check-ins</td><td>—</td><td>3 months</td><td>12 months</td></tr>
+              <tr><td>Guardian for minors</td><td>—</td><td>Info</td><td>Full</td></tr>
+              <tr><td>First-semester schedule</td><td>—</td><td>Full</td><td>Full</td></tr>
+              <tr><td>10 individual language lessons</td><td>—</td><td>—</td><td>Full</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Tariffs &amp; prices</h2>
+          <p>Placeholder figures — replace with final pricing. The early-bird column is optional.</p>
+          <table>
+            <colgroup><col style="width:40%"><col style="width:30%"><col style="width:30%"></colgroup>
+            <thead>
+              <tr><th>Tier</th><th>Price</th><th>Early-bird</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Basic</td><td>€1,900</td><td>€1,700</td></tr>
+              <tr><td>Standard</td><td>€2,900</td><td>€2,700</td></tr>
+              <tr><td>Premium</td><td>€3,900</td><td>€3,700</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Add-on services</h2>
+          <p>Available standalone or alongside any tier.</p>
+          <table>
+            <colgroup><col style="width:34%"><col style="width:22%"><col style="width:44%"></colgroup>
+            <thead>
+              <tr><th>Service</th><th>Price</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Career-orientation consultation</td><td>€50</td><td>Profile and direction session with a specialist.</td></tr>
+              <tr><td>Language tutor</td><td>€20 / lesson</td><td>Preparation for a language certificate or academic gap.</td></tr>
+              <tr><td>Maths tutor</td><td>€18 / lesson</td><td>Preparation for entrance exams and academic gap.</td></tr>
+              <tr><td>Diploma equivalence assessment</td><td>€2,500</td><td>Review of a bachelor's degree for master's programs.</td></tr>
+              <tr><td>Personal university tour</td><td>€200*</td><td>A 5-hour guided tour of the city's leading universities.</td></tr>
+            </tbody>
+          </table>
+          <p class="ac-small">* Credited toward your chosen tier if you later proceed with Amber Council.</p>
+
+          <h2>Notes</h2>
+          <ul>
+            <li>All figures on this page are placeholders for the editor — replace with final pricing.</li>
+            <li>Final pricing is confirmed at a free consultation, tailored to the student.</li>
+            <li>Tier names, services, levels and prices are all editable in place.</li>
+          </ul>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ (embed: pricing) ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">FAQ</p>
+      <h2 class="ac-h2" style="max-width:20ch;margin-bottom:var(--space-8);">Pricing questions.</h2>
+      <div class="ac-faq">
+        <div class="ac-faq__list">
+          <details class="ac-faq__q"><summary>How is pricing determined?</summary><div class="ac-faq__a"><p>Modular services start from a set price. The Academic Roadmap is priced by consultation — it depends on the student, the duration and the scope of support.</p></div></details>
+          <details class="ac-faq__q"><summary>What affects the cost?</summary><div class="ac-faq__a"><p>The services you choose, the length of the engagement, the institutions involved and the level of support.</p></div></details>
+          <details class="ac-faq__q ac-faq__q--last"><summary>Are there payment terms or refunds?</summary><div class="ac-faq__a"><p>[Placeholder — to be confirmed.]</p></div></details>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--secondary" href="faq.html#pricing">See all FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--cream" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Get a personalized plan and quote.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

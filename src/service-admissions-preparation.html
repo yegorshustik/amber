@@ -1,0 +1,254 @@
+---
+layout: base.njk
+title: "Admissions Preparation — Amber Council"
+description: "Admissions Preparation by Amber Council — exams, interviews and portfolio, so your child presents at their best. Available standalone or as part of your Academic Roadmap."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow"><a href="services.html" style="color:inherit;text-decoration:none;">Services</a> &middot; Admissions Preparation</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Admissions Preparation.</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:54ch;">Exams, interviews and portfolio — focused preparation so your child presents at their best where it counts. Available standalone, or as part of your Academic Roadmap.</p>
+      <div class="ac-hero__cta" style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+        <a class="ac-btn ac-btn--secondary" href="academic-roadmap.html">See the Academic Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FOR WHOM & ROADMAP ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <div style="display: grid; gap: var(--space-8); grid-template-columns: 1fr; @media(min-width: 800px) { grid-template-columns: 1fr 1fr; }">
+        
+        <!-- For Whom -->
+        <div>
+          <p class="ac-eyebrow">For whom</p>
+          <h2 class="ac-h3" style="margin-bottom: var(--space-4);">Is this for you?</h2>
+          <p class="ac-editorial">Students targeting highly selective boarding schools or top-tier universities who need to pass rigorous entrance exams and interviews.</p>
+        </div>
+
+        <!-- Where in Roadmap -->
+        <div style="background: var(--paper); padding: var(--space-8); border-radius: 8px; border: 1px solid var(--line);">
+          <p class="ac-eyebrow" style="color: var(--amber-deep);">Academic Roadmap</p>
+          <h2 class="ac-h4" style="margin-bottom: var(--space-2);">Step 3: Preparation</h2>
+          <p class="ac-small" style="color: var(--muted); margin-bottom: var(--space-6);">This is the core preparation phase of the Academic Roadmap. After mapping the path, we focus on making the student a competitive candidate through exams and coaching.</p>
+          <a class="ac-btn ac-btn--secondary ac-btn--sm" href="academic-roadmap.html">Explore the full Roadmap &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">What's included</p>
+      <h2 class="ac-h2" style="max-width:26ch;">Ready where it counts.</h2>
+      <div class="ac-features" style="margin-top:var(--space-12);">
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Entrance exams</h3>
+          <p class="ac-feature__d">Targeted prep for the tests that matter for each school or university.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Interview coaching</h3>
+          <p class="ac-feature__d">Practice and feedback for admissions interviews.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Portfolio &amp; application</h3>
+          <p class="ac-feature__d">Essays, documents and a coherent application story.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Timeline &amp; deadlines</h3>
+          <p class="ac-feature__d">A clear plan so nothing is left to the last minute.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Who it's for</h3>
+          <p class="ac-feature__d">Students applying to selective schools or universities.</p>
+        </div>
+        <div class="ac-feature">
+          <span class="ac-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          </span>
+          <h3 class="ac-feature__t">Pricing</h3>
+          <p class="ac-feature__d">From request — or by consultation as part of your Academic Roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">How it works</p>
+      <h2 class="ac-h2" style="margin-bottom: var(--space-12);">The process.</h2>
+      
+      <div class="ac-process__steps">
+        <div class="ac-step">
+          <p class="ac-step__k">Step 1</p>
+          <h3 class="ac-step__t">Diagnostic & Benchmarking</h3>
+          <p class="ac-step__d">We assess current performance against target school requirements to identify critical gaps.</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 2</p>
+          <h3 class="ac-step__t">Targeted Tutoring</h3>
+          <p class="ac-step__d">Subject-specific preparation for entrance exams (SAT, ACT, UKiset, CAT4, school-specific papers).</p>
+        </div>
+        <div class="ac-step">
+          <p class="ac-step__k">Step 3</p>
+          <h3 class="ac-step__t">Interview Coaching</h3>
+          <p class="ac-step__d">Mock interviews and feedback sessions to build confidence and speaking fluency before the real thing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE: editable content model. -->
+        <article class="ac-prose">
+
+          <h2>Overview</h2>
+          <p>Selective boarding schools and top-tier universities have single-digit acceptance rates. Academic talent alone is rarely enough to stand out. Our Admissions Preparation service focuses on building a coherent application profile, sharpening exam performance, and mastering the interview.</p>
+
+          <h2>Why preparation is critical</h2>
+          <p>Entrance tests and interviews are designed to filter out memorization. Admissions committees look for critical thinking, intellectual curiosity, and cultural fit. Early, targeted preparation is the only way to build these skills naturally.</p>
+
+          <h2>Our approach</h2>
+          <p>We begin with diagnostic testing to map current ability against target school benchmarks. Then we design a personalized tutoring and coaching plan, focusing only on the gaps that matter.</p>
+
+          <h2>Preparation areas</h2>
+          <p>We prepare students across three key areas:</p>
+          <ul>
+            <li><strong>Entrance exams:</strong> Customized tutoring for standard tests (SAT, ACT, IELTS, CAT4, UKiset) and school-specific entrance papers.</li>
+            <li><strong>Interview coaching:</strong> Interactive mock interviews mimicking the exact style of top schools, with videorecorded analysis.</li>
+            <li><strong>Application essays:</strong> Guiding the student to find their unique voice and write compelling personal statements.</li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr><th>Test Category</th><th>Common Exams</th><th>Key Area Checked</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cognitive Ability</td><td>CAT4, UKiset</td><td>Non-verbal &amp; spatial reasoning</td></tr>
+              <tr><td>Standardized Tests</td><td>SAT, ACT, SSAT</td><td>English, Mathematics &amp; Reading</td></tr>
+              <tr><td>Language Proficiency</td><td>IELTS, TOEFL</td><td>Academic English fluency</td></tr>
+            </tbody>
+          </table>
+
+          <figure class="ac-figure">
+            <img class="ac-photo ac-photo--wide" src="assets/ac-photo-consultation.jpg" alt="A student during a personalized mock interview prep session" loading="lazy" width="1122" height="631">
+            <figcaption>Personalized coaching — one-on-one sessions build candidate confidence and speaking fluency.</figcaption>
+          </figure>
+
+          <h2>What's included</h2>
+          <p>Our comprehensive preparation program includes:</p>
+          <ol>
+            <li>One-on-one sessions with subject-matter tutors.</li>
+            <li>Mock interviews with feedback from admissions experts.</li>
+            <li>Review and editing of all application essays and personal statements.</li>
+            <li>A structured timeline to prevent last-minute stress.</li>
+          </ol>
+
+          <h2>Our promise</h2>
+          <blockquote>
+            "The interview prep was a game-changer. Our daughter learned how to speak naturally and confidently about her interests, instead of giving rehearsed, dry answers."
+            <div class="ac-slide__by" style="margin-top: var(--space-6);">
+              <span class="ac-slide__avatar"><img src="assets/ac-avatar-yegor.jpg" alt="Yegor Shustik"></span>
+              <span class="ac-slide__id">
+                <a class="ac-slide__name" href="#" target="_blank" rel="noopener">Yegor Shustik</a>
+                <span class="ac-slide__role">Parent &middot; Sopot</span>
+              </span>
+            </div>
+          </blockquote>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ FAQ ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">FAQ</p>
+      <h2 class="ac-h2" style="max-width:20ch;margin-bottom:var(--space-8);">Common questions.</h2>
+      <div class="ac-faq" data-faq>
+        <div class="ac-faq__list">
+          <details class="ac-faq__q" open>
+            <summary>When should we start preparing?</summary>
+            <div class="ac-faq__a"><p>Ideally 12 to 18 months before the target enrollment date. This leaves enough time for meaningful improvement without burnout.</p></div>
+          </details>
+          <details class="ac-faq__q" open>
+            <summary>Do you guarantee admission if we take this service?</summary>
+            <div class="ac-faq__a"><p>We guarantee that your child will be as competitive as realistically possible. True selective schools never offer guaranteed admission.</p></div>
+          </details>
+          <details class="ac-faq__q ac-faq__q--last" open>
+            <summary>Are tutors native speakers?</summary>
+            <div class="ac-faq__a"><p>Yes, we match students with specialized tutors, often alumni of the target educational systems or native speakers with extensive admissions experience.</p></div>
+          </details>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8);">
+        <a class="ac-btn ac-btn--secondary" href="faq.html">See all FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Start with a free consultation.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found — Amber Council</title>
 <meta name="description" content="Error 404 - Page not found.">
@@ -12,11 +12,11 @@
 <link rel="stylesheet" href="assets/amber-tokens.css?v=61">
 <link rel="stylesheet" href="assets/amber-components.css?v=61">
 <link rel="stylesheet" href="assets/amber-patterns.css?v=61">
+
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
-<header class=ac-header>
+  <header class=ac-header>
   <div class=ac-header__inner>
     <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council"></a>
     <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
@@ -33,9 +33,12 @@
   </div>
 </header>
 
-<main>
 
-  <!-- ============ PAGE HERO ============ -->
+  <main>
+    ---
+
+
+<!-- ============ PAGE HERO ============ -->
   <section class="ac-section ac-section--cream" style="min-height: 60vh; display: flex; align-items: center;">
     <div class="ac-container">
       <p class="ac-eyebrow">Error 404</p>
@@ -48,10 +51,9 @@
     </div>
   </section>
 
-</main>
+  </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="ac-footer">
+  <footer class="ac-footer">
   <div class="ac-footer__inner">
     <div>
       <img src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council" height="64">
@@ -80,31 +82,20 @@
   </div>
   <div class="ac-footer__bottom">
     <div class="ac-footer__bottom-row">
-      <span>&copy; 2026 Amber Council. All rights reserved.</span>
+      <span>© 2026 Amber Council. All rights reserved.</span>
       <span class="ac-foot-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
       <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
     </div>
   </div>
 </footer>
 
-<script>
-(function () {
-  var b = document.querySelector('.ac-burger');
-  var n = document.getElementById('site-nav');
-  if (!b || !n) return;
-  b.addEventListener('click', function () {
-    var open = n.classList.toggle('is-open');
-    b.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  n.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      n.classList.remove('is-open');
-      b.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
-<script src="assets/ac-cookies.js?v=61"></script>
-<script src="assets/ac-reveal.js?v=61"></script>
+
+
+
+  <script src="assets/ac-nav.js?v=61"></script>
+  <script src="assets/ac-cookies.js?v=61"></script>
+  <script src="assets/ac-reveal.js?v=61"></script>
+  
+
 </body>
 </html>

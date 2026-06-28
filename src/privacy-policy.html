@@ -1,0 +1,76 @@
+---
+layout: base.njk
+title: "Privacy Policy — Amber Council"
+description: "Amber Council Privacy Policy — how we protect and manage your personal data in accordance with our strict confidentiality standards."
+---
+---
+{% set extra_js %}
+<script>
+(function () {
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('is-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      n.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+{% endset %}
+
+<!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Legal</p>
+      <h1 class="ac-h1">Privacy Policy</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:680px;">We take confidentiality seriously. This policy explains how we collect, protect, and use your personal information during your collaboration with Amber Council.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT (ToC + article blocks) ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-doc">
+
+        <!-- Table of Contents: auto-built from .ac-prose headings by toc.js -->
+        <nav class="ac-toc" data-toc aria-label="On this page"></nav>
+
+        <!-- ARTICLE -->
+        <article class="ac-prose">
+
+          <h2>Information we collect</h2>
+          <p>We only collect personal information that is necessary to map and walk your child's academic path. This includes:</p>
+          <ul>
+            <li><strong>Contact details:</strong> Name, email address, telephone number, and residential country.</li>
+            <li><strong>Student profile details:</strong> Age, current school grade, academic transcripts, language proficiencies, and extracurricular records.</li>
+            <li><strong>Consultation notes:</strong> Information provided during calls, emails, or portfolio reviews.</li>
+          </ul>
+
+          <h2>How we use your data</h2>
+          <p>Your data is processed exclusively to deliver our consulting services. We use it to:</p>
+          <ul>
+            <li>Evaluate your child's profile and create the Academic Roadmap.</li>
+            <li>Coordinate applications to selected boarding schools and universities.</li>
+            <li>Communicate with you regarding application milestones and admissions tasks.</li>
+          </ul>
+
+          <h2>Confidentiality &amp; security</h2>
+          <p>Amber Council enforces a strict standard of discretion as a discipline. We protect your documents through secure, encrypted storage systems. We do not sell, rent, or distribute your personal information to third parties or marketing brokers.</p>
+
+          <h2>Your rights</h2>
+          <p>You have full ownership of your data. You may contact us at any time to request access to your records, ask for corrections, or request complete deletion of all personal data from our systems.</p>
+
+          <h2>Policy updates</h2>
+          <p>We may update this policy periodically to reflect changes in our operational procedures or privacy regulations. Any updates will be published directly on this page.</p>
+
+        </article>
+
+      </div>
+    </div>
+  </section>

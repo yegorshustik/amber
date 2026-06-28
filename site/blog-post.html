@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Navigating UK Boarding School Admissions — Amber Council Journal</title>
 <meta name="description" content="Expert guide for parents: entry points (Year 9 vs. Year 12), examinations like UKiset, and strategies to secure placement at top UK boarding schools.">
@@ -12,36 +12,11 @@
 <link rel="stylesheet" href="assets/amber-tokens.css?v=61">
 <link rel="stylesheet" href="assets/amber-components.css?v=61">
 <link rel="stylesheet" href="assets/amber-patterns.css?v=61">
-<style>
-/* Reading progress bar */
-.ac-read-progress {
-  position: fixed; top: 60px; left: 0; width: 0%; height: 3px;
-  background: var(--amber-deep); z-index: 1000; transition: width 0.1s ease-out;
-}
-@media (min-width: 768px) {
-  .ac-read-progress { top: 72px; }
-}
-/* Author card styling */
-.ac-author-card {
-  margin-top: var(--space-12); padding: var(--space-6);
-  background: var(--cream); border-radius: var(--radius-card); border: 1px solid var(--line);
-  display: flex; gap: var(--space-4); align-items: start;
-}
-.ac-author-card__avatar { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; flex: none; border: 1px solid var(--line); }
-.ac-author-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
-.ac-author-card__info { display: flex; flex-direction: column; gap: 4px; }
-.ac-author-card__name { font-family: var(--font-body); font-weight: var(--fw-semibold); font-size: 16px; color: var(--navy); margin: 0; }
-.ac-author-card__role { font-size: 13px; color: var(--muted); margin-top: -2px; }
-.ac-author-card__bio { font-size: 14px; color: var(--ink); line-height: 1.5; margin: 8px 0 0; }
-</style>
+
 </head>
 <body>
 
-<!-- Reading Progress Bar -->
-<div class="ac-read-progress" id="progress-bar"></div>
-
-<!-- ============ HEADER ============ -->
-<header class=ac-header>
+  <header class=ac-header>
   <div class=ac-header__inner>
     <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council"></a>
     <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
@@ -58,9 +33,12 @@
   </div>
 </header>
 
-<main>
 
-  <!-- ============ POST HERO ============ -->
+  <main>
+    ---
+
+
+<!-- ============ POST HERO ============ -->
   <section class="ac-section ac-section--paper">
     <div class="ac-container">
       <p class="ac-eyebrow"><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a> &middot; Boarding Schools</p>
@@ -209,10 +187,9 @@
     </div>
   </section>
 
-</main>
+  </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="ac-footer">
+  <footer class="ac-footer">
   <div class="ac-footer__inner">
     <div>
       <img src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council" height="64">
@@ -241,50 +218,20 @@
   </div>
   <div class="ac-footer__bottom">
     <div class="ac-footer__bottom-row">
-      <span>&copy; 2026 Amber Council. All rights reserved.</span>
+      <span>© 2026 Amber Council. All rights reserved.</span>
       <span class="ac-foot-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
       <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
     </div>
   </div>
 </footer>
 
-<script src="toc.js"></script>
-<script>
-(function () {
-  // Mobile Burger Nav
-  var b = document.querySelector('.ac-burger');
-  var n = document.getElementById('site-nav');
-  if (b && n) {
-    b.addEventListener('click', function () {
-      var open = n.classList.toggle('is-open');
-      b.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
 
-  // Reading Progress Bar Logic
-  var bar = document.getElementById('progress-bar');
-  if (bar) {
-    window.addEventListener('scroll', function () {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      bar.style.width = scrolled + '%';
-    });
-  }
 
-  // Copy link share button
-  var copyBtn = document.getElementById('copy-link-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      navigator.clipboard.writeText(window.location.href).then(function () {
-        alert('Link copied to clipboard!');
-      });
-    });
-  }
-})();
-</script>
-<script src="assets/ac-cookies.js?v=61"></script>
-<script src="assets/ac-reveal.js?v=61"></script>
+
+  <script src="assets/ac-nav.js?v=61"></script>
+  <script src="assets/ac-cookies.js?v=61"></script>
+  <script src="assets/ac-reveal.js?v=61"></script>
+  
+
 </body>
 </html>
