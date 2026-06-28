@@ -940,13 +940,13 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 }
 @media (min-width: 900px) {
   .ac-section--hero-detail {
-    padding-bottom: 0;
+    padding-bottom: var(--space-8);
   }
   .ac-section--hero-detail .ac-hero {
-    align-items: end;
+    align-items: center;
   }
   .ac-section--hero-detail .ac-hero__media {
-    margin-bottom: -110px;
+    margin-bottom: -96px;
     position: relative;
     z-index: 10;
   }
@@ -956,7 +956,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     margin-left: auto;
   }
   .ac-cols__body--detail {
-    padding-top: 80px;
+    padding-top: 0;
   }
 }
 
