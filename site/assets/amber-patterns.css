@@ -254,6 +254,36 @@ a { color: inherit; }
 .ac-section--navy .ac-feature__t { color: var(--cream); }
 .ac-section--navy .ac-feature__d { color: rgba(237, 228, 210, 0.78); }
 
+@media (max-width: 759px) {
+  .ac-feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0 var(--space-3);
+  }
+  .ac-feature__icon {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+    align-self: center;
+  }
+  .ac-feature__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .ac-feature__t {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    align-self: center;
+  }
+  .ac-feature__d {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: var(--space-2);
+  }
+}
+
 /* Service cards (clickable tiles) */
 .ac-svc-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
 @media (min-width: 760px) { .ac-svc-grid { grid-template-columns: repeat(3, 1fr); } }
