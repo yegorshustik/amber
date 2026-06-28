@@ -140,7 +140,7 @@ a { color: inherit; }
   transition: transform 0.3s ease;
 }
 .ac-action:hover {
-  transform: scale(1.015);
+  transform: scale(1.03);
 }
 @media (min-width: 768px) {
   .ac-action { flex-direction: row; align-items: center; justify-content: space-between; }
