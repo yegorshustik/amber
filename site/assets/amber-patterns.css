@@ -275,7 +275,7 @@ a { color: inherit; }
 .ac-feature__d {
   grid-column: 1 / -1;
   grid-row: 2;
-  margin-top: var(--space-4);
+  margin-top: var(--space-6);
   font-size: var(--fs-body);
   color: var(--muted);
   margin: 0;
