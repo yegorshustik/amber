@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Amber Council</title>
+<meta name="description" content="Read expert insights and academic advice on boarding school placement, university admissions, and student visas.">
+<link rel="icon" href="assets/ac-favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/amber-tokens.css?v=20">
+<link rel="stylesheet" href="assets/amber-components.css?v=20">
+<link rel="stylesheet" href="assets/amber-patterns.css?v=20">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="ac-header">
+  <div class="ac-header__inner">
+    <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=20" alt="Amber Council"></a>
+    <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="ac-header__nav" id="site-nav">
+      <a class="ac-nav-link" href="academic-roadmap.html">Academic Roadmap</a>
+      <a class="ac-nav-link" href="services.html">Services</a>
+      <a class="ac-nav-link" href="pricing-policy.html">Pricing</a>
+      <a class="ac-nav-link" aria-current="page" href="blog.html">Blog</a>
+      <a class="ac-nav-link" href="about.html">About</a>
+      <a class="ac-nav-link" href="contacts.html">Contacts</a>
+      <a class="ac-btn ac-btn--primary ac-nav-cta" href="index.html#lead">Free consultation</a>
+    </nav>
+    <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Insights &amp; advice</p>
+      <h1 class="ac-h1" style="max-width:22ch;">Amber Council Journal.</h1>
+      <p class="ac-editorial" style="margin-top:20px;max-width:54ch;">Expert advice on boarding school applications, university admissions, and student life abroad — written by our counselors.</p>
+    </div>
+  </section>
+
+  <!-- ============ BLOG LISTING ============ -->
+  <section class="ac-section ac-section--cream">
+    <div class="ac-container">
+      
+      <!-- Category filters -->
+      <div class="ac-blog-filters" id="blog-filters">
+        <button class="ac-blog-filter is-active" data-filter="all">All posts</button>
+        <button class="ac-blog-filter" data-filter="boarding-schools">Boarding Schools</button>
+        <button class="ac-blog-filter" data-filter="admissions">Admissions</button>
+        <button class="ac-blog-filter" data-filter="visas">Visas</button>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="ac-blog-grid" id="blog-grid">
+        
+        <a class="ac-blog-card" href="blog-post.html" data-category="boarding-schools">
+          <span class="ac-blog-card__cat">Boarding Schools</span>
+          <h3 class="ac-blog-card__t">Navigating UK Boarding School Admissions: A Parent's Guide</h3>
+          <p class="ac-blog-card__d">From choosing the right entry points (Year 9 vs. Year 12) to understanding the UKiset and entrance exams, we map out the timeline for a successful UK placement.</p>
+          <div class="ac-blog-card__meta">
+            <span>June 28, 2026</span>
+            <span>6 min read</span>
+          </div>
+        </a>
+
+        <a class="ac-blog-card" href="blog-post.html" data-category="visas">
+          <span class="ac-blog-card__cat">Visas</span>
+          <h3 class="ac-blog-card__t">Understanding the F-1 US Student Visa Process</h3>
+          <p class="ac-blog-card__d">Navigating the I-20 form, SEVIS fee payments, financial proof regulations, and interview preparation to secure your study permit without delays.</p>
+          <div class="ac-blog-card__meta">
+            <span>June 15, 2026</span>
+            <span>5 min read</span>
+          </div>
+        </a>
+
+        <a class="ac-blog-card" href="blog-post.html" data-category="admissions">
+          <span class="ac-blog-card__cat">Admissions</span>
+          <h3 class="ac-blog-card__t">Oxbridge Admissions: How to Stand Out from the Crowd</h3>
+          <p class="ac-blog-card__d">Beyond grades — why deep reading, mock interviews, and personal statements are the true key to getting an offer from Oxford or Cambridge.</p>
+          <div class="ac-blog-card__meta">
+            <span>May 30, 2026</span>
+            <span>8 min read</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta">
+    <div class="ac-container">
+      <div class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Map the path first</p>
+          <h2 class="ac-h2">Start with a free consultation.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <a class="ac-btn ac-btn--primary" href="index.html#lead">Free consultation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ac-footer">
+  <div class="ac-footer__inner">
+    <div>
+      <img src="assets/ac-lockup-dark.svg?v=20" alt="Amber Council" height="64">
+      <p class="ac-small" style="margin-top:12px;max-width:280px;color:rgba(237,228,210,.72);">The right academic path to the strongest school or university your child can reach.</p>
+    </div>
+    <div>
+      <p class="ac-footer__title">Explore</p>
+      <a href="academic-roadmap.html">Academic Roadmap</a>
+      <span class="ac-foot-soon">Schools &amp; Universities<i>soon</i></span>
+      <a href="services.html">Services</a>
+      <a href="pricing-policy.html">Pricing</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Company</p>
+      <a href="about.html">About</a>
+      <span class="ac-foot-soon">FAQ<i>soon</i></span>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Get in touch</p>
+      <a href="tel:+48500557417">+48 500 557 417</a>
+      <a href="mailto:info@ambercouncil.org">info@ambercouncil.org</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Nowomejska%203%2F2%2C%2080-864%20Gdańsk%2C%20Poland" target="_blank" rel="noopener">Nowomejska 3/2, 80-864 Gdańsk</a>
+    </div>
+  </div>
+  <div class="ac-footer__bottom">
+    <div class="ac-footer__bottom-row">
+      <span>&copy; 2026 Amber Council. All rights reserved.</span>
+      <span class="ac-foot-legal"><span>Privacy Policy</span><span>Terms</span></span>
+      <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Mobile Burger Nav
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (b && n) {
+    b.addEventListener('click', function () {
+      var open = n.classList.toggle('is-open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Category Filtering Logic
+  var filterContainer = document.getElementById('blog-filters');
+  var cards = document.querySelectorAll('.ac-blog-card');
+  if (filterContainer && cards.length) {
+    filterContainer.addEventListener('click', function (e) {
+      var btn = e.target.closest('.ac-blog-filter');
+      if (!btn) return;
+      
+      // Update active state
+      filterContainer.querySelectorAll('.ac-blog-filter').forEach(function (button) {
+        button.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+
+      // Filter cards
+      var category = btn.dataset.filter;
+      cards.forEach(function (card) {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
