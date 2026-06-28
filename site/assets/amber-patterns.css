@@ -423,10 +423,21 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   .ac-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
   .ac-header__nav.is-open {
     display: flex; flex-direction: column; align-items: flex-start;
-    position: absolute; top: 100%; left: 0; right: 0;
-    background: var(--navy); padding: var(--space-6) var(--container-pad) var(--space-8);
-    gap: var(--space-4); border-bottom: 1px solid var(--line-dark);
-    margin-left: 0; /* Align perfectly on the left with the logo */
+    position: absolute; top: 100%;
+    left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: var(--container-max);
+    padding: var(--space-6) var(--container-pad) var(--space-8);
+    gap: var(--space-4);
+    margin-left: 0;
+  }
+  .ac-header__nav.is-open::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: -100vw; right: -100vw;
+    background: var(--navy);
+    border-bottom: 1px solid var(--line-dark);
+    z-index: -1;
   }
   .ac-nav-cta { display: inline-flex; margin-top: var(--space-4); }
 }
