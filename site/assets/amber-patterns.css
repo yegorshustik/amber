@@ -675,8 +675,12 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   border-radius: var(--radius-card);
   border: 1px solid var(--line);
   height: fit-content;
-  position: sticky;
-  top: calc(80px + var(--space-12));
+}
+@media (min-width: 900px) {
+  .ac-filters {
+    position: sticky;
+    top: calc(80px + var(--space-12));
+  }
 }
 .ac-filter-group {
   margin-bottom: var(--space-6);
