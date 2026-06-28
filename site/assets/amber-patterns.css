@@ -570,6 +570,19 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   }
 }
 
+/* Split cards utility (50/50 on desktop) */
+.ac-split-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+@media (min-width: 800px) {
+  .ac-split-cards {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
 /* ============================================================
    BLOG STYLES
    ============================================================ */
