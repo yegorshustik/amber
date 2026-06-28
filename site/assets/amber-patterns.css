@@ -932,4 +932,30 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   font-weight: 600;
 }
 
+/* ============================================================
+   DETAIL PAGE HERO OVERLAP LAYOUT
+   ============================================================ */
+.ac-section--hero-detail {
+  padding-bottom: var(--space-8);
+}
+@media (min-width: 900px) {
+  .ac-section--hero-detail {
+    padding-bottom: 0;
+  }
+  .ac-section--hero-detail .ac-hero {
+    align-items: end;
+  }
+  .ac-section--hero-detail .ac-hero__media {
+    margin-bottom: -110px;
+    position: relative;
+    z-index: 10;
+  }
+  .ac-section--hero-detail .ac-hero__media .ac-photo {
+    max-height: 380px;
+  }
+  .ac-cols__body--detail {
+    padding-top: 80px;
+  }
+}
+
 
