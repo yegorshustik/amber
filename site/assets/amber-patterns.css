@@ -337,14 +337,21 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 .ac-slide__social { margin-left: auto; color: var(--muted); display: inline-flex; }
 .ac-slide__social:hover { color: var(--amber-deep); }
 .ac-slide__social svg { width: 18px; height: 18px; }
-.ac-slider__nav { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-4); margin-top: var(--space-6); }
+.ac-slider__nav { display: none; align-items: center; justify-content: flex-end; gap: var(--space-4); margin-top: var(--space-6); }
 @media (min-width: 768px) {
-  .ac-slider__nav { position: absolute; bottom: 4px; right: 0; margin-top: 0; }
+  .ac-slider__nav { display: flex; position: absolute; bottom: 4px; right: 0; margin-top: 0; }
 }
 .ac-slider__dots { display: flex; gap: 8px; }
 .ac-slider__dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(17, 40, 63, 0.2); cursor: pointer; transition: background-color .18s; }
 .ac-slider__dot.is-active { background: var(--amber-deep); }
-.ac-slider__arrows { display: flex; gap: var(--space-2); }
+.ac-slider__arrows { display: none; gap: var(--space-2); }
+@media (min-width: 768px) {
+  .ac-slider__arrows { display: flex; }
+}
+.ac-slide__counter-inline { display: inline; opacity: 0.7; font-weight: normal; }
+@media (min-width: 768px) {
+  .ac-slide__counter-inline { display: none; }
+}
 .ac-slider__btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--navy); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background-color .18s, color .18s, border-color .18s; }
 .ac-slider__btn:hover { background: var(--navy); color: var(--cream); border-color: var(--navy); }
 .ac-slider__btn:disabled { opacity: .35; cursor: default; background: transparent; color: var(--navy); border-color: var(--line); }
@@ -360,7 +367,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 
 /* LEAD CAPTURE */
 .ac-lead { display: grid; grid-template-columns: 1fr; gap: var(--space-12); }
-@media (min-width: 900px) { .ac-lead { grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: start; } }
+@media (min-width: 900px) { .ac-lead { grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; } }
 .ac-form { display: grid; gap: var(--space-4); }
 .ac-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
 @media (max-width: 560px) { .ac-form__row { grid-template-columns: 1fr; } }
@@ -370,9 +377,9 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
    ============================================================ */
 .ac-burger { display: none; }
 .ac-nav-cta { display: none; }
-@media (min-width: 901px) { .ac-hero .ac-h1 { font-size: clamp(36px, 4.2vw, 50px); } }
+@media (min-width: 1081px) { .ac-hero .ac-h1 { font-size: clamp(36px, 4.2vw, 50px); } }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .ac-header__nav { display: none; }
   .ac-header__inner > .ac-btn--primary { display: none; }
   .ac-burger {

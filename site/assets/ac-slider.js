@@ -38,7 +38,7 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  function slideHTML(t) {
+  function slideHTML(t, num, total) {
     var avatar = t.photo
       ? '<span class="ac-slide__avatar"><img src="' + esc(t.photo) + '" alt=""></span>'
       : '<span class="ac-slide__avatar" aria-hidden="true">' + USER_ICON + '</span>';
@@ -49,12 +49,15 @@
       + '<blockquote>"' + esc(t.quote) + '"</blockquote>'
       + '<figcaption class="ac-slide__by">' + avatar
       + '<span class="ac-slide__id">' + name
-      + '<span class="ac-slide__role">' + esc(t.role) + '</span></span>'
+      + '<span class="ac-slide__role">' + esc(t.role) + ' <span class="ac-slide__counter-inline">&nbsp;•&nbsp; ' + num + ' / ' + total + '</span></span></span>'
       + '</figcaption></figure>';
   }
 
   function render(root) {
-    var slides = TESTIMONIALS.map(slideHTML).join('');
+    var total = TESTIMONIALS.length;
+    var slides = TESTIMONIALS.map(function (t, i) {
+      return slideHTML(t, i + 1, total);
+    }).join('');
     root.classList.add('ac-slider');
     root.innerHTML =
       '<div class="ac-slider__track">' + slides + '</div>'
@@ -96,6 +99,7 @@
       i = Math.max(0, Math.min(slides.length - 1, i));
       track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
     }
+
     function update() {
       var idx = currentIndex();
       dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
