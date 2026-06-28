@@ -167,7 +167,7 @@ a { color: inherit; }
 }
 .ac-footer__bottom-row .ac-foot-legal { color: rgba(237, 228, 210, 0.4); }
 .ac-footer__bottom-row .ac-foot-legal a,
-.ac-footer__bottom-row .ac-foot-legal span { margin-left: 14px; text-decoration: none; color: inherit; transition: color 0.15s; }
+.ac-footer__bottom-row .ac-foot-legal span { display: inline-block; margin-left: 14px; text-decoration: none; color: inherit; transition: color 0.15s; }
 .ac-footer__bottom-row .ac-foot-legal a:hover { color: var(--cream); }
 .ac-footer__bottom-row .ac-foot-legal a:first-child,
 .ac-footer__bottom-row .ac-foot-legal span:first-child { margin-left: 0; }
