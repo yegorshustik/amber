@@ -972,45 +972,45 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 .ac-hero-collage {
   position: relative;
   width: 320px;
-  height: 304px;
+  height: 260px;
   margin: 0 auto;
 }
 .ac-hero-collage__back {
   position: absolute;
   left: 0;
-  top: 8px;
-  width: 176px;
-  height: 220px;
+  top: 15px;
+  width: 140px;
+  height: 175px;
   z-index: 1;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 .ac-hero-collage__front {
   position: absolute;
   right: 0;
-  bottom: 8px;
-  width: 192px;
-  height: 240px;
+  bottom: 0;
+  width: 200px;
+  height: 250px;
   z-index: 2;
   border: 4px solid var(--paper);
   box-shadow: 0 16px 32px rgba(0,0,0,0.08);
 }
 @media (min-width: 900px) {
   .ac-hero-collage {
-    width: 400px;
-    height: 380px;
+    width: 420px;
+    height: 340px;
     margin-left: auto;
     margin-right: 0;
   }
   .ac-hero-collage__back {
-    top: 10px;
-    width: 220px;
-    height: 275px;
+    top: 20px;
+    width: 180px;
+    height: 225px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
   .ac-hero-collage__front {
-    bottom: 10px;
-    width: 240px;
-    height: 300px;
+    bottom: 0;
+    width: 260px;
+    height: 325px;
     border: 6px solid var(--paper);
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   }
