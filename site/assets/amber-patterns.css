@@ -980,7 +980,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   height: 250px;
   margin: 0 auto;
 }
-.ac-hero-collage__back {
+.ac-hero-collage .ac-hero-collage__back {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -989,7 +989,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   z-index: 1;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
-.ac-hero-collage__front {
+.ac-hero-collage .ac-hero-collage__front {
   position: absolute;
   right: 180px;
   top: 50px;
@@ -1006,14 +1006,14 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     margin-left: auto;
     margin-right: 0;
   }
-  .ac-hero-collage__back {
+  .ac-hero-collage .ac-hero-collage__back {
     right: 0;
     bottom: 0;
     width: 304px;
     height: 380px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
-  .ac-hero-collage__front {
+  .ac-hero-collage .ac-hero-collage__front {
     right: 264px;
     top: 76px;
     width: 182px;
