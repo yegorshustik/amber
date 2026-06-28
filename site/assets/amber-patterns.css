@@ -404,9 +404,9 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
    ============================================================ */
 .ac-burger { display: none; }
 .ac-nav-cta { display: none; }
-@media (min-width: 1081px) { .ac-hero .ac-h1 { font-size: clamp(36px, 4.2vw, 50px); } }
+@media (min-width: 1241px) { .ac-hero .ac-h1 { font-size: clamp(36px, 4.2vw, 50px); } }
 
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .ac-header__nav { display: none; }
   .ac-header__inner > .ac-btn--primary { display: none; }
   .ac-burger {
@@ -655,7 +655,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   border: 1px solid var(--line);
   height: fit-content;
   position: sticky;
-  top: 100px;
+  top: calc(52px + var(--space-6));
 }
 .ac-filter-group {
   margin-bottom: var(--space-6);
