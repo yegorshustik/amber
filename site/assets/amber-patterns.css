@@ -966,4 +966,54 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   }
 }
 
+/* ============================================================
+   HERO COLLAGE — overlapping student photos (home page)
+   ============================================================ */
+.ac-hero-collage {
+  position: relative;
+  width: 320px;
+  height: 304px;
+  margin: 0 auto;
+}
+.ac-hero-collage__girl {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 176px;
+  height: 220px;
+  z-index: 1;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+.ac-hero-collage__guy {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  width: 192px;
+  height: 240px;
+  z-index: 2;
+  border: 4px solid var(--paper);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+}
+@media (min-width: 900px) {
+  .ac-hero-collage {
+    width: 400px;
+    height: 380px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .ac-hero-collage__girl {
+    top: 10px;
+    width: 220px;
+    height: 275px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  .ac-hero-collage__guy {
+    bottom: 10px;
+    width: 240px;
+    height: 300px;
+    border: 6px solid var(--paper);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+}
+
 
