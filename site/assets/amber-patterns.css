@@ -243,7 +243,13 @@ a { color: inherit; }
 @media (max-width: 760px) { .ac-process { grid-template-columns: 1fr; gap: var(--space-12); } }
 
 /* Cap portrait photo height on desktop so they aren't overly tall (mobile keeps 4:5) */
-@media (min-width: 900px) { .ac-hero__media .ac-photo { max-height: 520px; } }
+@media (min-width: 900px) {
+  .ac-hero__media .ac-photo {
+    height: 380px;
+    width: 304px;
+    margin-left: auto;
+  }
+}
 @media (min-width: 760px) { .ac-process__media .ac-photo { max-height: 440px; } }
 
 /* FEATURE GRID — big-type */
