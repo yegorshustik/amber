@@ -122,7 +122,7 @@ a { color: inherit; }
   .ac-doc { grid-template-columns: 240px 1fr; gap: var(--space-16); align-items: start; }
 }
 .ac-toc { font-size: 14px; }
-@media (min-width: 1025px) { .ac-toc { position: sticky; top: 96px; } }
+@media (min-width: 1025px) { .ac-toc { position: sticky; top: 140px; } }
 .ac-toc__title { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--muted); margin-bottom: var(--space-4); }
 .ac-toc ul { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
 .ac-toc li a { display: block; padding: 6px var(--space-4); color: var(--muted); text-decoration: none; border-left: 2px solid transparent; margin-left: -1px; line-height: 1.4; }
