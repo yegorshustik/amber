@@ -659,7 +659,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   border: 1px solid var(--line);
   height: fit-content;
   position: sticky;
-  top: calc(72px + var(--space-12));
+  top: calc(80px + var(--space-12));
 }
 .ac-filter-group {
   margin-bottom: var(--space-6);
