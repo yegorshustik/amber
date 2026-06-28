@@ -976,7 +976,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 .ac-hero-collage {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   height: 250px;
   margin: 0 auto;
 }
@@ -991,7 +991,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 }
 .ac-hero-collage .ac-hero-collage__front {
   position: absolute;
-  right: 180px;
+  right: 196px;
   top: 50px;
   width: 120px;
   height: 150px;
@@ -1001,7 +1001,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 }
 @media (min-width: 900px) {
   .ac-hero-collage {
-    max-width: 456px;
+    max-width: 485px;
     height: 380px;
     margin-left: auto;
     margin-right: 0;
@@ -1014,7 +1014,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
   .ac-hero-collage .ac-hero-collage__front {
-    right: 264px;
+    right: 300px;
     top: 76px;
     width: 182px;
     height: 228px;
