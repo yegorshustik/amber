@@ -9,16 +9,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/amber-tokens.css?v=32">
-<link rel="stylesheet" href="assets/amber-components.css?v=32">
-<link rel="stylesheet" href="assets/amber-patterns.css?v=32">
+<link rel="stylesheet" href="assets/amber-tokens.css?v=34">
+<link rel="stylesheet" href="assets/amber-components.css?v=34">
+<link rel="stylesheet" href="assets/amber-patterns.css?v=34">
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
 <header class="ac-header">
   <div class="ac-header__inner">
-    <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=32" alt="Amber Council"></a>
+    <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=34" alt="Amber Council"></a>
     <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
     <nav class="ac-header__nav" id="site-nav">
       <a class="ac-nav-link" href="academic-roadmap.html">Academic Roadmap</a>
@@ -47,7 +47,7 @@
   </section>
 
   <!-- ============ DIRECTORY GRID & FILTERS ============ -->
-  <section class="ac-section ac-section--paper" style="padding-top:0;">
+  <section class="ac-section ac-section--paper">
     <div class="ac-container">
       
       <!-- Type Selection Tabs -->
@@ -63,12 +63,12 @@
         <aside class="ac-filters">
           <div class="ac-catalog-search-wrap">
             <span class="ac-filter-group__t">Search</span>
-            <input type="text" id="filter-search" class="ac-catalog-search" placeholder="Type name or city...">
+            <input type="text" id="filter-search" class="ac-input" placeholder="Type name or city...">
           </div>
 
           <div class="ac-filter-group">
             <label class="ac-filter-group__t" for="filter-country">Country</label>
-            <select id="filter-country" class="ac-filter-select">
+            <select id="filter-country" class="ac-select">
               <option value="all">All Countries</option>
               <option value="UK">United Kingdom</option>
               <option value="US">United States</option>
@@ -80,7 +80,7 @@
           <div id="sub-filters-school" style="display:none;">
             <div class="ac-filter-group">
               <label class="ac-filter-group__t" for="filter-gender">Gender option</label>
-              <select id="filter-gender" class="ac-filter-select">
+              <select id="filter-gender" class="ac-select">
                 <option value="all">All Options</option>
                 <option value="coed">Co-educational</option>
                 <option value="single">Single-Sex</option>
@@ -88,7 +88,7 @@
             </div>
             <div class="ac-filter-group">
               <label class="ac-filter-group__t" for="filter-boarding">Boarding option</label>
-              <select id="filter-boarding" class="ac-filter-select">
+              <select id="filter-boarding" class="ac-select">
                 <option value="all">All Options</option>
                 <option value="full">Full Boarding</option>
                 <option value="day-weekly">Day / Weekly Boarding</option>
@@ -100,7 +100,7 @@
           <div id="sub-filters-university" style="display:none;">
             <div class="ac-filter-group">
               <label class="ac-filter-group__t" for="filter-campus">Campus style</label>
-              <select id="filter-campus" class="ac-filter-select">
+              <select id="filter-campus" class="ac-select">
                 <option value="all">All Styles</option>
                 <option value="collegiate">Collegiate Campus</option>
                 <option value="city-modern">City / Modern Campus</option>
@@ -139,7 +139,7 @@
 <footer class="ac-footer">
   <div class="ac-footer__inner">
     <div>
-      <img src="assets/ac-lockup-dark.svg?v=32" alt="Amber Council" height="64">
+      <img src="assets/ac-lockup-dark.svg?v=34" alt="Amber Council" height="64">
       <p class="ac-small" style="margin-top:var(--space-3);max-width:280px;color:rgba(237,228,210,.72);">The right academic path to the strongest school or university your child can reach.</p>
     </div>
     <div>
@@ -188,7 +188,7 @@
   });
 })();
 </script>
-<script src="assets/ac-catalog.js?v=32"></script>
-<script src="assets/ac-cookies.js?v=32"></script>
+<script src="assets/ac-catalog.js?v=34"></script>
+<script src="assets/ac-cookies.js?v=34"></script>
 </body>
 </html>

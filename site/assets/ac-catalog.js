@@ -301,11 +301,11 @@
         '<' + (item.url === '#' ? 'div' : 'a') + ' ' + cardLinkAttr + '>' +
           '<div class="ac-catalog-card__img-wrap">' +
             '<img src="' + item.image + '" alt="' + item.name + '" class="ac-catalog-card__img">' +
-            '<span class="ac-catalog-card__badge">' + item.typeName + '</span>' +
           '</div>' +
           '<div class="ac-catalog-card__body">' +
-            '<div class="ac-catalog-card__loc">' + item.city + ', ' + item.countryName + '</div>' +
+            '<span class="ac-catalog-card__type">' + item.typeName + '</span>' +
             '<h3 class="ac-catalog-card__title">' + item.name + '</h3>' +
+            '<div class="ac-catalog-card__loc">' + item.city + ', ' + item.countryName + '</div>' +
             '<p class="ac-catalog-card__desc">' + item.description + '</p>' +
             '<div class="ac-catalog-card__specs">' + specsHtml + '</div>' +
             (item.url !== '#' ? '<span class="ac-catalog-card__link">View Profile <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>' : '<span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>') +
