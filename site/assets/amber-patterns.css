@@ -275,10 +275,10 @@ a { color: inherit; }
 .ac-feature__d {
   grid-column: 1 / -1;
   grid-row: 2;
+  margin: 0;
   margin-top: var(--space-8);
   font-size: var(--fs-body);
   color: var(--muted);
-  margin: 0;
 }
 .ac-section--navy .ac-feature__t { color: var(--cream); }
 .ac-section--navy .ac-feature__d { color: rgba(237, 228, 210, 0.78); }
