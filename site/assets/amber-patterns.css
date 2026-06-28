@@ -576,3 +576,59 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 .ac-post-share__btn:hover { color: var(--navy); border-color: var(--navy); background-color: var(--cream); }
 .ac-post-share__btn svg { width: 16px; height: 16px; }
 
+/* ============================================================
+   COOKIE CONSENT BANNER
+   ============================================================ */
+.ac-cookies {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translate(-50%, 120%);
+  width: calc(100% - 2 * var(--container-pad));
+  max-width: 580px;
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 32px rgba(11, 26, 42, 0.28);
+  border: 1px solid rgba(237, 228, 210, 0.12);
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.ac-cookies.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.ac-cookies__inner {
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+@media (min-width: 560px) {
+  .ac-cookies__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+}
+.ac-cookies__text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+  opacity: 0.9;
+}
+.ac-cookies__btns {
+  display: flex;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+.ac-cookies__btns .ac-btn {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
