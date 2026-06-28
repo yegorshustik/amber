@@ -557,6 +557,19 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   transform: translateY(0);
 }
 
+/* Pricing & Commitments block */
+.ac-pricing-commitment {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+@media (min-width: 800px) {
+  .ac-pricing-commitment {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
 /* ============================================================
    BLOG STYLES
    ============================================================ */
