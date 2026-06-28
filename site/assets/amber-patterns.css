@@ -951,7 +951,9 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     z-index: 10;
   }
   .ac-section--hero-detail .ac-hero__media .ac-photo {
-    max-height: 380px;
+    height: 380px;
+    width: 304px;
+    margin-left: auto;
   }
   .ac-cols__body--detail {
     padding-top: 80px;
