@@ -38,7 +38,7 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  function slideHTML(t, num, total) {
+  function slideHTML(t) {
     var avatar = t.photo
       ? '<span class="ac-slide__avatar"><img src="' + esc(t.photo) + '" alt=""></span>'
       : '<span class="ac-slide__avatar" aria-hidden="true">' + USER_ICON + '</span>';
@@ -49,15 +49,12 @@
       + '<blockquote>"' + esc(t.quote) + '"</blockquote>'
       + '<figcaption class="ac-slide__by">' + avatar
       + '<span class="ac-slide__id">' + name
-      + '<span class="ac-slide__role">' + esc(t.role) + ' <span class="ac-slide__counter-inline">&nbsp;•&nbsp; ' + num + ' / ' + total + '</span></span></span>'
+      + '<span class="ac-slide__role">' + esc(t.role) + '</span></span>'
       + '</figcaption></figure>';
   }
 
   function render(root) {
-    var total = TESTIMONIALS.length;
-    var slides = TESTIMONIALS.map(function (t, i) {
-      return slideHTML(t, i + 1, total);
-    }).join('');
+    var slides = TESTIMONIALS.map(slideHTML).join('');
     root.classList.add('ac-slider');
     root.innerHTML =
       '<div class="ac-slider__track">' + slides + '</div>'
@@ -82,6 +79,18 @@
     var nextBtn = root.querySelector('[data-next]');
     var dots = [];
 
+    // Find sibling eyebrow header to inject counter
+    var eyebrow = root.previousElementSibling;
+    var counterEl = null;
+    if (eyebrow && eyebrow.classList.contains('ac-eyebrow')) {
+      counterEl = eyebrow.querySelector('.ac-eyebrow-counter');
+      if (!counterEl) {
+        counterEl = document.createElement('span');
+        counterEl.className = 'ac-eyebrow-counter';
+        eyebrow.appendChild(counterEl);
+      }
+    }
+
     if (dotsWrap) {
       slides.forEach(function (_, i) {
         var d = document.createElement('button');
@@ -105,6 +114,10 @@
       dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
       if (prevBtn) prevBtn.disabled = idx <= 0;
       if (nextBtn) nextBtn.disabled = idx >= slides.length - 1;
+
+      if (counterEl) {
+        counterEl.innerHTML = '&nbsp;•&nbsp;' + (idx + 1) + '&nbsp;/&nbsp;' + slides.length;
+      }
     }
 
     if (prevBtn) prevBtn.addEventListener('click', function () { scrollToIndex(currentIndex() - 1); });
