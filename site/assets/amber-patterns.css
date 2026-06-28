@@ -37,7 +37,9 @@ a { color: inherit; }
 .ac-section--navy .ac-body-lg { color: var(--cream); }
 
 /* Title band for content pages */
-.ac-page-hero { background: var(--cream); padding-block: var(--space-16); border-bottom: 1px solid var(--line); }
+.ac-page-hero { padding-block: var(--space-16); border-bottom: 1px solid var(--line); }
+.ac-page-hero--cream { background: var(--cream); }
+.ac-page-hero--paper { background: var(--paper); }
 
 /* ============================================================
    PROSE — the editable content-block model.
