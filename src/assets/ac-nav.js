@@ -1,20 +1,19 @@
 /* ---- Mobile nav burger ---- */
 (function () {
-  function init() {
-    var b = document.querySelector('.ac-burger');
+  document.addEventListener('click', function(e) {
+    var b = e.target.closest('.ac-burger');
     var n = document.getElementById('site-nav');
-    if (!b || !n) return;
-    b.addEventListener('click', function () {
+    
+    if (b && n) {
       var open = n.classList.toggle('is-open');
       b.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    n.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
+    } else if (n && n.classList.contains('is-open')) {
+      // If clicking inside a link in the nav, close it
+      if (e.target.closest('a')) {
         n.classList.remove('is-open');
-        b.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+        var burger = document.querySelector('.ac-burger');
+        if (burger) burger.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
 })();
