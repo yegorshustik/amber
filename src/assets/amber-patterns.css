@@ -143,6 +143,10 @@ a { color: inherit; }
   text-decoration: none;
   cursor: pointer;
 }
+.ac-prose a.ac-action,
+a.ac-action {
+  text-decoration: none;
+}
 .ac-action:hover {
   transform: scale(1.03);
 }
