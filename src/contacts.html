@@ -122,25 +122,14 @@ description: "Contact Amber Council — Gdańsk-based premium academic guidance.
   }
 
   /* Map field id → { validator fn, error el id } */
-  var step1Fields = [
+  var fields = [
     { el: document.getElementById('f-name'),     fn: valName,   err: document.getElementById('err-name') },
     { el: document.getElementById('f-dob'),      fn: valDob,    err: document.getElementById('err-dob') },
-    { el: document.getElementById('f-gender'),   fn: valSelect, err: document.getElementById('err-gender') }
-  ].filter(function(f){ return f.el && f.err; });
-
-  var step2Fields = [
     { el: document.getElementById('f-grade'),    fn: valSelect, err: document.getElementById('err-grade') },
     { el: document.getElementById('f-consider'), fn: valSelect, err: document.getElementById('err-consider') },
     { el: document.getElementById('f-email'),    fn: valEmail,  err: document.getElementById('err-email') },
     { el: document.getElementById('f-phone'),    fn: valPhone,  err: document.getElementById('err-phone') }
   ].filter(function(f){ return f.el && f.err; });
-
-  var allFields = step1Fields.concat(step2Fields);
-
-  var btnNext = document.getElementById('next-btn');
-  var btnBack = document.getElementById('back-btn');
-  var step1Div = document.getElementById('step-1');
-  var step2Div = document.getElementById('step-2');
 
   /* Show / hide error for one field */
   function setFieldState(f, msg) {
@@ -154,65 +143,42 @@ description: "Contact Amber Council — Gdańsk-based premium academic guidance.
     }
   }
 
-  /* Check fields, enable/disable button */
-  function checkStep1() {
-    var allOk = step1Fields.every(function(f) { return f.fn(f.el.value) === ''; });
-    if(btnNext) btnNext.disabled = !allOk;
-  }
-  function checkStep2() {
-    var allOk = step2Fields.every(function(f) { return f.fn(f.el.value) === ''; });
-    if(btn) btn.disabled = !allOk;
+  /* Check all fields, enable/disable button */
+  function checkAll() {
+    var allOk = fields.every(function(f) {
+      return f.fn(f.el.value) === '';
+    });
+    btn.disabled = !allOk;
   }
 
   /* Attach blur + input/change listeners to each field */
-  allFields.forEach(function(f) {
+  fields.forEach(function(f) {
     /* Show error on blur (after user leaves the field) */
     f.el.addEventListener('blur', function () {
       setFieldState(f, f.fn(f.el.value));
-      checkStep1(); checkStep2();
+      checkAll();
     });
     /* Re-check live as user types / selects */
     var evt = (f.el.tagName === 'SELECT') ? 'change' : 'input';
     f.el.addEventListener(evt, function () {
+      /* Only clear error live (don't add new error while typing) */
       if (f.el.classList.contains('is-error')) {
         setFieldState(f, f.fn(f.el.value));
       }
-      checkStep1(); checkStep2();
+      checkAll();
     });
   });
-
-  /* Navigation between steps */
-  if(btnNext) {
-    btnNext.addEventListener('click', function() {
-      var allOk = step1Fields.every(function(f) {
-        var msg = f.fn(f.el.value);
-        setFieldState(f, msg);
-        return msg === '';
-      });
-      if(allOk) {
-        step1Div.style.display = 'none';
-        step2Div.style.display = 'block';
-      }
-    });
-  }
-
-  if(btnBack) {
-    btnBack.addEventListener('click', function() {
-      step2Div.style.display = 'none';
-      step1Div.style.display = 'block';
-    });
-  }
 
   /* Submit — show success overlay */
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     /* Final check in case button was somehow enabled without all fields valid */
-    var allOk = step2Fields.every(function(f) {
+    var allOk = fields.every(function(f) {
       var msg = f.fn(f.el.value);
       setFieldState(f, msg);
       return msg === '';
     });
-    if (!allOk) { checkStep2(); return; }
+    if (!allOk) { checkAll(); return; }
     /* Show success */
     if (success) success.classList.add('is-visible');
   });
@@ -270,72 +236,50 @@ description: "Contact Amber Council — Gdańsk-based premium academic guidance.
           </div>
 
           <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
-            <!-- STEP 1 -->
-            <div id="step-1">
+            <div class="ac-field">
+              <label class="ac-label" for="f-name">Full name of the student</label>
+              <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
+              <p class="ac-field-error" id="err-name" aria-live="polite"></p>
+            </div>
+            <div class="ac-form__row">
               <div class="ac-field">
-                <label class="ac-label" for="f-name">Full name of the student</label>
-                <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
-                <p class="ac-field-error" id="err-name" aria-live="polite"></p>
+                <label class="ac-label" for="f-dob">Date of birth</label>
+                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
+                <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
               </div>
-              <div class="ac-form__row">
-                <div class="ac-field">
-                  <label class="ac-label" for="f-dob">Date of birth</label>
-                  <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
-                  <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
-                </div>
-                <div class="ac-field">
-                  <label class="ac-label" for="f-gender">Gender</label>
-                  <select class="ac-select" id="f-gender">
-                    <option value="">Select…</option>
-                    <option>Male</option><option>Female</option><option>Prefer not to say</option>
-                  </select>
-                  <p class="ac-field-error" id="err-gender" aria-live="polite"></p>
-                </div>
-              </div>
-              <button class="ac-btn ac-btn--primary" id="next-btn" type="button" disabled style="margin-top:var(--space-2);width:100%;">Next step</button>
-            </div>
-
-            <!-- STEP 2 -->
-            <div id="step-2" style="display: none;">
-              <div class="ac-form__row">
-                <div class="ac-field">
-                  <label class="ac-label" for="f-grade">Current grade</label>
-                  <select class="ac-select" id="f-grade">
-                    <option value="">Select…</option>
-                    <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
-                    <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
-                  </select>
-                  <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
-                </div>
-                <div class="ac-field">
-                  <label class="ac-label" for="f-consider">What is being considered</label>
-                  <select class="ac-select" id="f-consider">
-                    <option value="">Select…</option>
-                    <option>School</option><option>University</option>
-                    <option>Short program</option><option>Visa</option>
-                  </select>
-                  <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
-                </div>
-              </div>
-              <div class="ac-form__row">
-                <div class="ac-field">
-                  <label class="ac-label" for="f-email">Email</label>
-                  <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
-                  <p class="ac-field-error" id="err-email" aria-live="polite"></p>
-                </div>
-                <div class="ac-field">
-                  <label class="ac-label" for="f-phone">Contact phone</label>
-                  <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
-                  <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
-                </div>
-              </div>
-              <p class="ac-small" style="font-size:13px; margin-top:var(--space-4); margin-bottom:var(--space-3); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
-              
-              <div style="display:flex; gap:var(--space-3); margin-top:var(--space-2);">
-                <button class="ac-btn ac-btn--secondary" id="back-btn" type="button" style="flex:1;">Back</button>
-                <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="flex:2;">Request consultation</button>
+              <div class="ac-field">
+                <label class="ac-label" for="f-grade">Current grade</label>
+                <select class="ac-select" id="f-grade">
+                  <option value="">Select…</option>
+                  <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                  <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                </select>
+                <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
               </div>
             </div>
+            <div class="ac-field">
+              <label class="ac-label" for="f-consider">What is being considered</label>
+              <select class="ac-select" id="f-consider">
+                <option value="">Select…</option>
+                <option>School</option><option>University</option>
+                <option>Short program</option><option>Visa</option>
+              </select>
+              <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
+            </div>
+            <div class="ac-form__row">
+              <div class="ac-field">
+                <label class="ac-label" for="f-email">Email</label>
+                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
+                <p class="ac-field-error" id="err-email" aria-live="polite"></p>
+              </div>
+              <div class="ac-field">
+                <label class="ac-label" for="f-phone">Contact phone</label>
+                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
+                <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
+              </div>
+            </div>
+                        <p class="ac-small" style="font-size:13px; margin-top:var(--space-4); margin-bottom:var(--space-3); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
+            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="margin-top:var(--space-2);width:100%;">Request consultation</button>
           </form>
         </div>
 
