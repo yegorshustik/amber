@@ -35,7 +35,41 @@
 
 
   <main>
-    
+    <script>
+(function () {
+  // Mobile Burger Nav
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (b && n) {
+    b.addEventListener('click', function () {
+      var open = n.classList.toggle('is-open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Reading Progress Bar Logic
+  var bar = document.getElementById('progress-bar');
+  if (bar) {
+    window.addEventListener('scroll', function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  }
+
+  // Copy link share button
+  var copyBtn = document.getElementById('copy-link-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        alert('Link copied to clipboard!');
+      });
+    });
+  }
+})();
+</script>
 
 <!-- ============ POST HERO ============ -->
   <section class="ac-section ac-section--paper">

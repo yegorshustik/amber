@@ -35,7 +35,107 @@
 
 
   <main>
-    
+    <script>
+(function () {
+  // Mobile Burger Nav
+  var b = document.querySelector('.ac-burger');
+  var n = document.getElementById('site-nav');
+  if (b && n) {
+    b.addEventListener('click', function () {
+      var open = n.classList.toggle('is-open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Category Filtering Logic
+  var filterContainer = document.getElementById('blog-filters');
+  var cards = document.querySelectorAll('.ac-blog-card');
+  if (filterContainer && cards.length) {
+    filterContainer.addEventListener('click', function (e) {
+      var btn = e.target.closest('.ac-blog-filter');
+      if (!btn) return;
+      
+      // Update active state
+      filterContainer.querySelectorAll('.ac-blog-filter').forEach(function (button) {
+        button.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+
+      // Filter cards
+      var category = btn.dataset.filter;
+      cards.forEach(function (card) {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Newsletter Form Validation & Handling
+  var form = document.getElementById('newsletter-form');
+  var emailInput = document.getElementById('f-email');
+  var errorEl = document.getElementById('err-email');
+  var successEl = document.getElementById('form-success');
+
+  if (form && emailInput) {
+    // Real-time ASCII restriction (no Cyrillic/non-ASCII characters)
+    emailInput.addEventListener('input', function () {
+      emailInput.value = emailInput.value.replace(/[^\x20-\x7E]/g, '');
+      if (emailInput.classList.contains('is-error')) {
+        validate();
+      }
+    });
+
+    emailInput.addEventListener('paste', function () {
+      setTimeout(function () {
+        emailInput.value = emailInput.value.replace(/[^\x20-\x7E]/g, '');
+        if (emailInput.classList.contains('is-error')) {
+          validate();
+        }
+      }, 0);
+    });
+
+    // Blur validation
+    emailInput.addEventListener('blur', function () {
+      validate();
+    });
+
+    function validate() {
+      var val = emailInput.value.trim();
+      var msg = '';
+      if (!val) {
+        msg = 'Please enter your email';
+      } else if (!/^[^\s@]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/.test(val)) {
+        msg = 'Enter a valid email address';
+      }
+
+      errorEl.textContent = msg;
+      if (msg) {
+        emailInput.classList.add('is-error');
+        emailInput.classList.remove('is-valid');
+        return false;
+      } else {
+        emailInput.classList.remove('is-error');
+        emailInput.classList.add('is-valid');
+        return true;
+      }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var isValid = validate();
+      if (!isValid) return;
+
+      // Show success state
+      if (successEl) {
+        successEl.classList.add('is-visible');
+      }
+    });
+  }
+})();
+</script>
 
 <!-- ============ HERO ============ -->
   <section class="ac-page-hero ac-page-hero--paper">
