@@ -129,7 +129,8 @@
 @media (max-width: 640px) {
   .ac-header__logo { height: 44px; }
 }
-.ac-header__nav { display: flex; gap: var(--space-6); align-items: center; }
+.ac-header__nav { display: flex; }
+.ac-header__nav-scroll { display: flex; gap: var(--space-6); align-items: center; }
 .ac-nav-col { display: flex; gap: var(--space-6); align-items: center; }
 .ac-nav-col-title { display: none; }
 @media (min-width: 1401px) { 
