@@ -112,7 +112,6 @@
   ];
 
   var activeFilters = {
-    search: '',
     type: 'school',
     country: 'all',
     gender: 'all',
@@ -128,17 +127,7 @@
     updateSubFiltersVisibility();
     render();
   }
-
   function setupEventListeners() {
-    // Search input
-    var searchInput = document.getElementById('filter-search');
-    if (searchInput) {
-      searchInput.addEventListener('input', function (e) {
-        activeFilters.search = e.target.value.toLowerCase().trim();
-        render();
-      });
-    }
-
     // Type Tabs
     var typeButtons = document.querySelectorAll('[data-filter-type]');
     typeButtons.forEach(function (btn) {
@@ -228,14 +217,6 @@
     if (!gridEl) return;
 
     var filtered = INSTITUTIONS.filter(function (item) {
-      // 1. Search text
-      if (activeFilters.search) {
-        var nameMatch = item.name.toLowerCase().indexOf(activeFilters.search) > -1;
-        var descMatch = item.description.toLowerCase().indexOf(activeFilters.search) > -1;
-        var cityMatch = item.city.toLowerCase().indexOf(activeFilters.search) > -1;
-        if (!nameMatch && !descMatch && !cityMatch) return false;
-      }
-
       // 2. Type tab
       if (activeFilters.type !== 'all' && item.type !== activeFilters.type) {
         return false;
