@@ -1,6 +1,7 @@
 /* ---- Mobile nav burger ---- */
 (function () {
   document.addEventListener('click', function(e) {
+    if (!e.target || typeof e.target.closest !== 'function') return;
     var b = e.target.closest('.ac-burger');
     var n = document.getElementById('site-nav');
     
