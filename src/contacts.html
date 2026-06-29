@@ -22,20 +22,39 @@ description: "Contact Amber Council — Gdańsk-based premium academic guidance.
 })();
 
 /* ---- Date-of-birth mask: dd.mm.yyyy ---- */
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   var dob = document.getElementById('f-dob');
   if (!dob) return;
-  dob.addEventListener('input', function () {
-    var d = dob.value.replace(/\D/g, '').slice(0, 8);
-    var out = d.slice(0, 2);
-    if (d.length >= 3) out += '.' + d.slice(2, 4);
-    if (d.length >= 5) out += '.' + d.slice(4, 8);
-    dob.value = out;
-  });
-})();
+  
+  function applyMask() {
+    var raw = dob.value;
+    // Remove all non-digits
+    var d = raw.replace(/\D/g, '').slice(0, 8);
+    var out = '';
+    
+    if (d.length > 0) {
+      out = d.slice(0, 2);
+      if (d.length >= 3) {
+        out += '.' + d.slice(2, 4);
+      }
+      if (d.length >= 5) {
+        out += '.' + d.slice(4, 8);
+      }
+    }
+    
+    // Only update if changed to avoid jumping cursor issues if possible
+    if (dob.value !== out) {
+      dob.value = out;
+    }
+  }
+
+  dob.addEventListener('input', applyMask);
+  dob.addEventListener('blur', applyMask);
+  dob.addEventListener('change', applyMask);
+});
 
 /* ---- Phone mask: + and digits only ---- */
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   var ph = document.getElementById('f-phone');
   if (!ph) return;
   ph.addEventListener('keydown', function (e) {
@@ -59,10 +78,10 @@ description: "Contact Amber Council — Gdańsk-based premium academic guidance.
     var digits = pasted.replace(/\D/g, '');
     ph.value = (hasPlus ? '+' : '') + digits;
   });
-})();
+});
 
 /* ---- Email mask: ASCII only (no Cyrillic) ---- */
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   var em = document.getElementById('f-email');
   if (!em) return;
   em.addEventListener('input', function () {
@@ -73,7 +92,7 @@ description: "Contact Amber Council — Gdańsk-based premium academic guidance.
       em.value = em.value.replace(/[^\x20-\x7E]/g, '');
     }, 0);
   });
-})();
+});
 
 /* ---- Form validation ---- */
 (function () {
