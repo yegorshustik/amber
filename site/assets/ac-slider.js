@@ -1,71 +1,7 @@
-/* Amber Council — testimonials (single-source component)
-   Edit the TESTIMONIALS array below — it renders into every
-   <div data-testimonials></div> on any page, so one edit updates all. */
+/* Amber Council — testimonials slider behavior
+   This script only handles interactions (scrolling, dots, arrows).
+   The actual HTML content is rendered server-side for SEO. */
 (function () {
-
-  /* ===================== EDIT TESTIMONIALS HERE ===================== */
-  var TESTIMONIALS = [
-    {
-      quote: "They were honest about what was realistic, then made it happen. For the first time we felt someone was genuinely accountable for our son's future.",
-      name: "Anna S.",
-      role: "Parent · Tri-City",
-      photo: "", 
-      social: ""                              
-    },
-    {
-      quote: "The admissions process seemed like a black box until we started working with Amber Council. They handled every document and deadline with total discretion and professionalism.",
-      name: "Marek K.",
-      role: "Parent · Sopot",
-      photo: "",
-      social: ""
-    },
-    {
-      quote: "Not just another agency. They truly care about the long-term outcome. Our daughter is now thriving at a top UK boarding school, and the roadmap they built made all the difference.",
-      name: "Katarzyna W.",
-      role: "Parent · Gdynia",
-      photo: "",
-      social: ""
-    }
-  ];
-  /* ================================================================= */
-
-  var USER_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
-  var CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
-  var CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
-
-  function esc(s) {
-    return String(s == null ? '' : s)
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
-
-  function slideHTML(t) {
-    var avatar = t.photo
-      ? '<span class="ac-slide__avatar"><img src="' + esc(t.photo) + '" alt=""></span>'
-      : '<span class="ac-slide__avatar" aria-hidden="true">' + USER_ICON + '</span>';
-    var name = t.social
-      ? '<a class="ac-slide__name" href="' + esc(t.social) + '" target="_blank" rel="noopener">' + esc(t.name) + '</a>'
-      : '<span class="ac-slide__name">' + esc(t.name) + '</span>';
-    return '<figure class="ac-slide">'
-      + '<blockquote>"' + esc(t.quote) + '"</blockquote>'
-      + '<figcaption class="ac-slide__by">' + avatar
-      + '<span class="ac-slide__id">' + name
-      + '<span class="ac-slide__role">' + esc(t.role) + '</span></span>'
-      + '</figcaption></figure>';
-  }
-
-  function render(root) {
-    var slides = TESTIMONIALS.map(slideHTML).join('');
-    root.classList.add('ac-slider');
-    root.innerHTML =
-      '<div class="ac-slider__track">' + slides + '</div>'
-      + '<div class="ac-slider__nav">'
-      +   '<div class="ac-slider__arrows">'
-      +     '<button class="ac-slider__btn" type="button" data-prev aria-label="Previous testimonial">' + CHEV_L + '</button>'
-      +     '<button class="ac-slider__btn" type="button" data-next aria-label="Next testimonial">' + CHEV_R + '</button>'
-      +   '</div>'
-      +   '<div class="ac-slider__dots" data-dots></div>'
-      + '</div>';
-  }
 
   function initSlider(root) {
     var track = root.querySelector('.ac-slider__track');
@@ -133,10 +69,10 @@
 
   function boot() {
     document.querySelectorAll('[data-testimonials]').forEach(function (root) {
-      render(root);
       initSlider(root);
     });
   }
+  
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
