@@ -255,17 +255,19 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
 
           <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
-            <div class="ac-field">
-              <label class="ac-label" for="f-name">Full name of the student</label>
-              <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
-              <p class="ac-field-error" id="err-name" aria-live="polite"></p>
-            </div>
             <div class="ac-form__row">
+              <div class="ac-field">
+                <label class="ac-label" for="f-name">Full name of the student</label>
+                <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
+                <p class="ac-field-error" id="err-name" aria-live="polite"></p>
+              </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-dob">Date of birth</label>
                 <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
                 <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
               </div>
+            </div>
+            <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-grade">Current grade</label>
                 <select class="ac-select" id="f-grade">
@@ -275,15 +277,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 </select>
                 <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
               </div>
-            </div>
-            <div class="ac-field">
-              <label class="ac-label" for="f-consider">What is being considered</label>
-              <select class="ac-select" id="f-consider">
-                <option value="">Select…</option>
-                <option>School</option><option>University</option>
-                <option>Short program</option><option>Visa</option>
-              </select>
-              <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
+              <div class="ac-field">
+                <label class="ac-label" for="f-consider">What is being considered</label>
+                <select class="ac-select" id="f-consider">
+                  <option value="">Select…</option>
+                  <option>School</option><option>University</option>
+                  <option>Short program</option><option>Visa</option>
+                </select>
+                <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
+              </div>
             </div>
             <div class="ac-form__row">
               <div class="ac-field">
