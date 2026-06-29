@@ -140,9 +140,14 @@ a { color: inherit; }
   transition: transform 0.3s ease;
   will-change: transform;
   backface-visibility: hidden;
+  text-decoration: none;
+  cursor: pointer;
 }
 .ac-action:hover {
   transform: scale(1.03);
+}
+.ac-action:active {
+  transform: scale(0.98);
 }
 @media (min-width: 768px) {
   .ac-action { flex-direction: row; align-items: center; justify-content: space-between; }
