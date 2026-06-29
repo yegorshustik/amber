@@ -4,24 +4,6 @@ title: "Amber Council — The right academic path for your child"
 description: "Amber Council maps and walks your child's academic path to the strongest school or university they can realistically reach — with full accountability, 24/7."
 ---
 
-<script>
-/* ---- Mobile nav burger ---- */
-(function () {
-  var b = document.querySelector('.ac-burger');
-  var n = document.getElementById('site-nav');
-  if (!b || !n) return;
-  b.addEventListener('click', function () {
-    var open = n.classList.toggle('is-open');
-    b.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  n.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      n.classList.remove('is-open');
-      b.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
 
 
 <!-- ============ HERO (split: text + media) ============ -->

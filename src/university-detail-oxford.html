@@ -3,23 +3,6 @@ layout: base.njk
 title: "University of Oxford Profile — Amber Council"
 description: "Detailed profile and Amber Council admissions guidance for the University of Oxford, UK's flagship collegiate higher education institution."
 ---
-<script>
-(function () {
-  var b = document.querySelector('.ac-burger');
-  var n = document.getElementById('site-nav');
-  if (!b || !n) return;
-  b.addEventListener('click', function () {
-    var open = n.classList.toggle('is-open');
-    b.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  n.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      n.classList.remove('is-open');
-      b.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
 
 <!-- ============ INSTITUTION HERO ============ -->
   <section class="ac-section ac-section--cream ac-section--hero-detail">

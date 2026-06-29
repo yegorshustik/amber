@@ -40,24 +40,7 @@
 
 
   <main>
-    <script>
-(function () {
-  var b = document.querySelector('.ac-burger');
-  var n = document.getElementById('site-nav');
-  if (!b || !n) return;
-  b.addEventListener('click', function () {
-    var open = n.classList.toggle('is-open');
-    b.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  n.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      n.classList.remove('is-open');
-      b.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
-
+    
 <!-- ============ PAGE HERO ============ -->
   <section class="ac-section ac-section--cream" style="min-height: 60vh; display: flex; align-items: center;">
     <div class="ac-container">
