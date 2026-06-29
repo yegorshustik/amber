@@ -36,6 +36,160 @@
 
   <main>
     
+
+<!-- ============ PAGE HERO ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Get in touch</p>
+      <h1 class="ac-h1">Contacts</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:620px;">Your child’s educational journey deserves a flawless strategy. Contact us to discuss your family's unique goals in complete confidence. Whether you have a specific university in mind or are just starting to explore the options, we are here to build your roadmap.</p>
+    </div>
+  </section>
+
+  <!-- ============ LEAD CAPTURE (quiz teaser + contact form) ============ -->
+  <section class="ac-section ac-section--navy" id="lead">
+    <div class="ac-container">
+      <div class="ac-lead">
+        <div class="ac-lead__intro">
+          <p class="ac-eyebrow">Get started</p>
+          <h2 class="ac-h2">Book a free consultation.</h2>
+          <p class="ac-body" style="max-width:42ch;">We'll discuss your child's profile, answer your questions, and map out a realistic path to the best universities worldwide.</p>
+        </div>
+
+        <div class="ac-card" style="position:relative; overflow:hidden;">
+
+          <!-- ✅ Success overlay (hidden until form is submitted) -->
+          <div class="ac-form-success" id="form-success" aria-live="polite">
+            <div class="ac-form-success__inner">
+              <div class="ac-form-success__icon">
+                <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
+                  <polyline points="14,27 22,35 38,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="ac-form-success__title">Request received</h3>
+              <p class="ac-form-success__body">We'll reach out personally within one business day to schedule your free consultation.</p>
+            </div>
+          </div>
+
+          <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
+            <div class="ac-form__row">
+              <div class="ac-field">
+                <label class="ac-label" for="f-name">Full name of the student</label>
+                <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
+                <p class="ac-field-error" id="err-name" aria-live="polite"></p>
+              </div>
+              <div class="ac-field">
+                <label class="ac-label" for="f-dob">Date of birth</label>
+                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
+                <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ac-form__row">
+              <div class="ac-field">
+                <label class="ac-label" for="f-grade">Current grade</label>
+                <select class="ac-select" id="f-grade">
+                  <option value="">Select…</option>
+                  <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                  <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                </select>
+                <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
+              </div>
+              <div class="ac-field">
+                <label class="ac-label" for="f-consider">What is being considered</label>
+                <select class="ac-select" id="f-consider">
+                  <option value="">Select…</option>
+                  <option>School</option><option>University</option>
+                  <option>Short program</option><option>Visa</option>
+                </select>
+                <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ac-form__row">
+              <div class="ac-field">
+                <label class="ac-label" for="f-email">Email</label>
+                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
+                <p class="ac-field-error" id="err-email" aria-live="polite"></p>
+              </div>
+              <div class="ac-field">
+                <label class="ac-label" for="f-phone">Contact phone</label>
+                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
+                <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
+              </div>
+            </div>
+            <p class="ac-small" style="font-size:13px; margin-top:var(--space-3); margin-bottom:var(--space-2); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
+            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="width:100%;">Request consultation</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT DETAILS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      <div class="ac-contacts">
+
+        <!-- LEFT: details -->
+        <div class="ac-contacts__col">
+          <div class="ac-contacts__block">
+            <p class="ac-eyebrow">Company</p>
+            <address>
+              LLC Amber Council<br>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Nowomejska%203%2F2%2C%2080-864%20Gdańsk%2C%20Poland" target="_blank" rel="noopener">Nowomejska 3/2, 80-864 Gdańsk, Poland</a>
+            </address>
+            <!-- PLACEHOLDER registration numbers — replace with real values -->
+            <p class="ac-small" style="margin-top:var(--space-2);">NIP: — &middot; REGON: — &middot; KRS: —</p>
+          </div>
+
+          <div class="ac-contacts__block">
+            <p class="ac-eyebrow">Direct</p>
+            <p><a href="tel:+48500557417">+48 500 557 417</a></p>
+            <p><a href="mailto:info@ambercouncil.org">info@ambercouncil.org</a></p>
+          </div>
+
+          <div class="ac-contacts__block">
+            <p class="ac-eyebrow">Hours</p>
+            <p>Mon–Fri, 9:00–18:00 (CET)</p>
+            <p>Urgent matters — 24/7 for our families.</p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: actions -->
+        <div class="ac-contacts__col">
+          <div class="ac-contacts__block">
+            <p class="ac-eyebrow">Message us</p>
+            <div class="ac-contacts__row">
+              <!-- WhatsApp uses the real phone number -->
+              <a class="ac-btn ac-btn--secondary" href="https://wa.me/48500557417" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a>
+              <!-- PLACEHOLDER Telegram handle — replace ambercouncil with the real one -->
+              <a class="ac-btn ac-btn--secondary" href="https://t.me/ambercouncil" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Telegram</a>
+            </div>
+          </div>
+
+          <div class="ac-contacts__block">
+            <p class="ac-eyebrow">Follow</p>
+            <div class="ac-contacts__row">
+              <!-- PLACEHOLDER social links — replace with real profiles -->
+              <a class="ac-btn ac-btn--secondary" href="https://www.linkedin.com/company/ambercouncil" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+              <a class="ac-btn ac-btn--secondary" href="https://www.instagram.com/ambercouncil" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+            </div>
+          </div>
+
+          <div class="ac-contacts__block">
+            <p class="ac-eyebrow">Take it with you</p>
+            <div class="ac-contacts__row">
+              <a class="ac-btn ac-btn--secondary" href="assets/amber-council.vcf" download>Save contact</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 <script>
 (function () {
   var b = document.querySelector('.ac-burger');
@@ -241,6 +395,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!nameEl || !('IntersectionObserver' in window)) return;
   if (!window.matchMedia('(min-width: 900px) and (pointer: fine)').matches) return;
   
+  var leadSection = document.getElementById('lead');
+  if (!leadSection) return;
+  
   var io = new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting) {
       io.disconnect();
@@ -248,167 +405,13 @@ document.addEventListener('DOMContentLoaded', function() {
         try { nameEl.focus({ preventScroll: true }); } catch (e) { nameEl.focus(); }
       }
     }
-  }, { threshold: 0.5 });
+  }, { threshold: 0.2 });
   
   setTimeout(function() {
-    io.observe(nameEl);
+    io.observe(leadSection);
   }, 100);
 });
 </script>
-
-
-<!-- ============ PAGE HERO ============ -->
-  <section class="ac-page-hero ac-page-hero--cream">
-    <div class="ac-container">
-      <p class="ac-eyebrow">Get in touch</p>
-      <h1 class="ac-h1">Contacts</h1>
-      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:620px;">Your child’s educational journey deserves a flawless strategy. Contact us to discuss your family's unique goals in complete confidence. Whether you have a specific university in mind or are just starting to explore the options, we are here to build your roadmap.</p>
-    </div>
-  </section>
-
-  <!-- ============ LEAD CAPTURE (quiz teaser + contact form) ============ -->
-  <section class="ac-section ac-section--navy" id="lead">
-    <div class="ac-container">
-      <div class="ac-lead">
-        <div class="ac-lead__intro">
-          <p class="ac-eyebrow">Get started</p>
-          <h2 class="ac-h2">Book a free consultation.</h2>
-          <p class="ac-body" style="max-width:42ch;">We'll discuss your child's profile, answer your questions, and map out a realistic path to the best universities worldwide.</p>
-        </div>
-
-        <div class="ac-card" style="position:relative; overflow:hidden;">
-
-          <!-- ✅ Success overlay (hidden until form is submitted) -->
-          <div class="ac-form-success" id="form-success" aria-live="polite">
-            <div class="ac-form-success__inner">
-              <div class="ac-form-success__icon">
-                <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
-                  <polyline points="14,27 22,35 38,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="ac-form-success__title">Request received</h3>
-              <p class="ac-form-success__body">We'll reach out personally within one business day to schedule your free consultation.</p>
-            </div>
-          </div>
-
-          <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
-            <div class="ac-form__row">
-              <div class="ac-field">
-                <label class="ac-label" for="f-name">Full name of the student</label>
-                <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
-                <p class="ac-field-error" id="err-name" aria-live="polite"></p>
-              </div>
-              <div class="ac-field">
-                <label class="ac-label" for="f-dob">Date of birth</label>
-                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
-                <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
-              </div>
-            </div>
-            <div class="ac-form__row">
-              <div class="ac-field">
-                <label class="ac-label" for="f-grade">Current grade</label>
-                <select class="ac-select" id="f-grade">
-                  <option value="">Select…</option>
-                  <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
-                  <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
-                </select>
-                <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
-              </div>
-              <div class="ac-field">
-                <label class="ac-label" for="f-consider">What is being considered</label>
-                <select class="ac-select" id="f-consider">
-                  <option value="">Select…</option>
-                  <option>School</option><option>University</option>
-                  <option>Short program</option><option>Visa</option>
-                </select>
-                <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
-              </div>
-            </div>
-            <div class="ac-form__row">
-              <div class="ac-field">
-                <label class="ac-label" for="f-email">Email</label>
-                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
-                <p class="ac-field-error" id="err-email" aria-live="polite"></p>
-              </div>
-              <div class="ac-field">
-                <label class="ac-label" for="f-phone">Contact phone</label>
-                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
-                <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
-              </div>
-            </div>
-            <p class="ac-small" style="font-size:13px; margin-top:var(--space-3); margin-bottom:var(--space-2); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
-            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="width:100%;">Request consultation</button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT DETAILS ============ -->
-  <section class="ac-section ac-section--paper">
-    <div class="ac-container">
-      <div class="ac-contacts">
-
-        <!-- LEFT: details -->
-        <div class="ac-contacts__col">
-          <div class="ac-contacts__block">
-            <p class="ac-eyebrow">Company</p>
-            <address>
-              LLC Amber Council<br>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Nowomejska%203%2F2%2C%2080-864%20Gdańsk%2C%20Poland" target="_blank" rel="noopener">Nowomejska 3/2, 80-864 Gdańsk, Poland</a>
-            </address>
-            <!-- PLACEHOLDER registration numbers — replace with real values -->
-            <p class="ac-small" style="margin-top:var(--space-2);">NIP: — &middot; REGON: — &middot; KRS: —</p>
-          </div>
-
-          <div class="ac-contacts__block">
-            <p class="ac-eyebrow">Direct</p>
-            <p><a href="tel:+48500557417">+48 500 557 417</a></p>
-            <p><a href="mailto:info@ambercouncil.org">info@ambercouncil.org</a></p>
-          </div>
-
-          <div class="ac-contacts__block">
-            <p class="ac-eyebrow">Hours</p>
-            <p>Mon–Fri, 9:00–18:00 (CET)</p>
-            <p>Urgent matters — 24/7 for our families.</p>
-          </div>
-
-        </div>
-
-        <!-- RIGHT: actions -->
-        <div class="ac-contacts__col">
-          <div class="ac-contacts__block">
-            <p class="ac-eyebrow">Message us</p>
-            <div class="ac-contacts__row">
-              <!-- WhatsApp uses the real phone number -->
-              <a class="ac-btn ac-btn--secondary" href="https://wa.me/48500557417" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a>
-              <!-- PLACEHOLDER Telegram handle — replace ambercouncil with the real one -->
-              <a class="ac-btn ac-btn--secondary" href="https://t.me/ambercouncil" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Telegram</a>
-            </div>
-          </div>
-
-          <div class="ac-contacts__block">
-            <p class="ac-eyebrow">Follow</p>
-            <div class="ac-contacts__row">
-              <!-- PLACEHOLDER social links — replace with real profiles -->
-              <a class="ac-btn ac-btn--secondary" href="https://www.linkedin.com/company/ambercouncil" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
-              <a class="ac-btn ac-btn--secondary" href="https://www.instagram.com/ambercouncil" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
-            </div>
-          </div>
-
-          <div class="ac-contacts__block">
-            <p class="ac-eyebrow">Take it with you</p>
-            <div class="ac-contacts__row">
-              <a class="ac-btn ac-btn--secondary" href="assets/amber-council.vcf" download>Save contact</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   </main>
 
