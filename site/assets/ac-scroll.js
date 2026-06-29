@@ -4,7 +4,7 @@
     if (!btn) return;
 
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 300) {
         btn.classList.add('is-visible');
       } else {
         btn.classList.remove('is-visible');
