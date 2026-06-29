@@ -481,7 +481,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     border-bottom: 1px solid var(--line-dark);
     z-index: -1;
   }
-  .ac-nav-cta { display: inline-flex; margin-top: var(--space-4); grid-column: 1 / -1; }
+  .ac-nav-cta { display: inline-flex; margin-top: var(--space-4); grid-column: 1 / -1; justify-self: start; }
 }
 
 /* ============================================================
