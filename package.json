@@ -4,8 +4,14 @@
   "description": "Стартовый комплект для Cowork-проекта. **Эта папка = единый источник правды.**",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve"
+    "build:eleventy": "eleventy",
+    "build:js": "esbuild src/app.js --bundle --minify --outfile=site/assets/app.js",
+    "build:css": "esbuild src/app.css --bundle --minify --outfile=site/assets/app.css --loader:.webp=file --loader:.svg=file --loader:.woff2=file --loader:.woff=file --loader:.ttf=file --loader:.jpg=file --loader:.png=file",
+    "build": "npm-run-all build:eleventy build:js build:css",
+    "start": "npm-run-all --parallel watch:eleventy watch:js watch:css",
+    "watch:eleventy": "eleventy --serve",
+    "watch:js": "esbuild src/app.js --bundle --outfile=site/assets/app.js --watch",
+    "watch:css": "esbuild src/app.css --bundle --outfile=site/assets/app.css --watch --loader:.webp=file --loader:.svg=file --loader:.woff2=file --loader:.woff=file --loader:.ttf=file --loader:.jpg=file --loader:.png=file"
   },
   "repository": {
     "type": "git",
@@ -19,6 +25,8 @@
   },
   "homepage": "https://github.com/yegorshustik/amber#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6"
+    "@11ty/eleventy": "^3.1.6",
+    "esbuild": "^0.28.1",
+    "npm-run-all": "^4.1.5"
   }
 }
