@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/app.css?v=72">
-<script type="module" src="assets/app.js?v=72"></script>
+<link rel="stylesheet" href="assets/app.css?v=73">
+<script type="module" src="assets/app.js?v=73"></script>
 
 </head>
 <body>
@@ -25,7 +25,7 @@
   <header class=ac-header>
   <div class=ac-header__inner>
     <a href="index.html" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council"></a>
-    <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+    <button class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" onclick="var n = document.getElementById('site-nav'); if(n) { var open = n.classList.toggle('is-open'); this.setAttribute('aria-expanded', open ? 'true' : 'false'); }">
       <div class="ac-burger__lines"><span></span><span></span><span></span></div>
       <span class="ac-burger__text">Menu</span>
     </button>
