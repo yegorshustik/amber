@@ -73,50 +73,72 @@
           </div>
 
           <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
-            <div class="ac-field">
-              <label class="ac-label" for="f-name">Full name of the student</label>
-              <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
-              <p class="ac-field-error" id="err-name" aria-live="polite"></p>
-            </div>
-            <div class="ac-form__row">
+            <!-- STEP 1 -->
+            <div id="step-1">
               <div class="ac-field">
-                <label class="ac-label" for="f-dob">Date of birth</label>
-                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
-                <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
+                <label class="ac-label" for="f-name">Full name of the student</label>
+                <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
+                <p class="ac-field-error" id="err-name" aria-live="polite"></p>
               </div>
-              <div class="ac-field">
-                <label class="ac-label" for="f-grade">Current grade</label>
-                <select class="ac-select" id="f-grade">
-                  <option value="">Select…</option>
-                  <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
-                  <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
-                </select>
-                <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
+              <div class="ac-form__row">
+                <div class="ac-field">
+                  <label class="ac-label" for="f-dob">Date of birth</label>
+                  <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
+                  <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
+                </div>
+                <div class="ac-field">
+                  <label class="ac-label" for="f-gender">Gender</label>
+                  <select class="ac-select" id="f-gender">
+                    <option value="">Select…</option>
+                    <option>Male</option><option>Female</option><option>Prefer not to say</option>
+                  </select>
+                  <p class="ac-field-error" id="err-gender" aria-live="polite"></p>
+                </div>
+              </div>
+              <button class="ac-btn ac-btn--primary" id="next-btn" type="button" disabled style="margin-top:var(--space-2);width:100%;">Next step</button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div id="step-2" style="display: none;">
+              <div class="ac-form__row">
+                <div class="ac-field">
+                  <label class="ac-label" for="f-grade">Current grade</label>
+                  <select class="ac-select" id="f-grade">
+                    <option value="">Select…</option>
+                    <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                    <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                  </select>
+                  <p class="ac-field-error" id="err-grade" aria-live="polite"></p>
+                </div>
+                <div class="ac-field">
+                  <label class="ac-label" for="f-consider">What is being considered</label>
+                  <select class="ac-select" id="f-consider">
+                    <option value="">Select…</option>
+                    <option>School</option><option>University</option>
+                    <option>Short program</option><option>Visa</option>
+                  </select>
+                  <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
+                </div>
+              </div>
+              <div class="ac-form__row">
+                <div class="ac-field">
+                  <label class="ac-label" for="f-email">Email</label>
+                  <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
+                  <p class="ac-field-error" id="err-email" aria-live="polite"></p>
+                </div>
+                <div class="ac-field">
+                  <label class="ac-label" for="f-phone">Contact phone</label>
+                  <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
+                  <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
+                </div>
+              </div>
+              <p class="ac-small" style="font-size:13px; margin-top:var(--space-4); margin-bottom:var(--space-3); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
+              
+              <div style="display:flex; gap:var(--space-3); margin-top:var(--space-2);">
+                <button class="ac-btn ac-btn--secondary" id="back-btn" type="button" style="flex:1;">Back</button>
+                <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="flex:2;">Request consultation</button>
               </div>
             </div>
-            <div class="ac-field">
-              <label class="ac-label" for="f-consider">What is being considered</label>
-              <select class="ac-select" id="f-consider">
-                <option value="">Select…</option>
-                <option>School</option><option>University</option>
-                <option>Short program</option><option>Visa</option>
-              </select>
-              <p class="ac-field-error" id="err-consider" aria-live="polite"></p>
-            </div>
-            <div class="ac-form__row">
-              <div class="ac-field">
-                <label class="ac-label" for="f-email">Email</label>
-                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
-                <p class="ac-field-error" id="err-email" aria-live="polite"></p>
-              </div>
-              <div class="ac-field">
-                <label class="ac-label" for="f-phone">Contact phone</label>
-                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
-                <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
-              </div>
-            </div>
-                        <p class="ac-small" style="font-size:13px; margin-top:var(--space-4); margin-bottom:var(--space-3); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
-            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" disabled style="margin-top:var(--space-2);width:100%;">Request consultation</button>
           </form>
         </div>
 
