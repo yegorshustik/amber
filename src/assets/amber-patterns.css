@@ -1095,4 +1095,47 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   }
 }
 
-
+/* ============================================================
+   SCROLL TO TOP
+   ============================================================ */
+.ac-scroll-top {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 48px;
+  height: 48px;
+  background: var(--navy);
+  color: var(--amber-light);
+  border: 1px solid rgba(237, 228, 210, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 900px) {
+  .ac-scroll-top {
+    bottom: var(--space-12);
+    right: var(--space-12);
+  }
+}
+.ac-scroll-top:hover {
+  background: var(--navy-deep);
+  color: var(--cream);
+  border-color: rgba(237, 228, 210, 0.3);
+}
+.ac-scroll-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.ac-scroll-top svg {
+  width: 20px;
+  height: 20px;
+}
