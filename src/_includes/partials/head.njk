@@ -1,7 +1,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title if title else "Amber Council" }}</title>
-<meta name="description" content="{{ description if description else "Amber Council" }}">
+<meta name="description" content="{{ description if description else 'Amber Council' }}">
+<meta property="og:title" content="{{ title if title else 'Amber Council' }}">
+<meta property="og:description" content="{{ description if description else 'Amber Council' }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ambercouncil.com/assets/ac-photo-hero.jpg">
+<meta property="og:url" content="https://ambercouncil.com{{ page.url }}">
+<link rel="canonical" href="https://ambercouncil.com{{ page.url }}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/ac-favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
