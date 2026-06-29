@@ -363,7 +363,7 @@ a.ac-action {
 
 /* Testimonial slider (shared component) */
 .ac-slider { position: relative; max-width: 980px; }
-.ac-slider__track { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding-top: 16px; margin-top: -16px; padding-bottom: 16px; margin-bottom: -16px; cursor: grab; }
+.ac-slider__track { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding-top: 16px; margin-top: -16px; padding-bottom: 16px; margin-bottom: -16px; cursor: grab; }
 .ac-slider__track:active, .ac-slider__track.is-dragging { cursor: grabbing; user-select: none; }
 .ac-slider__track::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ac-slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; margin: 0; opacity: 0.2; transform: scale(0.96) translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
