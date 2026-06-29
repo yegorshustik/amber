@@ -48,6 +48,7 @@
     function update() {
       var idx = currentIndex();
       dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
       if (prevBtn) prevBtn.disabled = idx <= 0;
       if (nextBtn) nextBtn.disabled = idx >= slides.length - 1;
 
