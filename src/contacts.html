@@ -204,18 +204,24 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 /* ---- Autofocus name field when form scrolls into view (desktop only) ---- */
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   var nameEl = document.getElementById('f-name');
   if (!nameEl || !('IntersectionObserver' in window)) return;
   if (!window.matchMedia('(min-width: 900px) and (pointer: fine)').matches) return;
+  
   var io = new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting) {
       io.disconnect();
-      try { nameEl.focus({ preventScroll: true }); } catch (e) { nameEl.focus(); }
+      if (nameEl.value.trim() === '') {
+        try { nameEl.focus({ preventScroll: true }); } catch (e) { nameEl.focus(); }
+      }
     }
-  }, { threshold: 0.9 });
-  io.observe(nameEl);
-})();
+  }, { threshold: 0.5 });
+  
+  setTimeout(function() {
+    io.observe(nameEl);
+  }, 100);
+});
 </script>
 {% endset %}
 
