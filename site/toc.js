@@ -70,7 +70,7 @@
             if (active) active.classList.add("is-active");
           }
         });
-      }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
+      }, { rootMargin: "-95px 0px -60% 0px", threshold: 0 });
       headings.forEach(function (h) { observer.observe(h); });
     }
   }
