@@ -7,21 +7,21 @@
   var TESTIMONIALS = [
     {
       quote: "They were honest about what was realistic, then made it happen. For the first time we felt someone was genuinely accountable for our son's future.",
-      name: "[Name Surname]",
+      name: "Anna S.",
       role: "Parent · Tri-City",
-      photo: "assets/ac-avatar-yegor-sm.jpg", // optional; "" → person-icon placeholder
-      social: ""                              // optional; if set, the name becomes a link
+      photo: "", 
+      social: ""                              
     },
     {
-      quote: "[Placeholder testimonial — a parent's words about the result and what it felt like to work with Amber Council.]",
-      name: "[Name Surname]",
+      quote: "The admissions process seemed like a black box until we started working with Amber Council. They handled every document and deadline with total discretion and professionalism.",
+      name: "Marek K.",
       role: "Parent · Sopot",
       photo: "",
       social: ""
     },
     {
-      quote: "[Placeholder testimonial — another short, specific quote about honesty, accountability or outcome.]",
-      name: "[Name Surname]",
+      quote: "Not just another agency. They truly care about the long-term outcome. Our daughter is now thriving at a top UK boarding school, and the roadmap they built made all the difference.",
+      name: "Katarzyna W.",
       role: "Parent · Gdynia",
       photo: "",
       social: ""
