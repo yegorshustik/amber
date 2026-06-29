@@ -25,22 +25,16 @@
       banner.classList.add('is-visible');
     }, 1000);
 
-    var acceptBtn = document.getElementById('cookies-accept');
-    var declineBtn = document.getElementById('cookies-decline');
-
-    if (acceptBtn) {
-      acceptBtn.addEventListener('click', function () {
+    document.addEventListener('click', function(e) {
+      if (!e.target || typeof e.target.closest !== 'function') return;
+      if (e.target.closest('#cookies-accept')) {
         localStorage.setItem(STORAGE_KEY, 'accepted');
         hide();
-      });
-    }
-
-    if (declineBtn) {
-      declineBtn.addEventListener('click', function () {
+      } else if (e.target.closest('#cookies-decline')) {
         localStorage.setItem(STORAGE_KEY, 'declined');
         hide();
-      });
-    }
+      }
+    });
 
     function hide() {
       banner.classList.remove('is-visible');
