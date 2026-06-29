@@ -2,19 +2,24 @@
   var STORAGE_KEY = 'ac_cookies_consent';
 
   function init() {
-    var consent = localStorage.getItem(STORAGE_KEY);
+    var consent;
+    try {
+      consent = localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      consent = null;
+    }
     if (consent) return; // Consent already given or declined
 
     // Create banner element
     var banner = document.createElement('div');
-    banner.className = 'ac-cookies';
-    banner.id = 'ac-cookie-banner';
+    banner.className = 'ac-notice';
+    banner.id = 'ac-notice-banner';
     banner.innerHTML =
-      '<div class="ac-cookies__inner">' +
-        '<p class="ac-cookies__text">We use cookies to analyze traffic and improve your experience.</p>' +
-        '<div class="ac-cookies__btns">' +
-          '<button class="ac-btn ac-btn--primary" id="cookies-accept" type="button">Accept</button>' +
-          '<button class="ac-btn ac-btn--secondary-dark" id="cookies-decline" type="button">Decline</button>' +
+      '<div class="ac-notice__inner">' +
+        '<p class="ac-notice__text">We use cookies to analyze traffic and improve your experience.</p>' +
+        '<div class="ac-notice__btns">' +
+          '<button class="ac-btn ac-btn--primary" id="notice-accept" type="button">Accept</button>' +
+          '<button class="ac-btn ac-btn--secondary-dark" id="notice-decline" type="button">Decline</button>' +
         '</div>' +
       '</div>';
 
@@ -27,11 +32,11 @@
 
     document.addEventListener('click', function(e) {
       if (!e.target || typeof e.target.closest !== 'function') return;
-      if (e.target.closest('#cookies-accept')) {
-        localStorage.setItem(STORAGE_KEY, 'accepted');
+      if (e.target.closest('#notice-accept')) {
+        try { localStorage.setItem(STORAGE_KEY, 'accepted'); } catch(e) {}
         hide();
-      } else if (e.target.closest('#cookies-decline')) {
-        localStorage.setItem(STORAGE_KEY, 'declined');
+      } else if (e.target.closest('#notice-decline')) {
+        try { localStorage.setItem(STORAGE_KEY, 'declined'); } catch(e) {}
         hide();
       }
     });

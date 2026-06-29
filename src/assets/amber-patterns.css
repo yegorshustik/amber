@@ -672,7 +672,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 /* ============================================================
    COOKIE CONSENT BANNER
    ============================================================ */
-.ac-cookies {
+.ac-notice {
   position: fixed;
   bottom: var(--space-6);
   left: 50%;
@@ -689,38 +689,38 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   opacity: 0;
   pointer-events: none;
 }
-.ac-cookies.is-visible {
+.ac-notice.is-visible {
   transform: translate(-50%, 0);
   opacity: 1;
   pointer-events: auto;
 }
-.ac-cookies__inner {
+.ac-notice__inner {
   padding: var(--space-4) var(--space-6);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 @media (min-width: 560px) {
-  .ac-cookies__inner {
+  .ac-notice__inner {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-6);
   }
 }
-.ac-cookies__text {
+.ac-notice__text {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.45;
   margin: 0;
   opacity: 0.9;
 }
-.ac-cookies__btns {
+.ac-notice__btns {
   display: flex;
   gap: var(--space-3);
   flex-shrink: 0;
 }
-.ac-cookies__btns .ac-btn {
+.ac-notice__btns .ac-btn {
   padding: 8px 18px;
   font-size: 13px;
 }
