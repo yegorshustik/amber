@@ -467,7 +467,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     width: 100%; max-width: var(--container-max);
     padding: var(--space-8) var(--container-pad) var(--space-12);
     gap: var(--space-8);
-    margin-left: 0;
+    margin-inline: 0;
   }
   .ac-header__nav.is-open .ac-nav-col { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
   .ac-header__nav.is-open .ac-nav-col-title { display: block; font-family: var(--font-label); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(237, 228, 210, 0.4); margin-bottom: var(--space-2); }
