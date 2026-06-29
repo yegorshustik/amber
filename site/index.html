@@ -327,7 +327,8 @@
   </div>
   <div class="ac-footer__bottom">
     <div class="ac-footer__bottom-row">
-      <span>© 2026 Amber Council. All rights reserved.</span>
+      <span>© <span id="current-year">2026</span> Amber Council. All rights reserved.</span>
+      <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
       <span class="ac-foot-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
       <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
     </div>
