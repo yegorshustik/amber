@@ -65,6 +65,38 @@
     });
     window.addEventListener('resize', update);
     update();
+
+    // Mouse drag-to-scroll support
+    var isDown = false;
+    var startX;
+    var scrollLeft;
+
+    track.addEventListener('mousedown', function (e) {
+      isDown = true;
+      track.classList.add('is-dragging');
+      track.style.scrollSnapType = 'none'; // disable snap during drag
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    track.addEventListener('mouseleave', function () {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('is-dragging');
+      track.style.scrollSnapType = '';
+    });
+    track.addEventListener('mouseup', function () {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('is-dragging');
+      track.style.scrollSnapType = '';
+    });
+    track.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - track.offsetLeft;
+      var walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
   }
 
   function boot() {
