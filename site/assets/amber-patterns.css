@@ -447,7 +447,15 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 @media (min-width: 1401px) { .ac-hero .ac-h1 { font-size: clamp(36px, 4.2vw, 50px); } }
 
 @media (max-width: 1400px) {
-  .ac-header__nav { display: none; }
+  .ac-header__nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    width: 100%; max-width: none;
+    background: var(--navy);
+    border-bottom: 1px solid var(--line-dark);
+    padding: 0; margin-inline: 0; z-index: 10;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.4s ease 0.4s, visibility 0.4s ease 0.4s;
+  }
   .ac-header__inner > .ac-btn--primary { display: none; }
   .ac-burger {
     display: inline-flex; align-items: center; gap: 12px;
@@ -463,16 +471,51 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   .ac-burger[aria-expanded="true"] .ac-burger__lines span:nth-child(2) { opacity: 0; }
   .ac-burger[aria-expanded="true"] .ac-burger__lines span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
   .ac-header__nav.is-open {
-    display: block;
-    position: absolute; top: 100%;
-    left: 0; right: 0; transform: none;
-    width: 100%; max-width: none;
-    background: var(--navy);
-    border-bottom: 1px solid var(--line-dark);
-    padding: 0;
-    margin-inline: 0;
-    z-index: 10;
+    opacity: 1; visibility: visible;
+    transition: opacity 0.4s ease 0s, visibility 0.4s ease 0s;
   }
+
+  /* Menu Items Animation */
+  .ac-header__nav .ac-nav-col { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+  .ac-header__nav .ac-nav-col > *,
+  .ac-header__nav .ac-nav-cta {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .ac-header__nav.is-open .ac-nav-col > *,
+  .ac-header__nav.is-open .ac-nav-cta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Forward Stagger (Open) */
+  .ac-header__nav.is-open .ac-nav-col:nth-child(1) > *:nth-child(1) { transition-delay: 0.1s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(1) > *:nth-child(2) { transition-delay: 0.15s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(1) > *:nth-child(3) { transition-delay: 0.2s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(1) > *:nth-child(4) { transition-delay: 0.25s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(1) > *:nth-child(5) { transition-delay: 0.3s; }
+
+  .ac-header__nav.is-open .ac-nav-col:nth-child(2) > *:nth-child(1) { transition-delay: 0.2s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(2) > *:nth-child(2) { transition-delay: 0.25s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(2) > *:nth-child(3) { transition-delay: 0.3s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(2) > *:nth-child(4) { transition-delay: 0.35s; }
+  .ac-header__nav.is-open .ac-nav-col:nth-child(2) > *:nth-child(5) { transition-delay: 0.4s; }
+
+  .ac-header__nav.is-open .ac-nav-cta { transition-delay: 0.5s; }
+
+  /* Reverse Stagger (Close) */
+  .ac-header__nav .ac-nav-cta { transition-delay: 0s; }
+  .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(5) { transition-delay: 0.05s; }
+  .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(4) { transition-delay: 0.1s; }
+  .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(3) { transition-delay: 0.15s; }
+  .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(2) { transition-delay: 0.2s; }
+  .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(1) { transition-delay: 0.25s; }
+  .ac-header__nav .ac-nav-col:nth-child(1) > *:nth-child(5) { transition-delay: 0.15s; }
+  .ac-header__nav .ac-nav-col:nth-child(1) > *:nth-child(4) { transition-delay: 0.2s; }
+  .ac-header__nav .ac-nav-col:nth-child(1) > *:nth-child(3) { transition-delay: 0.25s; }
+  .ac-header__nav .ac-nav-col:nth-child(1) > *:nth-child(2) { transition-delay: 0.3s; }
+  .ac-header__nav .ac-nav-col:nth-child(1) > *:nth-child(1) { transition-delay: 0.35s; }
   .ac-header__nav-scroll {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-height: calc(100dvh - 75px);
