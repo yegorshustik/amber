@@ -1148,12 +1148,11 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   transition-duration: 1s !important;
 }
 .ac-hero-collage__back.ac-reveal {
-  transition-delay: 0.2s !important;
+  transition-delay: 0.1s !important;
 }
 .ac-hero-collage__front.ac-reveal {
-  transition-delay: 1.2s !important;
+  transition-delay: 0.4s !important;
 }
-
 /* ============================================================
    SCROLL TO TOP
    ============================================================ */
