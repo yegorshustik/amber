@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#0b1a2a" />
-  <g transform="translate(255, 175) scale(2.5)">
+  <!-- Safe square zone: 630x630 centered at (600,315), with ~90px padding = content area ~450px wide -->
+  <!-- Logo lockup centered in the artboard -->
+  <g transform="translate(370, 195) scale(1.7)">
     <g fill="none" stroke="#C89B41" stroke-width="2.4" stroke-linejoin="round">
       <path d="M52 26 L94 56 L52 86 L10 56 Z"></path>
     </g>
