@@ -555,9 +555,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   .ac-header__nav {
     position: absolute; top: 100%; left: 0; right: 0;
     width: 100%; max-width: none;
-    background: rgba(11, 26, 42, 0.92);
-    backdrop-filter: blur(18px) saturate(1.4);
-    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    background: var(--navy);
     border-bottom: 1px solid rgba(237, 228, 210, 0.08);
     padding: 0; margin-inline: 0; z-index: 10;
     opacity: 0; visibility: hidden;
