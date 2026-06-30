@@ -87,6 +87,17 @@ a { color: inherit; }
 .ac-prose tbody td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--line); color: var(--ink); vertical-align: top; }
 .ac-prose tbody tr:last-child td { border-bottom: 0; }
 
+.ac-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--space-6) 0;
+}
+.ac-table-wrapper table {
+  margin: 0;
+  min-width: 600px;
+}
+
 /* figure / image placeholder */
 .ac-figure { margin: var(--space-8) 0; }
 .ac-figure img { border-radius: var(--radius-card); }
@@ -445,6 +456,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 .ac-burger { display: none; }
 .ac-nav-cta { display: none; }
 @media (min-width: 1401px) { .ac-hero .ac-h1 { font-size: clamp(36px, 4.2vw, 50px); } }
+@media (max-width: 1400px) {
   .ac-header__nav {
     position: absolute; top: 100%; left: 0; right: 0;
     width: 100%; max-width: none;
