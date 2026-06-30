@@ -456,7 +456,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
     opacity: 0; visibility: hidden;
     transform: translateY(-8px);
     will-change: opacity, transform, visibility;
-    transition: opacity 0.3s ease 0.45s, visibility 0.3s ease 0.45s, transform 0.3s ease 0.45s;
+    transition: opacity 0.3s ease 0.6s, visibility 0.3s ease 0.6s, transform 0.3s ease 0.6s;
   }
   .ac-header__inner > .ac-btn--primary { display: none; }
   .ac-burger {
