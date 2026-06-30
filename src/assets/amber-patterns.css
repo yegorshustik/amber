@@ -1095,6 +1095,18 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   }
 }
 
+/* Sequential fade-in for hero collage */
+.ac-hero-collage__back.ac-reveal,
+.ac-hero-collage__front.ac-reveal {
+  transition-duration: 1s !important;
+}
+.ac-hero-collage__back.ac-reveal {
+  transition-delay: 0.2s !important;
+}
+.ac-hero-collage__front.ac-reveal {
+  transition-delay: 1.2s !important;
+}
+
 /* ============================================================
    SCROLL TO TOP
    ============================================================ */
