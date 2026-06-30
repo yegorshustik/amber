@@ -138,8 +138,7 @@
   padding-bottom: 4px;
 }
 .ac-header__logo-link { flex-shrink: 0; display: flex; align-items: center; }
-.ac-header__logo { height: 64px; flex: none; transition: height 0.3s ease; }
-.ac-header.is-compact .ac-header__logo { height: 48px; }
+.ac-header__logo { height: 64px; flex: none; }
 .ac-header__nav { display: flex; }
 .ac-header__nav-scroll { display: flex; gap: var(--space-6); align-items: center; }
 .ac-nav-col { display: flex; gap: var(--space-6); align-items: center; }
