@@ -125,15 +125,12 @@
 }
 .ac-header__inner { display: flex; align-items: center; gap: var(--space-8);
   max-width: var(--container-max); margin-inline: auto; padding: 8px var(--container-pad); }
-.ac-header__logo { height: 64px; flex: none; transition: height 0.2s ease; }
-@media (max-width: 640px) {
-  .ac-header__logo { height: 44px; }
-}
+.ac-header__logo { height: 64px; flex: none; }
 .ac-header__nav { display: flex; }
 .ac-header__nav-scroll { display: flex; gap: var(--space-6); align-items: center; }
 .ac-nav-col { display: flex; gap: var(--space-6); align-items: center; }
 .ac-nav-col-title { display: none; }
-@media (min-width: 1401px) { 
+@media (min-width: 1025px) { 
   .ac-header__nav { margin-inline: auto; }
   .ac-nav-col--contacts { display: none; } 
   .ac-hide-on-desktop { display: none !important; }

@@ -214,8 +214,6 @@ a.ac-action {
    image collage, lead-capture form.
    ============================================================ */
 
-/* logo sizing */
-.ac-header__logo { height: 80px; }
 
 /* eyebrow + copy on dark sections */
 .ac-section--navy .ac-eyebrow, .ac-quote .ac-eyebrow { color: var(--amber-light); }
