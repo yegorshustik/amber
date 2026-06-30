@@ -17,6 +17,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -86,6 +87,21 @@ a { color: inherit; }
 }
 .ac-prose tbody td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--line); color: var(--ink); vertical-align: top; }
 .ac-prose tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 768px) {
+  .ac-prose { overflow-x: hidden; }
+  .ac-prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    table-layout: auto;
+    min-width: 0;
+  }
+  .ac-prose thead,
+  .ac-prose tbody,
+  .ac-prose tr { display: table; width: 100%; min-width: 520px; table-layout: fixed; }
+  .ac-prose table colgroup { display: none; }
+}
 
 .ac-table-wrapper {
   width: 100%;
