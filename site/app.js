@@ -8,3 +8,4 @@ import './toc.js';
 import './assets/ac-form.js';
 import './assets/ac-scroll.js';
 import './assets/ac-table.js';
+import './assets/ac-lang-picker.js';

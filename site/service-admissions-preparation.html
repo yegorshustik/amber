@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/app.css?v=92">
-<script type="module" src="assets/app.js?v=92"></script>
+<link rel="stylesheet" href="assets/app.css?v=93">
+<script type="module" src="assets/app.js?v=93"></script>
 
 </head>
 <body>
@@ -324,7 +324,19 @@
       <span>© <span id="current-year">2026</span> Amber Council. All rights reserved.</span>
       <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
       <span class="ac-foot-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
-      <span class="ac-lang"><a href="#">EN</a><a href="#">PL</a><a href="#">UA</a></span>
+      <div class="ac-lang-picker">
+        <button type="button" class="ac-lang-picker__toggle" aria-expanded="false" aria-haspopup="listbox">
+          <svg class="ac-lang-picker__globe" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="ac-lang-picker__current">English</span>
+        </button>
+        <ul class="ac-lang-picker__menu" role="listbox" aria-label="Select language">
+          <li role="option" aria-selected="true" data-lang="en">English</li>
+          <li role="option" aria-selected="false" data-lang="pl">Polski</li>
+          <li role="option" aria-selected="false" data-lang="ua">Українська</li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
