@@ -10,34 +10,9 @@
     var nav = root.querySelector('.ac-slider__nav');
     if (slides.length < 2) { if (nav) nav.style.display = 'none'; return; }
 
-    var dotsWrap = root.querySelector('[data-dots]');
     var prevBtn = root.querySelector('[data-prev]');
     var nextBtn = root.querySelector('[data-next]');
-    var dots = [];
-
-    // Find sibling eyebrow header to inject counter
-    var eyebrow = root.previousElementSibling;
-    var counterEl = null;
-    if (eyebrow && eyebrow.classList.contains('ac-eyebrow')) {
-      counterEl = eyebrow.querySelector('.ac-eyebrow-counter');
-      if (!counterEl) {
-        counterEl = document.createElement('span');
-        counterEl.className = 'ac-eyebrow-counter';
-        eyebrow.appendChild(counterEl);
-      }
-    }
-
-    if (dotsWrap) {
-      slides.forEach(function (_, i) {
-        var d = document.createElement('button');
-        d.type = 'button';
-        d.className = 'ac-slider__dot';
-        d.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-        d.addEventListener('click', function () { scrollToIndex(i); });
-        dotsWrap.appendChild(d);
-        dots.push(d);
-      });
-    }
+    var counterEl = root.querySelector('[data-counter]');
 
     function currentIndex() { return Math.round(track.scrollLeft / track.clientWidth); }
     function scrollToIndex(i) {
@@ -47,13 +22,12 @@
 
     function update() {
       var idx = currentIndex();
-      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
       slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
       if (prevBtn) prevBtn.disabled = idx <= 0;
       if (nextBtn) nextBtn.disabled = idx >= slides.length - 1;
 
       if (counterEl) {
-        counterEl.innerHTML = '&nbsp;•&nbsp;' + (idx + 1) + '&nbsp;/&nbsp;' + slides.length;
+        counterEl.textContent = (idx + 1) + ' / ' + slides.length;
       }
     }
 
