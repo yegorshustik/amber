@@ -9,6 +9,7 @@
       '.ac-h1', '.ac-h2', '.ac-h3',
       '.ac-eyebrow',
       '.ac-editorial',
+      '.ac-hero__cta',
       '.ac-feature',
       '.ac-card',
       '.ac-step',

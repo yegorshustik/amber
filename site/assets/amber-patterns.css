@@ -1151,3 +1151,17 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   width: 20px;
   height: 20px;
 }
+
+/* Sequential fade-in for hero text */
+.ac-hero__text .ac-eyebrow.ac-reveal {
+  transition-delay: 0s !important;
+}
+.ac-hero__text .ac-h1.ac-reveal {
+  transition-delay: 0.1s !important;
+}
+.ac-hero__text .ac-editorial.ac-reveal {
+  transition-delay: 0.4s !important;
+}
+.ac-hero__text .ac-hero__cta.ac-reveal {
+  transition-delay: 0.7s !important;
+}
