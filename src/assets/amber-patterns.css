@@ -1019,7 +1019,13 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
 
 /* Empty & Search Styles */
 .ac-catalog-empty {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  min-height: 320px;
   padding: var(--space-12) var(--space-6);
   border: 2px dashed var(--line);
   border-radius: var(--radius-card);
