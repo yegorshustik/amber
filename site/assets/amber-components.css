@@ -145,7 +145,7 @@
    FOOTER  — navy-deep
    ============================================================ */
 .ac-footer { background: var(--navy-deep); color: var(--cream); }
-.ac-footer__inner { max-width: var(--container-max); margin-inline: auto; padding: var(--space-16) var(--container-pad); display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--gutter); }
-.ac-footer__title { font-family: var(--font-label); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--amber-light); margin-bottom: 14px; }
+.ac-footer__inner { max-width: var(--container-max); margin-inline: auto; padding: var(--space-16) var(--container-pad); display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--gutter); align-items: start; }
+.ac-footer__title { font-family: var(--font-label); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--amber-light); margin-top: 0; margin-bottom: 14px; }
 .ac-footer a { font-family: var(--font-body); font-size: 15px; color: rgba(237,228,210,.78); text-decoration: none; display: block; padding: 5px 0; }
 .ac-footer a:hover { color: var(--amber-light); }
