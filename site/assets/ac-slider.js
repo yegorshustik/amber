@@ -14,6 +14,20 @@
     var nextBtn = root.querySelector('[data-next]');
     var counterEl = root.querySelector('[data-counter]');
 
+    // Find the eyebrow heading associated with this slider (sibling before it)
+    var eyebrowEl = null;
+    var container = root.parentElement;
+    if (container) {
+      eyebrowEl = container.querySelector('[data-slider-eyebrow]');
+    }
+    // Create the counter span for the eyebrow (mobile only)
+    var eyebrowCounter = null;
+    if (eyebrowEl) {
+      eyebrowCounter = document.createElement('span');
+      eyebrowCounter.className = 'ac-eyebrow__counter';
+      eyebrowEl.appendChild(eyebrowCounter);
+    }
+
     function currentIndex() { return Math.round(track.scrollLeft / track.clientWidth); }
     function scrollToIndex(i) {
       i = Math.max(0, Math.min(slides.length - 1, i));
@@ -28,6 +42,9 @@
 
       if (counterEl) {
         counterEl.textContent = (idx + 1) + ' / ' + slides.length;
+      }
+      if (eyebrowCounter) {
+        eyebrowCounter.textContent = ' · ' + (idx + 1) + '/' + slides.length;
       }
     }
 
