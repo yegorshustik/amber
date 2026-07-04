@@ -1,9 +1,11 @@
 /* Amber Council — Language Picker
-   Toggle dropdown, select language, update label, close on outside click. */
+   Toggle dropdown, select language, update label, close on outside click.
+   Syncs selection across all pickers on the page. */
 (function () {
   function init() {
-    var pickers = document.querySelectorAll('.ac-lang-picker');
-    pickers.forEach(function (picker) {
+    var allPickers = document.querySelectorAll('.ac-lang-picker');
+
+    allPickers.forEach(function (picker) {
       var toggle = picker.querySelector('.ac-lang-picker__toggle');
       var menu = picker.querySelector('.ac-lang-picker__menu');
       var currentLabel = picker.querySelector('.ac-lang-picker__current');
@@ -12,6 +14,13 @@
       // Toggle menu
       toggle.addEventListener('click', function (e) {
         e.stopPropagation();
+        // Close other open pickers first
+        allPickers.forEach(function (other) {
+          if (other !== picker) {
+            other.classList.remove('is-open');
+            other.querySelector('.ac-lang-picker__toggle').setAttribute('aria-expanded', 'false');
+          }
+        });
         var isOpen = picker.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
@@ -19,19 +28,22 @@
       // Select a language
       items.forEach(function (item) {
         item.addEventListener('click', function () {
-          // Update aria-selected
-          items.forEach(function (li) { li.setAttribute('aria-selected', 'false'); });
-          item.setAttribute('aria-selected', 'true');
+          var lang = item.getAttribute('data-lang');
+          var langName = item.textContent.replace('✓ ', '');
 
-          // Update the visible label
-          currentLabel.textContent = item.textContent.replace('✓ ', '');
-
-          // Close the menu
-          picker.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
+          // Update all pickers on the page to stay in sync
+          allPickers.forEach(function (p) {
+            var pLabel = p.querySelector('.ac-lang-picker__current');
+            var pItems = p.querySelectorAll('.ac-lang-picker__menu li');
+            pItems.forEach(function (li) {
+              li.setAttribute('aria-selected', li.getAttribute('data-lang') === lang ? 'true' : 'false');
+            });
+            if (pLabel) pLabel.textContent = langName;
+            p.classList.remove('is-open');
+            p.querySelector('.ac-lang-picker__toggle').setAttribute('aria-expanded', 'false');
+          });
 
           // In the future, this is where navigation to the localized version would happen:
-          // var lang = item.getAttribute('data-lang');
           // window.location.href = '/' + lang + '/';
         });
       });
