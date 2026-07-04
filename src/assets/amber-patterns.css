@@ -287,7 +287,7 @@ a.ac-action {
 /* Language picker inside burger menu — hidden on desktop */
 .ac-lang-picker--menu { display: none; }
 @media (max-width: 1024px) {
-  .ac-header__nav.is-open .ac-lang-picker--menu {
+  .ac-lang-picker--menu {
     display: block;
     margin-top: var(--space-4);
   }
@@ -608,6 +608,7 @@ a.ac-slide__name:hover { text-decoration: underline; color: var(--amber-deep); }
   }
   
   /* Reverse Stagger (Close) - Applied to base selector */
+  .ac-header__nav .ac-lang-picker--menu { transition-delay: 0s; }
   .ac-header__nav .ac-nav-cta { transition-delay: 0s; }
   .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(5) { transition-delay: 0.05s; }
   .ac-header__nav .ac-nav-col:nth-child(2) > *:nth-child(4) { transition-delay: 0.1s; }
