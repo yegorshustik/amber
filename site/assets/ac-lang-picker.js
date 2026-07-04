@@ -23,6 +23,24 @@
         });
         var isOpen = picker.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+        // Position dropdown based on available space
+        if (isOpen) {
+          var rect = toggle.getBoundingClientRect();
+          var menuHeight = menu.scrollHeight || 120;
+          var spaceBelow = window.innerHeight - rect.bottom;
+          var spaceAbove = rect.top;
+          if (spaceBelow >= menuHeight + 6) {
+            menu.style.top = 'calc(100% + 6px)';
+            menu.style.bottom = 'auto';
+          } else if (spaceAbove >= menuHeight + 6) {
+            menu.style.bottom = 'calc(100% + 6px)';
+            menu.style.top = 'auto';
+          } else {
+            menu.style.top = 'calc(100% + 6px)';
+            menu.style.bottom = 'auto';
+          }
+        }
       });
 
       // Select a language
