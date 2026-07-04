@@ -134,6 +134,7 @@
   background: var(--navy);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+  border-bottom: none;
 }
 .ac-header__inner { display: flex; align-items: center; gap: var(--space-8);
   max-width: var(--container-max); margin-inline: auto; padding: 8px var(--container-pad);
