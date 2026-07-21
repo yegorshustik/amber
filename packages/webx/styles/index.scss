@@ -1,0 +1,235 @@
+@import "variables";
+@import "mixins";
+
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/type';
+@import "utilities";
+@import "bootstrap/scss/utilities/api";
+
+
+
+:root {
+    --wx-spacer: #{$spacer};
+    --wx-easing : cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --wx-scrollbar-thumb-color : var(--wx-primary);
+    --wx-scrollbar-color : var(--wx-light-gray);
+
+    --wx-control-size : 42px;
+
+    --wx-input-size         : var(--wx-control-size);
+    --wx-input-padding-x    : calc(var(--wx-spacer) * 1.5);
+    --wx-input-padding-y    : calc(var(--wx-spacer));
+    --wx-input-radius       : calc(var(--wx-control-size) * .25);
+    --wx-input-border       : var(--wx-input-default-border);
+    --wx-input-background   : var(--wx-input-default-background);
+    --wx-input-color        : var(--wx-input-default-color);
+    --wx-input-placeholder  : var(--wx-secondary);
+
+    --wx-input-default-border     : var(--wx-border-color);
+    --wx-input-default-background : var(--wx-white);
+    --wx-input-default-color      : var(--wx-dark);
+
+    --wx-input-hover-border       : var(--wx-light);
+    --wx-input-hover-background   : var(--wx-white);
+    --wx-input-hover-color        : var(--wx-dark);
+
+    --wx-input-focus-border       : color-mix(in srgb, var(--wx-primary) 50%, white);
+    --wx-input-focus-background   : var(--wx-white);
+    --wx-input-focus-color        : var(--wx-dark);
+
+    --wx-input-filled-border      : var(--wx-primary);
+    --wx-input-filled-background  : var(--wx-white);
+    --wx-input-filled-color       : var(--wx-dark);
+
+    --wx-input-invalid-border      : var(--wx-danger);
+    --wx-input-invalid-background  : var(--wx-white);
+    --wx-input-invalid-color       : var(--wx-danger);
+}
+
+
+
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input,textarea, select, button {
+    outline: none!important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+h2 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+h3 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+a {
+    --wx-link-color-rgb: var(--wx-primary-rgb);
+    transition: color 200ms var(--wx-easing);
+
+    &:hover {
+        --wx-link-color-rgb : var(--wx-primary-hover-rgb);
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+
+.wx-native-hidden-select {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    pointer-events: none;
+}
+
+
+
+.selection-area {
+    z-index: 1000000000;
+    background: rgba(46, 115, 252, 0.11);
+    border: 1px solid rgba(98, 155, 255, 0.85);
+    border-radius: 0.15em;
+}
+
+div:has(>.selection-area) {
+    z-index: 1000000000!important;
+
+}
+
+
+.wx-native-hidden {
+    appearance: auto;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wx-dummy-photo {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--wx-border-radius);
+    background-color: var(--wx-white);
+    border:1px solid var(--wx-white);
+}
+
+
+.wx-input-box {
+    min-height: var(--wx-input-size);
+}
+
+
+[data-tooltip] {
+    position: relative;
+
+    &:hover {
+        &:before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: var(--wx-dark);
+            color: var(--wx-white);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+    }
+
+    &[data-tooltip-placement="top-right"] {
+        &:hover {
+            &:before {
+                left: auto;
+                right: -12px;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+
+.m-range-theme {
+    --c-primary: var(--wx-primary)!important;
+    --c-fill: var(--wx-light)!important;
+    --c-fill-stop: #F5F5F5;
+    --c-fill-thumb: #fff;
+    --c-drop: var(--wx-primary)!important;
+}
+
+
+table,
+.table {
+    width:100%!important;
+    border:none;
+
+    &, tr, td {
+        height: auto !important;
+    }
+
+    td, th {
+        padding:8px 16px;
+    }
+
+    thead {
+        td, th {
+            background-color: var(--wx-primary);
+            font-weight:600;
+            color: var(--wx-white);
+        }
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            td {
+                background-color:var(--wx-lightest);
+            }
+        }
+        tr:nth-child(odd) {
+            td {
+                background-color:var(--wx-white);
+            }
+        }
+        tr:hover {
+            td {
+                background-color:var(--wx-lightest);
+            }
+        }
+    }
+}

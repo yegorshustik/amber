@@ -1,0 +1,1 @@
+import{c as i}from"./copy-text-to-clipboard-iUb6yDku.js";let t;function c(e){e.addEventListener("click",()=>{i(e.dataset.copy),e.classList.add("copied"),t&&clearTimeout(t),t=setTimeout(()=>e.classList.remove("copied"),3e3)})}export{c as init};

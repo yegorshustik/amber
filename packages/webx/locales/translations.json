@@ -1,0 +1,295 @@
+{
+    "cancel": "Cancel",
+    "create": "Create",
+    "add": "Add",
+    "add-after": "Add after",
+    "copy": "Copy",
+    "sort": "Sort",
+    "paste": "Paste",
+    "save": "Save",
+    "remove": "Remove",
+    "trash": "Trash",
+    "close": "Close",
+    "answer": "Answer",
+    "color": "Color",
+    "id": "ID",
+    "or": "or",
+    "yes": "Yes",
+    "status": "Status",
+    "no": "No",
+    "cta": "Button",
+    "find": "Find",
+    "export": "Export",
+    "import": "Import",
+    "reset": "Reset",
+    "title": "Title",
+    "placeholder": "Placeholder",
+    "short-text": "Short text",
+    "text": "Text",
+    "cards": "Cards",
+    "details": "Details",
+    "tags": "Tags",
+    "gallery": "Gallery",
+    "alt": "Alt",
+    "prev": "Previous",
+    "next": "Next",
+    "url": "URL",
+    "type": "Type",
+    "send": "Send",
+    "settings": "Settings",
+    "created-at": "Created at",
+    "published-at": "Published at",
+    "parent": "Parent item",
+    "select": "Select",
+    "select-placeholder": "Select",
+    "select-empty": "Empty",
+    "searching": "Searching...",
+    "select-file": "Select file",
+    "browse-files": "Browse files",
+    "edit": "Edit",
+    "is-activated": "Activated",
+    "is-published": "Published",
+    "is-visible": "Visible",
+    "in-menu": "In menu",
+    "is-required": "Required",
+    "slug": "Slug",
+    "select-page": "Select page",
+    "search-placeholder": "Search",
+    "search-no-results": "Nothing found",
+    "search-no-results-reset": "Reset search query",
+    "datatable-empty": "No records found",
+    "image": "Image",
+    "signature": "Signature",
+    "default": "Default",
+    "light": "Light",
+    "dark": "Dark",
+    "general": "General",
+    "heading": "Heading",
+    "heading-level": "Level",
+    "heading-style": "Style",
+    "heading-h1": "H1",
+    "heading-h2": "H2",
+    "heading-h3": "H3",
+    "heading-h4": "H4",
+    "heading-h5": "H5",
+    "heading-h6": "H6",
+    "domain": "Domain",
+    "domain-alternative": "Alternative domain",
+    "documents": "Documents",
+    "truncated": "Truncated",
+    "text-expand": "Read more",
+    "text-collapse": "Hide",
+    "footer-links": "Footer links",
+    "layout": "Layout",
+    "shrink": "Shrunk",
+    "buffer": {
+        "pushed": "You added new data to the buffer.",
+        "pulled": "You retrieved data from the buffer.",
+        "cleared": "Buffer cleared."
+    },
+    "coordinates": {
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "find-coordinates": "Find coordinates",
+        "api-key": "Google Maps API key",
+        "api-key-warning": "Google Maps API key is required"
+    },
+    "input": {
+        "image": {
+            "edit-image": "Edit image",
+            "placeholder": "Select image"
+        },
+        "file": {
+            "edit-file": "Edit file"
+        }
+    },
+    "seo": {
+        "heading": "SEO",
+        "og": "OG image",
+        "title": "Title",
+        "description": "Description",
+        "keywords": "Keywords",
+        "h1": "H1 heading",
+        "robots-txt": "Robots.txt"
+    },
+    "filemanager": {
+        "title": "File manager",
+        "search-placeholder": "Search files",
+        "create-folder": "Create folder",
+        "edit-folder": "Edit folder",
+        "remove-folder": "Remove folder",
+        "upload-files": "Upload files",
+        "remove-files": "Remove selected files",
+        "file": "File",
+        "file-name": "File name",
+        "directory": {
+            "add": "Create folder",
+            "edit": "Edit folder",
+            "remove-confirm": "Are you sure you want to delete the folder and all its files?"
+        }
+    },
+    "video": {
+        "heading": "Video",
+        "type": {
+            "title": "Type",
+            "mp4": "MP4",
+            "youtube": "YouTube"
+        },
+        "poster": "Poster",
+        "file": "Select file",
+        "id": "ID"
+    },
+    "page-composer": {
+        "browser": "Component browser",
+        "add": "Add component",
+        "copy": "Copy components",
+        "paste": "Paste components",
+        "sort-components": "Sort components",
+        "component-buffer": "Component buffer",
+        "groups": {
+            "typography": "Typography",
+            "layout": "Layout"
+        },
+        "components": {
+            "text": "Text"
+        }
+    },
+    "login": {
+        "email": "Email",
+        "password": "Password",
+        "sign-in": "Sign in"
+    },
+    "users": "Users",
+    "user": {
+        "name": "Name",
+        "select": "Select",
+        "find-user": "Find user",
+        "profile": "Profile",
+        "phone": "Phone",
+        "status": "Status",
+        "status-admin": "Administrator",
+        "status-user": "User",
+        "sign-out": "Sign out",
+        "first-name": "First name",
+        "last-name": "Last name",
+        "email": "Email",
+        "company-name": "Company name",
+        "company-erdpo": "EDRPOU/INN",
+        "company-legal-address": "Legal address",
+        "password": "Password",
+        "confirm-password": "Confirm password",
+        "deleted": "User deleted"
+    },
+    "menu": {
+        "system": "System",
+        "content": "Content",
+        "users": "Users",
+        "configuration": "Configuration",
+        "pages": "Pages",
+        "articles": "Articles",
+        "articles-rubrics": "Categories",
+        "inbox": "Inbox",
+        "inbox-forms": "Forms"
+    },
+    "configuration": {
+        "heading": "Configuration",
+        "project-name": "Project name",
+        "branding": "Branding",
+        "branding-logo": "Project logo"
+    },
+    "not-found": {
+        "heading": "Page not found",
+        "go-back": "Go back"
+    },
+    "sites": {
+        "menu": "Sites",
+        "create": "Create site",
+        "edit": "Edit site",
+        "heading": "Sites",
+        "saved": "Site saved",
+        "deleted": "Site deleted",
+        "current-site": ":site",
+        "choose-site": "Site"
+    },
+    "inbox": {
+        "heading": "Inbox",
+        "forms": {
+            "heading": "Forms",
+            "create": "Create form",
+            "edit": "Edit form",
+            "saved": "Form saved",
+            "deleted": "Form deleted",
+            "recipients": "Recipients",
+            "thank-you": "Thank-you message",
+            "design": "Design",
+            "submit-button-text": "Submit button text",
+            "application": {
+                "selected-item": "Request #:id",
+                "heading": "Request #:id",
+                "create": "Create request",
+                "deleted": "Request deleted",
+                "saved": "Request saved"
+            },
+            "fields": {
+                "heading": "Fields",
+                "warning": "Create a form first to add fields.",
+                "create": "Create field",
+                "edit": "Edit field",
+                "saved": "Field saved",
+                "deleted": "Field deleted",
+                "is-fullsize": "Full width",
+                "in-table": "In table",
+                "types": {
+                    "text": "Text",
+                    "email": "Email",
+                    "tel": "Phone",
+                    "textarea": "Text area"
+                }
+            }
+        }
+    },
+    "pages": {
+        "heading": "Pages",
+        "create-page": "Create page",
+        "edit-page": "Edit page",
+        "saved": "Page saved",
+        "show-sidebar": "Show page menu"
+    },
+    "articles": {
+        "heading": "Articles",
+        "rubrics": {
+            "create": "Create category",
+            "edit": "Edit category",
+            "heading": "Categories",
+            "saved": "Category saved",
+            "deleted": "Category deleted"
+        },
+        "tags": {
+            "create": "Create tag",
+            "edit": "Edit tag",
+            "heading": "Tags",
+            "saved": "Tag saved",
+            "deleted": "Tag deleted"
+        },
+        "article": {
+            "rubrics": "Categories",
+            "tags": "Tags",
+            "create": "Create article",
+            "edit": "Edit article",
+            "heading": "Articles",
+            "saved": "Article saved",
+            "deleted": "Article deleted"
+        }
+    },
+    "faq": {
+        "question": "Question",
+        "answer": "Answer"
+    },
+    "contacts" : {
+        "contact-details": "Contact details",
+        "phone-number": "Phone number",
+        "google-maps-link": "Google Maps link",
+        "email": "Email",
+        "address": "Address"
+    }
+}

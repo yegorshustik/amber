@@ -1,0 +1,503 @@
+$spacer  : .5rem;
+
+$spacers : (
+    0   : 0,
+    2   : ($spacer * calc(2 / 8)),
+    4   : ($spacer * calc(4 / 8)),
+    6   : ($spacer * calc(6 / 8)),
+    8   : ($spacer * calc(8 / 8)),
+    10  : ($spacer * calc(10 / 8)),
+    12  : ($spacer * calc(12 / 8)),
+    14  : ($spacer * calc(14 / 8)),
+    16  : ($spacer * calc(16 / 8)),
+    18  : ($spacer * calc(18 / 8)),
+    24  : ($spacer * calc(24 / 8)),
+    32  : ($spacer * calc(32 / 8)),
+    40  : ($spacer * calc(40 / 8)),
+    48  : ($spacer * calc(48 / 8)),
+    64  : ($spacer * calc(64 / 8)),
+    96  : ($spacer * calc(96 / 8)),
+    128 : ($spacer * calc(128 / 8)),
+    192 : ($spacer * calc(192 / 8)),
+    256 : ($spacer * calc(256 / 8)),
+    384 : ($spacer * calc(384 / 8)),
+    512 : ($spacer * calc(512 / 8)),
+);
+
+$colors : ();
+$grays  : ();
+
+$grid-gutter-width : 1rem;
+
+$prefix                       : wx-;
+$enable-negative-margins      : true;
+$enable-responsive-font-sizes : true;
+$enable-gradients             : true;
+$enable-shadows               : true;
+$enable-smooth-scroll         : true;
+
+$headings-font-weight : 600;
+$font-size-base : 1rem;
+
+$h1-font-size:                $font-size-base * 2;
+$h2-font-size:                $font-size-base * 1.5;
+$h3-font-size:                $font-size-base * 1.25;
+$h4-font-size:                $font-size-base * 1.15;
+$h5-font-size:                $font-size-base * 1.05;
+$h6-font-size:                $font-size-base;
+
+$link-decoration : none;
+
+$body-bg        : #f3f4f4;
+$body-color     : #21262C;
+$border-color   : #d5d5e4;
+$border-radius-sm  : 12px;
+$border-radius-xs  : 8px;
+$border-radius     : 16px;
+$box-shadow : 0 0 8px 0 rgba(0,0,0,.1);
+
+$theme-colors: (
+    'white'          : #ffffff,
+    'dark'           : #21262C,
+    'background'     : #f3f3f6,
+
+    'lightest'     : #f3f3f6,
+
+//    'light'          : #f6f6fa,
+    'light-gray'       : #f3f3f3,
+    'light-gray-hover' : #dadade,
+
+
+    'light'          : #d4d8db,
+    'light-hover'    : #c5cace,
+    'light-active'   : #c5cace,
+    'light-disabled' : #d4d8db,
+
+
+    'primary'          : #427edd,
+    'primary-hover'    : #5b95ef,
+    'primary-active'   : #4276c7,
+    'primary-disabled' : #81acf1,
+
+    'success'          : #21c36d,
+    'success-hover'    : #2dd17b,
+    'success-active'   : #14ae5c,
+    'success-disabled' : #6fd79f,
+
+    'danger'          : #F14646,
+    'danger-hover'    : #d02d2d,
+    'danger-active'   : #d02d2d,
+    'danger-disabled' : #ef6f6f,
+
+    'warning'          : #FF9F43,
+    'warning-hover'    : #f89a48,
+    'warning-active'   : #f89a48,
+    'warning-disabled' : #f6ac65,
+
+    'secondary'          : #babac3,
+    'secondary-hover'    : #c1c1cb,
+    'secondary-active'   : #c1c1cb,
+    'secondary-disabled' : #c1c1cb,
+
+    'info'          : #0dcaf0,
+    'info-hover'    : #75dff5,
+    'info-active'   : #19c2e4,
+    'info-disabled' : #249cb5,
+);
+
+$font-family-base      : 'Inter', serif;
+$font-family-secondary : 'Inter', sans-serif;
+
+$buttons : (
+    'default' : (
+        'initial'  : (
+            'background' : 'var(--wx-white)',
+            'border'     : 'var(--wx-light-gray)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-light)',
+            'border'     : 'var(--wx-light-gray)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-light-gray)',
+            'border'     : 'var(--wx-light-gray)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-white)',
+            'border'     : 'var(--wx-secondary)',
+            'color'      : 'var(--wx-secondary)',
+        ),
+    ),
+
+    'blank' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'transparent',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-light-gray)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-light-gray)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'transparent',
+            'color'      : 'var(--wx-secondary)',
+        ),
+    ),
+
+    'primary' : (
+        'initial'  : (
+            'background' : 'var(--wx-primary)',
+            'border'     : 'var(--wx-primary)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-primary-hover)',
+            'border'     : 'var(--wx-primary-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-primary-active)',
+            'border'     : 'var(--wx-primary-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-primary-disabled)',
+            'border'     : 'var(--wx-primary-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-primary' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-primary)',
+            'color'      : 'var(--wx-primary)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-primary-hover)',
+            'color'      : 'var(--wx-primary-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-primary-active)',
+            'color'      : 'var(--wx-primary-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-primary-disabled)',
+            'color'      : 'var(--wx-primary-disabled)',
+        ),
+    ),
+
+    'secondary' : (
+        'initial'  : (
+            'background' : 'var(--wx-secondary)',
+            'border'     : 'var(--wx-secondary)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-secondary-hover)',
+            'border'     : 'var(--wx-secondary-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-secondary-active)',
+            'border'     : 'var(--wx-secondary-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-secondary-disabled)',
+            'border'     : 'var(--wx-secondary-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-secondary' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-secondary)',
+            'color'      : 'var(--wx-secondary)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-secondary-hover)',
+            'color'      : 'var(--wx-secondary-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-secondary-active)',
+            'color'      : 'var(--wx-secondary-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-secondary-disabled)',
+            'color'      : 'var(--wx-secondary-disabled)',
+        ),
+    ),
+
+    'success' : (
+        'initial'  : (
+            'background' : 'var(--wx-success)',
+            'border'     : 'var(--wx-success)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-success-hover)',
+            'border'     : 'var(--wx-success-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-success-active)',
+            'border'     : 'var(--wx-success-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-success-disabled)',
+            'border'     : 'var(--wx-success-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-success' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-success)',
+            'color'      : 'var(--wx-success)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-success-hover)',
+            'color'      : 'var(--wx-success-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-success-active)',
+            'color'      : 'var(--wx-success-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-success-disabled)',
+            'color'      : 'var(--wx-success-disabled)',
+        ),
+    ),
+
+    'danger' : (
+        'initial'  : (
+            'background' : 'var(--wx-danger)',
+            'border'     : 'var(--wx-danger)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-danger-hover)',
+            'border'     : 'var(--wx-danger-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-danger-active)',
+            'border'     : 'var(--wx-danger-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-danger-disabled)',
+            'border'     : 'var(--wx-danger-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-danger' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-danger)',
+            'color'      : 'var(--wx-danger)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-danger-hover)',
+            'color'      : 'var(--wx-danger-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-danger-active)',
+            'color'      : 'var(--wx-danger-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-danger-disabled)',
+            'color'      : 'var(--wx-danger-disabled)',
+        ),
+    ),
+
+    'warning' : (
+        'initial'  : (
+            'background' : 'var(--wx-warning)',
+            'border'     : 'var(--wx-warning)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-warning-hover)',
+            'border'     : 'var(--wx-warning-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-warning-active)',
+            'border'     : 'var(--wx-warning-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-warning-disabled)',
+            'border'     : 'var(--wx-warning-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-warning' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-warning)',
+            'color'      : 'var(--wx-warning)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-warning-hover)',
+            'color'      : 'var(--wx-warning-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-warning-active)',
+            'color'      : 'var(--wx-warning-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-warning-disabled)',
+            'color'      : 'var(--wx-warning-disabled)',
+        ),
+    ),
+
+    'light' : (
+        'initial'  : (
+            'background' : 'var(--wx-light)',
+            'border'     : 'var(--wx-light)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-light-hover)',
+            'border'     : 'var(--wx-light-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-light-active)',
+            'border'     : 'var(--wx-light-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-light-disabled)',
+            'border'     : 'var(--wx-light-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-light' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-light)',
+            'color'      : 'var(--wx-light)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-light-hover)',
+            'color'      : 'var(--wx-light-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-light-active)',
+            'color'      : 'var(--wx-light-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-light-disabled)',
+            'color'      : 'var(--wx-light-disabled)',
+        ),
+    ),
+    'info' : (
+        'initial'  : (
+            'background' : 'var(--wx-info)',
+            'border'     : 'var(--wx-info)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-info-hover)',
+            'border'     : 'var(--wx-info-hover)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-info-active)',
+            'border'     : 'var(--wx-info-active)',
+            'color'      : 'var(--wx-white)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-info-disabled)',
+            'border'     : 'var(--wx-info-disabled)',
+            'color'      : 'var(--wx-white)',
+        ),
+    ),
+
+    'outline-info' : (
+        'initial'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-info)',
+            'color'      : 'var(--wx-info)',
+        ),
+        'hover'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-info-hover)',
+            'color'      : 'var(--wx-info-hover)',
+        ),
+        'active'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-info-active)',
+            'color'      : 'var(--wx-info-active)',
+        ),
+        'disabled'  : (
+            'background' : 'transparent',
+            'border'     : 'var(--wx-info-disabled)',
+            'color'      : 'var(--wx-info-disabled)',
+        ),
+    ),
+
+
+    'back' : (
+        'initial'  : (
+            'background' : 'var(--wx-light)',
+            'border'     : 'var(--wx-light)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'hover'  : (
+            'background' : 'var(--wx-light-hover)',
+            'border'     : 'var(--wx-light-hover)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'active'  : (
+            'background' : 'var(--wx-light-active)',
+            'border'     : 'var(--wx-light-active)',
+            'color'      : 'var(--wx-dark)',
+        ),
+        'disabled'  : (
+            'background' : 'var(--wx-light-disabled)',
+            'border'     : 'var(--wx-light-disabled)',
+            'color'      : 'var(--wx-dark)',
+        ),
+    ),
+
+);
