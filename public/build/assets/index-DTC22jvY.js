@@ -1,1 +1,0 @@
-function o(s){s.onmouseover=()=>{s.classList.add("hover")},s.onmouseout=()=>{s.classList.remove("hover")},s.onblur=()=>{s.classList.remove("focus")},s.onfocus=()=>{s.classList.add("focus")},s.addEventListener("keyup",()=>{s.value===""?s.classList.remove("filled"):s.classList.add("filled")}),s.value===""?s.classList.remove("filled"):s.classList.add("filled")}export{o as init};
