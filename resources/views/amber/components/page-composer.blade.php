@@ -5,7 +5,7 @@
         @elseif($block['name'] == 'Quote')
             <x-amber::quote :style="$level > 0 ? 'margin-top:var(--space-16);' : ''" :content="$block['content']['quote']" />
         @elseif($block['name'] == 'Section')
-            <x-amber::section :color="$block['content']['color'] ?? 'default'" :shrink="($block['content']['layout'] ?? 'default') == 'shrink'">
+            <x-amber::section :color="$block['content']['color'] ?? 'default'">
                 @unless($block['content']['text']?->empty())
                     @if(!$block['content']['pre_heading']?->empty() || !$block['content']['heading']['text']?->empty() || !$block['content']['text']?->empty())
                         <x-slot name="head">
