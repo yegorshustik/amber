@@ -3,7 +3,6 @@ import { ref, watch } from 'vue';
 import { $t } from '@/locales';
 import { useLocalesStore } from '@/stores';
 import type { WxLocalizedValue } from '@/types/locale';
-import { WxInputImage, WxTextarea } from '@/ui';
 import WxFormControl from '../../components/WxFormControl/WxFormControl.vue';
 import WxGrid from '../../components/WxGrid/WxGrid.vue';
 import WxGridCol from '../../components/WxGrid/WxGridCol.vue';
@@ -11,6 +10,7 @@ import WxInput from '../../components/WxInput/WxInput.vue';
 import type { WxSingleImage } from '../../components/WxInputImage/types';
 import type { WxQuoteProps, WxQuoteContent } from './types';
 import { nl2br } from '@/utils';
+import { WxTextarea } from '@/ui';
 
 const props = withDefaults(defineProps<WxQuoteProps>(), {
     preview: false,
@@ -41,44 +41,29 @@ const handleInput = (key: keyof WxQuoteContent, value: WxLocalizedValue | WxSing
 </script>
 
 <template>
-    <div v-if="props.preview" class="quote bg-lightest d-flex p-md-16 p-lg-24 gap-16 rounded p-8">
-        <div class="max-w-96">
-            <img :src="currentValue?.image.src.url" alt="" class="w-100" />
+    <div v-if="props.preview" class="quote bg-lightest p-md-16 p-lg-24 gap-16 rounded p-8">
+        <div v-if="useLocalesStore().selectLocalizedValue(currentValue?.pre_heading)" class="fs-14px text-uppercase mb-6">
+            {{ useLocalesStore().selectLocalizedValue(currentValue.pre_heading) }}
         </div>
-
-        <div class="flex-grow-1">
-            <div class="h3" v-html="nl2br(useLocalesStore().selectLocalizedValue(currentValue?.text as WxLocalizedValue))" />
-            <div class="mt-12 text-secondary">
-                {{ useLocalesStore().selectLocalizedValue(currentValue?.signature as WxLocalizedValue) }}
-            </div>
-        </div>
+        <div class="h3 m-0 fst-italic" v-html="nl2br(useLocalesStore().selectLocalizedValue(currentValue?.text as WxLocalizedValue))" />
     </div>
 
     <wx-grid v-else>
-        <wx-grid-col :md="3" :lg="4">
-            <wx-form-control :title="$t('image')">
-                <wx-input-image
-                    :name="`${props.name}[image]}`"
-                    :value="currentValue?.image"
-                    @change="(value) => handleInput('image', value as WxLocalizedValue)"
+        <wx-grid-col :md="12" :lg="12">
+            <wx-form-control :title="$t('pre-heading')">
+                <wx-input
+                    :name="`${props.name}[pre_heading]}`"
+                    :value="currentValue?.pre_heading"
+                    localized
+                    @input="(value) => handleInput('pre_heading', value as WxLocalizedValue)"
                 />
             </wx-form-control>
-        </wx-grid-col>
-        <wx-grid-col :md="9" :lg="8">
             <wx-form-control :title="$t('text')">
                 <wx-textarea
                     :name="`${props.name}[text]}`"
                     :value="currentValue?.text"
                     localized
                     @input="(value) => handleInput('text', value as WxLocalizedValue)"
-                />
-            </wx-form-control>
-            <wx-form-control :title="$t('signature')">
-                <wx-input
-                    :name="`${props.name}[signature]}`"
-                    :value="currentValue?.signature"
-                    localized
-                    @input="(value) => handleInput('signature', value as WxLocalizedValue)"
                 />
             </wx-form-control>
         </wx-grid-col>

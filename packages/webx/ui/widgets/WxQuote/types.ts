@@ -5,8 +5,7 @@ import type { WxValue } from '../../components/WxInput/types';
 
 export interface WxQuoteContent {
     text ?: WxLocalizedValue|WxValue,
-    signature ?: WxLocalizedValue|WxValue,
-    image ?: WxSingleImage
+    pre_heading ?: WxLocalizedValue|WxValue
 }
 
 export interface WxQuoteProps {

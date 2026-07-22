@@ -7,6 +7,7 @@ import { inboxRoutes } from '@/templates/Inbox';
 import { pagesRoutes } from '@/templates/Pages';
 import { sitesRoutes } from '@/templates/Sites';
 import { usersRoutes } from '@/templates/Users';
+import { reviewsRoutes } from '@/templates/Reviews';
 
 import type { User } from '@/types/user';
 import { WxLayout } from '@/ui';
@@ -26,6 +27,7 @@ const router = createRouter({
                 ...configurationRoutes,
                 ...pagesRoutes,
                 ...articlesRoutes,
+                ...reviewsRoutes,
 
                 {
                     path: '/:pathMatch(.*)*',

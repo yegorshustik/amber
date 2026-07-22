@@ -3,6 +3,21 @@
 $utilities: map.merge(
     $utilities,
     (
+
+        "flex-basis": (
+            responsive: true,
+            property: flex-basis,
+            class: flex-basis,
+            values: (
+                auto: auto,
+                0: 0,
+                25: 25%,
+                33: 33.3%,
+                50: 50%,
+            )
+        ),
+
+
         "aspect-ratio": (
             responsive: true,
             property: aspect-ratio,

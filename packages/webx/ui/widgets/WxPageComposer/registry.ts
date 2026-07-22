@@ -44,7 +44,60 @@ export const registry: RegistryComposerComponent[] = [
         defaults: {
             text: null,
         },
-    }
+    },
+
+    {
+        name: 'Section',
+        title: $t('page-composer.components.section'),
+        group: 'typography',
+        features: [...defaultFeatures, 'droppable'],
+        icon: 'section',
+        component: markRaw(defineAsyncComponent(() => import('./components/Section.vue'))),
+        defaults: {
+            pre_heading: null,
+            heading: null,
+            text: null,
+            color: null,
+            heading_max_characters: null,
+        },
+    },
+
+    {
+        name: 'Hero',
+        title: $t('page-composer.components.hero'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'hero',
+        component: markRaw(defineAsyncComponent(() => import('./components/Hero.vue'))),
+        defaults: {
+            pre_heading: null,
+            heading: null,
+            text: null,
+            image: null,
+            image_2: null,
+        },
+    },
+    {
+        name: 'Quote',
+        title: $t('page-composer.components.quote'),
+        group: 'typography',
+        features: defaultFeatures,
+        icon: 'quote',
+        component: markRaw(defineAsyncComponent(() => import('./components/Quote.vue'))),
+        defaults: {
+            quote: null,
+        },
+    },
+    {
+        name: 'Reviews',
+        title: $t('page-composer.components.reviews'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'chat-dots',
+        component: markRaw(defineAsyncComponent(() => import('./components/Reviews.vue'))),
+        defaults: {
+        },
+    },
 ];
 
 export const getComponentsInGroup = (group: ComposerGroup) => registry.filter((item: RegistryComposerComponent) => item.group === group.slug);

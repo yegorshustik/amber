@@ -44,6 +44,11 @@ export const menu: WxMenuItem[] = [
                     },
                 ],
             },
+            {
+                title: $t('reviews.menu'),
+                route: 'reviews',
+                active: ['reviews.edit'],
+            },
         ],
     },
     {

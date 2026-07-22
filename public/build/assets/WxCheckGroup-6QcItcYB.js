@@ -1,0 +1,1 @@
+import{_ as o}from"./main-BuHBNSHL.js";import{y as r,z as s,D as c}from"./@vue-DKuZJEvg.js";const t={},a={class:"d-flex column-gap-16 row-gap-6 flex-wrap"};function n(e,l){return r(),s("div",a,[c(e.$slots,"default")])}const p=o(t,[["render",n]]);export{p as W};

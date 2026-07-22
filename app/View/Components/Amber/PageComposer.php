@@ -11,6 +11,7 @@ class PageComposer extends Component
     public function __construct(
         public PageComposerService $content,
         public ?array $children = null,
+        public int $level = 0
     ) {}
 
     public function render(): View

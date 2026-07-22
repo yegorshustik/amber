@@ -22,6 +22,7 @@
     "export": "Export",
     "import": "Import",
     "reset": "Reset",
+    "pre-heading": "Pre heading",
     "title": "Title",
     "placeholder": "Placeholder",
     "short-text": "Short text",
@@ -151,7 +152,11 @@
             "layout": "Layout"
         },
         "components": {
-            "text": "Text"
+            "text": "Text",
+            "hero": "Hero",
+            "section": "Section",
+            "quote": "Quote",
+            "reviews": "Reviews"
         }
     },
     "login": {
@@ -285,11 +290,26 @@
         "question": "Question",
         "answer": "Answer"
     },
-    "contacts" : {
+    "contacts": {
         "contact-details": "Contact details",
         "phone-number": "Phone number",
         "google-maps-link": "Google Maps link",
         "email": "Email",
         "address": "Address"
-    }
+    },
+    "reviews": {
+        "menu": "Reviews",
+        "create": "Add",
+        "edit": "Edit",
+        "heading": "Reviews",
+        "saved": "Review saved",
+        "deleted": "Review deleted"
+    },
+
+    "section-navy": "Dark navy",
+    "section-cream": "Cream",
+    "section-paper": "Paper",
+    "name": "Name",
+    "job": "Job",
+    "heading-max-characters": "Heading max characters"
 }

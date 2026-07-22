@@ -26,6 +26,6 @@ return [
             'visible' => true,
             'default' => false,
             'cms_default' => false,
-        ]
+        ],
     ],
 ];

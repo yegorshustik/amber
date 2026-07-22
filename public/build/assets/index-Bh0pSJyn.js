@@ -1,1 +1,0 @@
-function n(t){t.querySelectorAll(".accordion__item").forEach(c=>{c.querySelector(".accordion__question").addEventListener("click",e=>{const i=e.target.closest(".accordion__item")||e.target;i.classList.toggle("active");for(let o of t.children)o!==i&&o.classList.remove("active")})})}export{n as init};
