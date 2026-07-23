@@ -158,7 +158,8 @@
             "quote": "Quote",
             "reviews": "Reviews",
             "cta" : "Call to action",
-            "cards" : "Cards"
+            "cards" : "Cards",
+            "headline" : "Headline"
         }
     },
     "login": {

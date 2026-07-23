@@ -78,6 +78,25 @@ export const registry: RegistryComposerComponent[] = [
             image_2: null,
         },
     },
+
+    {
+        name: 'Headline',
+        title: $t('page-composer.components.headline'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'headline',
+        component: markRaw(defineAsyncComponent(() => import('./components/Headline.vue'))),
+        defaults: {
+            pre_heading: null,
+            heading: null,
+            text: null,
+            button_1: null,
+            button_1_url: null,
+            button_2: null,
+            button_2_url: null,
+        },
+    },
+
     {
         name: 'Quote',
         title: $t('page-composer.components.quote'),

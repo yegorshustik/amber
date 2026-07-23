@@ -51,6 +51,7 @@ export const iconNames = [
     'question',
     'phone-vibrate',
     'cards',
+    'headline',
 ] as const;
 
 export type WxIconName = typeof iconNames[number] | (string & {});

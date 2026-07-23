@@ -17,6 +17,12 @@
 
         {{ $head ?? null }}
 
+        <style>
+            .ac-section.ac-section--cream + .ac-section.ac-section--cream {
+                padding-top: 1px;
+            }
+        </style>
+
         @stack('layout-head')
     </head>
     <body>

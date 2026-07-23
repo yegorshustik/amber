@@ -55,6 +55,8 @@
             <x-amber::reviews />
         @elseif($block['name'] == 'Cta')
             <x-amber::cta :content="$block['content']" />
+        @elseif($block['name'] == 'Headline')
+            <x-amber::headline :content="$block['content']" />
         @elseif($block['name'] == 'Cards')
             <x-amber::cards :type="$block['content']['type']" :image="$block['content']['image']" :cards="$block['content']['items']" :style="$level > 0 ? 'margin-top:var(--space-12);' : ''" />
 

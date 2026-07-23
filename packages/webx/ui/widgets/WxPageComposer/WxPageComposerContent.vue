@@ -87,7 +87,7 @@ onUnmounted(() => {
         </div>
 
         <div class="wx-component__body">
-            <component :is="props.registry.component" v-model:component="component" v-model:edit="editComponent" />
+            <component :is="props.registry.component" :key="component.id" v-model:component="component" v-model:edit="editComponent" />
         </div>
     </div>
 </template>

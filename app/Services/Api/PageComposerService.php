@@ -27,6 +27,14 @@ class PageComposerService implements Responsable
                     $component['content']['image_2'] = new ImageService($component['content']['image_2']);
                     break;
 
+                case 'Headline':
+                    $component['content']['pre_heading'] = new MultilingualService($component['content']['pre_heading']);
+                    $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text']);
+                    $component['content']['text'] = new MultilingualService($component['content']['text']);
+                    $component['content']['button_1'] = new MultilingualService($component['content']['button_1']);
+                    $component['content']['button_2'] = new MultilingualService($component['content']['button_2']);
+                    break;
+
                 case 'Section':
                     $component['content']['pre_heading'] = new MultilingualService($component['content']['pre_heading']);
                     $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text'] ?? '[]');
