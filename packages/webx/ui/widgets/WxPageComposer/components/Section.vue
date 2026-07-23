@@ -76,6 +76,11 @@ watch(
                     <wx-input v-model="component.content.heading_max_characters" />
                 </wx-form-control>
             </wx-grid-col>
+            <wx-grid-col :md="4">
+                <wx-form-control :title="$t('id')">
+                    <wx-input v-model="component.content.id" />
+                </wx-form-control>
+            </wx-grid-col>
         </wx-grid>
 
         <template #footer>

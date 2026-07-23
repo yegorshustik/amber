@@ -156,7 +156,9 @@
             "hero": "Hero",
             "section": "Section",
             "quote": "Quote",
-            "reviews": "Reviews"
+            "reviews": "Reviews",
+            "cta" : "Call to action",
+            "cards" : "Cards"
         }
     },
     "login": {
@@ -311,5 +313,16 @@
     "section-paper": "Paper",
     "name": "Name",
     "job": "Job",
-    "heading-max-characters": "Heading max characters"
+    "heading-max-characters": "Heading max characters",
+    "cta-button" : {
+        "button" : "Button",
+        "button-text" : "Button text",
+        "button-link" : "Button link"
+    },
+    "cards-component" : {
+        "stage" : "Stage",
+        "step" : "Step",
+        "stat" : "Stat",
+        "feature" : "Feature"
+    }
 }

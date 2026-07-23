@@ -169,6 +169,17 @@ watch(
         reloadImages();
     },
 );
+watch(
+    () => editImageDialog.value,
+    (state) => {
+        if (state === false) {
+            if (!props.multiple && !props.localized) {
+                emit('update:modelValue', editImage.value);
+                emit('change', editImage.value);
+            }
+        }
+    },
+);
 
 /*
  * Single image
@@ -790,8 +801,8 @@ const directUploadBegin = (event: Event) => {
 
         img {
             position: absolute;
-            top:4px;
-            left:4px;
+            top: 4px;
+            left: 4px;
             width: calc(100% - 8px);
             height: calc(100% - 8px);
             object-fit: scale-down;

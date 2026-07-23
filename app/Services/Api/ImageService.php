@@ -11,14 +11,21 @@ class ImageService implements Responsable
 
     public function url(): ?string
     {
-        if ($this->image['src']['url'] ?? null) {
-            return $this->image['src']['url'];
-        }
-
         $path = $this->image['src']['path'] ?? null;
 
         if ($path) {
             return Storage::url($path);
+        }
+
+        return null;
+    }
+
+    public function body(): ?string
+    {
+        $path = $this->image['src']['path'] ?? null;
+
+        if ($path) {
+            return Storage::get($path);
         }
 
         return null;

@@ -5,7 +5,12 @@
         @elseif($block['name'] == 'Quote')
             <x-amber::quote :style="$level > 0 ? 'margin-top:var(--space-16);' : ''" :content="$block['content']['quote']" />
         @elseif($block['name'] == 'Section')
-            <x-amber::section :color="$block['content']['color'] ?? 'default'">
+            <x-amber::section
+                :id="$block['content']['id'] ?? null"
+                @style([
+                    'padding-top: 0;' => ($block['content']['id'] ?? null) == 'pricing'
+                ])
+                :color="$block['content']['color'] ?? 'default'">
                 @unless($block['content']['text']?->empty())
                     @if(!$block['content']['pre_heading']?->empty() || !$block['content']['heading']['text']?->empty() || !$block['content']['text']?->empty())
                         <x-slot name="head">
@@ -48,6 +53,20 @@
             </x-amber::section>
         @elseif($block['name'] == 'Reviews')
             <x-amber::reviews />
+        @elseif($block['name'] == 'Cta')
+            <x-amber::cta :content="$block['content']" />
+        @elseif($block['name'] == 'Cards')
+            <x-amber::cards :type="$block['content']['type']" :image="$block['content']['image']" :cards="$block['content']['items']" :style="$level > 0 ? 'margin-top:var(--space-12);' : ''" />
+
+            @unless($block['content']['button']?->empty())
+                <div style="margin-top:var(--space-12);">
+                    <a class="ac-btn ac-btn--ghost"
+                       @if(isExternalUrl($block['content']['url'])) target="_blank" rel="noopener noreferrer" @endif
+                       href="{{ isExternalUrl($block['content']['url']) ? $block['content']['url'] : locale_url($block['content']['url']) }}">
+                        {{ $block['content']['button'] }}
+                    </a>
+                </div>
+            @endunless
         @elseif($block['name'] == 'Text')
             <div class="text">
                 {!! $block['content']['text'] !!}

@@ -54,6 +54,7 @@ export const registry: RegistryComposerComponent[] = [
         icon: 'section',
         component: markRaw(defineAsyncComponent(() => import('./components/Section.vue'))),
         defaults: {
+            id: null,
             pre_heading: null,
             heading: null,
             text: null,
@@ -95,7 +96,38 @@ export const registry: RegistryComposerComponent[] = [
         features: [...defaultFeatures],
         icon: 'chat-dots',
         component: markRaw(defineAsyncComponent(() => import('./components/Reviews.vue'))),
+        defaults: {},
+    },
+
+    {
+        name: 'Cta',
+        title: $t('page-composer.components.cta'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'horn',
+        component: markRaw(defineAsyncComponent(() => import('./components/Cta.vue'))),
         defaults: {
+            pre_heading: null,
+            heading: null,
+            text: null,
+            button: null,
+            url: null,
+        },
+    },
+
+    {
+        name: 'Cards',
+        title: $t('page-composer.components.cards'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'cards',
+        component: markRaw(defineAsyncComponent(() => import('./components/Cards.vue'))),
+        defaults: {
+            type: null,
+            image: null,
+            items: [],
+            button: null,
+            url: null,
         },
     },
 ];

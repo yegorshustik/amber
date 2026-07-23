@@ -5,6 +5,7 @@ import type { WxSortableProps } from './types';
 
 const props = withDefaults(defineProps<WxSortableProps>(), {
     handle: '.handle',
+    cards: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'sorted']);
@@ -40,13 +41,19 @@ const change = () => {
 </script>
 
 <template>
-    <VueDraggableNext class="wx-sortable" @change="() => change()" :handle="props.handle" :animation="150" v-model="innerValue">
-        <div class="wx-sortable__row d-flex align-items-center gap-16 p-4" v-for="(item, index) in innerValue" :key="index">
+    <VueDraggableNext
+        :class="['wx-sortable', props.cards ? 'wx-sortable--cards' : '']"
+        @change="() => change()"
+        :handle="props.handle"
+        :animation="150"
+        v-model="innerValue"
+    >
+        <div class="wx-sortable__row d-flex gap-16 p-4" v-for="(item, index) in innerValue" :key="index">
             <div class="wx-sortable__content flex-grow-1">
-                <slot name="content" :item="item" :index="index" />
+                <slot name="content" :item="item" :index="index as number" />
             </div>
             <div v-if="$slots.actions" class="wx-sortable__actions">
-                <slot name="actions" :item="item" :index="index" />
+                <slot name="actions" :item="item" :index="index as number" />
             </div>
         </div>
     </VueDraggableNext>
@@ -54,9 +61,34 @@ const change = () => {
 
 <style scoped lang="scss">
 .wx-sortable {
-    &__row {
-        &:not(:last-child) {
-            border-bottom: 1px solid var(--wx-border-color);
+    &:not(.wx-sortable--cards) {
+        .wx-sortable__row {
+            align-items: center;
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--wx-border-color);
+            }
+        }
+    }
+
+    &.wx-sortable--cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 16px;
+
+        .wx-sortable__row {
+            flex-direction: column-reverse;
+            border: 1px solid var(--wx-border-color);
+            border-radius: var(--wx-border-radius);
+            background: var(--wx-white);
+
+            .wx-sortable__content {
+                padding: 0 12px 12px 12px;
+            }
+
+            .wx-sortable__actions {
+                display: flex;
+                justify-content: flex-end;
+            }
         }
     }
 }
