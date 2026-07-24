@@ -42,7 +42,7 @@ class ImageService implements Responsable
         return false;
     }
 
-    public function alt(): ?MultilingualService
+    public function alt(): MultilingualService|string|null
     {
         if (isset($this->image['alt']) && is_array($this->image['alt'])) {
             return new MultilingualService($this->image['alt']);
@@ -51,7 +51,7 @@ class ImageService implements Responsable
         return $this->image['alt'] ?? null;
     }
 
-    public function title(): ?MultilingualService
+    public function title(): MultilingualService|string|null
     {
         if (isset($this->image['title']) && is_array($this->image['title'])) {
             return new MultilingualService($this->image['title']);

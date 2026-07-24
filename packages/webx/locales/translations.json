@@ -62,6 +62,7 @@
     "image": "Image",
     "signature": "Signature",
     "default": "Default",
+    "full": "Full",
     "light": "Light",
     "dark": "Dark",
     "general": "General",
@@ -83,6 +84,7 @@
     "footer-links": "Footer links",
     "layout": "Layout",
     "shrink": "Shrunk",
+    "additional": "Additional",
     "buffer": {
         "pushed": "You added new data to the buffer.",
         "pulled": "You retrieved data from the buffer.",
@@ -159,7 +161,10 @@
             "reviews": "Reviews",
             "cta" : "Call to action",
             "cards" : "Cards",
-            "headline" : "Headline"
+            "headline" : "Headline",
+            "text-block": "Text block",
+            "article": "Article",
+            "image": "Image"
         }
     },
     "login": {

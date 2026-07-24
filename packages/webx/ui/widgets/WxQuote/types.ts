@@ -1,11 +1,16 @@
 import type { WxLocalizedValue } from '@/types/locale';
 import type { WxSingleImage } from '@/ui/components/WxInputImage';
-import type { WxValue } from '../../components/WxInput/types';
 
+
+export type WxQuoteType = 'default' | 'full';
 
 export interface WxQuoteContent {
-    text ?: WxLocalizedValue|WxValue,
-    pre_heading ?: WxLocalizedValue|WxValue
+    type?: WxQuoteType;
+    text?: WxLocalizedValue;
+    pre_heading?: WxLocalizedValue;
+    name?: WxLocalizedValue;
+    job?: WxLocalizedValue;
+    image?: WxSingleImage;
 }
 
 export interface WxQuoteProps {

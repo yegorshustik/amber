@@ -120,20 +120,27 @@ const reloadImages = () => {
             }
 
             Object.keys(currentValue.value).map((locale) =>
-                currentValue.value[locale].src.id > 0 ? ids.push(currentValue.value[locale].src.id) : null,
+                currentValue.value[locale]?.src.id > 0 ? ids.push(currentValue.value[locale].src.id) : null,
             );
 
             if (ids.length > 0) {
-                wxLoadFile(ids).then((files: WxFilemanagerFile[]) => {
+                wxLoadFile(ids).then((files: WxFilemanagerFile | WxFilemanagerFile[]) => {
                     Object.keys(currentValue.value).map((locale) => {
-                        const index = files.findIndex((item) => item.id === currentValue.value[locale].src.id);
-                        currentValue.value[locale].src = files[index];
-                        if (!currentValue.value[locale].alt) {
-                            currentValue.value[locale].alt = null;
-                        }
+                        if (currentValue.value[locale]) {
+                            if ((files as WxFilemanagerFile).id) {
+                                currentValue.value[locale].src = files;
+                            } else {
+                                const index = (files as WxFilemanagerFile[]).findIndex((item) => item.id === currentValue.value[locale].src.id);
+                                currentValue.value[locale].src = files[index];
+                            }
 
-                        if (!currentValue.value[locale].title) {
-                            currentValue.value[locale].title = null;
+                            if (!currentValue.value[locale].alt) {
+                                currentValue.value[locale].alt = null;
+                            }
+
+                            if (!currentValue.value[locale].title) {
+                                currentValue.value[locale].title = null;
+                            }
                         }
                     });
                 });
@@ -587,10 +594,10 @@ const directUploadBegin = (event: Event) => {
                         <template v-for="(image, index) in currentValue" :key="`src_${index}`">
                             <input :name="`${props.name}[${index}][src][id]`" :value="(image as WxSingleImage).src.id" type="hidden" />
                             <input :name="`${props.name}[${index}][src][path]`" :value="(image as WxSingleImage).src.path" type="hidden" />
-                            <template v-for="(alt, locale) in (image as WxSingleImage).alt" :key="`src_alt_${locale.code}`">
+                            <template v-for="(alt, locale) in (image as WxSingleImage).alt" :key="`src_alt_${locale}`">
                                 <input :name="`${props.name}[${index}][alt][${locale}]`" :value="alt" type="hidden" />
                             </template>
-                            <template v-for="(title, locale) in (image as WxSingleImage).title" :key="`src_title_${locale.code}`">
+                            <template v-for="(title, locale) in (image as WxSingleImage).title" :key="`src_title_${locale}`">
                                 <input :name="`${props.name}[${index}][title][${locale}]`" :value="title" type="hidden" />
                             </template>
                         </template>
@@ -628,7 +635,7 @@ const directUploadBegin = (event: Event) => {
 
                         <div class="wx-input-images__actions d-flex align-items-center justify-content-center gap-8 p-8">
                             <wx-action type="edit" @click="handleEditMultipleImage(image as WxSingleImage)" />
-                            <wx-action type="remove" @click="handleRemoveMultipleImage(image as WxSingleImage, index)" />
+                            <wx-action type="remove" @click="handleRemoveMultipleImage(image as WxSingleImage, index as number)" />
                         </div>
                     </div>
 

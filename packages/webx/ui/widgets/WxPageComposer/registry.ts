@@ -64,6 +64,26 @@ export const registry: RegistryComposerComponent[] = [
     },
 
     {
+        name: 'TextBlock',
+        title: $t('page-composer.components.text-block'),
+        group: 'typography',
+        features: [...defaultFeatures, 'droppable'],
+        icon: 'richtext',
+        component: markRaw(defineAsyncComponent(() => import('./components/TextBlock.vue'))),
+        defaults: {
+            pre_heading: null,
+            heading: null,
+            text: null,
+
+            additional: {
+                pre_heading: null,
+                heading: null,
+                text: null,
+            },
+        },
+    },
+
+    {
         name: 'Hero',
         title: $t('page-composer.components.hero'),
         group: 'layout',
@@ -147,6 +167,31 @@ export const registry: RegistryComposerComponent[] = [
             items: [],
             button: null,
             url: null,
+        },
+    },
+
+    {
+        name: 'Article',
+        title: $t('page-composer.components.article'),
+        group: 'layout',
+        features: ['add', 'remove'],
+        icon: 'layout-text-left',
+        component: markRaw(defineAsyncComponent(() => import('./components/Article.vue'))),
+        defaults: {
+
+        },
+    },
+
+    {
+        name: 'Image',
+        title: $t('page-composer.components.image'),
+        group: 'typography',
+        features: defaultFeatures,
+        icon: 'image',
+        component: markRaw(defineAsyncComponent(() => import('./components/Image.vue'))),
+        defaults: {
+            image: null,
+            signature: null,
         },
     },
 ];

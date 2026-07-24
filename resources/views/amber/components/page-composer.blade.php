@@ -7,9 +7,7 @@
         @elseif($block['name'] == 'Section')
             <x-amber::section
                 :id="$block['content']['id'] ?? null"
-                @style([
-                    'padding-top: 0;' => ($block['content']['id'] ?? null) == 'pricing'
-                ])
+                :style="($block['content']['id'] ?? null) == 'pricing' ? 'padding-bottom: 0;' : ''"
                 :color="$block['content']['color'] ?? 'default'">
                 @unless($block['content']['text']?->empty())
                     @if(!$block['content']['pre_heading']?->empty() || !$block['content']['heading']['text']?->empty() || !$block['content']['text']?->empty())
@@ -57,6 +55,8 @@
             <x-amber::cta :content="$block['content']" />
         @elseif($block['name'] == 'Headline')
             <x-amber::headline :content="$block['content']" />
+        @elseif($block['name'] == 'TextBlock')
+            <x-amber::text-block :content="$block['content']" />
         @elseif($block['name'] == 'Cards')
             <x-amber::cards :type="$block['content']['type']" :image="$block['content']['image']" :cards="$block['content']['items']" :style="$level > 0 ? 'margin-top:var(--space-12);' : ''" />
 
@@ -70,9 +70,13 @@
                 </div>
             @endunless
         @elseif($block['name'] == 'Text')
-            <div class="text">
-                {!! $block['content']['text'] !!}
-            </div>
+            {!! $block['content']['text'] !!}
+        @elseif($block['name'] == 'Image')
+            <x-amber::image :content="$block['content']" />
+        @elseif($block['name'] == 'Article')
+            <x-amber::toc>
+                <x-amber::page-composer :level="$level + 1" :content="$content" :children="$block['children']" />
+            </x-amber::toc>
         @endif
     @endforeach
 @endif

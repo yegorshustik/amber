@@ -77,6 +77,10 @@ const props = withDefaults(defineProps<WxCardProps>(), {
         >*:last-child {
             margin-bottom: 0!important;
         }
+
+        &:empty {
+            padding-top:0!important;
+        }
     }
 }
 </style>

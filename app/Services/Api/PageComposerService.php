@@ -35,6 +35,17 @@ class PageComposerService implements Responsable
                     $component['content']['button_2'] = new MultilingualService($component['content']['button_2']);
                     break;
 
+                case 'TextBlock':
+                    $component['content']['pre_heading'] = new MultilingualService($component['content']['pre_heading']);
+                    $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text']);
+                    $component['content']['text'] = new MultilingualService($component['content']['text']);
+
+                    $component['content']['additional']['pre_heading'] = new MultilingualService($component['content']['additional']['pre_heading'] ?? null);
+                    $component['content']['additional']['heading']['text'] = new MultilingualService($component['content']['additional']['heading']['text'] ?? null);
+                    $component['content']['additional']['text'] = new MultilingualService($component['content']['additional']['text'] ?? null);
+
+                    break;
+
                 case 'Section':
                     $component['content']['pre_heading'] = new MultilingualService($component['content']['pre_heading']);
                     $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text'] ?? '[]');
@@ -49,8 +60,11 @@ class PageComposerService implements Responsable
                     break;
 
                 case 'Quote':
-                    $component['content']['quote']['pre_heading'] = new MultilingualService($component['content']['quote']['pre_heading']);
-                    $component['content']['quote']['text'] = new MultilingualService($component['content']['quote']['text']);
+                    $component['content']['quote']['pre_heading'] = new MultilingualService($component['content']['quote']['pre_heading'] ?? null);
+                    $component['content']['quote']['text'] = new MultilingualService($component['content']['quote']['text'] ?? null);
+                    $component['content']['quote']['name'] = new MultilingualService($component['content']['quote']['name'] ?? null);
+                    $component['content']['quote']['job'] = new MultilingualService($component['content']['quote']['job'] ?? null);
+                    $component['content']['quote']['image'] = new ImageService($component['content']['quote']['image'] ?? []);
                     break;
 
                 case 'Cards':
@@ -76,6 +90,13 @@ class PageComposerService implements Responsable
                         '</table></div>',
                     ], $component['content']['text']);
 
+                    break;
+
+                case 'Image':
+                    $image = select_multilingual_field_value($component['content']['image']);
+
+                    $component['content']['image'] = new ImageService($image);
+                    $component['content']['signature'] = new MultilingualService($component['content']['signature'] ?? null);
                     break;
             }
 
