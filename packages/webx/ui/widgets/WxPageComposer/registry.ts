@@ -107,6 +107,7 @@ export const registry: RegistryComposerComponent[] = [
         icon: 'headline',
         component: markRaw(defineAsyncComponent(() => import('./components/Headline.vue'))),
         defaults: {
+            color: null,
             pre_heading: null,
             heading: null,
             text: null,
@@ -177,9 +178,7 @@ export const registry: RegistryComposerComponent[] = [
         features: ['add', 'remove'],
         icon: 'layout-text-left',
         component: markRaw(defineAsyncComponent(() => import('./components/Article.vue'))),
-        defaults: {
-
-        },
+        defaults: {},
     },
 
     {

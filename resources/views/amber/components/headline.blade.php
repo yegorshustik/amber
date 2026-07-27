@@ -1,4 +1,4 @@
-<section {{ $attributes->merge(['class' => 'ac-page-hero ac-page-hero--paper']) }}>
+<section {{ $attributes->merge(['class' => 'ac-page-hero ac-page-hero--' . ($content['color'] ?? 'paper')]) }}>
     <div class="ac-container">
         @unless($content['pre_heading']?->empty())
             <p class="ac-eyebrow">{{ $content['pre_heading'] }}</p>

@@ -7,7 +7,7 @@
         @elseif($block['name'] == 'Section')
             <x-amber::section
                 :id="$block['content']['id'] ?? null"
-                :style="($block['content']['id'] ?? null) == 'pricing' ? 'padding-bottom: 0;' : ''"
+                :style="($block['content']['id'] ?? null) == 'pricing' ? 'padding-top: 0;' : ''"
                 :color="$block['content']['color'] ?? 'default'">
                 @unless($block['content']['text']?->empty())
                     @if(!$block['content']['pre_heading']?->empty() || !$block['content']['heading']['text']?->empty() || !$block['content']['text']?->empty())

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { $t } from '@/locales';
-import { WxFormControl, WxGrid, WxGridCol, WxHeading, WxInput, WxInputImage, WxTextarea } from '@/ui';
+import { WxFormControl, WxGrid, WxGridCol, WxHeading, WxInput, WxInputImage, WxSelect, WxTextarea } from '@/ui';
 import WxButton from '../../../components/WxButton/WxButton.vue';
 import WxDialog from '../../../components/WxDialog/WxDialog.vue';
 import type { WxPageComposerComponent, WxPageComposerContentProps } from '../types';
@@ -56,6 +56,22 @@ watch(
     </div>
 
     <wx-dialog :size="1400" :title="$t('edit')" v-model="editMode" @close="() => emit('update:edit', false)">
+        <wx-grid>
+            <wx-grid-col :md="4">
+                <wx-form-control :title="$t('color')">
+                    <wx-select
+                        v-model="component.content.color"
+                        :options="[
+                            { label: $t('default'), value: 'default' },
+                            { label: $t('section-navy'), value: 'navy' },
+                            { label: $t('section-cream'), value: 'cream' },
+                            { label: $t('section-paper'), value: 'paper' },
+                        ]"
+                    />
+                </wx-form-control>
+            </wx-grid-col>
+        </wx-grid>
+
         <wx-form-control :title="$t('pre-heading')">
             <wx-input localized v-model="component.content.pre_heading" />
         </wx-form-control>
