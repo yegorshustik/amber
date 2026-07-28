@@ -18,6 +18,7 @@ class FieldStoreRequest extends FormRequest
             'is_required' => 'sometimes',
             'is_fullsize' => 'sometimes',
             'in_table' => 'sometimes',
+            'options' => 'sometimes',
         ];
     }
 

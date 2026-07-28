@@ -10,6 +10,8 @@ enum FieldType: string implements Responsable
     case EMAIL = 'email';
     case TEL = 'tel';
     case TEXTAREA = 'textarea';
+    case DATE = 'date';
+    case SELECT = 'select';
 
     public function title()
     {
@@ -18,6 +20,8 @@ enum FieldType: string implements Responsable
             self::EMAIL => __('cms.inbox.fields.type.email'),
             self::TEL => __('cms.inbox.fields.type.tel'),
             self::TEXTAREA => __('cms.inbox.fields.type.textarea'),
+            self::DATE => __('cms.inbox.fields.type.date'),
+            self::SELECT => __('cms.inbox.fields.type.select'),
         };
     }
 

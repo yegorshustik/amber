@@ -227,7 +227,21 @@ export const registry: RegistryComposerComponent[] = [
         features: [...defaultFeatures],
         icon: 'person-vcard',
         component: markRaw(defineAsyncComponent(() => import('./components/Contacts.vue'))),
+        defaults: {},
+    },
+
+    {
+        name: 'ContactCenter',
+        title: $t('page-composer.components.contact-center'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'input-cursor-text',
+        component: markRaw(defineAsyncComponent(() => import('./components/ContactCenter.vue'))),
         defaults: {
+            pre_heading: null,
+            heading: null,
+            text: null,
+            form_id: null,
         },
     },
 ];

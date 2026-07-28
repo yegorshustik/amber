@@ -7,13 +7,32 @@ import type { ApiResponse } from '@/types/api';
 import {
     WxAction,
     WxActions,
-    WxButton, WxButtons, WxCard, WxCheck, WxCheckGroup, WxDatatable, WxDatatableColumn,
-    WxDialog, WxEntityCard, WxForm, WxFormControl, WxGrid, WxGridCol, WxInput, WxPage, WxSelect, WxTab, WxTabs,
-    WxTextarea
+    WxButton,
+    WxButtons,
+    WxCard,
+    WxCheck,
+    WxCheckGroup,
+    WxDatatable,
+    WxDatatableColumn,
+    WxDialog,
+    WxEntityCard,
+    WxFieldset,
+    WxForm,
+    WxFormControl,
+    WxGrid,
+    WxGridCol,
+    WxInput,
+    WxPage,
+    WxSelect,
+    WxSortable,
+    WxTab,
+    WxTabs,
+    WxTextarea,
 } from '@/ui';
 import WxAlert from '@/ui/components/WxAlert/WxAlert.vue';
 import type { WxSelectOption } from '@/ui/components/WxSelect';
 import { api, wxConfirm, wxSnackbar } from '@/utils';
+import { WxLocalizedValue } from '@/types/locale';
 
 const route = useRoute();
 const router = useRouter();
@@ -25,6 +44,8 @@ const fieldsDialog = ref<boolean>(false);
 const fields = ref();
 const field = ref();
 const selectedFields = ref([]);
+const currentType = ref();
+const currentOptions = ref([]);
 
 onBeforeMount(async () => {
     if (route.params.id) {
@@ -32,44 +53,43 @@ onBeforeMount(async () => {
 
         form.value = response.data;
         loaded.value = true;
-    }
-    else if (route.query.copy) {
+    } else if (route.query.copy) {
         const response = await api.get<ApiResponse<any>>(`inbox/form/${route.query.copy}`);
 
         form.value = response.data;
         loaded.value = true;
-    }
-    else {
+    } else {
         loaded.value = true;
     }
-})
+});
 
-const success = (response : ApiResponse<any>) => {
+const success = (response: ApiResponse<any>) => {
     if (!route.params.id) {
         router.push({ name: 'inbox.forms.edit', params: { id: response.data.id } });
         form.value = response.data;
     }
 
-    wxSnackbar($t('inbox.forms.saved'), { type : 'success' });
-}
+    wxSnackbar($t('inbox.forms.saved'), { type: 'success' });
+};
 
-const fieldTypes = () : WxSelectOption[] => [
-    { label : $t('inbox.forms.fields.types.text'), value : 'text' },
-    { label : $t('inbox.forms.fields.types.email'), value : 'email' },
-    { label : $t('inbox.forms.fields.types.tel'), value : 'tel' },
-    { label : $t('inbox.forms.fields.types.textarea'), value : 'textarea' },
-]
-
+const fieldTypes = (): WxSelectOption[] => [
+    { label: $t('inbox.forms.fields.types.text'), value: 'text' },
+    { label: $t('inbox.forms.fields.types.email'), value: 'email' },
+    { label: $t('inbox.forms.fields.types.tel'), value: 'tel' },
+    { label: $t('inbox.forms.fields.types.textarea'), value: 'textarea' },
+    { label: $t('inbox.forms.fields.types.date'), value: 'date' },
+    { label: $t('inbox.forms.fields.types.select'), value: 'select' },
+];
 
 const successField = () => {
     field.value = null;
     fieldsDialog.value = false;
-    wxSnackbar($t('inbox.forms.fields.saved'), { type : 'success' });
+    wxSnackbar($t('inbox.forms.fields.saved'), { type: 'success' });
     setTimeout(() => fields.value.reload(), 0);
-}
+};
 const removeField = async (item) => {
     try {
-        await api.delete(`inbox/field/${item.id}`, {form_id : form.value.id}).then(() => {
+        await api.delete(`inbox/field/${item.id}`, { form_id: form.value.id }).then(() => {
             wxSnackbar($t('inbox.forms.fields.deleted'));
 
             setTimeout(() => fields.value.reload(), 0);
@@ -82,14 +102,14 @@ const removeField = async (item) => {
 const saveFieldsSorting = (items) => {
     const ids = items.map((item) => item.id);
 
-    api.post(`inbox/field/sorting`, { form_id : form.value.id, ids: ids });
+    api.post(`inbox/field/sorting`, { form_id: form.value.id, ids: ids });
 };
 
 const removeSelectedFields = () => {
     wxConfirm().then(() => {
         const ids = selectedFields.value.map((item) => item.id);
 
-        api.delete(`inbox/field/mass-destroy`, { form_id : form.value.id, ids: ids }).then(() => {
+        api.delete(`inbox/field/mass-destroy`, { form_id: form.value.id, ids: ids }).then(() => {
             wxSnackbar($t('inbox.forms.fields.deleted'));
 
             setTimeout(() => fields.value.reload(), 0);
@@ -220,6 +240,8 @@ const removeSelectedFields = () => {
                                                 () => {
                                                     field = item as Record<any, any>;
                                                     fieldsDialog = true;
+                                                    currentType = field.type.value;
+                                                    currentOptions = field.options;
                                                 }
                                             "
                                         />
@@ -247,7 +269,7 @@ const removeSelectedFields = () => {
 
             <template #sidebar>
                 <wx-form-control :title="$t('type')">
-                    <wx-select name="type" :options="fieldTypes()" :value="field?.type.value || 'text'" />
+                    <wx-select name="type" :options="fieldTypes()" @change="(v) => (currentType = v)" :value="field?.type.value || 'text'" />
                 </wx-form-control>
                 <wx-form-control :title="$t('settings')">
                     <wx-check-group class="flex-column">
@@ -276,9 +298,46 @@ const removeSelectedFields = () => {
                 </wx-grid-col>
             </wx-grid>
 
+            <wx-fieldset :legend="$t('inbox.forms.fields.options')" v-if="currentType == 'select'">
+                <template v-for="(item, index) in currentOptions" :key="index + '-input'">
+                    <template v-for="(option, locale) in item.option" :key="locale">
+                        <input type="hidden" :name="`options[${index}][option][${locale}]`" :value="option" />
+                    </template>
+                </template>
+                <wx-sortable v-model="currentOptions">
+                    <template #content="{ item }: { item: { option: WxLocalizedValue } }">
+                        <wx-input v-model="item.option" localized />
+                    </template>
+                    <template #actions="{ index }: { index: number }">
+                        <wx-actions>
+                            <wx-action type="sort" class="handle" />
+                            <wx-action type="remove" @click="currentOptions.splice(index, 1)" />
+                        </wx-actions>
+                    </template>
+                </wx-sortable>
+
+                <div class="d-flex justify-content-center mt-8">
+                    <wx-actions>
+                        <wx-action :data-tooltip="$t('add')" type="add" @click="() => currentOptions.push({ option: null })" />
+                    </wx-actions>
+                </div>
+            </wx-fieldset>
+
             <template #footer>
                 <wx-buttons class="justify-content-end">
-                    <wx-button type="button" theme="default">{{ $t('cancel') }}</wx-button>
+                    <wx-button
+                        type="button"
+                        theme="default"
+                        @click="
+                            () => {
+                                fieldsDialog = false;
+                                field = null;
+                                currentOptions = [];
+                                currentType = null;
+                            }
+                        "
+                        >{{ $t('cancel') }}</wx-button
+                    >
                     <wx-button type="submit" theme="primary">{{ $t('save') }}</wx-button>
                 </wx-buttons>
             </template>

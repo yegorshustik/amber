@@ -247,6 +247,83 @@
                     @endif
                 </div>
             </div>
+        @elseif($block['name'] == 'ContactCenter')
+            @if($block['content']['form'])
+                <div class="ac-lead">
+                    @if(!$block['content']['pre_heading']?->empty() || !$block['content']['heading']['text']?->empty() || !$block['content']['text']?->empty())
+                        <div class="ac-lead__intro">
+                            @unless($block['content']['pre_heading']?->empty())
+                                <p class="ac-eyebrow">{{ $block['content']['pre_heading'] }}</p>
+                            @endunless
+
+                            @unless($block['content']['heading']['text']?->empty())
+                                <x-amber::heading :max-characters="$block['content']['heading_max_characters'] ?? 1000" :level="$block['content']['heading']['level'] ?? 'h2'" :style="$block['content']['heading']['style'] ?? null">
+                                    {!! $block['content']['heading']['text'] !!}
+                                </x-amber::heading>
+                            @endunless
+
+                            @unless($block['content']['text']?->empty())
+                                {!! str_replace('<p', '<p style="max-width:42ch;" class="ac-body"', $block['content']['text']) !!}
+                            @endunless
+                        </div>
+                    @endif
+
+
+                    <div class="ac-card" style="position:relative; overflow:hidden;">
+                        <div class="ac-form-success" id="form-success" aria-live="polite">
+                            <div class="ac-form-success__inner">
+                                <div class="ac-form-success__icon">
+                                    <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
+                                        <polyline points="14,27 22,35 38,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 class="ac-form-success__title">{{ select_multilingual_field_value($block['content']['form']->options['thank-you.heading']) }}</h3>
+                                <div class="ac-form-success__body">{!! select_multilingual_field_value($block['content']['form']->options['thank-you.text']) !!}</div>
+                            </div>
+                        </div>
+
+
+                        <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
+                            <div class="ac-form__row">
+                                @foreach($block['content']['form']->fields as $field)
+                                    <div class="ac-field">
+                                        <label class="ac-label" for="field_{{ $field->id }}">{{ $field->title }}</label>
+
+                                        @if($field->type == \App\Enums\Inbox\FieldType::TEXT)
+                                            <input class="ac-input" id="field_{{ $field->id }}" type="text" placeholder="{{ $field->placeholder }}" autocomplete="name">
+                                        @elseif($field->type == \App\Enums\Inbox\FieldType::DATE)
+                                            <input class="ac-input" id="field_{{ $field->id }}" type="text" inputmode="numeric" maxlength="10" placeholder="{{ $field->placeholder }}" autocomplete="bday">
+                                        @elseif($field->type == \App\Enums\Inbox\FieldType::EMAIL)
+                                            <input class="ac-input" id="field_{{ $field->id }}" type="email" placeholder="{{ $field->placeholder }}" autocomplete="email">
+                                        @elseif($field->type == \App\Enums\Inbox\FieldType::TEL)
+                                            <input class="ac-input" id="field_{{ $field->id }}" type="tel" placeholder="{{ $field->placeholder }}" autocomplete="tel">
+                                        @elseif($field->type == \App\Enums\Inbox\FieldType::SELECT)
+                                            <select class="ac-select" id="field_{{ $field->id }}">
+                                                <option value="">{{ $field->placeholder }}</option>
+                                                @foreach($field->options AS $item)
+                                                    <option>{{ select_multilingual_field_value($item['option']) }}</option>
+                                                @endforeach
+
+                                            </select>
+                                        @endif
+                                        <p class="ac-field-error" id="err-name" aria-live="polite"></p>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <p class="ac-small" style="font-size:13px; margin-top:var(--space-3); margin-bottom:var(--space-2); color:var(--muted); text-align:center;">
+                                {!! __('form.agreement', [
+                                    'terms' => '<a href="' . locale_url('terms') . '" style="color:inherit; text-decoration:underline;">' . __('form.agreement.terms') . '</a>',
+                                    'privacy' => '<a href="' . locale_url('privacy') . '" style="color:inherit; text-decoration:underline;">' . __('form.agreement.privacy') . '</a>'
+                                ]) !!}
+                            </p>
+                            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" style="width:100%;">
+                                {{ select_multilingual_field_value($block['content']['form']->options['design.submit-button-text'], __('form.submit')) }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @endif
         @endif
     @endforeach
 @endif

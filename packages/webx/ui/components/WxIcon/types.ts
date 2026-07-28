@@ -55,6 +55,7 @@ export const iconNames = [
     'richtext',
     'layout-text-left',
     'person-vcard',
+    'input-cursor-text',
 ] as const;
 
 export type WxIconName = typeof iconNames[number] | (string & {});

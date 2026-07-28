@@ -167,7 +167,8 @@
             "image": "Image",
             "faq": "FAQ",
             "person": "Person",
-            "contacts" : "Contacts"
+            "contacts" : "Contacts",
+            "contact-center": "Contact Center"
         }
     },
     "login": {
@@ -237,6 +238,7 @@
             "deleted": "Form deleted",
             "recipients": "Recipients",
             "thank-you": "Thank-you message",
+            "select-form" : "Select form",
             "design": "Design",
             "submit-button-text": "Submit button text",
             "application": {
@@ -255,11 +257,14 @@
                 "deleted": "Field deleted",
                 "is-fullsize": "Full width",
                 "in-table": "In table",
+                "options": "Options",
                 "types": {
                     "text": "Text",
                     "email": "Email",
                     "tel": "Phone",
-                    "textarea": "Text area"
+                    "textarea": "Text area",
+                    "date" : "Date",
+                    "select" : "Select"
                 }
             }
         }

@@ -13,7 +13,6 @@ import {
     WxTabs,
     WxTab,
     WxCard,
-    WxSeo,
     WxActions,
     WxAction,
     WxDialog,
@@ -109,9 +108,6 @@ const removeItem = (category: FaqCategory, index: number) => {
                     <template v-for="(category, index) in categories" :key="index + '-input'">
                         <template v-for="(title, locale) in category.title" :key="locale">
                             <input type="hidden" :name="`param[faq.categories][${index}][title][${locale}]`" :value="title" />
-                        </template>
-                        <template v-for="(heading, locale) in category.heading" :key="locale">
-                            <input type="hidden" :name="`param[faq.categories][${index}][heading][${locale}]`" :value="heading" />
                         </template>
                         <input type="hidden" :name="`param[faq.categories][${index}][slug]`" :value="category.slug" />
                         <template v-for="(item, itemIndex) in category.items" :key="index + '-input-' + itemIndex">

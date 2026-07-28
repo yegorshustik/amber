@@ -2,6 +2,7 @@
 
 namespace App\Services\Api;
 
+use App\Models\Inbox\Form;
 use App\Models\Review;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Collection;
@@ -123,7 +124,6 @@ class PageComposerService implements Responsable
                     break;
 
                 case 'Contacts':
-
                     $component['content'] = [
                         'company-name' => config('system.contacts.company-name'),
                         'address' => config('system.contacts.address'),
@@ -138,6 +138,13 @@ class PageComposerService implements Responsable
                         'vcf' => config('system.contacts.vcf'),
                     ];
 
+                    break;
+
+                case 'ContactCenter':
+                    $component['content']['pre_heading'] = new MultilingualService($component['content']['pre_heading']);
+                    $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text']);
+                    $component['content']['text'] = new MultilingualService($component['content']['text']);
+                    $component['content']['form'] = Form::where('is_published', true)->find($component['content']['form_id']);
                     break;
             }
 

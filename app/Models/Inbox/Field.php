@@ -20,6 +20,7 @@ class Field extends Model implements Responsable
         'is_required',
         'is_fullsize',
         'in_table',
+        'options',
         'position',
     ];
 
@@ -31,6 +32,7 @@ class Field extends Model implements Responsable
         'is_required' => 'boolean',
         'is_fullsize' => 'boolean',
         'in_table' => 'boolean',
+        'options' => 'array',
     ];
 
     protected static function booted()
@@ -50,6 +52,7 @@ class Field extends Model implements Responsable
             'is_required' => $this->is_required,
             'is_fullsize' => $this->is_fullsize,
             'in_table' => $this->in_table,
+            'options' => $this->options,
             'type' => $this->type->toResponse($request),
         ];
     }
