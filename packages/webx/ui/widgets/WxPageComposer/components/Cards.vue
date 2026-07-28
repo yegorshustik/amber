@@ -328,6 +328,15 @@ const removeItem = (index: number) => {
                         ]"
                     />
                 </wx-form-control>
+                <wx-form-control :title="$t('columns')" v-if="component.content.type == 'feature'">
+                    <wx-select
+                        v-model="component.content.columns"
+                        :options="[
+                            { label: $t('default'), value: '' },
+                            { label: $t('two-columns'), value: 'two-columns' },
+                        ]"
+                    />
+                </wx-form-control>
             </wx-grid-col>
         </wx-grid>
 

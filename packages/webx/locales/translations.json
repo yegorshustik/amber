@@ -164,7 +164,10 @@
             "headline" : "Headline",
             "text-block": "Text block",
             "article": "Article",
-            "image": "Image"
+            "image": "Image",
+            "faq": "FAQ",
+            "person": "Person",
+            "contacts" : "Contacts"
         }
     },
     "login": {
@@ -296,14 +299,23 @@
     },
     "faq": {
         "question": "Question",
-        "answer": "Answer"
+        "answer": "Answer",
+        "menu": "FAQ",
+        "heading": "FAQ",
+        "saved": "Faq saved",
+        "category-title-empty" : "Category title example",
+        "edit-category" : "Edit category",
+        "all-categories" : "All categories"
     },
     "contacts": {
         "contact-details": "Contact details",
         "phone-number": "Phone number",
         "google-maps-link": "Google Maps link",
         "email": "Email",
-        "address": "Address"
+        "address": "Address",
+        "registration-numbers": "Registration numbers",
+        "company-name" : "Company name",
+        "opening-hours": "Opening hours"
     },
     "reviews": {
         "menu": "Reviews",
@@ -330,5 +342,7 @@
         "step" : "Step",
         "stat" : "Stat",
         "feature" : "Feature"
-    }
+    },
+    "columns" : "Columns",
+    "two-columns" : "Two columns"
 }

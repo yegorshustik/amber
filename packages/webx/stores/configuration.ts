@@ -10,7 +10,7 @@ export const useConfigurationStore = defineStore('configurationStore', {
 
     actions: {
         load() {
-            api.get<ApiResponse<Configuration[]>>('configuration').then((response) => {
+            return api.get<ApiResponse<Configuration[]>>('configuration').then((response) => {
                 this.params = response.data;
             })
         },

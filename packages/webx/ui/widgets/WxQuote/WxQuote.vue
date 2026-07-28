@@ -71,6 +71,7 @@ const handleInput = (key: keyof WxQuoteContent, value: WxLocalizedValue | WxSing
             <div v-if="useLocalesStore().selectLocalizedValue(currentValue?.pre_heading)" class="fs-14px text-uppercase mb-6">
                 {{ useLocalesStore().selectLocalizedValue(currentValue.pre_heading) }}
             </div>
+            <div class="h3 fst-italic m-0" v-html="nl2br(useLocalesStore().selectLocalizedValue(currentValue?.text as WxLocalizedValue))" />
         </template>
     </div>
 

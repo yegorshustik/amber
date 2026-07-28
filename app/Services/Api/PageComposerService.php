@@ -98,6 +98,47 @@ class PageComposerService implements Responsable
                     $component['content']['image'] = new ImageService($image);
                     $component['content']['signature'] = new MultilingualService($component['content']['signature'] ?? null);
                     break;
+
+                case 'Faq':
+                    $component['content']['faq'] = collect(config('system.faq.categories'))->map(function ($category) {
+                        $category['title'] = new MultilingualService($category['title']);
+                        $category['heading'] = new MultilingualService($category['heading']);
+
+                        $category['items'] = collect($category['items'])->map(function ($item) {
+                            $item['question'] = new MultilingualService($item['question']);
+                            $item['answer'] = new MultilingualService($item['answer']);
+
+                            return $item;
+                        });
+
+                        return $category;
+                    });
+                    break;
+
+                case 'Person':
+                    $component['content']['job'] = new MultilingualService($component['content']['job']);
+                    $component['content']['name'] = new MultilingualService($component['content']['name']);
+                    $component['content']['about'] = new MultilingualService($component['content']['about']);
+                    $component['content']['image'] = new ImageService($component['content']['image']);
+                    break;
+
+                case 'Contacts':
+
+                    $component['content'] = [
+                        'company-name' => config('system.contacts.company-name'),
+                        'address' => config('system.contacts.address'),
+                        'registration-numbers' => config('system.contacts.registration-numbers'),
+                        'phone' => config('system.contacts.phone'),
+                        'email' => config('system.contacts.email'),
+                        'opening-hours' => collect(explode("\n", config('system.contacts.opening-hours')))->map(fn($v) => trim($v)),
+                        'whatsapp' => config('system.contacts.whatsapp'),
+                        'telegram' => config('system.contacts.telegram'),
+                        'linkedin' => config('system.contacts.linkedin'),
+                        'instagram' => config('system.contacts.instagram'),
+                        'vcf' => config('system.contacts.vcf'),
+                    ];
+
+                    break;
             }
 
             return $component;

@@ -15,7 +15,7 @@
         @endforeach
     </div>
 @elseif($type == 'feature')
-    <div {{ $attributes->merge(['class' => 'ac-features']) }}>
+    <div {{ $attributes->merge(['class' => 'ac-features ' . ($columns == 'two-columns' ? 'ac-features--two' : '')]) }}>
         @foreach ($cards as $card)
             <div class="ac-feature">
                 @if($card['image']?->exists())

@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<WxTextareaProps>(), {
     preset: 'minimal',
     disabled: false,
 });
-const errors = inject<Ref<ValidationError['errors']>>('wx-form-errors');
+const errors = inject<Ref<ValidationError['errors']>>('wx-form-errors', null);
 
 const { editorConfig, focusEditor } = useTinyMce(props);
 const getEditorId = (localeCode: string) => `editor-${uid}-${localeCode}`;

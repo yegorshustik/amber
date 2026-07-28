@@ -32,7 +32,9 @@
                             </div>
                         </x-slot>
                     @endif
-                    <x-amber::page-composer :level="$level + 1" :content="$content" :children="$block['children']" />
+                    <div class="ac-container">
+                        <x-amber::page-composer :level="$level + 1" :content="$content" :children="$block['children']" />
+                    </div>
                 @else
                     <div class="ac-container">
                         @unless($block['content']['pre_heading']?->empty())
@@ -58,7 +60,7 @@
         @elseif($block['name'] == 'TextBlock')
             <x-amber::text-block :content="$block['content']" />
         @elseif($block['name'] == 'Cards')
-            <x-amber::cards :type="$block['content']['type']" :image="$block['content']['image']" :cards="$block['content']['items']" :style="$level > 0 ? 'margin-top:var(--space-12);' : ''" />
+            <x-amber::cards :type="$block['content']['type']" :columns="$block['content']['columns'] ?? 'default'" :image="$block['content']['image']" :cards="$block['content']['items']" :style="$level > 0 ? 'margin-top:var(--space-12);' : ''" />
 
             @unless($block['content']['button']?->empty())
                 <div style="margin-top:var(--space-12);">
@@ -77,6 +79,174 @@
             <x-amber::toc>
                 <x-amber::page-composer :level="$level + 1" :content="$content" :children="$block['children']" />
             </x-amber::toc>
+        @elseif($block['name'] == 'Faq')
+            @if($block['content']['category'])
+                @if($faq = $block['content']['faq']->where('slug', $block['content']['category'])->first())
+                    <div class="ac-faq" style="margin-top: var(--space-8);">
+                        <div class="ac-faq__list">
+                            @foreach($faq['items'] as $item)
+                                <details @class(['ac-faq__q', 'ac-faq__q--last' => $loop->last])>
+                                    <summary>{{ $item['question'] }}</summary>
+                                    <div class="ac-faq__a">
+                                        {!! $item['answer'] !!}
+                                    </div>
+                                </details>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div style="margin-top:var(--space-8);">
+                        <a class="ac-btn ac-btn--secondary" href="{{ locale_url('faq') }}#{{ $faq['slug'] }}">{{ __('see-all-faq') }}</a>
+                    </div>
+                @endif
+            @else
+                @if($block['content']['faq']->count() > 0)
+                    <div class="ac-faq" data-faq>
+                        <div class="ac-faq__tabs" role="tablist" aria-label="FAQ categories">
+                            @foreach($block['content']['faq'] as $category)
+                                <button class="ac-faq__tab" type="button" data-cat="{{ $category['slug'] }}">{{ $category['title'] }}</button>
+                            @endforeach
+                        </div>
+                    </div>
+                    @foreach($category['items'] as $faq)
+                        <details class="ac-faq__q" data-cat="{{ $category['slug'] }}" open>
+                            <summary>{{ $faq['question'] }}</summary>
+                            <div class="ac-faq__a">
+                                {!! $faq['answer'] !!}
+                            </div>
+                        </details>
+                    @endforeach
+                @endif
+            @endif
+        @elseif($block['name'] == 'Person')
+            <div class="ac-founder">
+                <figure class="ac-founder__photo">
+                    @if($block['content']['image']?->exists())
+                        <img class="ac-img-ph ac-img-ph--portrait"
+                             style="object-fit: cover"
+                             src="{{ $block['content']['image']->url() }}"
+                             alt="{{ $block['content']['image']->alt() }}" >
+                    @else
+                        <div class="ac-img-ph ac-img-ph--portrait"></div>
+                    @endif
+                </figure>
+                <div>
+                    @unless($block['content']['job']?->empty())
+                        <p class="ac-eyebrow">{{ $block['content']['job'] }}</p>
+                    @endunless
+                    @unless($block['content']['name']?->empty())
+                        <h2 class="ac-h2" style="max-width:18ch;">{{ $block['content']['name'] }}</h2>
+                    @endunless
+                    @unless($block['content']['about']?->empty())
+                            {!! str_replace('<p', '<p style="margin-top:var(--space-4);max-width:52ch;" class="ac-body"', $block['content']['about']) !!}
+                    @endunless
+
+                    @if($block['content']['linkedin'])
+                    <div style="margin-top:var(--space-6);">
+                        <a class="ac-btn ac-btn--secondary" href="{{ $block['content']['linkedin'] }}" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect width="4" height="12" x="2" y="9"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    @endif
+                </div>
+            </div>
+        @elseif($block['name'] == 'Contacts')
+            <div class="ac-contacts">
+
+                <!-- LEFT: details -->
+                <div class="ac-contacts__col">
+                    <div class="ac-contacts__block">
+                        <p class="ac-eyebrow">{{ __('contacts.company') }}</p>
+
+                        <address>
+                            @if($block['content']['company-name'])
+                                {{ $block['content']['company-name'] }}<br>
+                            @endif
+                            @if($block['content']['address'])
+                                <a href="https://www.google.com/maps/search/?api=1&amp;query={{ $block['content']['address'] }}" target="_blank" rel="noopener">{{ $block['content']['address'] }}</a>
+                            @endif
+                        </address>
+
+                        @if($block['content']['registration-numbers'])
+                        <p class="ac-small" style="margin-top:var(--space-2);">{{ $block['content']['registration-numbers'] }}</p>
+                        @endif
+                    </div>
+
+                    <div class="ac-contacts__block">
+                        <p class="ac-eyebrow">{{ __('contacts.direct') }}</p>
+                        @if($block['content']['phone'])
+                            <p><a href="tel:{{ clearPhone($block['content']['phone']) }}">{{ $block['content']['phone'] }}</a></p>
+                        @endif
+                        @if($block['content']['email'])
+                            <p><a href="mailto:{{ $block['content']['email'] }}">{{ $block['content']['email'] }}</a></p>
+                        @endif
+                    </div>
+
+                    @if($block['content']['opening-hours']->count() > 0)
+                        <div class="ac-contacts__block">
+                            <p class="ac-eyebrow">{{ __('contacts.hours') }}</p>
+                            @foreach($block['content']['opening-hours'] as $row)
+                                <p>{{ $row }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+
+                <!-- RIGHT: actions -->
+                <div class="ac-contacts__col">
+                    <div class="ac-contacts__block">
+                        <p class="ac-eyebrow">{{ __('contacts.message-us') }}</p>
+                        <div class="ac-contacts__row">
+                            <!-- WhatsApp uses the real phone number -->
+                            @if($block['content']['whatsapp'])
+                                <a class="ac-btn ac-btn--secondary" href="{{ $block['content']['whatsapp'] }}" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                                    {{ __('contacts.whatsapp') }}
+                                </a>
+                            @endif
+                            <!-- PLACEHOLDER Telegram handle — replace ambercouncil with the real one -->
+                            @if($block['content']['telegram'])
+                                <a class="ac-btn ac-btn--secondary" href="{{ $block['content']['telegram'] }}" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                    {{ __('contacts.telegram') }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="ac-contacts__block">
+                        <p class="ac-eyebrow">{{ __('contacts.follow') }}</p>
+                        <div class="ac-contacts__row">
+                            <!-- PLACEHOLDER social links — replace with real profiles -->
+                            @if($block['content']['linkedin'])
+                            <a class="ac-btn ac-btn--secondary" href="{{ $block['content']['linkedin'] }}" target="_blank" rel="noopener">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                {{ __('contacts.linkedin') }}
+                            </a>
+                            @endif
+                            @if($block['content']['instagram'])
+                                <a class="ac-btn ac-btn--secondary" href="{{ $block['content']['instagram'] }}" target="_blank" rel="noopener">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                    {{ __('contacts.instagram') }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+
+                    @if($block['content']['vcf']?->exists())
+                    <div class="ac-contacts__block">
+                        <p class="ac-eyebrow">{{ __('contacts.vcf-title') }}</p>
+                        <div class="ac-contacts__row">
+                            <a class="ac-btn ac-btn--secondary" href="{{ $block['content']['vcf']->url() }}" download>{{ __('contacts.vcf-download') }}</a>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+            </div>
         @endif
     @endforeach
 @endif

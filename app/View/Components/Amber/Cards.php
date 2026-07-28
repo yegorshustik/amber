@@ -13,6 +13,7 @@ class Cards extends Component
         public string $type = 'default',
         public ?ImageService $image = null,
         public Collection $cards = new Collection,
+        public string $columns = 'default',
     ) {}
 
     public function render(): View

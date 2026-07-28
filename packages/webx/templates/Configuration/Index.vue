@@ -2,7 +2,7 @@
 import { onBeforeMount } from 'vue';
 import { $t } from '@/locales';
 import { useConfigurationStore } from '@/stores/configuration';
-import { WxButtons, WxButton, WxPage, WxForm, WxTabs, WxTab, WxCard, WxFormControl, WxInput, WxGrid, WxGridCol, WxTextarea } from '@/ui';
+import { WxButtons, WxButton, WxPage, WxForm, WxTabs, WxTab, WxCard, WxFormControl, WxInput, WxGrid, WxGridCol, WxTextarea, WxInputFile } from '@/ui';
 import WxInputImage from '../../ui/components/WxInputImage/WxInputImage.vue';
 
 onBeforeMount(() => {
@@ -47,15 +47,65 @@ onBeforeMount(() => {
                                 </wx-form-control>
                             </wx-grid-col>
                         </wx-grid>
+                        <wx-grid>
+                            <wx-grid-col :sm="6">
+                                <wx-form-control :title="$t('contacts.registration-numbers')">
+                                    <wx-input
+                                        localized
+                                        name="param[contacts.registration-numbers]"
+                                        type="text"
+                                        :value="useConfigurationStore().getRaw('contacts.registration-numbers')"
+                                    />
+                                </wx-form-control>
+                            </wx-grid-col>
+                            <wx-grid-col :sm="6">
+                                <wx-form-control :title="$t('contacts.company-name')">
+                                    <wx-input
+                                        name="param[contacts.company-name]"
+                                        type="text"
+                                        :value="useConfigurationStore().getRaw('contacts.company-name')"
+                                    />
+                                </wx-form-control>
+                            </wx-grid-col>
+                        </wx-grid>
 
                         <wx-form-control :title="$t('contacts.address')">
-                            <wx-input name="param[contacts.address]" type="text" :value="useConfigurationStore().getRaw('contacts.address')" />
+                            <wx-input localized name="param[contacts.address]" type="text" :value="useConfigurationStore().getRaw('contacts.address')" />
                         </wx-form-control>
+
                         <wx-form-control :title="$t('contacts.google-maps-link')">
                             <wx-textarea
                                 name="param[contacts.google-maps-link]"
                                 :value="useConfigurationStore().getRaw('contacts.google-maps-link')"
                             />
+                        </wx-form-control>
+
+                        <wx-form-control :title="$t('contacts.opening-hours')">
+                            <wx-textarea
+                                localized
+                                name="param[contacts.opening-hours]"
+                                :value="useConfigurationStore().getRaw('contacts.opening-hours')"
+                            />
+                        </wx-form-control>
+
+                        <wx-form-control title="WhatsApp">
+                            <wx-input name="param[contacts.whatsapp]" :value="useConfigurationStore().getRaw('contacts.whatsapp')" />
+                        </wx-form-control>
+
+                        <wx-form-control title="Telegram">
+                            <wx-input name="param[contacts.telegram]" :value="useConfigurationStore().getRaw('contacts.telegram')" />
+                        </wx-form-control>
+
+                        <wx-form-control title="Linkedin">
+                            <wx-input name="param[contacts.linkedin]" :value="useConfigurationStore().getRaw('contacts.linkedin')" />
+                        </wx-form-control>
+
+                        <wx-form-control title="Instagram">
+                            <wx-input name="param[contacts.instagram]" :value="useConfigurationStore().getRaw('contacts.instagram')" />
+                        </wx-form-control>
+
+                        <wx-form-control title="VCF Card">
+                            <wx-input-file name="param[contacts.vcf]" :value="useConfigurationStore().getRaw('contacts.vcf')" />
                         </wx-form-control>
                     </wx-card>
                 </wx-tab>

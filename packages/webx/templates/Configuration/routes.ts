@@ -8,5 +8,12 @@ export const configurationRoutes: RouteRecordRaw[] = [
         meta: {
             auth : true
         }
+    }, {
+        path: 'configuration/faq',
+        name: 'configuration.faq',
+        component: () => import('./Faq.vue'),
+        meta: {
+            auth : true
+        }
     }
 ];

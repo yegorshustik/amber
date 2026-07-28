@@ -165,6 +165,7 @@ export const registry: RegistryComposerComponent[] = [
         defaults: {
             type: null,
             image: null,
+            columns: null,
             items: [],
             button: null,
             url: null,
@@ -191,6 +192,42 @@ export const registry: RegistryComposerComponent[] = [
         defaults: {
             image: null,
             signature: null,
+        },
+    },
+    {
+        name: 'Faq',
+        title: $t('page-composer.components.faq'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'question',
+        component: markRaw(defineAsyncComponent(() => import('./components/Faq.vue'))),
+        defaults: {
+            category: '',
+        },
+    },
+    {
+        name: 'Person',
+        title: $t('page-composer.components.person'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'user',
+        component: markRaw(defineAsyncComponent(() => import('./components/Person.vue'))),
+        defaults: {
+            image: null,
+            job: null,
+            name: null,
+            about: null,
+            linkedin: null,
+        },
+    },
+    {
+        name: 'Contacts',
+        title: $t('page-composer.components.contacts'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'person-vcard',
+        component: markRaw(defineAsyncComponent(() => import('./components/Contacts.vue'))),
+        defaults: {
         },
     },
 ];
