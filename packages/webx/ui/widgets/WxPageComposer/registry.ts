@@ -244,6 +244,17 @@ export const registry: RegistryComposerComponent[] = [
             form_id: null,
         },
     },
+
+    {
+        name: 'Services',
+        title: $t('page-composer.components.services'),
+        group: 'layout',
+        features: [...defaultFeatures],
+        icon: 'server',
+        component: markRaw(defineAsyncComponent(() => import('./components/Services.vue'))),
+        defaults: {
+        },
+    },
 ];
 
 export const getComponentsInGroup = (group: ComposerGroup) => registry.filter((item: RegistryComposerComponent) => item.group === group.slug);

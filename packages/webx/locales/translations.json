@@ -168,7 +168,8 @@
             "faq": "FAQ",
             "person": "Person",
             "contacts" : "Contacts",
-            "contact-center": "Contact Center"
+            "contact-center": "Contact Center",
+            "services" : "Services"
         }
     },
     "login": {
@@ -227,6 +228,14 @@
         "deleted": "Site deleted",
         "current-site": ":site",
         "choose-site": "Site"
+    },
+    "services": {
+        "menu": "Services",
+        "create": "Create service",
+        "edit": "Edit services",
+        "heading": "Services",
+        "saved": "Service saved",
+        "deleted": "Service deleted"
     },
     "inbox": {
         "heading": "Inbox",

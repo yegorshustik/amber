@@ -324,6 +324,19 @@
                     </div>
                 </div>
             @endif
+
+        @elseif($block['name'] == 'Services')
+            @if($block['content']['services']->count() > 0)
+                <div class="ac-svc-grid" style="margin-top:var(--space-12);">
+                    @foreach($block['content']['services'] as $service)
+                        <a class="ac-svc-card" href="{{ $service->url }}">
+                            <h3 class="ac-svc-card__t">{{ $service->title }}</h3>
+                            <p class="ac-svc-card__d">{{ $service->details }}</p>
+                            <p class="ac-svc-card__more">{{ __('learn-more') }} <span>→</span></p>
+                        </a>
+                    @endforeach
+                </div>
+            @endif
         @endif
     @endforeach
 @endif

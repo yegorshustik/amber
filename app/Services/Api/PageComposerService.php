@@ -4,6 +4,7 @@ namespace App\Services\Api;
 
 use App\Models\Inbox\Form;
 use App\Models\Review;
+use App\Models\Service;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Collection;
 
@@ -145,6 +146,10 @@ class PageComposerService implements Responsable
                     $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text']);
                     $component['content']['text'] = new MultilingualService($component['content']['text']);
                     $component['content']['form'] = Form::where('is_published', true)->find($component['content']['form_id']);
+                    break;
+
+                case 'Services':
+                    $component['content']['services'] = Service::published()->get();
                     break;
             }
 

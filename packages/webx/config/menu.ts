@@ -54,6 +54,10 @@ export const menu: WxMenuItem[] = [
                 route: 'configuration.faq',
                 active: [],
             },
+            {
+                title: $t('services.menu'),
+                route: 'services',
+            },
         ],
     },
     {

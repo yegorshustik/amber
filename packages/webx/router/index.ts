@@ -5,6 +5,7 @@ import { articlesRoutes } from '@/templates/Articles';
 import { configurationRoutes } from '@/templates/Configuration';
 import { inboxRoutes } from '@/templates/Inbox';
 import { pagesRoutes } from '@/templates/Pages';
+import { servicesRoutes } from '@/templates/Services';
 import { sitesRoutes } from '@/templates/Sites';
 import { usersRoutes } from '@/templates/Users';
 import { reviewsRoutes } from '@/templates/Reviews';
@@ -28,6 +29,7 @@ const router = createRouter({
                 ...pagesRoutes,
                 ...articlesRoutes,
                 ...reviewsRoutes,
+                ...servicesRoutes,
 
                 {
                     path: '/:pathMatch(.*)*',

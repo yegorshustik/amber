@@ -30,6 +30,7 @@ use App\Http\Controllers\Api\Orders\StatusesController as OrderStatusesControlle
 use App\Http\Controllers\Api\Orders\TrashController;
 use App\Http\Controllers\Api\PagesController;
 use App\Http\Controllers\Api\ReviewsController as SiteReviewsController;
+use App\Http\Controllers\Api\ServicesController;
 use App\Http\Controllers\Api\Shipping\AddressController;
 use App\Http\Controllers\Api\Shipping\CitiesController;
 use App\Http\Controllers\Api\Shipping\CompaniesController;
@@ -79,6 +80,18 @@ Route::group([
         Route::delete('sites/mass-destroy', [SitesController::class, 'massDestroy']);
         Route::get('sites/list', [SitesController::class, 'list']);
         Route::apiResource('sites', SitesController::class);
+    });
+
+    /*
+     * Services
+     */
+    Route::group([
+        'middleware' => 'auth:sanctum',
+    ], function () {
+        Route::post('services/sorting', [ServicesController::class, 'sorting']);
+        Route::delete('services/mass-destroy', [ServicesController::class, 'massDestroy']);
+        Route::get('services/list', [ServicesController::class, 'list']);
+        Route::apiResource('services', ServicesController::class);
     });
 
     /*
