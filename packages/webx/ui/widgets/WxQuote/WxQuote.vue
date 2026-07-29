@@ -22,7 +22,7 @@ const currentValue = ref<WxQuoteContent>(props.modelValue || props.value);
 
 onBeforeMount(() => {
     if (currentValue.value && !currentValue.value?.type) {
-        currentValue.value.type = 'default';
+        //currentValue.value.type = 'default';
         /*currentValue.value = {
             type: 'default',
         };*/
@@ -54,9 +54,9 @@ const handleInput = (key: keyof WxQuoteContent, value: WxLocalizedValue | WxSing
         <template v-if="currentValue?.type === 'full'">
             <div class="h3 fst-italic m-0" v-html="nl2br(useLocalesStore().selectLocalizedValue(currentValue?.text as WxLocalizedValue))" />
 
-            <div class="d-flex gap-16 mt-24">
+            <div class="d-flex mt-24 gap-16">
                 <div class="max-w-48">
-                    <img :src="currentValue?.image.src.url" alt="" class="w-100 rounded-circle object-fit-cover" />
+                    <img :src="currentValue?.image?.src?.url" alt="" class="w-100 rounded-circle object-fit-cover" />
                 </div>
 
                 <div class="flex-grow-1">

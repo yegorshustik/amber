@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class Toc extends Component
 {
     public function __construct(
+        public bool $hideToc = false,
     ) {}
 
     public function render(): View

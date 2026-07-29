@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 import { $t } from '@/locales';
 import { useLocalesStore } from '@/stores';
-import { WxAction, WxActions, WxCard, WxInput, WxTextarea } from '@/ui';
+import { WxAction, WxActions, WxCard, WxGrid, WxGridCol, WxInput, WxSelect, WxTextarea } from '@/ui';
 import WxButton from '../../../components/WxButton/WxButton.vue';
 import WxDialog from '../../../components/WxDialog/WxDialog.vue';
 import WxFormControl from '../../../components/WxFormControl/WxFormControl.vue';
@@ -37,7 +37,7 @@ const isAdditionalFilled = () => {
 </script>
 
 <template>
-    <div class="d-flex flex-column flex-lg-row gap-16">
+    <div :class="['d-flex flex-column gap-16', component.content.reverse == '1' ? 'flex-lg-row-reverse' : 'flex-lg-row']">
         <div class="flex-grow-1 flex-basis-0">
             <div v-if="useLocalesStore().selectLocalizedValue(component.content.pre_heading)" class="fs-14px text-uppercase mb-6">
                 {{ useLocalesStore().selectLocalizedValue(component.content.pre_heading) }}
@@ -54,6 +54,10 @@ const isAdditionalFilled = () => {
                 v-if="useLocalesStore().selectLocalizedValue(component.content.text)"
                 v-html="useLocalesStore().selectLocalizedValue(component.content.text)"
             />
+
+            <wx-button class="mt-24" theme="primary" v-if="useLocalesStore().selectLocalizedValue(component.content.button)">
+                {{ useLocalesStore().selectLocalizedValue(component.content.button) }}
+            </wx-button>
         </div>
         <div class="flex-grow-1 flex-basis-0" v-if="isAdditionalFilled()">
             <div class="bg-lightest rounded border p-16">
@@ -72,6 +76,10 @@ const isAdditionalFilled = () => {
                     v-if="useLocalesStore().selectLocalizedValue(component.content.additional?.text)"
                     v-html="useLocalesStore().selectLocalizedValue(component.content.additional.text)"
                 />
+
+                <wx-button class="mt-24" theme="primary" v-if="useLocalesStore().selectLocalizedValue(component.content.additional.button)">
+                    {{ useLocalesStore().selectLocalizedValue(component.content.additional.button) }}
+                </wx-button>
             </div>
         </div>
     </div>
@@ -87,6 +95,19 @@ const isAdditionalFilled = () => {
             <wx-textarea v-model="component.content.text" localized />
         </wx-form-control>
 
+        <wx-grid>
+            <wx-grid-col :sm="6">
+                <wx-form-control :title="$t('cta-button.button-text')">
+                    <wx-input localized v-model="component.content.button" />
+                </wx-form-control>
+            </wx-grid-col>
+            <wx-grid-col :sm="6">
+                <wx-form-control :title="$t('cta-button.button-link')">
+                    <wx-input v-model="component.content.button_url" />
+                </wx-form-control>
+            </wx-grid-col>
+        </wx-grid>
+
         <wx-card :title="$t('additional')">
             <template #actions>
                 <wx-actions>
@@ -95,6 +116,20 @@ const isAdditionalFilled = () => {
             </template>
 
             <template v-if="additionalVisible">
+                <wx-grid>
+                    <wx-grid-col :md="4">
+                        <wx-form-control :title="$t('reverse')">
+                            <wx-select
+                                v-model="component.content.reverse"
+                                :options="[
+                                    { label: $t('no'), value: '0' },
+                                    { label: $t('yes'), value: '1' },
+                                ]"
+                            />
+                        </wx-form-control>
+                    </wx-grid-col>
+                </wx-grid>
+
                 <wx-form-control :title="$t('pre-heading')">
                     <wx-input localized v-model="component.content.additional.pre_heading" />
                 </wx-form-control>
@@ -104,6 +139,19 @@ const isAdditionalFilled = () => {
                 <wx-form-control :title="$t('text')">
                     <wx-textarea v-model="component.content.additional.text" localized />
                 </wx-form-control>
+
+                <wx-grid>
+                    <wx-grid-col :sm="6">
+                        <wx-form-control :title="$t('cta-button.button-text')">
+                            <wx-input localized v-model="component.content.additional.button" />
+                        </wx-form-control>
+                    </wx-grid-col>
+                    <wx-grid-col :sm="6">
+                        <wx-form-control :title="$t('cta-button.button-link')">
+                            <wx-input v-model="component.content.additional.button_url" />
+                        </wx-form-control>
+                    </wx-grid-col>
+                </wx-grid>
             </template>
         </wx-card>
 

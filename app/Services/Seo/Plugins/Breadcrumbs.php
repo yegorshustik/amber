@@ -18,6 +18,11 @@ class Breadcrumbs implements PluginInterface
         }
     }
 
+    public function items(): Collection
+    {
+        return $this->breadcrumbs;
+    }
+
     public function count(): int
     {
         return $this->breadcrumbs->count();

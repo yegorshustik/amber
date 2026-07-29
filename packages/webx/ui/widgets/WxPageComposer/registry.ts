@@ -74,11 +74,16 @@ export const registry: RegistryComposerComponent[] = [
             pre_heading: null,
             heading: null,
             text: null,
+            button: null,
+            button_url: null,
 
             additional: {
+                reverse: null,
                 pre_heading: null,
                 heading: null,
                 text: null,
+                button: null,
+                button_url: null,
             },
         },
     },
@@ -176,10 +181,12 @@ export const registry: RegistryComposerComponent[] = [
         name: 'Article',
         title: $t('page-composer.components.article'),
         group: 'layout',
-        features: ['add', 'remove'],
+        features: defaultFeatures,
         icon: 'layout-text-left',
         component: markRaw(defineAsyncComponent(() => import('./components/Article.vue'))),
-        defaults: {},
+        defaults: {
+            hide_toc: '0',
+        },
     },
 
     {
@@ -252,8 +259,7 @@ export const registry: RegistryComposerComponent[] = [
         features: [...defaultFeatures],
         icon: 'server',
         component: markRaw(defineAsyncComponent(() => import('./components/Services.vue'))),
-        defaults: {
-        },
+        defaults: {},
     },
 ];
 

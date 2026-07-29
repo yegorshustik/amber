@@ -41,10 +41,13 @@ class PageComposerService implements Responsable
                     $component['content']['pre_heading'] = new MultilingualService($component['content']['pre_heading']);
                     $component['content']['heading']['text'] = new MultilingualService($component['content']['heading']['text']);
                     $component['content']['text'] = new MultilingualService($component['content']['text']);
+                    $component['content']['button'] = new MultilingualService($component['content']['button'] ?? null);
+                    $component['content']['reverse'] = $component['content']['reverse'] == '1';
 
                     $component['content']['additional']['pre_heading'] = new MultilingualService($component['content']['additional']['pre_heading'] ?? null);
                     $component['content']['additional']['heading']['text'] = new MultilingualService($component['content']['additional']['heading']['text'] ?? null);
                     $component['content']['additional']['text'] = new MultilingualService($component['content']['additional']['text'] ?? null);
+                    $component['content']['additional']['button'] = new MultilingualService($component['content']['additional']['button'] ?? null);
 
                     break;
 

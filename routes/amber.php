@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Amber\FaqController;
+use App\Http\Controllers\Amber\ServicesController;
 use App\Http\Controllers\Amber\InboxController;
 use App\Http\Controllers\Amber\PageController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +17,7 @@ Route::group([
     };
 
     Route::get('/', $router);
-    //Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+    Route::get('/services/{slug}', [ServicesController::class, 'show']);
 
 
     /*

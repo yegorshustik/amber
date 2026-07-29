@@ -76,7 +76,7 @@
         @elseif($block['name'] == 'Image')
             <x-amber::image :content="$block['content']" />
         @elseif($block['name'] == 'Article')
-            <x-amber::toc>
+            <x-amber::toc :hide-toc="($block['content']['hide_toc'] ?? '0') == '1'">
                 <x-amber::page-composer :level="$level + 1" :content="$content" :children="$block['children']" />
             </x-amber::toc>
         @elseif($block['name'] == 'Faq')

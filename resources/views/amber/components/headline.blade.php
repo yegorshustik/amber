@@ -2,6 +2,18 @@
     <div class="ac-container">
         @unless($content['pre_heading']?->empty())
             <p class="ac-eyebrow">{{ $content['pre_heading'] }}</p>
+        @else
+            @if(seo()->breadcrumbs->count() > 1)
+                <p class="ac-eyebrow">
+                @foreach(seo()->breadcrumbs->items() as $item)
+                    @if($loop->last)
+                        {{ $item['title'] }}
+                    @else
+                        <a href="{{ $item['url'] }}" style="color:inherit;text-decoration:none;">{{ $item['title'] }}</a> &middot;
+                    @endif
+                @endforeach
+                </p>
+            @endif
         @endunless
 
 

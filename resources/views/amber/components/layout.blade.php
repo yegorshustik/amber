@@ -18,7 +18,8 @@
         {{ $head ?? null }}
 
         <style>
-            .ac-section.ac-section--cream + .ac-section.ac-section--cream {
+            .ac-section.ac-section--cream + .ac-section.ac-section--cream,
+            .ac-section.ac-section--paper + .ac-section.ac-section--paper {
                 padding-top: 1px;
             }
         </style>

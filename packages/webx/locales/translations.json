@@ -358,5 +358,7 @@
         "feature" : "Feature"
     },
     "columns" : "Columns",
-    "two-columns" : "Two columns"
+    "two-columns" : "Two columns",
+    "hide-toc": "Hide table of contents",
+    "reverse": "Reverse"
 }
