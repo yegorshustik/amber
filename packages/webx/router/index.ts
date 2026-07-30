@@ -2,13 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useUserStore } from '@/stores';
 import { useConfigurationStore } from '@/stores/configuration';
 import { articlesRoutes } from '@/templates/Articles';
+import { catalogRoutes } from '@/templates/Catalog';
 import { configurationRoutes } from '@/templates/Configuration';
 import { inboxRoutes } from '@/templates/Inbox';
 import { pagesRoutes } from '@/templates/Pages';
+import { reviewsRoutes } from '@/templates/Reviews';
 import { servicesRoutes } from '@/templates/Services';
 import { sitesRoutes } from '@/templates/Sites';
 import { usersRoutes } from '@/templates/Users';
-import { reviewsRoutes } from '@/templates/Reviews';
 
 import type { User } from '@/types/user';
 import { WxLayout } from '@/ui';
@@ -30,6 +31,7 @@ const router = createRouter({
                 ...articlesRoutes,
                 ...reviewsRoutes,
                 ...servicesRoutes,
+                ...catalogRoutes,
 
                 {
                     path: '/:pathMatch(.*)*',

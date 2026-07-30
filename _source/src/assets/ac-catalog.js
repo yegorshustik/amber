@@ -135,12 +135,12 @@
         typeButtons.forEach(function (b) { b.classList.remove('is-active'); });
         btn.classList.add('is-active');
         activeFilters.type = btn.getAttribute('data-filter-type');
-        
+
         // Reset sub-filters when switching type
         activeFilters.gender = 'all';
         activeFilters.boarding = 'all';
         activeFilters.campus = 'all';
-        
+
         resetSelects();
         updateSubFiltersVisibility();
         render();
@@ -251,7 +251,7 @@
     });
 
     if (filtered.length === 0) {
-      gridEl.innerHTML = 
+      gridEl.innerHTML =
         '<div class="ac-catalog-empty">' +
           '<h3 class="ac-h3">No institutions match your search.</h3>' +
           '<p>Try adjusting your filters or search keywords.</p>' +
@@ -263,13 +263,13 @@
     filtered.forEach(function (item) {
       var specsHtml = '';
       if (item.type === 'school') {
-        specsHtml = 
+        specsHtml =
           '<div class="ac-catalog-card__spec-item"><strong>Age:</strong> ' + item.specs.age + '</div>' +
           '<div class="ac-catalog-card__spec-item"><strong>Gender:</strong> ' + item.specs.gender + '</div>' +
           '<div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> ' + item.specs.boarding + '</div>' +
           '<div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> ' + item.specs.curriculum + '</div>';
       } else {
-        specsHtml = 
+        specsHtml =
           '<div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> ' + item.specs.degrees + '</div>' +
           '<div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> ' + item.specs.acceptance + '</div>' +
           '<div class="ac-catalog-card__spec-item"><strong>Campus:</strong> ' + item.specs.campus + '</div>' +
@@ -294,7 +294,7 @@
         '</' + (item.url === '#' ? 'div' : 'a') + '>';
     });
 
-    gridEl.innerHTML = html;
+    //gridEl.innerHTML = html;
   }
 
   if (document.readyState === 'loading') {

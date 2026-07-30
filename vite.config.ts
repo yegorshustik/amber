@@ -41,42 +41,6 @@ export default defineConfig({
         },
     },
     plugins: [
-        {
-            name: 'vite-plugin-selective-purgecss',
-            async transform(code, id) {
-                const normalizedId = id.replace(/\\/g, '/');
-
-                if (normalizedId.includes('resources/assets/amber/app.scss')) {
-
-                    const postcss = (await import('postcss')).default;
-                    const purgecss = (await import('@fullhuman/postcss-purgecss')).default;
-
-                    const result = await postcss([
-                        purgecss({
-                            content: [
-                                './resources/views/amber/components/**/*.blade.php',
-                                './resources/views/amber/**/*.blade.php',
-                                './resources/assets/amber/**/*.{js,ts,vue,jsx,tsx}',
-                            ],
-                            rejected: true,
-                            safelist: {
-                                standard: [/^swiper/, /^main/, /table-responsive/, /table/],
-                                deep: [/section/, /^swiper/, /slide/, /fade/, /main/, /table-responsive/, /table/],
-                                greedy: [/swiper/, /main/, /:has/, /table-responsive/, /table/],
-                            },
-                        }),
-                    ]).process(code, { from: id });
-
-                    return {
-                        code: result.css,
-                        map: result.map ? result.map.toString() : null
-                    };
-                }
-
-                return null;
-            }
-        },
-
         laravel({
             input: [
                 'packages/webx/main.ts',

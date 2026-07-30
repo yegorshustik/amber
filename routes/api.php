@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\Catalog\ReviewsController;
 use App\Http\Controllers\Api\Catalog\SavedFiltersController;
 use App\Http\Controllers\Api\Catalog\StatusesController;
 use App\Http\Controllers\Api\Catalog\StockController;
+use App\Http\Controllers\Api\CatalogController;
 use App\Http\Controllers\Api\ConfigurationController;
 use App\Http\Controllers\Api\Equipment\CategoriesController as EquipmentCategoriesController;
 use App\Http\Controllers\Api\Equipment\ModelsController as EquipmentModelsController;
@@ -92,6 +93,18 @@ Route::group([
         Route::delete('services/mass-destroy', [ServicesController::class, 'massDestroy']);
         Route::get('services/list', [ServicesController::class, 'list']);
         Route::apiResource('services', ServicesController::class);
+    });
+
+    /*
+     * Catalog
+     */
+    Route::group([
+        'middleware' => 'auth:sanctum',
+    ], function () {
+        Route::post('catalog/sorting', [CatalogController::class, 'sorting']);
+        Route::delete('catalog/mass-destroy', [CatalogController::class, 'massDestroy']);
+        Route::get('catalog/list', [CatalogController::class, 'list']);
+        Route::apiResource('catalog', CatalogController::class);
     });
 
     /*
@@ -402,7 +415,6 @@ Route::group([
         Route::apiResource('address', AddressController::class)->only(['index']);
     });
 
-
     Route::group([
         'middleware' => 'auth:sanctum',
         'prefix' => 'orders',
@@ -430,7 +442,6 @@ Route::group([
         Route::apiResource('order', OrdersController::class);
     });
 
-
     /*
      * Reviews
      */
@@ -454,7 +465,6 @@ Route::group([
         Route::get('banners/list', [BannersController::class, 'list']);
         Route::apiResource('banners', BannersController::class);
     });
-
 
     /*
      * Equipment

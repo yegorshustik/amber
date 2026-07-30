@@ -58,6 +58,10 @@ export const menu: WxMenuItem[] = [
                 title: $t('services.menu'),
                 route: 'services',
             },
+            {
+                title: $t('catalog.menu'),
+                route: 'catalog',
+            },
         ],
     },
     {

@@ -29,6 +29,7 @@
     "text": "Text",
     "cards": "Cards",
     "details": "Details",
+    "short-details": "Short details",
     "tags": "Tags",
     "gallery": "Gallery",
     "alt": "Alt",
@@ -54,6 +55,7 @@
     "in-menu": "In menu",
     "is-required": "Required",
     "slug": "Slug",
+    "content": "Content",
     "select-page": "Select page",
     "search-placeholder": "Search",
     "search-no-results": "Nothing found",
@@ -237,6 +239,32 @@
         "saved": "Service saved",
         "deleted": "Service deleted"
     },
+    "catalog": {
+        "menu": "Catalog",
+        "create": "Create item",
+        "edit": "Edit item",
+        "heading": "Catalog",
+        "saved": "Item saved",
+        "deleted": "Item deleted",
+        "features" : {
+            "country" : "Country",
+            "city" : "City",
+            "age-range" : "Age range",
+            "gender" : "Gender",
+            "boarding" : "Boarding",
+            "curriculum" : "Curriculum",
+            "size" : "Size",
+            "campus_style": "Campus style",
+            "acceptance": "Acceptance",
+            "programs": "Programs",
+            "degrees": "Degrees",
+            "established": "Established"
+        },
+        "type" : {
+            "school" : "School",
+            "university" : "University"
+        }
+    },
     "inbox": {
         "heading": "Inbox",
         "forms": {
@@ -360,5 +388,6 @@
     "columns" : "Columns",
     "two-columns" : "Two columns",
     "hide-toc": "Hide table of contents",
-    "reverse": "Reverse"
+    "reverse": "Reverse",
+    "features": "Features"
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Amber\CatalogController;
 use App\Http\Controllers\Amber\ServicesController;
 use App\Http\Controllers\Amber\InboxController;
 use App\Http\Controllers\Amber\PageController;
@@ -18,6 +19,8 @@ Route::group([
 
     Route::get('/', $router);
     Route::get('/services/{slug}', [ServicesController::class, 'show']);
+    Route::get('/catalog', [CatalogController::class, 'index']);
+    Route::get('/catalog/{slug}', [CatalogController::class, 'show']);
 
 
     /*

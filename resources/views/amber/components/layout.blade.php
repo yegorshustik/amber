@@ -45,6 +45,5 @@
         @endisset
 
         @vite('resources/assets/amber/app.js')
-        @vite('resources/assets/amber/app/main.ts')
     </body>
 </html>
