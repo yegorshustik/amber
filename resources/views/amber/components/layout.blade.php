@@ -43,7 +43,5 @@
         @else
             <x-amber::footer />
         @endisset
-
-        @vite('resources/assets/amber/app.js')
     </body>
 </html>
