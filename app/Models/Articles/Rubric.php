@@ -21,10 +21,12 @@ class Rubric extends Model implements Responsable
     protected $fillable = [
         'site_id',
         'image',
+        'pre_heading',
         'title',
         'slug',
         'is_published',
         'seo',
+        'details',
         'content',
         'position',
     ];
@@ -33,6 +35,8 @@ class Rubric extends Model implements Responsable
         'image' => ImageCast::class,
         'title' => MultilingualCast::class,
         'content' => MultilingualCast::class,
+        'pre_heading' => MultilingualCast::class,
+        'details' => MultilingualCast::class,
         'seo' => SeoCast::class,
         'is_published' => 'boolean',
     ];
@@ -69,6 +73,8 @@ class Rubric extends Model implements Responsable
             'id' => $this->id,
             'image' => $this->image->toResponse($request),
             'title' => $this->title->toResponse($request),
+            'pre_heading' => $this->pre_heading->toResponse($request),
+            'details' => $this->details->toResponse($request),
             'slug' => $this->slug,
             'is_published' => $this->is_published,
             'seo' => $this->seo->toResponse($request),

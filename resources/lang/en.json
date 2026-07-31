@@ -94,6 +94,17 @@
     "catalog.spec.programs": "Top Programs",
     "catalog.spec.established": "Established",
 
+    "all-posts": "All posts",
+    "seconds": ":sec sec read",
+    "minutes": ":min min read",
+
+    "related.heading": "Related articles",
+    "article.cta.pre-heading": "Map the path first",
+    "article.cta.heading": "Start with a free consultation.",
+    "article.cta.text": "A short call to understand your child's profile and map the realistic path forward.",
+    "article.cta.button": "Free consultation",
+    "": "",
+    "": "",
     "": "",
     "": "",
     "": "",

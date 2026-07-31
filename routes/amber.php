@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Amber\ArticlesController;
 use App\Http\Controllers\Amber\CatalogController;
 use App\Http\Controllers\Amber\ServicesController;
 use App\Http\Controllers\Amber\InboxController;
 use App\Http\Controllers\Amber\PageController;
+use App\Models\Articles\Rubric;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 
@@ -22,6 +24,14 @@ Route::group([
     Route::get('/catalog', [CatalogController::class, 'index']);
     Route::get('/catalog/{slug}', [CatalogController::class, 'show']);
 
+
+    /*
+     * Blog
+     */
+    rescue(fn () => Rubric::items()->each(function (Rubric $rubric) {
+        Route::match(['get', 'post'], $rubric->slug, fn () => (new ArticlesController)->index($rubric));
+    }));
+    Route::get('article/{slug}', [ArticlesController::class, 'show'])->where('slug', '.*');
 
     /*
      * Inbox

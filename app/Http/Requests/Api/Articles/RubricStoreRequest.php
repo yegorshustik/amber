@@ -15,6 +15,8 @@ class RubricStoreRequest extends FormRequest
             'id' => 'sometimes',
             'title' => new RequiredMultilingualRule,
 
+            'pre_heading' => 'sometimes',
+            'details' => 'sometimes',
             'image' => 'sometimes',
             'slug' => 'sometimes',
             'is_published' => 'sometimes',

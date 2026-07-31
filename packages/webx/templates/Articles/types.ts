@@ -26,6 +26,8 @@ export interface Article {
 export interface ArticleRubric {
     id: number;
     image?: WxSingleImage;
+    pre_heading: WxLocalizedValue;
+    details: WxLocalizedValue;
     title: WxLocalizedValue;
     slug: string;
     is_published: boolean;

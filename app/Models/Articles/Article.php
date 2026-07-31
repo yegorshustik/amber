@@ -9,11 +9,14 @@ use App\Casts\Api\SeoCast;
 use App\Http\Resources\Api\Articles\RubricsCollection;
 use App\Http\Resources\Api\Articles\TagsCollection;
 use App\Models\Scopes\SiteScope;
+use App\Services\Cache;
+use App\View\Components\Amber\PageComposer;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Collection;
 
 class Article extends Model implements Responsable
 {
@@ -86,5 +89,34 @@ class Article extends Model implements Responsable
             'announcement' => $this->announcement->toResponse($request),
             'content' => $this->content->toResponse($request),
         ];
+    }
+
+    public function getPublishedDateFormatted(): string
+    {
+        $format = match (app()->getLocale()) {
+            'uk', 'pl' => 'd F Y',
+            default => 'F d, Y',
+        };
+
+        return $this->published_at->locale(app()->getLocale())->translatedFormat($format);
+    }
+
+    public function estimatedReadTime(): string
+    {
+        $html = renderComponent(PageComposer::class, [
+            'content' => $this->content
+        ]);
+
+        return estimateReadingTime($html);
+    }
+
+    public function related() : Attribute
+    {
+        return Attribute::get(
+            fn() => Cache::remember(
+                'related-' . $this->id,
+                fn() : Collection => $this->rubrics->where('slug', '!=', 'blog')->first()?->articles()->where('id', '<>', $this->id)->published()->take(6)->get()
+            )
+        );
     }
 }

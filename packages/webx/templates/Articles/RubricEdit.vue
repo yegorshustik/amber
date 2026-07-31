@@ -75,6 +75,10 @@ const success = (response: ApiResponse<ArticleRubric>) => {
                             </wx-form-control>
                         </template>
 
+                        <wx-form-control :title="$t('pre-heading')">
+                            <wx-input name="pre_heading" :value="rubric?.pre_heading || null" localized />
+                        </wx-form-control>
+
                         <wx-grid>
                             <wx-grid-col :md="9">
                                 <wx-form-control :title="$t('title')">
@@ -95,6 +99,10 @@ const success = (response: ApiResponse<ArticleRubric>) => {
                                 </wx-form-control>
                             </wx-grid-col>
                         </wx-grid>
+
+                        <wx-form-control :title="$t('details')">
+                            <wx-textarea name="details" :value="rubric?.details || null" localized />
+                        </wx-form-control>
                     </wx-card>
 
                     <wx-card>

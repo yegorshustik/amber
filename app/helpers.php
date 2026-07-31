@@ -4,6 +4,7 @@ use App\Models\Site;
 use App\Services\Cache;
 use App\Services\Localization;
 use App\Services\Seo;
+use Illuminate\View\Factory;
 
 if (! function_exists('fillArray')) {
     function fillArray(array $template, array $params): array
@@ -243,5 +244,43 @@ if (! function_exists('replaceContacts')) {
         }, $content);
 
         return $content;
+    }
+}
+
+
+if (!function_exists('str_word_count_utf8')) {
+    function str_word_count_utf8($str): int
+    {
+        return count(preg_split('~[^\p{L}\p{N}\']+~u',$str));
+    }
+}
+
+
+if (!function_exists('estimateReadingTime')) {
+    function estimateReadingTime(string $text): string
+    {
+        $wpm = 200;
+        $wordCount = str_word_count_utf8(strip_tags($text));
+
+        $minutes = (int) floor($wordCount / $wpm);
+        $seconds = (int) floor($wordCount % $wpm / ($wpm / 60));
+        if ($minutes === 0) $minutes = 1;
+
+        if ($minutes === 0) {
+            return __('seconds', ['sec' => $seconds]);
+        } else {
+            return __('minutes', ['min' => $minutes]);
+        }
+    }
+}
+
+
+if (!function_exists('renderComponent')) {
+    function renderComponent(string $component, array $data) : string
+    {
+        $component = app(Factory::class)->getContainer()->make($component, $data);
+        app(Factory::class)->startComponent($component->resolveView(), $component->data());
+
+        return app(Factory::class)->renderComponent();
     }
 }
