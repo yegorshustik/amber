@@ -1,0 +1,1 @@
+import{y as r,z as o,G as t}from"./@vue-DKuZJEvg.js";const c={xmlns:"http://www.w3.org/2000/svg",fill:"currentColor",viewBox:"0 0 16 16"};function l(n,e){return r(),o("svg",c,[...e[0]||(e[0]=[t("circle",{cx:"8",cy:"8",r:"8"},null,-1)])])}const a={render:l};export{a as default,l as render};

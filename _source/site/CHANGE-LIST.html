@@ -1,0 +1,84 @@
+<h1>Amber Council — Site Change List (dev handoff)</h1>
+<p>Постраничный список правок для разработки. Приоритеты:
+<strong>P0</strong> — блокер запуска / ломает воронку · <strong>P1</strong> — рост конверсии/доверия · <strong>P2</strong> — полировка.
+Анализ от 2026-06-28, по текущей сборке (<code>site/</code>). Ничего из перечисленного ещё не внесено.</p>
+<hr>
+<h2>0. Global / site-wide</h2>
+<ul>
+<li><strong>[P0] Единый первичный CTA.</strong> Сейчас по сайту чередуются «Take the test», «Free consultation», «Book a call», «Request consultation», «Book a free consultation». Стандартизировать: первичный — <strong>«Free consultation»</strong> (уже доминирует, 61 вхождение), вторичный — один (напр. «Take the test», только когда квиз будет). Везде один глагол/формулировка.</li>
+<li><strong>[P0] Решение по квизу.</strong> Квиза (<code>quiz.html</code>) нет, но «Take the test» на него ссылается. Либо (а) собрать квиз Stage 1 → Stage 2 (профиль → направления → примеры вузов → захват контакта), либо (б) до его появления убрать все «Take the test» и оставить «Free consultation». Сейчас обещание «теста» не выполняется (ведёт на контактную форму).</li>
+<li><strong>[P1] Навигация — сократить.</strong> 8 пунктов в шапке. Оставить решающие: <code>Academic Roadmap · Services · Schools &amp; Universities · Pricing · About</code> + CTA. <strong>FAQ, Contacts, Blog → в футер.</strong></li>
+<li><strong>[P1] Trust-строка глобально.</strong> Тонкая полоса доверия (Boarding schools · Ivy League · Oxbridge · Tri-City, или маркеры опыта) — под hero на Home и на ключевых страницах. Сейчас доверие появляется слишком поздно.</li>
+<li><strong>[P1] Реальные отзывы.</strong> Слайдер <code>data-testimonials</code> и блоки «What parents say» — на плейсхолдерах. Подставить 5 реальных кейсов (известный блокер из брифа).</li>
+<li><strong>[P2] Языки.</strong> Переключатель EN/PL/UA в футере неактивен (<code>href=&quot;#&quot;</code>). Подключить i18n или скрыть до готовности.</li>
+<li><strong>[P2] Privacy/Terms.</strong> <code>privacy-policy.html</code> и <code>terms.html</code> есть — связать ссылками в футере (сейчас текст без ссылок).</li>
+</ul>
+<hr>
+<h2>1. Home (<code>index.html</code>)</h2>
+<ul>
+<li><strong>[P0] Мёртвая кнопка.</strong> В секции «Find the direction» «Take the test» ведёт на <code>href=&quot;#&quot;</code>. Починить (на квиз) или убрать.</li>
+<li><strong>[P1] Порядок секций.</strong> Сейчас ценовой CTA («Get a personalized plan and quote») стоит <strong>до</strong> отзывов/commitment/«how we work» — жёсткий ask раньше доверия. Рекомендуемый порядок:
+Hero → (trust-строка) → Триггер grade 9 → Academic Roadmap → Why us + Promise → Services → <strong>Commitment → Testimonials → How we work</strong> → <strong>Pricing-CTA + Lead-форма вместе внизу</strong>.</li>
+<li><strong>[P1] Убрать дублирование.</strong> «Why us» (Honest targeting / Full accountability / 24/7) и «Our commitment» (Support 24/7 / Engagement / Reach / Process) повторяют 24/7 и «any institution». Один блок переориентировать на <strong>доказательства/опыт</strong> (с какими школами/вузами работаем, сколько ведём), а не повтор accountability.</li>
+<li><strong>[P1] Social proof выше.</strong> Хотя бы один отзыв или trust-строку поднять ближе к первому экрану.</li>
+<li><strong>[P2] Lead-форма — трение.</strong> 6 полей для холодного визитёра. DOB и Current grade сделать опциональными или собирать на звонке; либо вести через квиз (ценность в обмен на контакт).</li>
+</ul>
+<hr>
+<h2>2. Academic Roadmap (<code>academic-roadmap.html</code>)</h2>
+<ul>
+<li><strong>[P1] Убрать «Pricing» из «What's included».</strong> В сетке 6 плиток одна — «Pricing / by consultation». Это не «что входит», а коммерция — вынести в отдельную строку/ссылку на Pricing. Оставить 5 содержательных пунктов.</li>
+<li><strong>[P1] Добавить визуал пути.</strong> Вставить 4-стадийный путь (Camps → School → University → Support) как на Home — флагман должен показывать «маршрут», а не только список.</li>
+<li><strong>[P1] Proof перед CTA.</strong> Добавить 1 блок доказательства (кейс/цитата) до финального «Free consultation».</li>
+<li><strong>[P2] Cross-link.</strong> Явные ссылки на конкретные service-страницы из соответствующих стадий.</li>
+</ul>
+<hr>
+<h2>3. Services (<code>services.html</code>) + страницы услуг (<code>service-*.html</code>)</h2>
+<ul>
+<li><strong>[P1] Привязка к Roadmap.</strong> На каждой странице услуги показать, <strong>какой стадии Academic Roadmap</strong> она соответствует, и линк на флагман.</li>
+<li><strong>[P1] Мини-FAQ под услугу.</strong> 3–4 вопроса, специфичных для услуги (а не общий FAQ).</li>
+<li><strong>[P2] Proof на услугу.</strong> Один релевантный кейс/цитата на каждой service-странице.</li>
+<li><strong>[P2] Camps/Visa.</strong> По vision это Phase 2-приоритеты — проверить, что контент не «тоньше» ключевых (Boarding, Post-Enrollment, Preparation).</li>
+</ul>
+<hr>
+<h2>4. Schools &amp; Universities (<code>catalog.html</code>, <code>school-detail-*</code>, <code>university-detail-*</code>)</h2>
+<ul>
+<li><strong>[P0] Проверить функциональность каталога.</strong> Убедиться, что на <code>catalog.html</code> работают: переключатель Schools|Universities, фильтры (country; для вузов — specialty; для школ — ages/boarding), поиск, карточки. Если страница пустая/статичная — наполнить.</li>
+<li><strong>[P1] Любая карточка → воронка.</strong> На detail-страницах (Eton, Oxford) обязательный CTA «enquire / free consultation» — каталог это воронка, не справочник.</li>
+<li><strong>[P1] Контент detail по модели данных.</strong> Привести поля к <code>Institution</code> (Common + school/university-specific) из vision §10.</li>
+<li><strong>[P2] Рейтинг.</strong> Поле rating — TBD; либо скрыть, либо заполнить, чтобы не было пустых мест.</li>
+</ul>
+<hr>
+<h2>5. Pricing (<code>pricing-policy.html</code>)</h2>
+<ul>
+<li><strong>[P0] Добавить модель цены ПЕРЕД FAQ.</strong> Сейчас страница почти сразу уходит в «Pricing questions». По vision цена = модель и философия: (1) почему value-based (платишь за managed accountability + 24/7, не за бумаги), (2) якоря <code>from X</code> для модульных услуг, (3) <code>by consultation</code> для Academic Roadmap, (4) что входит. FAQ — после.</li>
+<li><strong>[P1] Прозрачность.</strong> Явно «без скрытых платежей» — усиливает honest-positioning.</li>
+</ul>
+<hr>
+<h2>6. About (<code>about.html</code>)</h2>
+<ul>
+<li><strong>[P0] Реальный founder.</strong> Сейчас «[Founder name]» — плейсхолдер. Подставить имя, фото, короткое био, цитату; кнопка LinkedIn — на реальный профиль (личный бренд — часть GTM).</li>
+<li><strong>[P0] Mission.</strong> Заголовок секции «Our mission» пуст — вставить миссию (+ латинский слоган, если решён; если нет — это открытый TODO заказчика).</li>
+<li><strong>[P1] Founder выше.</strong> Короткий founder-блок/цитату поднять ближе к началу — доверие через личность.</li>
+</ul>
+<hr>
+<h2>7. FAQ (<code>faq.html</code>)</h2>
+<ul>
+<li><strong>[P1] Покрыть реальные возражения.</strong> Убедиться, что отвечает на: цена, гарантии, страны/охват, возрастные рамки, что входит, возврат/money-back (решение по гарантии — открытый TODO).</li>
+<li><strong>[P2] Якоря.</strong> Дать прямые ссылки на разделы FAQ со страниц услуг/Pricing.</li>
+</ul>
+<hr>
+<h2>8. Contacts (<code>contacts.html</code>)</h2>
+<ul>
+<li><strong>[P1] Добавить lead-форму</strong> (или явный линк на форму с Home) — не только мессенджеры.</li>
+<li><strong>[P2] Карта.</strong> Встроить карту по адресу Gdańsk; «Book a free consultation» — первичным CTA.</li>
+</ul>
+<hr>
+<h2>9. Blog (<code>blog.html</code>, <code>blog-post.html</code>)</h2>
+<ul>
+<li><strong>[P1] Скрыть из меню, если тонкий.</strong> По стратегии Blog — Phase 2. Если нет 3–5 реальных статей — убрать из навигации (тонкий блог бьёт по премиальности), оставить страницы для будущего.</li>
+</ul>
+<hr>
+<h2>Сводка приоритетов</h2>
+<p><strong>P0 (до запуска):</strong> единый CTA + решение по квизу · мёртвая «Take the test» на Home · модель цены на Pricing · реальный founder + mission на About · проверка функционала каталога.
+<strong>P1 (конверсия):</strong> реордер Home · trust-строка + отзывы выше · дедуп Why-us/Commitment · убрать Pricing-плитку из Roadmap · привязка услуг к Roadmap · сократить навигацию · каталог → воронка.
+<strong>P2 (полировка):</strong> языки/privacy-ссылки · форма-трение · мини-FAQ/proof на услугах · карта на Contacts · скрыть тонкий блог.</p>

@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Requests\Api\Articles;
+
+use App\Rules\Api\RequiredMultilingualRule;
+use App\Services\Localization;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
+
+class RubricStoreRequest extends FormRequest
+{
+    public function rules(): array
+    {
+        return [
+            'id' => 'sometimes',
+            'title' => new RequiredMultilingualRule,
+
+            'pre_heading' => 'sometimes',
+            'details' => 'sometimes',
+            'image' => 'sometimes',
+            'slug' => 'sometimes',
+            'is_published' => 'sometimes',
+            'seo' => 'sometimes',
+            'content' => 'sometimes',
+        ];
+    }
+
+    public function validated($key = null, $default = null): array
+    {
+        $validated = parent::validated();
+
+        $validated['slug'] ??= $validated['title'][(new Localization)->current()['locale']];
+        $validated['slug'] = Str::slug($validated['slug']);
+
+        $validated['is_published'] ??= false;
+
+        return $validated;
+    }
+}

@@ -1,0 +1,264 @@
+---
+layout: base.njk
+title: "Schools &amp; Universities Directory — Amber Council"
+description: "Browse and filter elite boarding schools and universities across the UK, US, and Switzerland. Find the right academic path tailored to your child's profile."
+---
+
+<!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Academic directory</p>
+      <h1 class="ac-h1">Schools &amp; Universities</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:680px;">An curated guide to elite schools and universities in the United Kingdom, United States, and Switzerland. Filter by institution type, country, and specific academic parameters.</p>
+    </div>
+  </section>
+
+  <!-- ============ DIRECTORY GRID & FILTERS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      
+      <!-- Type Selection Tabs -->
+      <div class="ac-filter-tabs">
+        <button class="ac-filter-tab is-active" data-filter-type="school">Boarding Schools</button>
+        <button class="ac-filter-tab" data-filter-type="university">Universities</button>
+      </div>
+
+      <div class="ac-catalog-layout">
+        
+        <!-- Filter Sidebar -->
+        <aside class="ac-filters">
+
+
+          <div class="ac-filter-group">
+            <label class="ac-filter-group__t" for="filter-country">Country</label>
+            <select id="filter-country" class="ac-select">
+              <option value="all">All Countries</option>
+              <option value="UK">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="Switzerland">Switzerland</option>
+            </select>
+          </div>
+
+          <!-- School-specific sub-filters -->
+          <div id="sub-filters-school" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-gender">Gender option</label>
+              <select id="filter-gender" class="ac-select">
+                <option value="all">All Options</option>
+                <option value="coed">Co-educational</option>
+                <option value="single">Single-Sex</option>
+              </select>
+            </div>
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-boarding">Boarding option</label>
+              <select id="filter-boarding" class="ac-select">
+                <option value="all">All Options</option>
+                <option value="full">Full Boarding</option>
+                <option value="day-weekly">Day / Weekly Boarding</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- University-specific sub-filters -->
+          <div id="sub-filters-university" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-campus">Campus style</label>
+              <select id="filter-campus" class="ac-select">
+                <option value="all">All Styles</option>
+                <option value="collegiate">Collegiate Campus</option>
+                <option value="city-modern">City / Modern Campus</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Results Grid -->
+        <div class="ac-catalog-grid" id="catalog-grid">
+          <a
+            href="school-detail-eton.html"
+            class="ac-catalog-card"
+            data-type="school"
+            data-country="UK"
+            data-gender="single"
+            data-boarding="full"
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-eton.jpg" alt="Eton College" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">Boarding School</span>
+              <h3 class="ac-catalog-card__title">Eton College</h3>
+              <div class="ac-catalog-card__loc">Windsor, United Kingdom</div>
+              <p class="ac-catalog-card__desc">One of the world's most famous boarding schools, offering academic excellence, traditional values, and leadership preparation for boys.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Age:</strong> 13–18</div>
+                <div class="ac-catalog-card__spec-item"><strong>Gender:</strong> Boys Only</div>
+                <div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> Full Boarding</div>
+                <div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> GCSE, A-Level</div>
+              </div>
+              <span class="ac-catalog-card__link">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="school"
+            data-country="US"
+            data-gender="coed"
+            data-boarding="day-weekly"
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="Phillips Academy Andover" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">Boarding School</span>
+              <h3 class="ac-catalog-card__title">Phillips Academy Andover</h3>
+              <div class="ac-catalog-card__loc">Andover, MA, United States</div>
+              <p class="ac-catalog-card__desc">A prestigious, highly selective co-educational boarding school in New England, celebrated for its academic depth and global student body.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Age:</strong> 14–18</div>
+                <div class="ac-catalog-card__spec-item"><strong>Gender:</strong> Co-educational</div>
+                <div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> Full / Day</div>
+                <div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> US Diploma, AP</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="school"
+            data-country="Switzerland"
+            data-gender="coed"
+            data-boarding="full"
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="Institut Le Rosey" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">Boarding School</span>
+              <h3 class="ac-catalog-card__title">Institut Le Rosey</h3>
+              <div class="ac-catalog-card__loc">Rolle / Gstaad, Switzerland</div>
+              <p class="ac-catalog-card__desc">Widely known as the “School of Kings” — a highly international Swiss boarding school featuring a dual-campus system (lake and mountain).</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Age:</strong> 7–18</div>
+                <div class="ac-catalog-card__spec-item"><strong>Gender:</strong> Co-educational</div>
+                <div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> Full Boarding</div>
+                <div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> IB, French Bac</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <a
+            href="university-detail-oxford.html"
+            class="ac-catalog-card"
+            data-type="university"
+            data-country="UK"
+            data-campus="collegiate"
+            hidden
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-oxford.jpg" alt="University of Oxford" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">University</span>
+              <h3 class="ac-catalog-card__title">University of Oxford</h3>
+              <div class="ac-catalog-card__loc">Oxford, United Kingdom</div>
+              <p class="ac-catalog-card__desc">The oldest university in the English-speaking world. Renowned for its unique collegiate system, one-on-one tutorials, and elite research.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> UG, PG, PhD</div>
+                <div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> 14%</div>
+                <div class="ac-catalog-card__spec-item"><strong>Campus:</strong> Collegiate</div>
+                <div class="ac-catalog-card__spec-item"><strong>Programs:</strong> PPE, STEM, Classics</div>
+              </div>
+              <span class="ac-catalog-card__link">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="university"
+            data-country="US"
+            data-campus="city-modern"
+            hidden
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="Harvard University" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">University</span>
+              <h3 class="ac-catalog-card__title">Harvard University</h3>
+              <div class="ac-catalog-card__loc">Cambridge, MA, United States</div>
+              <p class="ac-catalog-card__desc">An elite Ivy League research university. Offers unmatched academic resources, global networking, and historically low acceptance rates.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> UG, PG, PhD</div>
+                <div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> 4%</div>
+                <div class="ac-catalog-card__spec-item"><strong>Campus:</strong> Traditional</div>
+                <div class="ac-catalog-card__spec-item"><strong>Programs:</strong> Liberal Arts, STEM, Law</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="university"
+            data-country="Switzerland"
+            data-campus="city-modern"
+            hidden
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="ETH Zurich" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">University</span>
+              <h3 class="ac-catalog-card__title">ETH Zurich</h3>
+              <div class="ac-catalog-card__loc">Zurich, Switzerland</div>
+              <p class="ac-catalog-card__desc">A world-leading public university for science and technology. Renowned for high academic standards and cutting-edge research programs.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> UG, PG, PhD</div>
+                <div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> 25%</div>
+                <div class="ac-catalog-card__spec-item"><strong>Campus:</strong> City / Modern</div>
+                <div class="ac-catalog-card__spec-item"><strong>Programs:</strong> STEM, Engineering</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="ac-catalog-empty" id="catalog-empty" hidden>
+            <h3 class="ac-h3">No institutions match your search.</h3>
+            <p>Try adjusting your filters.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <a href="contacts.html#lead" class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Find the right fit for your child.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <span class="ac-btn ac-btn--primary">Free consultation</span>
+      </a>
+    </div>
+  </section>

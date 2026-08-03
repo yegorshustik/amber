@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schools &amp;amp; Universities Directory — Amber Council</title>
+<meta name="description" content="Browse and filter elite boarding schools and universities across the UK, US, and Switzerland. Find the right academic path tailored to your child&#39;s profile.">
+<meta property="og:title" content="Schools &amp;amp; Universities Directory — Amber Council">
+<meta property="og:description" content="Browse and filter elite boarding schools and universities across the UK, US, and Switzerland. Find the right academic path tailored to your child&#39;s profile.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://yegorshustik.github.io/amber/assets/og-image.jpg">
+<meta property="og:url" content="https://yegorshustik.github.io/amber/catalog.html">
+<link rel="canonical" href="https://yegorshustik.github.io/amber/catalog.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/ac-favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css?v=98">
+<script type="module" src="assets/app.js?v=98"></script>
+
+</head>
+<body>
+
+  <header class=ac-header>
+  <div class=ac-header__inner>
+    <a href="index.html" class="ac-header__logo-link" aria-label="Amber Council — home"><img class="ac-header__logo" src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council"></a>
+    <button type="button" class="ac-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" onclick="var n = document.getElementById('site-nav'); if(n) { var open = n.classList.toggle('is-open'); this.setAttribute('aria-expanded', open ? 'true' : 'false'); var h = this.closest('.ac-header'); if(open){ h.classList.add('is-menu-open'); } else { setTimeout(function(){ h.classList.remove('is-menu-open'); }, 1200); } }">
+      <div class="ac-burger__lines"><span></span><span></span><span></span></div>
+      <span class="ac-burger__text">Menu</span>
+    </button>
+    <nav class="ac-header__nav" id="site-nav">
+      <div class="ac-header__nav-scroll">
+        <div class="ac-nav-col">
+          <p class="ac-nav-col-title">Explore</p>
+          <a class="ac-nav-link" href="academic-roadmap.html">Academic Roadmap</a>
+          <a class="ac-nav-link" href="services.html">Services</a>
+          <a class="ac-nav-link" href="catalog.html">Schools &amp; Universities</a>
+          <a class="ac-nav-link" href="pricing-policy.html">Pricing</a>
+        </div>
+        <div class="ac-nav-col">
+          <p class="ac-nav-col-title">Company</p>
+          <a class="ac-nav-link" href="about.html">About</a>
+          <a class="ac-nav-link ac-hide-on-desktop" href="faq.html">FAQ</a>
+          <a class="ac-nav-link" href="contacts.html">Contacts</a>
+          <a class="ac-nav-link ac-hide-on-desktop" href="blog.html">Blog</a>
+        </div>
+
+        <a class="ac-btn ac-btn--primary ac-nav-cta" href="contacts.html#lead">Free consultation</a>
+
+        <div class="ac-lang-picker ac-lang-picker--menu">
+          <button type="button" class="ac-lang-picker__toggle" aria-expanded="false" aria-haspopup="listbox">
+            <svg class="ac-lang-picker__globe" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="ac-lang-picker__current">English</span>
+          </button>
+          <ul class="ac-lang-picker__menu" role="listbox" aria-label="Select language">
+            <li role="option" aria-selected="true" data-lang="en">English</li>
+            <li role="option" aria-selected="false" data-lang="pl">Polski</li>
+            <li role="option" aria-selected="false" data-lang="ua">Українська</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a class="ac-btn ac-btn--primary" href="contacts.html#lead">Free consultation</a>
+  </div>
+</header>
+
+
+  <main>
+    
+<!-- ============ PAGE HERO (title band) ============ -->
+  <section class="ac-page-hero ac-page-hero--cream">
+    <div class="ac-container">
+      <p class="ac-eyebrow">Academic directory</p>
+      <h1 class="ac-h1">Schools &amp; Universities</h1>
+      <p class="ac-editorial" style="margin-top:var(--space-4);max-width:680px;">An curated guide to elite schools and universities in the United Kingdom, United States, and Switzerland. Filter by institution type, country, and specific academic parameters.</p>
+    </div>
+  </section>
+
+  <!-- ============ DIRECTORY GRID & FILTERS ============ -->
+  <section class="ac-section ac-section--paper">
+    <div class="ac-container">
+      
+      <!-- Type Selection Tabs -->
+      <div class="ac-filter-tabs">
+        <button class="ac-filter-tab is-active" data-filter-type="school">Boarding Schools</button>
+        <button class="ac-filter-tab" data-filter-type="university">Universities</button>
+      </div>
+
+      <div class="ac-catalog-layout">
+        
+        <!-- Filter Sidebar -->
+        <aside class="ac-filters">
+
+
+          <div class="ac-filter-group">
+            <label class="ac-filter-group__t" for="filter-country">Country</label>
+            <select id="filter-country" class="ac-select">
+              <option value="all">All Countries</option>
+              <option value="UK">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="Switzerland">Switzerland</option>
+            </select>
+          </div>
+
+          <!-- School-specific sub-filters -->
+          <div id="sub-filters-school" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-gender">Gender option</label>
+              <select id="filter-gender" class="ac-select">
+                <option value="all">All Options</option>
+                <option value="coed">Co-educational</option>
+                <option value="single">Single-Sex</option>
+              </select>
+            </div>
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-boarding">Boarding option</label>
+              <select id="filter-boarding" class="ac-select">
+                <option value="all">All Options</option>
+                <option value="full">Full Boarding</option>
+                <option value="day-weekly">Day / Weekly Boarding</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- University-specific sub-filters -->
+          <div id="sub-filters-university" style="display:none;">
+            <div class="ac-filter-group">
+              <label class="ac-filter-group__t" for="filter-campus">Campus style</label>
+              <select id="filter-campus" class="ac-select">
+                <option value="all">All Styles</option>
+                <option value="collegiate">Collegiate Campus</option>
+                <option value="city-modern">City / Modern Campus</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Results Grid -->
+        <div class="ac-catalog-grid" id="catalog-grid">
+          <a
+            href="school-detail-eton.html"
+            class="ac-catalog-card"
+            data-type="school"
+            data-country="UK"
+            data-gender="single"
+            data-boarding="full"
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-eton.jpg" alt="Eton College" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">Boarding School</span>
+              <h3 class="ac-catalog-card__title">Eton College</h3>
+              <div class="ac-catalog-card__loc">Windsor, United Kingdom</div>
+              <p class="ac-catalog-card__desc">One of the world's most famous boarding schools, offering academic excellence, traditional values, and leadership preparation for boys.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Age:</strong> 13–18</div>
+                <div class="ac-catalog-card__spec-item"><strong>Gender:</strong> Boys Only</div>
+                <div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> Full Boarding</div>
+                <div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> GCSE, A-Level</div>
+              </div>
+              <span class="ac-catalog-card__link">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="school"
+            data-country="US"
+            data-gender="coed"
+            data-boarding="day-weekly"
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="Phillips Academy Andover" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">Boarding School</span>
+              <h3 class="ac-catalog-card__title">Phillips Academy Andover</h3>
+              <div class="ac-catalog-card__loc">Andover, MA, United States</div>
+              <p class="ac-catalog-card__desc">A prestigious, highly selective co-educational boarding school in New England, celebrated for its academic depth and global student body.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Age:</strong> 14–18</div>
+                <div class="ac-catalog-card__spec-item"><strong>Gender:</strong> Co-educational</div>
+                <div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> Full / Day</div>
+                <div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> US Diploma, AP</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="school"
+            data-country="Switzerland"
+            data-gender="coed"
+            data-boarding="full"
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="Institut Le Rosey" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">Boarding School</span>
+              <h3 class="ac-catalog-card__title">Institut Le Rosey</h3>
+              <div class="ac-catalog-card__loc">Rolle / Gstaad, Switzerland</div>
+              <p class="ac-catalog-card__desc">Widely known as the “School of Kings” — a highly international Swiss boarding school featuring a dual-campus system (lake and mountain).</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Age:</strong> 7–18</div>
+                <div class="ac-catalog-card__spec-item"><strong>Gender:</strong> Co-educational</div>
+                <div class="ac-catalog-card__spec-item"><strong>Boarding:</strong> Full Boarding</div>
+                <div class="ac-catalog-card__spec-item"><strong>Curriculum:</strong> IB, French Bac</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <a
+            href="university-detail-oxford.html"
+            class="ac-catalog-card"
+            data-type="university"
+            data-country="UK"
+            data-campus="collegiate"
+            hidden
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-oxford.jpg" alt="University of Oxford" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">University</span>
+              <h3 class="ac-catalog-card__title">University of Oxford</h3>
+              <div class="ac-catalog-card__loc">Oxford, United Kingdom</div>
+              <p class="ac-catalog-card__desc">The oldest university in the English-speaking world. Renowned for its unique collegiate system, one-on-one tutorials, and elite research.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> UG, PG, PhD</div>
+                <div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> 14%</div>
+                <div class="ac-catalog-card__spec-item"><strong>Campus:</strong> Collegiate</div>
+                <div class="ac-catalog-card__spec-item"><strong>Programs:</strong> PPE, STEM, Classics</div>
+              </div>
+              <span class="ac-catalog-card__link">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="university"
+            data-country="US"
+            data-campus="city-modern"
+            hidden
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="Harvard University" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">University</span>
+              <h3 class="ac-catalog-card__title">Harvard University</h3>
+              <div class="ac-catalog-card__loc">Cambridge, MA, United States</div>
+              <p class="ac-catalog-card__desc">An elite Ivy League research university. Offers unmatched academic resources, global networking, and historically low acceptance rates.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> UG, PG, PhD</div>
+                <div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> 4%</div>
+                <div class="ac-catalog-card__spec-item"><strong>Campus:</strong> Traditional</div>
+                <div class="ac-catalog-card__spec-item"><strong>Programs:</strong> Liberal Arts, STEM, Law</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <div
+            class="ac-catalog-card is-placeholder"
+            data-type="university"
+            data-country="Switzerland"
+            data-campus="city-modern"
+            hidden
+          >
+            <div class="ac-catalog-card__img-wrap">
+              <img src="assets/ac-photo-hero.jpg" alt="ETH Zurich" class="ac-catalog-card__img">
+            </div>
+            <div class="ac-catalog-card__body">
+              <span class="ac-catalog-card__type">University</span>
+              <h3 class="ac-catalog-card__title">ETH Zurich</h3>
+              <div class="ac-catalog-card__loc">Zurich, Switzerland</div>
+              <p class="ac-catalog-card__desc">A world-leading public university for science and technology. Renowned for high academic standards and cutting-edge research programs.</p>
+              <div class="ac-catalog-card__specs">
+                <div class="ac-catalog-card__spec-item"><strong>Degrees:</strong> UG, PG, PhD</div>
+                <div class="ac-catalog-card__spec-item"><strong>Acceptance:</strong> 25%</div>
+                <div class="ac-catalog-card__spec-item"><strong>Campus:</strong> City / Modern</div>
+                <div class="ac-catalog-card__spec-item"><strong>Programs:</strong> STEM, Engineering</div>
+              </div>
+              <span class="ac-catalog-card__link is-placeholder">Profile Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="ac-catalog-empty" id="catalog-empty" hidden>
+            <h3 class="ac-h3">No institutions match your search.</h3>
+            <p>Try adjusting your filters.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="ac-section ac-section--paper" id="cta" style="padding-top:0;">
+    <div class="ac-container">
+      <a href="contacts.html#lead" class="ac-action">
+        <div class="ac-action__text">
+          <p class="ac-eyebrow">Take the next step</p>
+          <h2 class="ac-h2">Find the right fit for your child.</h2>
+          <p>A short call to understand your child's profile and map the realistic path forward.</p>
+        </div>
+        <span class="ac-btn ac-btn--primary">Free consultation</span>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="ac-footer">
+  <div class="ac-footer__inner">
+    <div>
+      <img src="assets/ac-lockup-dark.svg?v=61" alt="Amber Council" height="64">
+      <p class="ac-small" style="margin-top:var(--space-3);max-width:280px;color:rgba(237,228,210,.72);">The right academic path to the strongest school or university your child can reach.</p>
+    </div>
+    <div>
+      <p class="ac-footer__title">Explore</p>
+      <a href="academic-roadmap.html">Academic Roadmap</a>
+      <a href="services.html">Services</a>
+      <a href="catalog.html">Schools &amp; Universities</a>
+      <a href="pricing-policy.html">Pricing</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Company</p>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <p class="ac-footer__title">Get in touch</p>
+      <a href="tel:+48500557417">+48 500 557 417</a>
+      <a href="mailto:info@ambercouncil.org">info@ambercouncil.org</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Nowomejska%203%2F2%2C%2080-864%20Gdańsk%2C%20Poland" target="_blank" rel="noopener">Nowomejska 3/2, 80-864 Gdańsk</a>
+    </div>
+  </div>
+  <div class="ac-footer__bottom">
+    <div class="ac-footer__bottom-row">
+      <span>© <span id="current-year">2026</span> Amber Council. All rights reserved.</span>
+      <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+      <span class="ac-foot-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
+      <div class="ac-lang-picker">
+        <button type="button" class="ac-lang-picker__toggle" aria-expanded="false" aria-haspopup="listbox">
+          <svg class="ac-lang-picker__globe" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="ac-lang-picker__current">English</span>
+        </button>
+        <ul class="ac-lang-picker__menu" role="listbox" aria-label="Select language">
+          <li role="option" aria-selected="true" data-lang="en">English</li>
+          <li role="option" aria-selected="false" data-lang="pl">Polski</li>
+          <li role="option" aria-selected="false" data-lang="ua">Українська</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="ac-scroll-top" id="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+
+</body>
+</html>
