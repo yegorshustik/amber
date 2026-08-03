@@ -32,7 +32,7 @@ watch(
     () => route.params.id,
     () => {
         if (route.params.id && forms.value[0]) {
-            router.push({ name: 'inbox.form.applications', params: { id: forms.value[0].id } });
+           // router.push({ name: 'inbox.form.applications', params: { id: forms.value[0].id } });
         }
     },
 );

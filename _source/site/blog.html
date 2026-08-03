@@ -98,67 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Newsletter Form Validation & Handling
-  var form = document.getElementById('newsletter-form');
-  var emailInput = document.getElementById('f-email');
-  var errorEl = document.getElementById('err-email');
-  var successEl = document.getElementById('form-success');
-
-  if (form && emailInput) {
-    // Real-time ASCII restriction (no Cyrillic/non-ASCII characters)
-    emailInput.addEventListener('input', function () {
-      emailInput.value = emailInput.value.replace(/[^\x20-\x7E]/g, '');
-      if (emailInput.classList.contains('is-error')) {
-        validate();
-      }
-    });
-
-    emailInput.addEventListener('paste', function () {
-      setTimeout(function () {
-        emailInput.value = emailInput.value.replace(/[^\x20-\x7E]/g, '');
-        if (emailInput.classList.contains('is-error')) {
-          validate();
-        }
-      }, 0);
-    });
-
-    // Blur validation
-    emailInput.addEventListener('blur', function () {
-      validate();
-    });
-
-    function validate() {
-      var val = emailInput.value.trim();
-      var msg = '';
-      if (!val) {
-        msg = 'Please enter your email';
-      } else if (!/^[^\s@]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/.test(val)) {
-        msg = 'Enter a valid email address';
-      }
-
-      if (errorEl) errorEl.textContent = msg;
-      if (msg) {
-        emailInput.classList.add('is-error');
-        emailInput.classList.remove('is-valid');
-        return false;
-      } else {
-        emailInput.classList.remove('is-error');
-        emailInput.classList.add('is-valid');
-        return true;
-      }
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var isValid = validate();
-      if (!isValid) return;
-
-      // Show success state
-      if (successEl) {
-        successEl.classList.add('is-visible');
-      }
-    });
-  }
 });
 </script>
 
@@ -262,16 +201,19 @@ document.addEventListener('DOMContentLoaded', function () {
           <h2 class="ac-h2">Subscribe to our journal.</h2>
           <p>Get our latest academic insights, admissions timelines, and counselor guides delivered straight to your inbox.</p>
         </div>
-        <form id="newsletter-form" class="ac-newsletter-form" novalidate>
-          <div class="ac-newsletter-group">
-            <input class="ac-input" type="email" id="f-email" placeholder="Your email address" required>
-            <button type="submit" id="submit-btn" class="ac-btn ac-btn--primary">Subscribe</button>
+        <form class="ac-newsletter-form" action="/inbox/newsletter" method="post" data-ac-form novalidate>
+          <div class="ac-field">
+            <div class="ac-newsletter-group">
+              <input class="ac-input" type="email" name="email" placeholder="Your email address" data-validate="email" required>
+              <button type="submit" class="ac-btn ac-btn--primary">Subscribe</button>
+            </div>
+            <div class="ac-field-error" aria-live="polite"></div>
           </div>
-          <div class="ac-field-error" id="err-email"></div>
+          <div class="ac-form-submit-error" data-form-error aria-live="polite"></div>
         </form>
 
         <!-- Form Success State overlay inside .ac-action -->
-        <div class="ac-form-success" id="form-success" style="background: var(--navy); color: var(--cream);">
+        <div class="ac-form-success" data-form-success style="background: var(--navy); color: var(--cream);" aria-live="polite">
           <div class="ac-form-success__inner" style="max-width: 440px;">
             <div class="ac-form-success__icon" style="color: var(--amber);">
               <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">

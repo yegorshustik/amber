@@ -18,10 +18,10 @@ class InboxController extends Controller
         $form = Form::whereSlug($slug)->firstorFail();
 
         $rules = [
-            'g-recaptcha-response' => [
+            /*'g-recaptcha-response' => [
                 'required',
                 new CaptchaRule,
-            ],
+            ],*/
         ];
 
         foreach ($form->fields as $field) {

@@ -268,9 +268,8 @@
                         </div>
                     @endif
 
-
                     <div class="ac-card" style="position:relative; overflow:hidden;">
-                        <div class="ac-form-success" id="form-success" aria-live="polite">
+                        <div class="ac-form-success" data-form-success aria-live="polite">
                             <div class="ac-form-success__inner">
                                 <div class="ac-form-success__icon">
                                     <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -283,31 +282,60 @@
                             </div>
                         </div>
 
-
-                        <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
+                        <form class="ac-form" method="post" action="{{ route('amber.inbox', ['slug' => $block['content']['form']->slug]) }}" data-ac-form novalidate>
                             <div class="ac-form__row">
                                 @foreach($block['content']['form']->fields as $field)
                                     <div class="ac-field">
                                         <label class="ac-label" for="field_{{ $field->id }}">{{ $field->title }}</label>
 
                                         @if($field->type == \App\Enums\Inbox\FieldType::TEXT)
-                                            <input class="ac-input" id="field_{{ $field->id }}" type="text" placeholder="{{ $field->placeholder }}" autocomplete="name">
+                                            <input class="ac-input"
+                                                   name="field_{{ $field->id }}"
+                                                   id="field_{{ $field->id }}"
+                                                   type="text"
+                                                   {{ $field->is_required ? 'required' : '' }}
+                                                   placeholder="{{ $field->placeholder }}"
+                                                   autocomplete="name">
                                         @elseif($field->type == \App\Enums\Inbox\FieldType::DATE)
-                                            <input class="ac-input" id="field_{{ $field->id }}" type="text" inputmode="numeric" maxlength="10" placeholder="{{ $field->placeholder }}" autocomplete="bday">
+                                            <input class="ac-input"
+                                                   name="field_{{ $field->id }}"
+                                                   id="field_{{ $field->id }}"
+                                                   type="text"
+                                                   {{ $field->is_required ? 'required' : '' }}
+                                                   inputmode="numeric"
+                                                   data-mask="date"
+                                                   data-validate="date"
+                                                   maxlength="10"
+                                                   placeholder="{{ $field->placeholder }}"
+                                                   autocomplete="bday">
                                         @elseif($field->type == \App\Enums\Inbox\FieldType::EMAIL)
-                                            <input class="ac-input" id="field_{{ $field->id }}" type="email" placeholder="{{ $field->placeholder }}" autocomplete="email">
+                                            <input class="ac-input"
+                                                   name="field_{{ $field->id }}"
+                                                   id="field_{{ $field->id }}"
+                                                   type="email"
+                                                   {{ $field->is_required ? 'required' : '' }}
+                                                   placeholder="{{ $field->placeholder }}"
+                                                   autocomplete="email">
                                         @elseif($field->type == \App\Enums\Inbox\FieldType::TEL)
-                                            <input class="ac-input" id="field_{{ $field->id }}" type="tel" placeholder="{{ $field->placeholder }}" autocomplete="tel">
+                                            <input class="ac-input"
+                                                   name="field_{{ $field->id }}"
+                                                   id="field_{{ $field->id }}"
+                                                   type="tel"
+                                                   {{ $field->is_required ? 'required' : '' }}
+                                                   placeholder="{{ $field->placeholder }}"
+                                                   autocomplete="tel">
                                         @elseif($field->type == \App\Enums\Inbox\FieldType::SELECT)
-                                            <select class="ac-select" id="field_{{ $field->id }}">
+                                            <select class="ac-select"
+                                                    name="field_{{ $field->id }}"
+                                                    id="field_{{ $field->id }}"
+                                                    {{ $field->is_required ? 'required' : '' }} >
                                                 <option value="">{{ $field->placeholder }}</option>
                                                 @foreach($field->options AS $item)
                                                     <option>{{ select_multilingual_field_value($item['option']) }}</option>
                                                 @endforeach
-
                                             </select>
                                         @endif
-                                        <p class="ac-field-error" id="err-name" aria-live="polite"></p>
+                                        <p class="ac-field-error" aria-live="polite"></p>
                                     </div>
                                 @endforeach
                             </div>
@@ -317,6 +345,7 @@
                                     'privacy' => '<a href="' . locale_url('privacy') . '" style="color:inherit; text-decoration:underline;">' . __('form.agreement.privacy') . '</a>'
                                 ]) !!}
                             </p>
+                            <p class="ac-form-submit-error" data-form-error aria-live="polite"></p>
                             <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" style="width:100%;">
                                 {{ select_multilingual_field_value($block['content']['form']->options['design.submit-button-text'], __('form.submit')) }}
                             </button>

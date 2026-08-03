@@ -71,7 +71,7 @@
 .ac-field { display: flex; flex-direction: column; gap: 6px; }
 .ac-label { font-family: var(--font-body); font-weight: var(--fw-medium); font-size: 14px; color: var(--navy); }
 .ac-input, .ac-select, .ac-textarea {
-  font-family: var(--font-body); font-size: var(--fs-body); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--fs-small); color: var(--ink);
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-input);
   padding: 12px 14px; width: 100%; transition: border-color .15s ease, box-shadow .15s ease;
 }

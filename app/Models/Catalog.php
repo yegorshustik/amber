@@ -109,6 +109,23 @@ class Catalog extends Model implements Responsable
         ]);
     }
 
+    public function getFilterAttributes(): string
+    {
+        return match($this->type) {
+            ItemType::SCHOOL => implode(' ', [
+                'data-type="school"',
+                'data-country="'.md5($this->country).'"',
+                'data-gender="'.md5($this->gender).'"',
+                'data-boarding="'.md5($this->boarding).'"'
+            ]),
+            ItemType::UNIVERSITY =>  implode(' ', [
+                'data-type="university"',
+                'data-country="'.md5($this->country).'"',
+                'data-campus="'.md5($this->campus_style).'"',
+            ]),
+        };
+    }
+
     public function toResponse($request)
     {
         return [

@@ -93,7 +93,7 @@
         <div class="ac-card" style="position:relative; overflow:hidden;">
 
           <!-- ✅ Success overlay (hidden until form is submitted) -->
-          <div class="ac-form-success" id="form-success" aria-live="polite">
+          <div class="ac-form-success" data-form-success aria-live="polite">
             <div class="ac-form-success__inner">
               <div class="ac-form-success__icon">
                 <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,23 +106,23 @@
             </div>
           </div>
 
-          <form class="ac-form" id="lead-form" onsubmit="return false;" novalidate>
+          <form class="ac-form" action="/inbox/consultation" method="post" data-ac-form novalidate>
             <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-name">Full name of the student</label>
-                <input class="ac-input" id="f-name" type="text" placeholder="Name Surname" autocomplete="name">
+                <input class="ac-input" id="f-name" name="student_name" type="text" placeholder="Name Surname" autocomplete="name" data-validate="full-name" required>
                 <p class="ac-field-error" id="err-name" aria-live="polite"></p>
               </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-dob">Date of birth</label>
-                <input class="ac-input" id="f-dob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10">
+                <input class="ac-input" id="f-dob" name="date_of_birth" type="text" inputmode="numeric" autocomplete="bday" placeholder="dd.mm.yyyy" maxlength="10" data-mask="date" data-validate="date" required>
                 <p class="ac-field-error" id="err-dob" aria-live="polite"></p>
               </div>
             </div>
             <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-grade">Current grade</label>
-                <select class="ac-select" id="f-grade">
+                <select class="ac-select" id="f-grade" name="current_grade" data-validate="required" required>
                   <option value="">Select…</option>
                   <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
                   <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
@@ -131,7 +131,7 @@
               </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-consider">What is being considered</label>
-                <select class="ac-select" id="f-consider">
+                <select class="ac-select" id="f-consider" name="consideration" data-validate="required" required>
                   <option value="">Select…</option>
                   <option>School</option><option>University</option>
                   <option>Short program</option><option>Visa</option>
@@ -142,17 +142,18 @@
             <div class="ac-form__row">
               <div class="ac-field">
                 <label class="ac-label" for="f-email">Email</label>
-                <input class="ac-input" id="f-email" type="email" placeholder="you@email.com" autocomplete="email">
+                <input class="ac-input" id="f-email" name="email" type="email" placeholder="you@email.com" autocomplete="email" data-validate="email" required>
                 <p class="ac-field-error" id="err-email" aria-live="polite"></p>
               </div>
               <div class="ac-field">
                 <label class="ac-label" for="f-phone">Contact phone</label>
-                <input class="ac-input" id="f-phone" type="tel" placeholder="+48 …" autocomplete="tel">
+                <input class="ac-input" id="f-phone" name="phone" type="tel" placeholder="+48 …" autocomplete="tel" data-mask="phone" data-validate="phone" required>
                 <p class="ac-field-error" id="err-phone" aria-live="polite"></p>
               </div>
             </div>
             <p class="ac-small" style="font-size:13px; margin-top:var(--space-3); margin-bottom:var(--space-2); color:var(--muted); text-align:center;">By submitting this request, you agree to our <a href="terms.html" style="color:inherit; text-decoration:underline;">Terms</a> and <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>.</p>
-            <button class="ac-btn ac-btn--primary" id="submit-btn" type="submit" style="width:100%;">Request consultation</button>
+            <p class="ac-form-submit-error" data-form-error aria-live="polite"></p>
+            <button class="ac-btn ac-btn--primary" type="submit" style="width:100%;">Request consultation</button>
           </form>
         </div>
 
@@ -223,7 +224,6 @@
       </div>
     </div>
   </section>
-
 
 
   </main>

@@ -81,13 +81,13 @@
                 </aside>
 
                 <!-- Results Grid -->
-                <div class="ac-catalog-grid" id="catalog-grid2">
+                <div class="ac-catalog-grid" id="catalog-grid">
                     @foreach($catalog AS $item)
                         @php
-                            /** @var \App\Models\Catalog $item */
+                        /** @var \App\Models\Catalog $item */
                         @endphp
 
-                        {!! ($item->is_visible ? '<a ' : '<div ') . ($item->is_visible ? ('href="'.$item->url.'" class="ac-catalog-card">') : 'class="ac-catalog-card is-placeholder">') !!}
+                        {!! ($item->is_visible ? '<a ' : '<div ') . $item->getFilterAttributes() . ($item->is_visible ? ('href="'.$item->url.'" class="ac-catalog-card">') : 'class="ac-catalog-card is-placeholder" hidden>') !!}
                         <div class="ac-catalog-card__img-wrap">
                             @if($item->image?->exists())
                             <img src="{{ $item->image->url() }}" alt="{{ $item->image->alt() ?: $item->title }}" class="ac-catalog-card__img">
