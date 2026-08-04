@@ -22,7 +22,7 @@ const handleSubmit = async (e: Event) => {
     try {
         const method = props.method || 'post';
 
-        const response = await api[method](props.action, data);
+        const response = await api[method != 'get' ? 'post' : method](props.action, data);
 
         emit('success', response);
     } catch (err: any) {
@@ -31,7 +31,6 @@ const handleSubmit = async (e: Event) => {
             emit('error', err as ValidationError);
 
             wxSnackbar(err.message, { type: 'danger' });
-
         } else {
             console.error('Submit error:', err);
         }
@@ -41,7 +40,8 @@ const handleSubmit = async (e: Event) => {
 </script>
 
 <template>
-    <form @submit.prevent="handleSubmit" :method="props.method" :action="props.action" novalidate v-bind="$attrs">
+    <form @submit.prevent="handleSubmit" :method="props.method != 'get' ? 'post' : props.method" :action="props.action" novalidate v-bind="$attrs">
+        <input type="hidden" name="_method" :value="props.method" />
         <slot :errors="errors"></slot>
     </form>
 </template>
