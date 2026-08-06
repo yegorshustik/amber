@@ -101,6 +101,11 @@ class Catalog extends Model implements Responsable
         );
     }
 
+    public function rawUrl(): Attribute
+    {
+        return Attribute::get(fn () => 'catalog/'.$this->slug);
+    }
+
     public function getFaq(): Collection
     {
         return collect($this->faq)->map(fn ($item) => [

@@ -71,6 +71,13 @@ class Page extends Model implements Responsable
         );
     }
 
+    public function rawUrl() : Attribute
+    {
+        return new Attribute(
+            get : fn() => '/' . (trim(str_replace(['index/index', 'index'], '', $this->getRawOriginal('url')), '/') ?: '')
+        );
+    }
+
     public function toResponse($request)
     {
         return [

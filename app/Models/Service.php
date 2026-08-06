@@ -52,6 +52,11 @@ class Service extends Model implements Responsable
         );
     }
 
+    public function rawUrl(): Attribute
+    {
+        return Attribute::get(fn () => 'services/'.$this->slug);
+    }
+
     public function toResponse($request)
     {
         return [

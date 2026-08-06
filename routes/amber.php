@@ -5,6 +5,7 @@ use App\Http\Controllers\Amber\CatalogController;
 use App\Http\Controllers\Amber\ServicesController;
 use App\Http\Controllers\Amber\InboxController;
 use App\Http\Controllers\Amber\PageController;
+use App\Http\Controllers\Amber\SitemapController;
 use App\Models\Articles\Rubric;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
@@ -23,6 +24,7 @@ Route::group([
     Route::get('/services/{slug}', [ServicesController::class, 'show']);
     Route::get('/catalog', [CatalogController::class, 'index']);
     Route::get('/catalog/{slug}', [CatalogController::class, 'show']);
+    Route::get('sitemap.xml', [SitemapController::class, 'index']);
 
 
     /*

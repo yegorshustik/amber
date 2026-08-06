@@ -67,6 +67,11 @@ class Article extends Model implements Responsable
         return Attribute::get(fn () => locale_url('article/'.$this->slug));
     }
 
+    public function rawUrl(): Attribute
+    {
+        return Attribute::get(fn () => 'article/'.$this->slug);
+    }
+
     public function scopePublished(Builder $builder)
     {
         $builder->where('is_published', true);

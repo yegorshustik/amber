@@ -51,6 +51,11 @@ class Rubric extends Model implements Responsable
         return Attribute::get(fn () => locale_url($this->slug));
     }
 
+    public function rawUrl(): Attribute
+    {
+        return Attribute::get(fn () => $this->slug);
+    }
+
     public function articles(): BelongsToMany
     {
         return $this->belongsToMany(
