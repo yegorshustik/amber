@@ -1,7 +1,7 @@
 <footer {{ $attributes->merge(['class' => 'ac-footer']) }}>
     <div class="ac-footer__inner">
         <div>
-            <img src="/assets/ac-lockup-dark.svg?v=61" alt="{{ __('amber-council') }}" height="64">
+            <img src="/assets/ac-lockup-dark.svg?v=62" alt="{{ __('amber-council') }}" height="64">
             <p class="ac-small" style="margin-top:var(--space-3);max-width:280px;color:rgba(237,228,210,.72);">
                 {{ __('footer.text') }}
             </p>

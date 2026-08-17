@@ -3,7 +3,7 @@
         <a href="{{ locale_url('/') }}"
            class="ac-header__logo-link"
            aria-label="{{ __('amber-council') }}">
-            <img class="ac-header__logo" src="/assets/ac-lockup-dark.svg?v=61" alt="{{ __('amber-council') }}">
+            <img class="ac-header__logo" src="/assets/ac-lockup-dark.svg?v=62" alt="{{ __('amber-council') }}">
         </a>
         <button
             type="button"
